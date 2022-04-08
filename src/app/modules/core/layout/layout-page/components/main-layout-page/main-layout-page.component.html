@@ -1,0 +1,17 @@
+<div class="main-layout-page">
+
+  <app-main-layout-page-header>
+    <ng-container >
+      <ng-content select="[]"></ng-content>
+    </ng-container>
+  </app-main-layout-page-header>
+
+  <main >
+    <ng-content></ng-content>
+  </main>
+
+  <div>
+    <ng-content select="[footer]"></ng-content>
+  </div>
+
+</div>
