@@ -6,10 +6,10 @@ const path = require('path');
 const app = express();
 // app.use(compression());
 
-app.use(express.static(path.join(__dirname, 'dist/graduation-project-ma')));
+app.use(express.static(path.join(__dirname, 'dist/Utility-bills')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/graduation-project-ma/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/Utility-bills/index.html'));
 });
 
 const port = process.env.PORT || 3000;
