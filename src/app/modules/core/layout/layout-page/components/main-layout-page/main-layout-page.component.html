@@ -1,12 +1,15 @@
 <div class="main-layout-page">
 
   <app-main-layout-page-header>
-    <ng-container >
-      <ng-content select="[]"></ng-content>
+    <ng-container authLink>
+      <ng-content select="[authLink]"></ng-content>
+    </ng-container>
+    <ng-container navigationLinks>
+      <ng-content select="[navigationLinks]"></ng-content>
     </ng-container>
   </app-main-layout-page-header>
 
-  <main >
+  <main>
     <ng-content></ng-content>
   </main>
 
