@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.module';
 import { authLoginComponents } from './components';
-import {RouterModule} from "@angular/router";
+import { RouterModule } from '@angular/router';
+import { FormModule } from '../../core/form/form.module';
+
 
 @NgModule({
     declarations: [
@@ -11,7 +13,12 @@ import {RouterModule} from "@angular/router";
     imports: [
         CommonModule,
         LayoutPageModule,
-        RouterModule
+        RouterModule,
+        FormModule,
+    ],
+    exports: [
+        ...authLoginComponents
     ]
 })
-export class AuthLoginModule { }
+
+export class AuthLoginModule {}
