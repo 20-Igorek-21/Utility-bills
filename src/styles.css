@@ -7,6 +7,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 18px;
   line-height: 20px;
   background-color: var(--color-page);
@@ -23,8 +24,55 @@ html, body {
 
 .link {
   text-decoration: none;
+  color: inherit;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  transition: background-size .3s;
   cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.button {
+  font-size: 18px;
+}
+
+.app-auth-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.app-auth-form__field {
+  width: 100%;
+}
+
+.app-auth-form__container {
+  flex-direction: column;
+  width: 380px;
+  padding: 20px;
+  border-radius: 7px;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+}
+
+.app-auth-form__button {
+  height: 50px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.app-auth-form__message-errors {
+  position: absolute;
+  top: 50px;
+  left: -5px;
+}
+
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: .9;
+}

@@ -2,8 +2,6 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let AuthLoginFormComponent = class AuthLoginFormComponent {
     constructor() { }
-    ngOnInit() {
-    }
 };
 AuthLoginFormComponent = __decorate([
     Component({

@@ -24,6 +24,4 @@ AuthLoginModule = __decorate([
     })
 ], AuthLoginModule);
 export { AuthLoginModule };
-export class AuthLoginModule {
-}
 //# sourceMappingURL=auth-login.module.js.map
