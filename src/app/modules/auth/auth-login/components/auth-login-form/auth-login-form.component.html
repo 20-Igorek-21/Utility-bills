@@ -2,10 +2,10 @@
       [formGroup]="loginForm"
       (ngSubmit)="onSubmit()">
 
-  <app-input-password [label]="'Логін'"
-                      formControlName="email">
+  <app-input-field [label]="'Логін'"
+                   formControlName="email">
     <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
-  </app-input-password>
+  </app-input-field>
 
   <app-input-password [label]="'Пароль'"
                       formControlName="password">
