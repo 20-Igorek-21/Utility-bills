@@ -18,6 +18,8 @@ export class InputFieldComponent implements ControlValueAccessor {
     @Input()
     public label!: string;
     public value = '';
+    public type = '';
+
 
     public handleInput(value: string): void {
         this.onChange(value)
