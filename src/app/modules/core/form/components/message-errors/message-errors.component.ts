@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
+import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 
 @Component({
-  selector: 'app-message-errors',
-  templateUrl: './message-errors.component.html',
-  styleUrls: ['./message-errors.component.css']
+    selector: 'app-message-errors',
+    templateUrl: './message-errors.component.html',
+    styleUrls: ['./message-errors.component.css']
 })
-export class MessageErrorsComponent implements OnInit {
+export class MessageErrorsComponent {
 
-  constructor() { }
+    @Input()
+    public controlsName!: AbstractControl | null;
 
-  ngOnInit(): void {
-  }
+    public readonly minLengthSymbol = MIN_LENGTH_SYMBOL
 
 }

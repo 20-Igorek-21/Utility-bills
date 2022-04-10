@@ -1,1 +1,11 @@
-<p>message-errors works!</p>
+<ng-container *ngIf="controlsName?.dirty">
+
+  <p *ngIf="controlsName?.hasError('required')">Некоректне відображення введених даних</p>
+
+  <p *ngIf="controlsName?.hasError('email')">Необхідно коректно вказати електронну пошту</p>
+
+  <p *ngIf="controlsName?.hasError('minlength' )">Необхідно вказати мінімум {{ minLengthSymbol }} символів</p>
+
+  <p *ngIf="controlsName?.hasError('notMatch')">Паролі не співпадають!</p>
+
+</ng-container>

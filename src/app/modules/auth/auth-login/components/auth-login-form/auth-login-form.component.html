@@ -1,5 +1,27 @@
-<form>
-  <app-input-field></app-input-field>
-  <app-input-password [label]="'Пароль'"></app-input-password>
-</form>
+<form class="app-auth-form app-auth-form__container app-auth-form__container--login"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()">
 
+  <app-input-password [label]="'Логін'"
+                      formControlName="email">
+    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
+  </app-input-password>
+
+  <app-input-password [label]="'Пароль'"
+                      formControlName="password">
+    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
+  </app-input-password>
+
+  <div class="app-auth-form app-auth-form__content-row">
+    <a class="link app-auth-form__link"
+       routerLink="/auth/reset-password">Забули пароль?</a>
+    <mat-checkbox class="link app-auth-form__checkbox"
+                  color="primary"
+                  formControlName="checkbox">Запам'ятати мене</mat-checkbox>
+  </div>
+
+  <button class="button app-auth-form__button"
+          mat-flat-button
+          type="submit">Увійти</button>
+
+</form>
