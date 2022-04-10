@@ -1,6 +1,9 @@
 <form class="app-auth-form app-auth-form__container app-auth-form__container--login"
-      [formGroup]="loginForm"
+      [formGroup]="registerForm"
       (ngSubmit)="onSubmit()">
+
+  <app-input-field [label]="'Ім\'я користувача'">
+  </app-input-field>
 
   <app-input-field [label]="'Логін'"
                    formControlName="email">
@@ -11,17 +14,5 @@
                       formControlName="password">
     <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
-
-  <div class="app-auth-form app-auth-form__content-row">
-    <a class="link app-auth-form__link"
-       routerLink="/auth/reset-password">Забули пароль?</a>
-    <mat-checkbox class="link app-auth-form__checkbox"
-                  color="primary"
-                  formControlName="checkbox">Запам'ятати мене</mat-checkbox>
-  </div>
-
-  <button class="button app-auth-form__button"
-          mat-flat-button
-          type="submit">Увійти</button>
 
 </form>
