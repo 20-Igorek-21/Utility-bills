@@ -7,6 +7,7 @@ import {LayoutPageModule} from "../../core/layout/layout-page/layout-page.module
 import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
 
+
 @NgModule({
     declarations: [
         ...authRegisterComponents

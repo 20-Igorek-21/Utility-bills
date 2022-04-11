@@ -3,6 +3,7 @@
       (ngSubmit)="onSubmit()">
 
   <app-input-field [label]="'Логін'"
+                   [type]="'text'"
                    formControlName="email">
     <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
   </app-input-field>

@@ -5,7 +5,9 @@ let AuthSharedModule = class AuthSharedModule {
 };
 AuthSharedModule = __decorate([
     NgModule({
-        declarations: [],
+        declarations: [
+            ...authValidators
+        ],
         imports: [
             CommonModule
         ]

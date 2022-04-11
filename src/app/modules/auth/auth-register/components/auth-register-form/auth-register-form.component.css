@@ -1,9 +1,3 @@
 .app-auth-form__container--register {
   min-height: 300px;
 }
-
-.app-auth-form__content-row {
-  align-items: center;
-  margin-bottom: 20px;
-}
-
