@@ -3,7 +3,7 @@
   <mat-label>{{label}}</mat-label>
   <input matInput required
          [(ngModel)]="value"
-         [type]="'text'"
+         type="{{type}}"
          (blur)="onTouched()"
          (ngModelChange)="handleInput($event)">
   <ng-content></ng-content>

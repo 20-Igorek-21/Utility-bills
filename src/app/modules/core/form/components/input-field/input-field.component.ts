@@ -18,7 +18,8 @@ export class InputFieldComponent implements ControlValueAccessor {
     @Input()
     public label!: string;
     public value = '';
-    public type = '';
+    @Input()
+    public type!: string | number;
 
 
     public handleInput(value: string): void {
