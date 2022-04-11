@@ -1,7 +1,31 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+///либа яка вказує який тип даних використовується @ngneat/reactive-forms
+import { FormControl } from '@ngneat/reactive-forms';
+import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 let AuthLoginFormComponent = class AuthLoginFormComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+        this.loginForm = new FormGroup({
+            email: new FormControl('', [Validators.required, Validators.email]),
+            password: new FormControl('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
+            checkbox: new FormControl(false)
+        });
+    }
+    get controls() {
+        return {
+            email: this.loginForm.get('email'),
+            password: this.loginForm.get('password'),
+            checkbox: this.loginForm.get('checkbox')
+        };
+    }
+    onSubmit() {
+        if (!this.loginForm.invalid) {
+            alert(this.loginForm.value.email + '  ' + this.loginForm.value.password);
+            this.loginForm.reset();
+        }
+    }
 };
 AuthLoginFormComponent = __decorate([
     Component({

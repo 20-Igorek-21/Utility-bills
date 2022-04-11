@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthLoginFormPageViewComponent } from './auth-login/components';
-import {AuthRegisterFormPageViewComponent} from "./auth-register/components";
+import { AuthRegisterFormPageViewComponent } from './auth-register/components';
 
 export const authRoutes: Routes = [
     {
