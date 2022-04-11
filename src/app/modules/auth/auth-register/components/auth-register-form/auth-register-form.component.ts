@@ -10,23 +10,22 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
     styleUrls: ['./auth-register-form.component.css']
 })
 export class AuthRegisterFormComponent  {
+
     constructor( private router: Router ) { }
-    
+
     registerForm: FormGroup = new FormGroup({
         userName: new FormControl<string>(''),
         email: new FormControl<string>('', [Validators.required, Validators.email]),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
-        re_password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
+        repeatPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
     })
-
-
 
     public get controls() {
         return {
             userName: this.registerForm.get('userName') as FormControl<string>,
             email: this.registerForm.get('email') as FormControl<string>,
             password: this.registerForm.get('password') as FormControl<string>,
-            re_password: this.registerForm.get('password') as FormControl<string>,
+            repeatPassword: this.registerForm.get('repeatPassword') as FormControl<string>,
         }
     }
 
@@ -35,6 +34,5 @@ export class AuthRegisterFormComponent  {
             alert(this.registerForm.value.userName+ '  '  + this.registerForm.value.email + '  ' + this.registerForm.value.password);
             this.registerForm.reset();
         }
-
     }
 }

@@ -1,6 +1,6 @@
 import { AuthRegisterFormComponent } from './auth-register-form/auth-register-form.component';
-import { AuthRegisterFormPageComponent } from "./auth-register-form-page/auth-register-form-page.component";
-import { AuthRegisterFormPageViewComponent } from "./auth-register-form-page-view/auth-register-form-page-view.component";
+import { AuthRegisterFormPageComponent } from './auth-register-form-page/auth-register-form-page.component';
+import { AuthRegisterFormPageViewComponent } from './auth-register-form-page-view/auth-register-form-page-view.component';
 export const authRegisterComponents = [
     AuthRegisterFormComponent,
     AuthRegisterFormPageComponent,

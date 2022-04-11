@@ -2,7 +2,7 @@
       [formGroup]="registerForm"
       (ngSubmit)="onSubmit()">
 
-  <app-input-field [label]="'Ім\'я користувача'"
+  <app-input-field [label]="'Ім`я користувача'"
                    [type]="'text'"
                    formControlName="userName">
   </app-input-field>
@@ -19,8 +19,9 @@
   </app-input-password>
 
   <app-input-password [label]="'Повторіть пароль'"
-                      formControlName="re_password">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.re_password"></app-message-errors>
+                      appConfirmPasswordValidator="password"
+                      formControlName="repeatPassword">
+    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.repeatPassword"></app-message-errors>
   </app-input-password>
 
   <button class="button app-auth-form__button"

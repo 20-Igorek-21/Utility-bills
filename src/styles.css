@@ -7,7 +7,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 18px;
   line-height: 20px;
   background-color: var(--color-page);
@@ -72,7 +72,16 @@ html, body {
   align-items: center;
 }
 
+.main-navigation__link {
+
+}
+
 .button:hover {
   cursor: pointer;
   opacity: .9;
+}
+
+.main-navigation__link:hover {
+  background-image: linear-gradient(#FFF, #f4f5f6);
+  background-size: 100% 2px;
 }

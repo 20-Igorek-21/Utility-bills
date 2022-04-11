@@ -1,7 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-///либа яка вказує який тип даних використовується @ngneat/reactive-forms
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 let AuthLoginFormComponent = class AuthLoginFormComponent {

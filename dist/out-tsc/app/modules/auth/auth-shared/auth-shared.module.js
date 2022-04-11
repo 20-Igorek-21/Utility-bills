@@ -1,12 +1,16 @@
 import { __decorate } from "tslib";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { authValidators, ConfirmPasswordValidatorDirective } from './validators';
 let AuthSharedModule = class AuthSharedModule {
 };
 AuthSharedModule = __decorate([
     NgModule({
         declarations: [
-            ...authValidators
+            ...authValidators,
+        ],
+        exports: [
+            ConfirmPasswordValidatorDirective
         ],
         imports: [
             CommonModule
