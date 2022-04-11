@@ -1,5 +1,5 @@
 import {Component, forwardRef, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 
 @Component({
@@ -17,9 +17,9 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 export class InputFieldComponent implements ControlValueAccessor {
     @Input()
     public label!: string;
+    @Input()
+    public type!:string | number;
     public value = '';
-    public type = '';
-
 
     public handleInput(value: string): void {
         this.onChange(value)
