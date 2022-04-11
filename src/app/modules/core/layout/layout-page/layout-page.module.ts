@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { layoutPageComponents } from './components';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import { SwitchMenuDirective } from './directives/switch-menu.directive';
-
+import {layoutPageDirectives} from './directives';
 
 @NgModule({
     declarations: [
         ...layoutPageComponents,
-        SwitchMenuDirective,
-
+        ...layoutPageDirectives
     ],
     exports: [
         ...layoutPageComponents,
@@ -18,8 +16,6 @@ import { SwitchMenuDirective } from './directives/switch-menu.directive';
     imports: [
         CommonModule,
         MatToolbarModule,
-
-
     ]
 })
 export class LayoutPageModule { }

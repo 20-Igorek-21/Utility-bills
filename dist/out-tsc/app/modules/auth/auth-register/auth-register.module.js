@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { authRegisterComponents } from "./components";
 import { FormModule } from "../../core/form/form.module";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LayoutPageModule } from "../../core/layout/layout-page/layout-page.module";
 import { MatButtonModule } from "@angular/material/button";
 import { RouterModule } from "@angular/router";
+import { AuthSharedModule } from "../auth-shared/auth-shared.module";
 let AuthRegisterModule = class AuthRegisterModule {
 };
 AuthRegisterModule = __decorate([
@@ -20,7 +21,9 @@ AuthRegisterModule = __decorate([
             ReactiveFormsModule,
             LayoutPageModule,
             MatButtonModule,
-            RouterModule
+            RouterModule,
+            FormsModule,
+            AuthSharedModule
         ],
         exports: [
             ...authRegisterComponents

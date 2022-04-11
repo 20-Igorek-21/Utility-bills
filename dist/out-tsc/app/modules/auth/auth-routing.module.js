@@ -1,5 +1,5 @@
 import { AuthLoginFormPageViewComponent } from './auth-login/components';
-import { AuthRegisterFormPageViewComponent } from "./auth-register/components";
+import { AuthRegisterFormPageViewComponent } from './auth-register/components';
 export const authRoutes = [
     {
         path: 'login',

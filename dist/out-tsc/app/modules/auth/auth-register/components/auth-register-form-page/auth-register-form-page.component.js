@@ -1,9 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let AuthRegisterFormPageComponent = class AuthRegisterFormPageComponent {
-    constructor() { }
-    ngOnInit() {
-    }
 };
 AuthRegisterFormPageComponent = __decorate([
     Component({

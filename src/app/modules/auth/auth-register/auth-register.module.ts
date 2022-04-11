@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LayoutPageModule} from "../../core/layout/layout-page/layout-page.module";
 import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
+import {AuthSharedModule} from "../auth-shared/auth-shared.module";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {RouterModule} from "@angular/router";
         LayoutPageModule,
         MatButtonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        AuthSharedModule
     ],
     exports: [
         ...authRegisterComponents
