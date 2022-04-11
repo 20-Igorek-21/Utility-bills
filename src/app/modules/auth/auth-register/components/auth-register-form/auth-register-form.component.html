@@ -5,7 +5,7 @@
   <app-input-field [label]="'Ім\'я користувача'">
   </app-input-field>
 
-  <app-input-field [label]="'Логін'"
+  <app-input-field [label]="'Email'"
                    formControlName="email">
     <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
   </app-input-field>
@@ -15,4 +15,12 @@
     <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
+  <app-input-password [label]="'Повторіть пароль'"
+                      formControlName="password">
+    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
+  </app-input-password>
+
+  <button class="button app-auth-form__button"
+          mat-flat-button
+          type="submit">Зареєструватися</button>
 </form>
