@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {authRegisterComponents} from "./components";
 import {FormModule} from "../../core/form/form.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import {LayoutPageModule} from "../../core/layout/layout-page/layout-page.module";
+import {MatButtonModule} from "@angular/material/button";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -11,7 +14,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     imports: [
         CommonModule,
         FormModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        LayoutPageModule,
+        MatButtonModule,
+        RouterModule
     ],
     exports: [
         ...authRegisterComponents
