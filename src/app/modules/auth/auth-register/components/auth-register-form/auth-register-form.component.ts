@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {FormGroup, Validators} from "@angular/forms";
-import {FormControl} from "@ngneat/reactive-forms";
-import {MIN_LENGTH_SYMBOL} from "../../../../../constants";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
+import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 
 @Component({
-  selector: 'app-auth-register-form',
-  templateUrl: './auth-register-form.component.html',
-  styleUrls: ['./auth-register-form.component.css']
+    selector: 'app-auth-register-form',
+    templateUrl: './auth-register-form.component.html',
+    styleUrls: ['./auth-register-form.component.css']
 })
 export class AuthRegisterFormComponent  {
     constructor( private router: Router ) { }

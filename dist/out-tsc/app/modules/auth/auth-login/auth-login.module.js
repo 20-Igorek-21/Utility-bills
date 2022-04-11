@@ -5,6 +5,9 @@ import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.modu
 import { authLoginComponents } from './components';
 import { RouterModule } from '@angular/router';
 import { FormModule } from '../../core/form/form.module';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatButtonModule } from "@angular/material/button";
 let AuthLoginModule = class AuthLoginModule {
 };
 AuthLoginModule = __decorate([
@@ -17,6 +20,9 @@ AuthLoginModule = __decorate([
             LayoutPageModule,
             RouterModule,
             FormModule,
+            ReactiveFormsModule,
+            MatCheckboxModule,
+            MatButtonModule,
         ],
         exports: [
             ...authLoginComponents
