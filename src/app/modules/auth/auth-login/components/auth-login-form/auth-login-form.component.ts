@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators } from '@angular/forms';
+///либа яка вказує який тип даних використовується @ngneat/reactive-forms
 import { FormControl } from '@ngneat/reactive-forms';
+
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 
 @Component({
@@ -32,6 +34,5 @@ export class AuthLoginFormComponent  {
             alert(this.loginForm.value.email + '  ' + this.loginForm.value.password);
             this.loginForm.reset();
         }
-
     }
 }
