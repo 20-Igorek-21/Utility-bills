@@ -23,15 +23,13 @@ export class AuthLoginFormComponent  {
     public get controls() {
         return {
             email: this.loginForm.get('email') as FormControl<string>,
-            password: this.loginForm.get('password') as FormControl<string>,
-            checkbox: this.loginForm.get('checkbox') as FormControl<boolean>
+            password: this.loginForm.get('password') as FormControl<string>
         }
     }
 
     public onSubmit() {
-        if (!this.loginForm.invalid) {
-            alert(this.loginForm.value.email + '  ' + this.loginForm.value.password);
-            this.loginForm.reset();
+        if(!this.loginForm.invalid) {
+
         }
     }
 }

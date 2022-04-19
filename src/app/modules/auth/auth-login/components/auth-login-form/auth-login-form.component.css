@@ -14,12 +14,12 @@
 
 .app-auth-form__link:hover {
   opacity: .9;
-  background-image: linear-gradient(#6996F8, #2268F6);
+  background-image: linear-gradient(#157AFF, #2496ED);
   background-size: 100% 2px;
 }
 
 .app-auth-form__checkbox:hover {
   opacity: .9;
-  background-image: linear-gradient(#6996F8, #2268F6);
+  background-image: linear-gradient(#157AFF, #2496ED);
   background-size: 100% 2px;
 }

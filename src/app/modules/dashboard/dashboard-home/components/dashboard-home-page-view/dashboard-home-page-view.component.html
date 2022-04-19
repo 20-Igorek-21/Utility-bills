@@ -1,0 +1,19 @@
+<app-main-layout-page class="app-main-layout">
+
+  <ng-container authLink>
+    <button class="button app-main-layout__button" (click)="login()">
+      <svg height="30" width="30">
+        <use href="./assets/svg/sprites.svg#user-icon"></use>
+      </svg>
+    </button>
+  </ng-container>
+
+  <ng-container navigationLinks>
+    <app-main-layout-page-header-navigation-dashboard></app-main-layout-page-header-navigation-dashboard>
+  </ng-container>
+
+  <app-dashboard-home-page></app-dashboard-home-page>
+
+  <app-layout-footer-view footer></app-layout-footer-view>
+
+</app-main-layout-page>

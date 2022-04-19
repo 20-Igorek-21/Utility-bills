@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
     {
         path: '',
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
         path: 'auth',
-        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
     },
     {
         path: 'users',
@@ -16,7 +17,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: ''
+        redirectTo: '/auth/login'
     }
 ];
 
