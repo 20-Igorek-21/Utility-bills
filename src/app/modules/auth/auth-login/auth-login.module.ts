@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import  {MatButtonModule } from '@angular/material/button';
 
 
+
 @NgModule({
     declarations: [
         ...authLoginComponents
@@ -24,7 +25,8 @@ import  {MatButtonModule } from '@angular/material/button';
     ],
     exports: [
         ...authLoginComponents
-    ]
+    ],
+    providers: []
 })
 
 export class AuthLoginModule {}

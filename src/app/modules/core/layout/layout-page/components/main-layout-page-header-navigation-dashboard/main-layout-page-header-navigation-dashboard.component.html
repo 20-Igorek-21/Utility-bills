@@ -1,0 +1,22 @@
+<nav class="main-navigation" appSwitchMenu [isShow]="isShow">
+
+  <a class="link main-navigation__link"
+     routerLink="/"
+     routerLinkActive="main-navigation__link--active"
+     [routerLinkActiveOptions]="{exact:true}">Головна сторінка</a>
+
+  <a class="link main-navigation__link"
+     routerLink="/news"
+     routerLinkActive="main-navigation__link--active">Новини</a>
+
+  <a class="link main-navigation__link"
+     routerLink="/about"
+     routerLinkActive="main-navigation__link--active">Про нас</a>
+
+</nav>
+
+<button class="button main-navigation__button-menu"  (click)="switchMenu()">
+  <svg height="35" width="35">
+    <use href="./assets/svg/sprites.svg#menu-icon"></use>
+  </svg>
+</button>

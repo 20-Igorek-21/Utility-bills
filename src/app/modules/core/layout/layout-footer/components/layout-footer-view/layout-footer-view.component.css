@@ -1,0 +1,9 @@
+.main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-footer__title {
+  font-size: 22px;
+}

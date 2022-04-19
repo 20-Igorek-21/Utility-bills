@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {layoutFooterComponents, LayoutFooterViewComponent} from './components';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        ...layoutFooterComponents
+    ],
+    exports: [
+        LayoutFooterViewComponent
+    ],
     imports: [
         CommonModule
     ]

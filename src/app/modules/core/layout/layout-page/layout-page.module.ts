@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { layoutPageComponents } from './components';
 import {layoutPageDirectives} from './directives';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     declarations: [
         ...layoutPageComponents,
-        ...layoutPageDirectives
+        ...layoutPageDirectives,
     ],
     exports: [
         ...layoutPageComponents,
@@ -16,6 +16,7 @@ import {layoutPageDirectives} from './directives';
     imports: [
         CommonModule,
         MatToolbarModule,
+        RouterModule,
     ]
 })
 export class LayoutPageModule { }

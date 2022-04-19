@@ -7,21 +7,24 @@
                    formControlName="userName">
   </app-input-field>
 
-  <app-input-field [label]="'Email'"
+  <app-input-field [label]="'Адрес електронної почти'"
                    [type]="'text'"
                    formControlName="email">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
+    <app-message-errors class="app-auth-form__message-errors"
+                        [controlsName]="controls.email"></app-message-errors>
   </app-input-field>
 
   <app-input-password [label]="'Пароль'"
                       formControlName="password">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
+    <app-message-errors class="app-auth-form__message-errors"
+                        [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
   <app-input-password [label]="'Повторіть пароль'"
                       appConfirmPasswordValidator="password"
                       formControlName="repeatPassword">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.repeatPassword"></app-message-errors>
+    <app-message-errors class="app-auth-form__message-errors"
+                        [controlsName]="controls.repeatPassword"></app-message-errors>
   </app-input-password>
 
   <button class="button app-auth-form__button"

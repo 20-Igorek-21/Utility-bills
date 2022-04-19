@@ -5,12 +5,14 @@
   <app-input-field [label]="'Логін'"
                    [type]="'text'"
                    formControlName="email">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.email"></app-message-errors>
+    <app-message-errors class="app-auth-form__message-errors"
+                        [controlsName]="controls.email"></app-message-errors>
   </app-input-field>
 
   <app-input-password [label]="'Пароль'"
                       formControlName="password">
-    <app-message-errors class="app-auth-form__message-errors" [controlsName]="controls.password"></app-message-errors>
+    <app-message-errors class="app-auth-form__message-errors"
+                        [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
   <div class="app-auth-form app-auth-form__content-row">
