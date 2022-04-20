@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthLoginFormPageViewComponent } from './auth-login/components';
 import { AuthRegisterFormPageViewComponent } from './auth-register/components';
-import {AuthResetPasswordFormPageViewComponent} from './auth-reset-password/components';
+import { AuthResetPasswordFormPageViewComponent } from './auth-reset-password/components';
 
 export const authRoutes: Routes = [
     {
