@@ -4,6 +4,7 @@
 
   <app-input-field [label]="'Логін'"
                    [type]="'text'"
+                   [required]="true"
                    formControlName="email">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.email"></app-message-errors>

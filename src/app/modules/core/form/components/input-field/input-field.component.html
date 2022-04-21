@@ -1,7 +1,8 @@
 <mat-form-field class="app-auth-form__field"
                 appearance="outline">
   <mat-label>{{label}}</mat-label>
-  <input matInput required
+  <input matInput
+         [required]="required"
          [(ngModel)]="value"
          type="{{type}}"
          (blur)="onTouched()"

@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-    selector: 'app-personal-cabinet-form-page',
-    templateUrl: './personal-cabinet-form-page.component.html',
-    styleUrls: ['./personal-cabinet-form-page.component.css']
+    selector: 'app-personal-cabinet-form-editor',
+    templateUrl: './personal-cabinet-form-editor.component.html',
+    styleUrls: ['./personal-cabinet-form-editor.component.css']
 })
-export class PersonalCabinetFormPageComponent implements OnInit{
+export class PersonalCabinetFormEditorComponent implements OnInit {
 
     isLinear = false;
     firstFormGroup!: FormGroup;
@@ -22,5 +22,4 @@ export class PersonalCabinetFormPageComponent implements OnInit{
             secondCtrl: ['', Validators.required],
         });
     }
-
 }

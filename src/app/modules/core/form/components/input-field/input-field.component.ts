@@ -19,6 +19,9 @@ export class InputFieldComponent implements ControlValueAccessor {
     public label!: string;
     @Input()
     public type!:string | number;
+    @Input()
+    public required!: boolean ;
+
     public value = '';
 
     public handleInput(value: string): void {
