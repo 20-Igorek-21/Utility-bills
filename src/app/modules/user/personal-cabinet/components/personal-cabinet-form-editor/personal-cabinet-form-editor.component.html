@@ -1,0 +1,30 @@
+<mat-stepper class="app-auth-form app-auth-form__container" orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Особисті дані</ng-template>
+        <app-personal-cabinet-form-credentials></app-personal-cabinet-form-credentials>
+      <div>
+        <button mat-button matStepperNext>Дальше</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Організації</ng-template>
+        <app-personal-cabinet-form-providers></app-personal-cabinet-form-providers>
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Дальше</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Фініш</ng-template>
+    <p>Вітаю! Збережіть свої дані</p>
+    <div>
+      <button mat-button matStepperPrevious>Назад</button>
+      <button mat-button (click)="stepper.reset()">Зкинути</button>
+      <button mat-button matStepperPrevious>Зберегти</button>
+    </div>
+  </mat-step>
+</mat-stepper>

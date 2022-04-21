@@ -2,13 +2,9 @@
       [formGroup]="registerForm"
       (ngSubmit)="onSubmit()">
 
-  <app-input-field [label]="'Ім`я користувача'"
-                   [type]="'text'"
-                   formControlName="userName">
-  </app-input-field>
-
   <app-input-field [label]="'Адрес електронної почти'"
-                   [type]="'text'"
+                   [type]="'email'"
+                   [required]="true"
                    formControlName="email">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.email"></app-message-errors>
