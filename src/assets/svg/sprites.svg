@@ -1,10 +1,9 @@
 <svg style="visibility: hidden" width="0" height="0">
 
-  <symbol id="user-icon" viewBox="0 0 185.2 185.2" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(1926.5 268.5)">
-      <ellipse cx="-1833.9" cy="-222.5" rx="41.3" ry="41.4" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#fdfdfd;stroke-width:9.26041603;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"/>
-      <path d="M-1921.6-88h175.4m-175.4 0a88 86.3 0 0 1-.2-6.8 88 86.3 0 0 1 88-86.2 88 86.3 0 0 1 87.9 86.2v0a88 86.3 0 0 1-.3 6.8" style="fill:none;stroke:#ffffff;stroke-width:9.26041603;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-    </g>
+  <symbol id="user-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFF">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
   </symbol>
 
   <symbol id="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.75 24.75" fill="#FFF">
