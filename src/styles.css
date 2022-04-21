@@ -5,7 +5,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  min-width: 320px;
+  min-width: 300px;
   margin: 0;
   padding: 0;
   font-family: "Roboto", "Helvetica Neue", sans-serif;
@@ -35,6 +35,7 @@ html, body {
 
 .button {
   font-size: 18px;
+  cursor: pointer;
 }
 
       /*header*/
@@ -93,6 +94,10 @@ html, body {
   color: var(--color-white);
 }
 
+.main-navigation__link--register {
+  margin-right: 40px;
+}
+
 .main-navigation__link--active {
   background-image: linear-gradient(#FFF, #f4f5f6);
   background-size: 100% 2px;
@@ -136,8 +141,11 @@ html, body {
       /*hover effects*/
 
 .button:hover {
-  cursor: pointer;
   opacity: .9;
+}
+
+.app-main-layout__button:hover {
+  opacity: .8;
 }
 
 .main-navigation__link:hover {
@@ -170,6 +178,12 @@ html, body {
     color: var(--color-blue);
   }
 
+  .main-navigation__link--register {
+    margin: 0 20px;
+
+    color: var(--color-white);
+  }
+
   .main-navigation__link--active {
     background-image: linear-gradient(#2496ED, #157AFF);
     background-size: 100% 2px;
@@ -198,6 +212,12 @@ html, body {
     background-image: linear-gradient(#2496ED, #157AFF);
     background-size: 100% 2px;
   }
+
+  .main-navigation__link--register:hover {
+    background-image: linear-gradient(#FFF, #f4f5f6);
+    background-size: 100% 2px;
+  }
+
 }
 
 @media (max-width: 600px) {

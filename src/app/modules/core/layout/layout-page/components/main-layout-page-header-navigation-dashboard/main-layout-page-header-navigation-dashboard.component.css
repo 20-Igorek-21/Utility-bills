@@ -1,3 +1,9 @@
 .main-navigation__dashboard {
   width: 400px;
 }
+
+@media (max-width: 767px) {
+  .main-navigation__dashboard {
+    width: 100%;
+  }
+}

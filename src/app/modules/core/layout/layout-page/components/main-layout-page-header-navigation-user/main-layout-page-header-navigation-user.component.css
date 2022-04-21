@@ -1,3 +1,9 @@
 .main-navigation__users {
   width: 350px;
 }
+
+@media (max-width: 767px) {
+  .main-navigation__users {
+    width: 100%;
+  }
+}
