@@ -87,6 +87,11 @@ html, body {
   top: 50px;
   left: -5px;
 }
+      /*personal-cabinet*/
+
+.app-personal-cabinet-form {
+  width: 400px;
+}
 
       /*navigation*/
 

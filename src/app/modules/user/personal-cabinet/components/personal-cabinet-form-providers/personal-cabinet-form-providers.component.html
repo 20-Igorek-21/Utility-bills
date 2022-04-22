@@ -1,1 +1,54 @@
-<p>personal-cabinet-form-providers works!</p>
+<mat-stepper orientation="vertical">
+
+  <mat-step [stepControl]="gasProviderForm">
+    <form [formGroup]="gasProviderForm">
+      <ng-template matStepLabel>Черкаси газ</ng-template>
+     <app-input-field [label]="'Номер особового рахунку'"
+                      [type]="'text'"
+                      formControlName="gasProvider">
+     </app-input-field>
+      <div>
+        <button mat-raised-button matStepperNext>Дальше</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="oblenergoProviderForm">
+    <form [formGroup]="oblenergoProviderForm">
+      <ng-template matStepLabel>Черкаси обленерго</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="oblenergoProvider"></app-input-field>
+      <div>
+        <button mat-raised-button  matStepperPrevious>Назад</button>
+        <button mat-raised-button  matStepperNext>Дальше</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <form [formGroup]="khimvoloknoProviderForm">
+      <ng-template matStepLabel>Черкаcьке хімволокно</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="khimvoloknoProvider"></app-input-field>
+      <div>
+        <button mat-raised-button  matStepperPrevious>Назад</button>
+        <button mat-raised-button  matStepperNext>Дальше</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="vodokanalProviderForm">
+      <ng-template matStepLabel>Черкаси водоканал</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="vodokanalProvider"></app-input-field>
+      <div>
+        <button mat-raised-button  matStepperPrevious>Назад</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-stepper>

@@ -6,13 +6,14 @@ import {FormModule} from '../../core/form/form.module';
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatInputModule} from '@angular/material/input';
+import {LayoutPageModule} from "../../core/layout/layout-page/layout-page.module";
+import {RouterModule} from "@angular/router";
+import {LayoutFooterModule} from "../../core/layout/layout-footer/layout-footer.module";
+
 
 @NgModule({
     declarations: [
         ...personalCabinetComponents,
-
-
     ],
     imports: [
         CommonModule,
@@ -20,7 +21,10 @@ import {MatInputModule} from '@angular/material/input';
         FormModule,
         MatButtonModule,
         MatStepperModule,
-        MatInputModule
+        LayoutPageModule,
+        RouterModule,
+        LayoutFooterModule,
+
     ]
 })
 export class PersonalCabinetModule { }
