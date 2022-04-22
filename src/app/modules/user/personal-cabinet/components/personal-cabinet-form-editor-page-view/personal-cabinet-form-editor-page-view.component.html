@@ -1,1 +1,16 @@
-<p>personal-cabinet-form-editor-page-view works!</p>
+<app-main-layout-page>
+
+  <ng-container authLink>
+    <a class="link main-navigation__link main-navigation__link--register"
+       routerLink="/">Вихід</a>
+  </ng-container>
+
+  <ng-container navigationLinks>
+    <app-main-layout-page-header-navigation-user></app-main-layout-page-header-navigation-user>
+  </ng-container>
+
+  <app-personal-cabinet-form-editor-page></app-personal-cabinet-form-editor-page>
+
+  <app-layout-footer-view footer></app-layout-footer-view>
+
+</app-main-layout-page>

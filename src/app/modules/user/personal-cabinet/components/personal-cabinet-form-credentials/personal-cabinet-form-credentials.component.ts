@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, Validators} from '@angular/forms';
-import {FormControl} from '@ngneat/reactive-forms';
+import { Component } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
 
 @Component({
     selector: 'app-personal-cabinet-form-credentials',
@@ -9,17 +9,10 @@ import {FormControl} from '@ngneat/reactive-forms';
 })
 export class PersonalCabinetFormCredentialsComponent {
 
-    communalAccountForm: FormGroup = new FormGroup({
-        fullName: new FormControl<string>(''),
-        city: new FormControl<string>(''),
-        street: new FormControl<string>(''),
-        house: new FormControl<string>(''),
-        apartment: new FormControl<number>(),
+    credentialsForm: FormGroup = new FormGroup({
+        fullName: new FormControl<string>('', Validators.required),
         phone: new FormControl<string>('+38(0', [
-            Validators.required, Validators.pattern('')
+            Validators.required, Validators.pattern('/\\+38\\(0[0-9]{2}\\)-[0-9]{3}-\\d{2}-\\d{2}/')
         ])
     })
-
-        // /\+38\(0[0-9]{2}\)-[0-9]{3}-\d{2}-\d{2}/
-
 }

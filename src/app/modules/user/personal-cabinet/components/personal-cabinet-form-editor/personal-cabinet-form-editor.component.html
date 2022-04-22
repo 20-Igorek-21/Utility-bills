@@ -1,30 +1,36 @@
-<mat-stepper class="app-auth-form app-auth-form__container" orientation="vertical" [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+<mat-stepper class="app-personal-cabinet-form" orientation="vertical" [linear]="isLinear" #stepper>
+
+  <mat-step [stepControl]="plugForm">
+    <form [formGroup]="plugForm">
       <ng-template matStepLabel>Особисті дані</ng-template>
-        <app-personal-cabinet-form-credentials></app-personal-cabinet-form-credentials>
+        <app-personal-cabinet-form-credentials #formCredentials></app-personal-cabinet-form-credentials>
       <div>
-        <button mat-button matStepperNext>Дальше</button>
+        <button  mat-raised-button  matStepperNext>Дальше</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+
+  <mat-step [stepControl]="plugForm">
+    <form [formGroup]="plugForm">
+      <ng-template matStepLabel>Адреса</ng-template>
+        <app-personal-cabinet-form-address #formAddress></app-personal-cabinet-form-address>
+      <div>
+        <button mat-raised-button  matStepperPrevious>Назад</button>
+        <button mat-raised-button  matStepperNext>Дальше</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="plugForm">
+    <form [formGroup]="plugForm">
       <ng-template matStepLabel>Організації</ng-template>
-        <app-personal-cabinet-form-providers></app-personal-cabinet-form-providers>
+        <app-personal-cabinet-form-providers #formProviders></app-personal-cabinet-form-providers>
       <div>
-        <button mat-button matStepperPrevious>Назад</button>
-        <button mat-button matStepperNext>Дальше</button>
+        <div>
+          <button mat-raised-button  matStepperPrevious>Назад</button>
+          <button mat-raised-button  (click)="stepper.reset()">Зкинути</button>
+          <button mat-raised-button  matStepperNext (click)="onSubmit()">Зберегти</button>
+        </div>
       </div>
     </form>
   </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Фініш</ng-template>
-    <p>Вітаю! Збережіть свої дані</p>
-    <div>
-      <button mat-button matStepperPrevious>Назад</button>
-      <button mat-button (click)="stepper.reset()">Зкинути</button>
-      <button mat-button matStepperPrevious>Зберегти</button>
-    </div>
-  </mat-step>
-</mat-stepper>
