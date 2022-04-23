@@ -5,7 +5,8 @@
       <ng-template matStepLabel>Особисті дані</ng-template>
         <app-personal-cabinet-form-credentials #formCredentials></app-personal-cabinet-form-credentials>
       <div>
-        <button  mat-raised-button  matStepperNext>Дальше</button>
+        <button  mat-raised-button
+                 matStepperNext>Дальше</button>
       </div>
     </form>
   </mat-step>
@@ -15,8 +16,10 @@
       <ng-template matStepLabel>Адреса</ng-template>
         <app-personal-cabinet-form-address #formAddress></app-personal-cabinet-form-address>
       <div>
-        <button mat-raised-button  matStepperPrevious>Назад</button>
-        <button mat-raised-button  matStepperNext>Дальше</button>
+        <button mat-raised-button
+                matStepperPrevious>Назад</button>
+        <button mat-raised-button
+                matStepperNext>Дальше</button>
       </div>
     </form>
   </mat-step>
@@ -27,9 +30,13 @@
         <app-personal-cabinet-form-providers #formProviders></app-personal-cabinet-form-providers>
       <div>
         <div>
-          <button mat-raised-button  matStepperPrevious>Назад</button>
-          <button mat-raised-button  (click)="stepper.reset()">Зкинути</button>
-          <button mat-raised-button  matStepperNext (click)="onSubmit()">Зберегти</button>
+          <button mat-raised-button
+                  matStepperPrevious>Назад</button>
+          <button mat-raised-button
+                  (click)="stepper.reset()">Зкинути</button>
+          <button mat-raised-button
+                  matStepperNext
+                  (click)="onSubmit()">Зберегти</button>
         </div>
       </div>
     </form>

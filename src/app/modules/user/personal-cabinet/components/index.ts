@@ -4,6 +4,7 @@ import { PersonalCabinetFormEditorPageViewComponent } from './personal-cabinet-f
 import { PersonalCabinetFormEditorPageComponent } from './personal-cabinet-form-editor-page/personal-cabinet-form-editor-page.component';
 import { PersonalCabinetFormEditorComponent } from './personal-cabinet-form-editor/personal-cabinet-form-editor.component';
 import { PersonalCabinetFormAddressComponent } from './personal-cabinet-form-address/personal-cabinet-form-address.component';
+import {PersonalCabinetCardComponent} from './personal-cabinet-card/personal-cabinet-card.component';
 
 export const personalCabinetComponents = [
     PersonalCabinetFormCredentialsComponent,
@@ -11,7 +12,8 @@ export const personalCabinetComponents = [
     PersonalCabinetFormAddressComponent,
     PersonalCabinetFormEditorComponent,
     PersonalCabinetFormEditorPageComponent,
-    PersonalCabinetFormEditorPageViewComponent
+    PersonalCabinetFormEditorPageViewComponent,
+    PersonalCabinetCardComponent
 ]
 
 export * from './personal-cabinet-form-credentials/personal-cabinet-form-credentials.component';
@@ -20,3 +22,4 @@ export * from './personal-cabinet-form-editor-page-view/personal-cabinet-form-ed
 export * from './personal-cabinet-form-editor-page/personal-cabinet-form-editor-page.component';
 export * from './personal-cabinet-form-editor/personal-cabinet-form-editor.component';
 export * from './personal-cabinet-form-address/personal-cabinet-form-address.component';
+export * from './personal-cabinet-card/personal-cabinet-card.component';

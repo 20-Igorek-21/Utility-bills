@@ -1,0 +1,82 @@
+.app-personal-cabinet-card {
+  height: 200px;
+  width: 320px;
+  position: relative;
+  border: none;
+  border-radius: 7px;
+  background-color: #FFF;
+  color: var(--color-dark-blue);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+}
+
+.app-personal-cabinet-card__button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-personal-cabinet-card__button--icon {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.app-personal-cabinet-card__button--block-delete {
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+.app-personal-cabinet-card__button--block-edit {
+  width: 60px;
+  height: 60px;
+  top: 0;
+  right: 0;
+  cursor: default;
+}
+
+.app-personal-cabinet-card__icon {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  fill: #079f15;
+}
+
+.app-personal-cabinet-card__user-name {
+  padding-bottom: 12px;
+  margin: 10px 0 0;
+  font-weight: 500;
+}
+
+.app-personal-cabinet-card__user-phone {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.app-personal-cabinet-card__content-row {
+  align-items: center;
+}
+
+.app-personal-cabinet-card__title {
+  margin: 0 0 0 20px;
+  width: 85px;
+  display: flex;
+  justify-content: left;
+  font-weight: 500;
+}
+
+.app-personal-cabinet-card__subtitle {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.app-personal-cabinet-card:hover {
+  box-shadow: 0 4px 8px rgb(120, 161, 245), 0 8px 16px rgb(0 0 0 / 15%);
+  cursor: pointer;
+}
