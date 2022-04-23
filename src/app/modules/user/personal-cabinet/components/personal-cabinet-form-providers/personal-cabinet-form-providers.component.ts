@@ -25,4 +25,12 @@ export class PersonalCabinetFormProvidersComponent{
         vodokanalProvider: new FormControl<string>('')
     })
 
+    public get controls() {
+        return {
+            gasProvider: this.gasProviderForm.get('gasProvider') as FormControl<string>
+        }
+    }
+
+
+
 }

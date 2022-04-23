@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+
 
 @Component({
     selector: 'app-dashboard-home-page-view',
@@ -8,9 +8,6 @@ import {Router} from '@angular/router';
 })
 export class DashboardHomePageViewComponent {
 
-    constructor( private router: Router) { }
 
-    public login() {
-        this.router.navigateByUrl('auth/login');
-    }
+
 }

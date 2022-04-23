@@ -6,6 +6,8 @@
      <app-input-field [label]="'Номер особового рахунку'"
                       [type]="'text'"
                       formControlName="gasProvider">
+       <app-message-errors class="app-auth-form__message-errors"
+                           [controlsName]="controls.gasProvider"></app-message-errors>
      </app-input-field>
       <div>
         <button mat-raised-button matStepperNext>Дальше</button>

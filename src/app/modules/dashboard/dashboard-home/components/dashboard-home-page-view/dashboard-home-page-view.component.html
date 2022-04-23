@@ -1,11 +1,13 @@
 <app-main-layout-page class="app-main-layout">
 
   <ng-container authLink>
-    <button class="button app-main-layout__button" (click)="login()">
-      <svg height="50" width="50">
-        <use href="./assets/svg/sprites.svg#user-icon"></use>
-      </svg>
-    </button>
+    <a class="link main-navigation__link-auth main-navigation__link-auth--login"
+       routerLink="/auth/login">Увійти</a>
+<!--    <button class="button app-main-layout__button" (click)="login()">-->
+<!--      <svg height="50" width="50">-->
+<!--        <use href="./assets/svg/sprites.svg#user-icon"></use>-->
+<!--      </svg>-->
+<!--    </button>-->
   </ng-container>
 
   <ng-container navigationLinks>
