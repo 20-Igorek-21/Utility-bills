@@ -5,13 +5,16 @@ import { layoutPageComponents } from './components';
 import { layoutPageDirectives } from './directives';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
     declarations: [
         ...layoutPageComponents,
         ...layoutPageDirectives,
+
     ],
     exports: [
         ...layoutPageComponents,
+        ...layoutPageDirectives,
     ],
     imports: [
         CommonModule,

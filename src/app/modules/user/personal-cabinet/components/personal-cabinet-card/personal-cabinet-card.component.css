@@ -1,6 +1,7 @@
 .app-personal-cabinet-card {
   height: 200px;
   width: 320px;
+  margin: 20px;
   position: relative;
   border: none;
   border-radius: 7px;
@@ -10,20 +11,24 @@
 }
 
 .app-personal-cabinet-card__button {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.app-personal-cabinet-card__wrapper-button {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.app-personal-cabinet-card__button--icon {
-  width: 35px;
-  height: 35px;
-  background-color: transparent;
-  overflow: hidden;
-}
-
-.app-personal-cabinet-card__button--block-delete {
+.app-personal-cabinet-card__wrapper-button--edit {
   width: 60px;
   height: 60px;
   top: 0;
@@ -31,7 +36,7 @@
   cursor: default;
 }
 
-.app-personal-cabinet-card__button--block-edit {
+.app-personal-cabinet-card__wrapper-button--delete {
   width: 60px;
   height: 60px;
   top: 0;
@@ -76,7 +81,19 @@
   font-size: 16px;
 }
 
+.app-personal-cabinet-card__button:hover {
+  transform: scale(1.2);
+}
+
 .app-personal-cabinet-card:hover {
   box-shadow: 0 4px 8px rgb(120, 161, 245), 0 8px 16px rgb(0 0 0 / 15%);
   cursor: pointer;
+}
+
+@media (max-width: 340px) {
+
+  .app-personal-cabinet-card {
+    height: 210px;
+    width: 290px;
+  }
 }

@@ -1,0 +1,54 @@
+.content-page__content-row {
+  min-width: 60px;
+  padding: 15px;
+  margin: 0 10px 40px 10px;
+  align-items: center;
+  border-radius: 7px;
+  background-color: var(--color-grey);
+}
+
+.content-page__message-text {
+  font-size: 18px;
+  line-height: 24px;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.content-page__message-text--color-red {
+  color: #ff0202;
+}
+
+.content-page__messages {
+  margin: 0 10px 20px 10px;
+  padding: 15px;
+  border-radius: 7px;
+  background-color: var(--color-grey);
+}
+
+.content-page__button-add-address {
+  height: 45px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.content-page__section-cards {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1081px) {
+
+  .content-page__content-row {
+    margin: 40px 10px 40px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .content-page__content-row {
+    flex-direction: column;
+  }
+}

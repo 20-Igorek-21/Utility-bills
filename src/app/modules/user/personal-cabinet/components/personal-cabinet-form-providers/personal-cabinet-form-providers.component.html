@@ -6,11 +6,10 @@
      <app-input-field [label]="'Номер особового рахунку'"
                       [type]="'text'"
                       formControlName="gasProvider">
-       <app-message-errors class="app-auth-form__message-errors"
-                           [controlsName]="controls.gasProvider"></app-message-errors>
      </app-input-field>
       <div>
-        <button mat-raised-button matStepperNext>Дальше</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button matStepperNext>Дальше</button>
       </div>
     </form>
   </mat-step>
@@ -22,8 +21,12 @@
                        [type]="'text'"
                        formControlName="oblenergoProvider"></app-input-field>
       <div>
-        <button mat-raised-button  matStepperPrevious>Назад</button>
-        <button mat-raised-button  matStepperNext>Дальше</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperNext>Дальше</button>
       </div>
     </form>
   </mat-step>
@@ -35,8 +38,12 @@
                        [type]="'text'"
                        formControlName="khimvoloknoProvider"></app-input-field>
       <div>
-        <button mat-raised-button  matStepperPrevious>Назад</button>
-        <button mat-raised-button  matStepperNext>Дальше</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperNext>Дальше</button>
       </div>
     </form>
 
@@ -48,7 +55,9 @@
                        [type]="'text'"
                        formControlName="vodokanalProvider"></app-input-field>
       <div>
-        <button mat-raised-button  matStepperPrevious>Назад</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
       </div>
     </form>
   </mat-step>

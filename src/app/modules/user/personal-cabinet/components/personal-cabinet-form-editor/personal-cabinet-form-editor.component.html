@@ -1,43 +1,75 @@
-<mat-stepper class="app-personal-cabinet-form" orientation="vertical" [linear]="isLinear" #stepper>
+<div class="app-personal-cabinet-form-editor">
 
-  <mat-step [stepControl]="plugForm">
-    <form [formGroup]="plugForm">
-      <ng-template matStepLabel>Особисті дані</ng-template>
+  <mat-stepper class="app-personal-cabinet-form-editor__form"
+               orientation="vertical"
+               [linear]="isLinear"
+               #stepper>
+
+    <mat-step [stepControl]="plugForm">
+
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Особисті дані</ng-template>
         <app-personal-cabinet-form-credentials #formCredentials></app-personal-cabinet-form-credentials>
-      <div>
-        <button  mat-raised-button
-                 matStepperNext>Дальше</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <mat-step [stepControl]="plugForm">
-    <form [formGroup]="plugForm">
-      <ng-template matStepLabel>Адреса</ng-template>
-        <app-personal-cabinet-form-address #formAddress></app-personal-cabinet-form-address>
-      <div>
-        <button mat-raised-button
-                matStepperPrevious>Назад</button>
-        <button mat-raised-button
-                matStepperNext>Дальше</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <mat-step [stepControl]="plugForm">
-    <form [formGroup]="plugForm">
-      <ng-template matStepLabel>Організації</ng-template>
-        <app-personal-cabinet-form-providers #formProviders></app-personal-cabinet-form-providers>
-      <div>
         <div>
-          <button mat-raised-button
-                  matStepperPrevious>Назад</button>
-          <button mat-raised-button
-                  (click)="stepper.reset()">Зкинути</button>
-          <button mat-raised-button
+          <button class="app-personal-cabinet-form-editor__button" mat-raised-button
+                  matStepperNext>Далі
+          </button>
+          <button class="app-personal-cabinet-form-editor__button app-personal-cabinet-form-editor__button--close" mat-raised-button
                   matStepperNext
-                  (click)="onSubmit()">Зберегти</button>
+                  (click)="onCloseWindow()">Закрити
+          </button>
         </div>
-      </div>
-    </form>
-  </mat-step>
+      </form>
+
+    </mat-step>
+
+    <mat-step [stepControl]="plugForm">
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Адреса</ng-template>
+        <app-personal-cabinet-form-address #formAddress></app-personal-cabinet-form-address>
+        <div>
+          <button class="app-personal-cabinet-form-editor__button" mat-raised-button
+                  matStepperPrevious>Назад
+          </button>
+          <button class="app-personal-cabinet-form-editor__button"
+                  mat-raised-button
+                  matStepperNext>Далі
+          </button>
+          <button class="app-personal-cabinet-form-editor__button app-personal-cabinet-form-editor__button--close" mat-raised-button
+                  matStepperNext
+                  (click)="onCloseWindow()">Закрити
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="plugForm">
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Організації</ng-template>
+        <app-personal-cabinet-form-providers #formProviders></app-personal-cabinet-form-providers>
+        <div>
+          <div>
+            <button class="app-personal-cabinet-form-editor__button"
+                    mat-raised-button
+                    matStepperPrevious>Назад
+            </button>
+            <button class="app-personal-cabinet-form-editor__button"
+                    mat-raised-button
+                    (click)="stepper.reset()">Скинути
+            </button>
+            <button class="app-personal-cabinet-form-editor__button"
+                    mat-raised-button
+                    matStepperNext
+                    (click)="onSubmit()">Зберегти
+            </button>
+            <button class="app-personal-cabinet-form-editor__button app-personal-cabinet-form-editor__button--close" mat-raised-button
+                    matStepperNext
+                    (click)="onCloseWindow()">Закрити
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+  </mat-stepper>
+</div>
