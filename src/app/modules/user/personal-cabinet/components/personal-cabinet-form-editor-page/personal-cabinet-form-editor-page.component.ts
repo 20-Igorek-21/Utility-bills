@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-personal-cabinet-form-editor-page',
     templateUrl: './personal-cabinet-form-editor-page.component.html',
     styleUrls: ['./personal-cabinet-form-editor-page.component.css']
 })
-export class PersonalCabinetFormEditorPageComponent implements OnInit {
+export class PersonalCabinetFormEditorPageComponent {
 
-    constructor() { }
+    public massageText = true;
+    public isShowEditorForm = true;
 
-    ngOnInit(): void {
+    public onShowEditorForm(): void {
+        this.isShowEditorForm = false;
     }
 
+    public isCloseEditorForm(): void {
+        this.isShowEditorForm = true;
+    }
 }

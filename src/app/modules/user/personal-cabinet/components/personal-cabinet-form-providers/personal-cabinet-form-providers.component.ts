@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import {FormControl} from "@ngneat/reactive-forms";
+import { FormControl } from '@ngneat/reactive-forms';
 
 @Component({
     selector: 'app-personal-cabinet-form-providers',

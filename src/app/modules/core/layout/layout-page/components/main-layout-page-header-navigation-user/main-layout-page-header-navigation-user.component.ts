@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutPageHeaderNavigationUserComponent {
 
-    public isShow = false;
+    public isShowBurgerMenu = false;
 
     public switchMenu() {
-        this.isShow = !this.isShow;
+        this.isShowBurgerMenu = !this.isShowBurgerMenu;
     }
 
 }
