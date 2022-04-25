@@ -8,15 +8,15 @@ const routes = [
     },
     {
         path: 'auth',
-        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
     },
     {
-        path: 'users',
-        loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)
+        path: 'user',
+        loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
     },
     {
         path: '**',
-        redirectTo: ''
+        redirectTo: '/'
     }
 ];
 let AppRoutingModule = class AppRoutingModule {

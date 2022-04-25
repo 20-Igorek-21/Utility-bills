@@ -29,6 +29,9 @@ __decorate([
 __decorate([
     Input()
 ], InputFieldComponent.prototype, "type", void 0);
+__decorate([
+    Input()
+], InputFieldComponent.prototype, "required", void 0);
 InputFieldComponent = InputFieldComponent_1 = __decorate([
     Component({
         selector: 'app-input-field',

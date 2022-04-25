@@ -22,6 +22,7 @@ let AuthRegisterFormComponent = class AuthRegisterFormComponent {
         };
     }
     onSubmit() {
+        this.registerForm.markAllAsTouched();
         if (!this.registerForm.invalid) {
             alert(this.registerForm.value.userName + '  ' + this.registerForm.value.email + '  ' + this.registerForm.value.password);
             this.registerForm.reset();

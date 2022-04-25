@@ -2,3 +2,7 @@
   width: 90px;
   margin: 0 10px 10px 0;
 }
+
+.app-personal-cabinet-form-providers-button:hover {
+  opacity: .8;
+}
