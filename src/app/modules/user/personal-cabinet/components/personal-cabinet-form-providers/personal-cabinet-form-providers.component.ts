@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import {FormControl} from "@ngneat/reactive-forms";
+import { FormControl } from '@ngneat/reactive-forms';
 
 @Component({
     selector: 'app-personal-cabinet-form-providers',
@@ -24,5 +24,13 @@ export class PersonalCabinetFormProvidersComponent{
     vodokanalProviderForm: FormGroup = new FormGroup({
         vodokanalProvider: new FormControl<string>('')
     })
+
+    public get controls() {
+        return {
+            gasProvider: this.gasProviderForm.get('gasProvider') as FormControl<string>
+        }
+    }
+
+
 
 }

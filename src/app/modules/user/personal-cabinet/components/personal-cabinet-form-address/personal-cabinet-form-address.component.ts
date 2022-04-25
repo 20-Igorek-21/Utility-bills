@@ -13,6 +13,6 @@ export class PersonalCabinetFormAddressComponent {
         city: new FormControl<string>('', Validators.required),
         street: new FormControl<string>('', Validators.required),
         house: new FormControl<string>('', Validators.required),
-        apartment: new FormControl<number>()
+        apartment: new FormControl<number | null>(null)
     })
 }

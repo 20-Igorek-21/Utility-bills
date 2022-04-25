@@ -1,0 +1,57 @@
+<button class="app-personal-cabinet-card" type="button">
+
+  <h1 class="app-personal-cabinet-card__user-name">Фесенка М.М.</h1>
+
+  <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--edit">
+    <button class="button app-personal-cabinet-card__button"
+            (click)="editCard()">
+      <svg>
+        <use href="./assets/svg/sprites.svg#edit-icon"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--delete">
+    <button class="button app-personal-cabinet-card__button"
+            (click)="deleteCard()">
+      <svg>
+        <use href="./assets/svg/sprites.svg#delete-icon"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="content-row app-personal-cabinet-card__content-row">
+    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+      <use href="./assets/svg/sprites.svg#place-icon"></use>
+    </svg>
+    <h3 class="app-personal-cabinet-card__title">Місто:</h3>
+    <p class="app-personal-cabinet-card__subtitle">Черкаси</p>
+  </div>
+
+  <div class="content-row app-personal-cabinet-card__content-row">
+    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+      <use href="./assets/svg/sprites.svg#street-icon"></use>
+    </svg>
+    <h3 class="app-personal-cabinet-card__title">Вул.</h3>
+    <p class="app-personal-cabinet-card__subtitle">Бойко</p>
+  </div>
+
+  <div class="content-row app-personal-cabinet-card__content-row">
+    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+      <use href="./assets/svg/sprites.svg#house-icon"></use>
+    </svg>
+    <h3 class="app-personal-cabinet-card__title">Будинок:</h3>
+    <p class="app-personal-cabinet-card__subtitle">1</p>
+  </div>
+
+  <div class="content-row app-personal-cabinet-card__content-row">
+    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+      <use href="./assets/svg/sprites.svg#apartment-icon"></use>
+    </svg>
+    <h3 class="app-personal-cabinet-card__title">Квартира:</h3>
+    <p class="app-personal-cabinet-card__subtitle">4</p>
+  </div>
+
+  <h3 class="app-personal-cabinet-card__user-phone">тел. 0661545555</h3>
+
+</button>
