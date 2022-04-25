@@ -1,44 +1,25 @@
-<div class="wrapper">
-  <div class="cards">
-    <mat-accordion>
-      <mat-expansion-panel [expanded]="step === false" (opened)="setStep(false)" >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Черкасигаз
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <form [formGroup]="indicatorsForm">
-        <app-input-field [label]="'Показ'"
-                         [required]="true"
-                         formControlName="indicator">
+<mat-accordion>
+  <mat-expansion-panel [expanded]="step === false"
+                       (opened)="setStep(false)"
+                       class="cards__item">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="cards__item-title">
+        Черкасигаз
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="indicatorsForm">
+      <app-input-field [label]="'Показ'"
+                       type="'text'"
+                       [required]="true"
+                       formControlName="indicator">
 
-          <app-message-errors class="app-auth-form__message-errors"
-                              [controlsName]="controls.indicator"></app-message-errors>
-        </app-input-field>
-
-        </form>
-          <button (click)="onSubmit()">Відправити</button>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
-</div>
-
-
-<!--<div class="wrapper">-->
-<!--  <div class="cards">-->
-<!--        <button type="button"-->
-<!--                class="cards__item"-->
-<!--        (click)=" modalForm = true">-->
-<!--          Черкасигаз-->
-<!--        </button>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<div class="modal"-->
-<!--*ngIf="modalForm">-->
-<!--  <nav class="navbar">-->
-<!--    <h1>{{title}}</h1>-->
-<!--  </nav>-->
-<!--  <app-input-field></app-input-field>-->
-<!--  <button (click)="modalForm = false" class="btn">Close</button>-->
-<!--</div>-->
+<!--            <app-message-errors class="app-auth-form__message-errors"-->
+<!--                                [controlsName]="controls.indicator">-->
+<!--            </app-message-errors>-->
+      </app-input-field>
+    </form>
+      <button (click)="onSubmit()"
+              class="cards__item-btn">
+        Відправити</button>
+  </mat-expansion-panel>
+</mat-accordion>

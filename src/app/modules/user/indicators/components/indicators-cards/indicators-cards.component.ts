@@ -14,13 +14,13 @@ export class IndicatorsCardsComponent {
     step = true;
     indicatorsForm: FormGroup = new FormGroup({
         indicator: new FormControl<string>('', [
-            Validators.required, Validators.pattern('/[0-9]/ ')
+            Validators.required, Validators.pattern('') // додати валідатор на введення чисел
         ])
     })
 
     public get controls() {
         return {
-            indicator: this.indicatorsForm.get('required') as FormControl<string>
+            indicator: this.indicatorsForm.get('indicator') as FormControl<string>
         }
     }
     setStep(index: boolean): void {
@@ -32,6 +32,7 @@ export class IndicatorsCardsComponent {
             this.step = true;
             console.log( this.indicatorsForm.value)
             this.indicatorsForm.reset();
+            alert("Показники відправлені")
         }
 
     }
