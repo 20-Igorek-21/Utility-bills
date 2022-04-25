@@ -1,6 +1,6 @@
 <button class="app-personal-cabinet-card" type="button">
 
-  <h1 class="app-personal-cabinet-card__user-name">Фесенка М.М.</h1>
+  <h1 class="app-personal-cabinet-card__user-name">{{card.credentials.fullName}}</h1>
 
   <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--edit">
     <button class="button app-personal-cabinet-card__button"
@@ -25,7 +25,7 @@
       <use href="./assets/svg/sprites.svg#place-icon"></use>
     </svg>
     <h3 class="app-personal-cabinet-card__title">Місто:</h3>
-    <p class="app-personal-cabinet-card__subtitle">Черкаси</p>
+    <p class="app-personal-cabinet-card__subtitle">{{card.addresses.city}}</p>
   </div>
 
   <div class="content-row app-personal-cabinet-card__content-row">
@@ -33,7 +33,7 @@
       <use href="./assets/svg/sprites.svg#street-icon"></use>
     </svg>
     <h3 class="app-personal-cabinet-card__title">Вул.</h3>
-    <p class="app-personal-cabinet-card__subtitle">Бойко</p>
+    <p class="app-personal-cabinet-card__subtitle">{{card.addresses.street}}</p>
   </div>
 
   <div class="content-row app-personal-cabinet-card__content-row">
@@ -41,7 +41,7 @@
       <use href="./assets/svg/sprites.svg#house-icon"></use>
     </svg>
     <h3 class="app-personal-cabinet-card__title">Будинок:</h3>
-    <p class="app-personal-cabinet-card__subtitle">1</p>
+    <p class="app-personal-cabinet-card__subtitle">{{card.addresses.house}}</p>
   </div>
 
   <div class="content-row app-personal-cabinet-card__content-row">
@@ -49,9 +49,9 @@
       <use href="./assets/svg/sprites.svg#apartment-icon"></use>
     </svg>
     <h3 class="app-personal-cabinet-card__title">Квартира:</h3>
-    <p class="app-personal-cabinet-card__subtitle">4</p>
+    <p class="app-personal-cabinet-card__subtitle">{{card.addresses.house}}</p>
   </div>
 
-  <h3 class="app-personal-cabinet-card__user-phone">тел. 0661545555</h3>
+  <h3 class="app-personal-cabinet-card__user-phone">тел. {{card.credentials.phone}}</h3>
 
 </button>

@@ -1,9 +1,7 @@
 <div class="app-personal-cabinet-form-editor">
 
   <mat-stepper class="app-personal-cabinet-form-editor__form"
-               orientation="vertical"
-               [linear]="isLinear"
-               #stepper>
+               orientation="vertical">
 
     <mat-step [stepControl]="plugForm">
 
@@ -53,11 +51,7 @@
                     mat-raised-button
                     matStepperPrevious>Назад
             </button>
-            <button class="app-personal-cabinet-form-editor__button"
-                    mat-raised-button
-                    (click)="stepper.reset()">Скинути
-            </button>
-            <button class="app-personal-cabinet-form-editor__button"
+            <button class="app-personal-cabinet-form-editor__button app-personal-cabinet-form-editor__button--save"
                     mat-raised-button
                     matStepperNext
                     (click)="onSubmit()">Зберегти

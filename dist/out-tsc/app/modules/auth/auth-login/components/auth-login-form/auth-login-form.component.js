@@ -15,14 +15,12 @@ let AuthLoginFormComponent = class AuthLoginFormComponent {
     get controls() {
         return {
             email: this.loginForm.get('email'),
-            password: this.loginForm.get('password'),
-            checkbox: this.loginForm.get('checkbox')
+            password: this.loginForm.get('password')
         };
     }
     onSubmit() {
-        if (!this.loginForm.invalid) {
-            alert(this.loginForm.value.email + '  ' + this.loginForm.value.password);
-            this.loginForm.reset();
+        if (this.loginForm.invalid) {
+            this.router.navigateByUrl('user/personal-cabinet');
         }
     }
 };

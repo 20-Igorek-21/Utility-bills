@@ -2,6 +2,7 @@
 
   <app-personal-cabinet-form-editor (isCloseEditorForm)="isCloseEditorForm()"
                                     appToggleButton
+                                    (fetchData)="fetchData()"
                                     [showEditorForm]="isShowEditorForm"></app-personal-cabinet-form-editor>
 
   <div class="content-row content-page__content-row">
@@ -19,9 +20,7 @@
   </div>
 
   <section class="content-page__section-cards">
-    <app-personal-cabinet-card ></app-personal-cabinet-card>
-    <app-personal-cabinet-card ></app-personal-cabinet-card>
-    <app-personal-cabinet-card></app-personal-cabinet-card>
+    <app-personal-cabinet-card *ngFor="let card of cards" [card]="card"></app-personal-cabinet-card>
   </section>
 
 </div>

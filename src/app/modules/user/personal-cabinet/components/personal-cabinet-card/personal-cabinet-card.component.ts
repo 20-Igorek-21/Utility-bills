@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import { IUserAccount } from '../../types/user-account.interface';
 
 @Component({
     selector: 'app-personal-cabinet-card',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./personal-cabinet-card.component.css']
 })
 export class PersonalCabinetCardComponent {
+
+    @Input() card!: IUserAccount
 
     public editCard(): void {
 

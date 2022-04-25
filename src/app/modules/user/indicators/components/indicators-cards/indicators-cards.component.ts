@@ -1,15 +1,15 @@
 import {Component, Input } from '@angular/core';
-import { FormGroup, Validators} from "@angular/forms";
+import { FormGroup, Validators} from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 @Component({
-  selector: 'app-indicators-cards',
-  templateUrl: './indicators-cards.component.html',
-  styleUrls: ['./indicators-cards.component.css']
+    selector: 'app-indicators-cards',
+    templateUrl: './indicators-cards.component.html',
+    styleUrls: ['./indicators-cards.component.css']
 })
 export class IndicatorsCardsComponent {
    @Input() title = 'Введіть показники:';
 
-  constructor() { }
+   constructor() { }
 
     step = true;
     indicatorsForm: FormGroup = new FormGroup({
@@ -32,7 +32,7 @@ export class IndicatorsCardsComponent {
             this.step = true;
             console.log( this.indicatorsForm.value)
             this.indicatorsForm.reset();
-            alert("Показники відправлені")
+            alert('Показники відправлені')
         }
 
     }

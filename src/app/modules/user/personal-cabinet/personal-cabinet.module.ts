@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { personalCabinetComponents } from './components';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormModule} from '../../core/form/form.module';
-import {MatButtonModule} from '@angular/material/button';
-import {MatStepperModule} from '@angular/material/stepper';
-import {LayoutPageModule} from '../../core/layout/layout-page/layout-page.module';
-import {RouterModule} from '@angular/router';
-import {LayoutFooterModule} from '../../core/layout/layout-footer/layout-footer.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatStepperModule } from '@angular/material/stepper';
+import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.module';
+import { RouterModule } from '@angular/router';
+import { LayoutFooterModule } from '../../core/layout/layout-footer/layout-footer.module';
+import { personalCabinetServices } from './services';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,9 @@ import {LayoutFooterModule} from '../../core/layout/layout-footer/layout-footer.
         LayoutPageModule,
         RouterModule,
         LayoutFooterModule,
+    ],
+    providers: [
+        ...personalCabinetServices
     ]
 })
 export class PersonalCabinetModule { }

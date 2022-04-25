@@ -26,7 +26,8 @@ AuthLoginModule = __decorate([
         ],
         exports: [
             ...authLoginComponents
-        ]
+        ],
+        providers: []
     })
 ], AuthLoginModule);
 export { AuthLoginModule };

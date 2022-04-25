@@ -1,6 +1,6 @@
-import { SwitchMenuDirective } from './switch-menu.directive';
+import { ToggleButtonDirective } from './toggle-button.directive';
 export const layoutPageDirectives = [
-    SwitchMenuDirective
+    ToggleButtonDirective
 ];
-export * from './switch-menu.directive';
+export * from './toggle-button.directive';
 //# sourceMappingURL=index.js.map
