@@ -1,0 +1,25 @@
+<mat-accordion>
+  <mat-expansion-panel [expanded]="step === false"
+                       (opened)="setStep(false)"
+                       class="cards__item">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="cards__item-title">
+        Черкасигаз
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="indicatorsForm">
+      <app-input-field [label]="'Показ'"
+                       type="'text'"
+                       [required]="true"
+                       formControlName="indicator">
+
+<!--            <app-message-errors class="app-auth-form__message-errors"-->
+<!--                                [controlsName]="controls.indicator">-->
+<!--            </app-message-errors>-->
+      </app-input-field>
+    </form>
+      <button (click)="onSubmit()"
+              class="cards__item-btn">
+        Відправити</button>
+  </mat-expansion-panel>
+</mat-accordion>
