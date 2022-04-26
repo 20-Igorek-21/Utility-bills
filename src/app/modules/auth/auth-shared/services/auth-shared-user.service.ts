@@ -10,6 +10,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class AuthSharedUserService {
 
+    private token = '';
+
     constructor(private readonly http: HttpClient) { }
 
     public registerUser(registerValue: FormGroup): Observable<IUserAuth> {
@@ -25,10 +27,19 @@ export class AuthSharedUserService {
         })
     }
 
-    public loginUser(): Observable<{ token: string }> {
+    public loginUser(loginValue: FormGroup): Observable<{ token: string }> {
         return this.http.post<{ token: string }>(environment.apiUrl, {
-
+            name: loginValue.value.email,
+            password: loginValue.value.password
         })
+    }
+
+    setToken(token: string): void {
+        this.token = token;
+    }
+
+    getToken(): string {
+        return this.token
     }
 
 }
