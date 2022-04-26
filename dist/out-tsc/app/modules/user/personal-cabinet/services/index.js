@@ -1,7 +1,6 @@
-import {PersonalCabinetService} from './personal-cabinet.service';
-
+import { PersonalCabinetService } from './personal-cabinet.service';
 export const personalCabinetServices = [
     PersonalCabinetService
-]
-
+];
 export * from './personal-cabinet.service';
+//# sourceMappingURL=index.js.map

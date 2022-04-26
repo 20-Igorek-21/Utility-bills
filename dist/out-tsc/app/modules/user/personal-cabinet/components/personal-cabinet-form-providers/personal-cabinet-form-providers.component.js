@@ -5,21 +5,34 @@ import { FormControl } from '@ngneat/reactive-forms';
 let PersonalCabinetFormProvidersComponent = class PersonalCabinetFormProvidersComponent {
     constructor() {
         this.gasProviderForm = new FormGroup({
-            gasProvider: new FormControl('', Validators.minLength(7))
+            code: new FormControl('', Validators.minLength(7)),
+            name: new FormControl('gasProvider'),
+            status: new FormControl(false)
         });
         this.oblenergoProviderForm = new FormGroup({
-            oblenergoProvider: new FormControl('')
+            code: new FormControl(''),
+            name: new FormControl('oblenergoProvider'),
+            status: new FormControl(false)
         });
         this.khimvoloknoProviderForm = new FormGroup({
-            khimvoloknoProvider: new FormControl('')
+            code: new FormControl(''),
+            name: new FormControl('khimvoloknoProvider'),
+            status: new FormControl(false)
         });
         this.vodokanalProviderForm = new FormGroup({
-            vodokanalProvider: new FormControl('')
+            code: new FormControl(''),
+            name: new FormControl('vodokanalProvider'),
+            status: new FormControl(false)
         });
+    }
+    set status(value) {
+        if (value.length === 10) {
+            true;
+        }
     }
     get controls() {
         return {
-            gasProvider: this.gasProviderForm.get('gasProvider')
+            gasCode: this.gasProviderForm.get('gasCode')
         };
     }
 };

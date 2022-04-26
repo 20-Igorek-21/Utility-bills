@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { authValidators, ConfirmPasswordValidatorDirective } from './validators';
+import { authSharedServices } from './services';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { authValidators, ConfirmPasswordValidatorDirective } from './validators'
 
     ],
     providers: [
-
+        ...authSharedServices
     ]
 })
 export class AuthSharedModule { }

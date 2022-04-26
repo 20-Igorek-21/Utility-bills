@@ -1,34 +1,13 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {map, Observable} from 'rxjs';
-import {
-    IUserAccount,
-    IUserAccountAddress,
-    IUserAccountCredential,
-    IUserAccountProvider
-} from '../types/user-account.interface';
-
-
-@Injectable({
-    providedIn: 'root'
-})
-export class PersonalCabinetService {
-
-    URL = 'http://localhost:3000/accounts'
-
-    constructor(private readonly http: HttpClient) {
-
+import { __decorate } from "tslib";
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
+let PersonalCabinetService = class PersonalCabinetService {
+    constructor(http) {
+        this.http = http;
+        this.URL = 'http://localhost:3000/accounts';
     }
-
-    createAccount(
-        credentialsValue: IUserAccountCredential,
-        addressValue: IUserAccountAddress,
-        gasProviderValue: IUserAccountProvider,
-        khimvoloknoProviderValue: IUserAccountProvider,
-        vodokanalProviderValue: IUserAccountProvider,
-        oblenergoProviderValue: IUserAccountProvider
-    ): Observable<object> {
-        return this.http.post<IUserAccountAddress>(this.URL, {
+    createAccount(credentialsValue, addressValue, gasProviderValue, khimvoloknoProviderValue, vodokanalProviderValue, oblenergoProviderValue) {
+        return this.http.post(this.URL, {
             credentials: {
                 fullName: credentialsValue.fullName,
                 phone: credentialsValue.phone
@@ -61,11 +40,17 @@ export class PersonalCabinetService {
                     status: oblenergoProviderValue.status
                 }
             ]
-        })
+        });
     }
-
-    fetshAccount(): Observable<any> {
-        return this.http.get<IUserAccount>(this.URL)
-            .pipe(map((res:IUserAccount) => res));
+    fetshAccount() {
+        return this.http.get(this.URL)
+            .pipe(map((res) => res));
     }
-}
+};
+PersonalCabinetService = __decorate([
+    Injectable({
+        providedIn: 'root'
+    })
+], PersonalCabinetService);
+export { PersonalCabinetService };
+//# sourceMappingURL=personal-cabinet.service.js.map

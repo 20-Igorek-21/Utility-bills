@@ -8,7 +8,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.module';
 import { RouterModule } from '@angular/router';
 import { LayoutFooterModule } from '../../core/layout/layout-footer/layout-footer.module';
-import { personalCabinetServices } from './services';
+
 
 @NgModule({
     declarations: [
@@ -24,8 +24,6 @@ import { personalCabinetServices } from './services';
         RouterModule,
         LayoutFooterModule,
     ],
-    providers: [
-        ...personalCabinetServices
-    ]
+    providers: []
 })
 export class PersonalCabinetModule { }
