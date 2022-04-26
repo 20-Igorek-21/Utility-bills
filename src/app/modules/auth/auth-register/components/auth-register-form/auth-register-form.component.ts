@@ -5,7 +5,8 @@ import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
 import { Subscription } from 'rxjs';
-import { IUserCreated } from '../../../auth-shared/types/auth-shared-user-interface';
+import { IUserAuth } from '../../../auth-shared/types/auth-shared-user-interface';
+
 
 @Component({
     selector: 'app-auth-register-form',
@@ -41,7 +42,7 @@ export class AuthRegisterFormComponent  implements OnDestroy {
     public onSubmit() {
         if (!this.registerForm.invalid) {
             this.subscription.add(this.authSharedUserService.registerUser(this.registerForm)
-                .subscribe((d:IUserCreated)=> {
+                .subscribe((d:IUserAuth)=> {
                     console.log(d);
                     this.router.navigateByUrl('/auth/login');
                 },
