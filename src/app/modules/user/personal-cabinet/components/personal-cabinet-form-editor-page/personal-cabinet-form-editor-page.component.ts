@@ -1,25 +1,31 @@
-import { Component } from '@angular/core';
-import { PersonalCabinetService } from '../../services';
-import { IUserAccount } from '../../types/user-account.interface';
+import { Component, OnDestroy } from '@angular/core';
+import { UserSharedFetchAccountService } from '../../../user-shared/services';
+import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-personal-cabinet-form-editor-page',
     templateUrl: './personal-cabinet-form-editor-page.component.html',
     styleUrls: ['./personal-cabinet-form-editor-page.component.css']
 })
-export class PersonalCabinetFormEditorPageComponent {
+export class PersonalCabinetFormEditorPageComponent implements OnDestroy {
 
-    cards: IUserAccount []= []
+    public cards: IUserAccount []= []
+    private subscription: Subscription = new Subscription()
 
-    constructor(private readonly personalCabinetService: PersonalCabinetService) {
+    constructor(private readonly userSharedFetchAccountService: UserSharedFetchAccountService) {
         this.fetchData()
     }
 
+    ngOnDestroy() {
+        this.subscription.unsubscribe()
+    }
+
     fetchData() {
-        this.personalCabinetService.fetshAccount()
+        this.subscription.add(this.userSharedFetchAccountService.fetshAccount()
             .subscribe( (data: IUserAccount[]) => {
                 this.cards = data
-            })
+            }))
     }
 
     public massageText = true;

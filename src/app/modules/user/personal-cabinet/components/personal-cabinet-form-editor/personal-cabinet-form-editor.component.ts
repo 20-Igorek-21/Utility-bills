@@ -1,19 +1,21 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
 import { FormGroup} from '@angular/forms';
 import { PersonalCabinetFormCredentialsComponent } from '../personal-cabinet-form-credentials/personal-cabinet-form-credentials.component';
 import { PersonalCabinetFormAddressComponent } from '../personal-cabinet-form-address/personal-cabinet-form-address.component';
 import { PersonalCabinetFormProvidersComponent } from '../personal-cabinet-form-providers/personal-cabinet-form-providers.component';
-import { PersonalCabinetService } from '../../services';
+
+import { UserSharedCreateAccountService } from '../../../user-shared/services';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-personal-cabinet-form-editor',
     templateUrl: './personal-cabinet-form-editor.component.html',
     styleUrls: ['./personal-cabinet-form-editor.component.css']
 })
-export class PersonalCabinetFormEditorComponent {
+export class PersonalCabinetFormEditorComponent implements OnDestroy{
 
-    constructor(private readonly personalCabinetService: PersonalCabinetService) {}
-
+    private subscription: Subscription = new Subscription()
 
     @ViewChild('formCredentials')
     public formCredentials!: PersonalCabinetFormCredentialsComponent;
@@ -25,6 +27,13 @@ export class PersonalCabinetFormEditorComponent {
     @Output() isCloseEditorForm = new EventEmitter;
     @Output() fetchData = new EventEmitter;
 
+    constructor(
+        private readonly userSharedCreatAccountService: UserSharedCreateAccountService,
+        private readonly router: Router) {}
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe()
+    }
 
     plugForm: FormGroup = new FormGroup({});
 
@@ -43,16 +52,17 @@ export class PersonalCabinetFormEditorComponent {
     }
 
     onSubmit(): void {
-        this.personalCabinetService.createAccount(
+        this.subscription.add(this.userSharedCreatAccountService.createAccount(
             this.formCredentials.credentialsForm.value,
             this.formAddress.addressForm.value,
             this.formProviders.gasProviderForm.value,
             this.formProviders.khimvoloknoProviderForm.value,
             this.formProviders.vodokanalProviderForm.value,
             this.formProviders.oblenergoProviderForm.value
-        ).subscribe( (d) => {
+        ).subscribe( () => {
             this.fetchData.emit()
-        })
+            this.router.navigateByUrl('user/indicators')
+        }))
         this.resetForm()
     }
 }

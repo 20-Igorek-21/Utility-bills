@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
-import { IUserAccount } from '../../types/user-account.interface';
+import { Component, Input } from '@angular/core';
+import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
+
 
 @Component({
     selector: 'app-personal-cabinet-card',
@@ -11,11 +12,11 @@ export class PersonalCabinetCardComponent {
     @Input() card!: IUserAccount
 
     public editCard(): void {
-
+        console.log('ok')
     }
 
     public deleteCard(): void {
-
+        console.log('ok')
     }
 
 }
