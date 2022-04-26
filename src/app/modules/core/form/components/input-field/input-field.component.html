@@ -6,7 +6,8 @@
          [(ngModel)]="value"
          type="{{type}}"
          (blur)="onTouched()"
-         (ngModelChange)="handleInput($event)">
+         (ngModelChange)="handleInput($event)"
+         class="app-auth-form__field">
   <ng-content></ng-content>
 </mat-form-field>
 
