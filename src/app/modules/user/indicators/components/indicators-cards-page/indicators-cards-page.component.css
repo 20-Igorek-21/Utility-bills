@@ -1,11 +1,57 @@
-.cards-title {
+.indicators {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.indicators-title {
   font-size: 35px;
   font-weight: 500;
-  margin: 20px;
 }
-.cards {
+
+.divider {
+  background-color: #e5e5e5;
+}
+
+.indicators-user__data {
+  color: #333;
+  border: 0;
+}
+
+.indicators-user__content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  align-items: baseline;
+}
+
+.indicators-user__data-title {
+  margin: 0;
+  width: 85px;
+  display: flex;
+  justify-content: left;
+  font-weight: 500;
+}
+
+.indicators-user__data-subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+}
+/*тест*/
+.indicators__form {
+  max-width: 500px;
+  border: none;
+  border-radius: 7px;
+  color: var(--color-dark-blue);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+  padding: 15px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.indicators__form-btn {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: var(--color-light-blue);;
+  border-radius: 7px;
+  color: #FFFFFF;
+  font-size: 20px;
 }
