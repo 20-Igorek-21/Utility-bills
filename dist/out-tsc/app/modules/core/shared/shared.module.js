@@ -1,13 +1,18 @@
 import { __decorate } from "tslib";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { sharedServices } from './services';
 let SharedModule = class SharedModule {
 };
 SharedModule = __decorate([
     NgModule({
-        declarations: [sha],
+        declarations: [],
         imports: [
-            CommonModule
+            CommonModule,
+        ],
+        exports: [],
+        providers: [
+            ...sharedServices
         ]
     })
 ], SharedModule);

@@ -1,9 +1,18 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let PersonalCabinetFormEditorPageComponent = class PersonalCabinetFormEditorPageComponent {
-    constructor() {
+    constructor(personalCabinetService) {
+        this.personalCabinetService = personalCabinetService;
+        this.cards = [];
         this.massageText = true;
         this.isShowEditorForm = true;
+        this.fetchData();
+    }
+    fetchData() {
+        this.personalCabinetService.fetshAccount()
+            .subscribe((data) => {
+            this.cards = data;
+        });
     }
     onShowEditorForm() {
         this.isShowEditorForm = false;

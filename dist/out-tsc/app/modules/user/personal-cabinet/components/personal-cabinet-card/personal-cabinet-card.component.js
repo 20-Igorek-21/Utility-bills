@@ -1,11 +1,14 @@
 import { __decorate } from "tslib";
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 let PersonalCabinetCardComponent = class PersonalCabinetCardComponent {
     editCard() {
     }
     deleteCard() {
     }
 };
+__decorate([
+    Input()
+], PersonalCabinetCardComponent.prototype, "card", void 0);
 PersonalCabinetCardComponent = __decorate([
     Component({
         selector: 'app-personal-cabinet-card',

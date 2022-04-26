@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user-routing.module';
 import { PersonalCabinetModule } from './personal-cabinet/personal-cabinet.module';
-import { indicatorsModule } from "./indicators/indicators.module";
+import { indicatorsModule } from './indicators/indicators.module';
+import { UserSharedModule } from './user-shared/user-shared.module';
 let UserModule = class UserModule {
 };
 UserModule = __decorate([
@@ -14,6 +15,7 @@ UserModule = __decorate([
             CommonModule,
             PersonalCabinetModule,
             indicatorsModule,
+            UserSharedModule,
             RouterModule.forChild(userRoutes)
         ]
     })

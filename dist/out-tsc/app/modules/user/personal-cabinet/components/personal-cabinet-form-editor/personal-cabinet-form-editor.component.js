@@ -2,21 +2,29 @@ import { __decorate } from "tslib";
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 let PersonalCabinetFormEditorComponent = class PersonalCabinetFormEditorComponent {
-    constructor() {
-        this.isLinear = false;
+    constructor(personalCabinetService) {
+        this.personalCabinetService = personalCabinetService;
         this.isCloseEditorForm = new EventEmitter;
+        this.fetchData = new EventEmitter;
         this.plugForm = new FormGroup({});
     }
     onCloseWindow() {
+        this.resetForm();
+    }
+    resetForm() {
         this.isCloseEditorForm.emit();
+        this.formCredentials.credentialsForm.reset();
+        this.formAddress.addressForm.reset();
+        this.formProviders.gasProviderForm.reset();
+        this.formProviders.khimvoloknoProviderForm.reset();
+        this.formProviders.vodokanalProviderForm.reset();
+        this.formProviders.oblenergoProviderForm.reset();
     }
     onSubmit() {
-        console.log(this.formCredentials.credentialsForm.value);
-        console.log(this.formAddress.addressForm.value);
-        console.log(this.formProviders.gasProviderForm.value);
-        console.log(this.formProviders.khimvoloknoProviderForm.value);
-        console.log(this.formProviders.vodokanalProviderForm.value);
-        console.log(this.formProviders.oblenergoProviderForm.value);
+        this.personalCabinetService.createAccount(this.formCredentials.credentialsForm.value, this.formAddress.addressForm.value, this.formProviders.gasProviderForm.value, this.formProviders.khimvoloknoProviderForm.value, this.formProviders.vodokanalProviderForm.value, this.formProviders.oblenergoProviderForm.value).subscribe((d) => {
+            this.fetchData.emit();
+        });
+        this.resetForm();
     }
 };
 __decorate([
@@ -31,6 +39,9 @@ __decorate([
 __decorate([
     Output()
 ], PersonalCabinetFormEditorComponent.prototype, "isCloseEditorForm", void 0);
+__decorate([
+    Output()
+], PersonalCabinetFormEditorComponent.prototype, "fetchData", void 0);
 PersonalCabinetFormEditorComponent = __decorate([
     Component({
         selector: 'app-personal-cabinet-form-editor',
