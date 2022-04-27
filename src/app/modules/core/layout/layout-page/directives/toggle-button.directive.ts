@@ -11,6 +11,9 @@ export class ToggleButtonDirective {
         this.isShowBurgerMenu = value;
     }
 
+    @HostBinding('class.app-main-layout__lock') isShowLayoutLock = false;
+
+
     @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowEditorForm = false;
 
     @Input() set showEditorForm(value: boolean) {

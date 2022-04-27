@@ -9,7 +9,6 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.module';
 import { RouterModule } from '@angular/router';
 import { LayoutFooterModule } from '../../core/layout/layout-footer/layout-footer.module';
-import { personalCabinetServices } from './services';
 let PersonalCabinetModule = class PersonalCabinetModule {
 };
 PersonalCabinetModule = __decorate([
@@ -27,9 +26,7 @@ PersonalCabinetModule = __decorate([
             RouterModule,
             LayoutFooterModule,
         ],
-        providers: [
-            ...personalCabinetServices
-        ]
+        providers: []
     })
 ], PersonalCabinetModule);
 export { PersonalCabinetModule };

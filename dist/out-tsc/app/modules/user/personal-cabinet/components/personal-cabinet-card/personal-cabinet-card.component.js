@@ -2,8 +2,10 @@ import { __decorate } from "tslib";
 import { Component, Input } from '@angular/core';
 let PersonalCabinetCardComponent = class PersonalCabinetCardComponent {
     editCard() {
+        console.log('ok');
     }
     deleteCard() {
+        console.log('ok');
     }
 };
 __decorate([

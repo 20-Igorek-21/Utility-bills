@@ -1,18 +1,23 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 let PersonalCabinetFormEditorPageComponent = class PersonalCabinetFormEditorPageComponent {
-    constructor(personalCabinetService) {
-        this.personalCabinetService = personalCabinetService;
+    constructor(userSharedFetchAccountService) {
+        this.userSharedFetchAccountService = userSharedFetchAccountService;
         this.cards = [];
+        this.subscription = new Subscription();
         this.massageText = true;
         this.isShowEditorForm = true;
         this.fetchData();
     }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
     fetchData() {
-        this.personalCabinetService.fetshAccount()
+        this.subscription.add(this.userSharedFetchAccountService.fetshAccount()
             .subscribe((data) => {
             this.cards = data;
-        });
+        }));
     }
     onShowEditorForm() {
         this.isShowEditorForm = false;
