@@ -13,6 +13,9 @@ export class ToggleButtonDirective {
 
     @HostBinding('class.app-main-layout__lock') isShowLayoutLock = false;
 
+    @Input() set showLayoutLock(value: boolean) {
+        this.isShowLayoutLock = value;
+    }
 
     @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowEditorForm = false;
 

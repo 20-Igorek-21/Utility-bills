@@ -254,3 +254,9 @@ html, body {
     transform: translateX(0);
   }
 }
+
+
+.app-main-layout__lock {
+  border: 2px solid red;
+  overflow: hidden;
+}

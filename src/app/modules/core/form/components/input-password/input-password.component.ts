@@ -17,6 +17,8 @@ export class InputPasswordComponent implements ControlValueAccessor {
 
     @Input()
     public label!: string;
+    @Input()
+    public required!: boolean;
     public value = '';
     public hide = true;
 

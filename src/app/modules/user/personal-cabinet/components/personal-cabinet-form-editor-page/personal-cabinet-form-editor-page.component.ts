@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, OnDestroy } from '@angular/core';
 import { UserSharedFetchAccountService } from '../../../user-shared/services';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
 import { Subscription } from 'rxjs';

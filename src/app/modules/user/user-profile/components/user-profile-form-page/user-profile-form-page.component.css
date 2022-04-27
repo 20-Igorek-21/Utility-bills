@@ -1,0 +1,15 @@
+.content-page__title {
+  margin: 20px 30px 20px;
+  font-size: 35px;
+  line-height: 35px;
+  color: var(--color-dark-blue);
+}
+
+@media (min-width: 420px) {
+
+  .content-page__title {
+    margin: 0 10px 55px;
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
