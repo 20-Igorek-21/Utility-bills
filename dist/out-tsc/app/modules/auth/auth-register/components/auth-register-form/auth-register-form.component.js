@@ -10,7 +10,7 @@ let AuthRegisterFormComponent = class AuthRegisterFormComponent {
         this.authSharedUserService = authSharedUserService;
         this.subscription = new Subscription();
         this.registerForm = new FormGroup({
-            email: new FormControl('', [Validators.required, Validators.email]),
+            email: new FormControl('', [Validators.required, Validators.email], []),
             password: new FormControl('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
             repeatPassword: new FormControl('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
         });

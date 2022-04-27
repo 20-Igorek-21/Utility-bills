@@ -1,10 +1,13 @@
 import { __decorate } from "tslib";
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+// import {FormGroup, Validators} from "@angular/forms";
+// import {FormControl} from "@ngneat/reactive-forms";
+// import {IUserAccount} from "../../../user-shared/types/user-shared-account.interface";
 let IndicatorsCardsPageComponent = class IndicatorsCardsPageComponent {
-    constructor() { }
-    ngOnInit() {
-    }
 };
+__decorate([
+    Input()
+], IndicatorsCardsPageComponent.prototype, "card", void 0);
 IndicatorsCardsPageComponent = __decorate([
     Component({
         selector: 'app-indicators-cards-page',

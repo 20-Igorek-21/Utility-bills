@@ -1,6 +1,7 @@
 import { __decorate } from "tslib";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { userSharedServices } from './services';
 let UserSharedModule = class UserSharedModule {
 };
 UserSharedModule = __decorate([
@@ -9,7 +10,9 @@ UserSharedModule = __decorate([
         imports: [
             CommonModule
         ],
-        po
+        providers: [
+            ...userSharedServices
+        ]
     })
 ], UserSharedModule);
 export { UserSharedModule };

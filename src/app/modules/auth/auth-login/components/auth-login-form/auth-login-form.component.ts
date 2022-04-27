@@ -28,8 +28,8 @@ export class AuthLoginFormComponent  {
     }
 
     public onSubmit() {
-        if(this.loginForm.invalid) {
+        // if(this.loginForm.invalid) {
             this.router.navigateByUrl('user/personal-cabinet')
-        }
+        // }
     }
 }

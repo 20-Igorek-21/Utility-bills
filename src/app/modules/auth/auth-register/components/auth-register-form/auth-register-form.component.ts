@@ -26,7 +26,7 @@ export class AuthRegisterFormComponent  implements OnDestroy {
     }
 
     registerForm: FormGroup = new FormGroup({
-        email: new FormControl<string>('', [Validators.required, Validators.email]),
+        email: new FormControl<string>('', [Validators.required, Validators.email], []),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
         repeatPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
     })

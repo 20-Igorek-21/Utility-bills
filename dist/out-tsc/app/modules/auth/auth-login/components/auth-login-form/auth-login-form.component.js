@@ -19,9 +19,9 @@ let AuthLoginFormComponent = class AuthLoginFormComponent {
         };
     }
     onSubmit() {
-        if (this.loginForm.invalid) {
-            this.router.navigateByUrl('user/personal-cabinet');
-        }
+        // if(this.loginForm.invalid) {
+        this.router.navigateByUrl('user/personal-cabinet');
+        // }
     }
 };
 AuthLoginFormComponent = __decorate([

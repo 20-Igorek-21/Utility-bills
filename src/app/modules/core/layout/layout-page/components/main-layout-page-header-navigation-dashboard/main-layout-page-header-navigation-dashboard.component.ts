@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 
 @Component({
     selector: 'app-main-layout-page-header-navigation-dashboard',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class MainLayoutPageHeaderNavigationDashboardComponent {
 
     public isShowBurgerMenu = false;
+
 
     public switchMenu() {
         this.isShowBurgerMenu = !this.isShowBurgerMenu;
