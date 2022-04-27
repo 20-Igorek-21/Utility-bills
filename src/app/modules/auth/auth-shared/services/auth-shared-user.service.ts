@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
-import { IUserAuth } from '../types/auth-shared-user-interface';
+import { IUserAuth } from '../../../core/form/types/auth-shared-user-interface';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({

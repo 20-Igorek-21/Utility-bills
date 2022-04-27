@@ -1,14 +1,14 @@
 .content-page__title {
+  margin: 20px 10px 20px;
   font-size: 35px;
   line-height: 35px;
-  margin: 20px 10px 20px;
 }
 
 @media (min-width: 420px) {
 
   .content-page__title {
+    margin: 0 10px 55px;
     font-size: 40px;
     line-height: 40px;
-    margin: 0 10px 55px;
   }
 }

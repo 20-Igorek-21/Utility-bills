@@ -2,7 +2,7 @@
       [formGroup]="registerForm"
       (ngSubmit)="onSubmit()">
 
-  <app-input-field [label]="'Адрес електронної почти'"
+  <app-input-field [label]="'Адрес електронної пошти'"
                    [type]="'email'"
                    [required]="true"
                    formControlName="email">
@@ -11,12 +11,14 @@
   </app-input-field>
 
   <app-input-password [label]="'Пароль'"
+                      [required]="true"
                       formControlName="password">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
   <app-input-password [label]="'Повторіть пароль'"
+                      [required]="true"
                       appConfirmPasswordValidator="password"
                       formControlName="repeatPassword">
     <app-message-errors class="app-auth-form__message-errors"

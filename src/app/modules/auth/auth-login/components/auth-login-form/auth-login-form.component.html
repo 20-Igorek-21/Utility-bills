@@ -2,7 +2,7 @@
       [formGroup]="loginForm"
       (ngSubmit)="onSubmit()">
 
-  <app-input-field [label]="'Логін'"
+  <app-input-field [label]="'Адрес електронної пошти'"
                    [type]="'text'"
                    [required]="true"
                    formControlName="email">
@@ -11,6 +11,7 @@
   </app-input-field>
 
   <app-input-password [label]="'Пароль'"
+                      [required]="true"
                       formControlName="password">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.password"></app-message-errors>
