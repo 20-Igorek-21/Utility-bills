@@ -1,41 +1,43 @@
 <div class="indicators">
-  <h2 class="indicators-title">Ваші дані:</h2>
-  <hr class="divider">
-  <div class="indicators-user__data">
-    <div class="indicators-user__content">
-      <h3 class="indicators-user__data-title">П.І.Б.:</h3>
-      <p class="indicators-user__data-subtitle">Бойко</p>
+  <div class="indicators-data">
+    <h2 class="indicators-title">Ваші дані:</h2>
+    <hr class="divider">
+    <div class="indicators-user__data">
+      <div class="indicators-user__content">
+        <h3 class="indicators-user__data-title">П.І.Б.:</h3>
+        <p class="indicators-user__data-subtitle">Бойко</p>
+      </div>
+      <div class="indicators-user__content">
+        <h3 class="indicators-user__data-title">Місто:</h3>
+        <p class="indicators-user__data-subtitle">Черкаси</p>
+      </div>
+      <div class="indicators-user__content">
+        <h3 class="indicators-user__data-title">Вул.:</h3>
+        <p class="indicators-user__data-subtitle">Бойко</p>
+      </div>
+      <div class="indicators-user__content">
+        <h3 class="indicators-user__data-title">Будинок:</h3>
+        <p class="indicators-user__data-subtitle">1</p>
+      </div>
+      <div class="indicators-user__content">
+        <h3 class="indicators-user__data-title">Квартира:</h3>
+        <p class="indicators-user__data-subtitle">4</p>
+      </div>
     </div>
-    <div class="indicators-user__content">
-      <h3 class="indicators-user__data-title">Місто:</h3>
-      <p class="indicators-user__data-subtitle">Черкаси</p>
-    </div>
-    <div class="indicators-user__content">
-      <h3 class="indicators-user__data-title">Вул.:</h3>
-      <p class="indicators-user__data-subtitle">Бойко</p>
-    </div>
-    <div class="indicators-user__content">
-      <h3 class="indicators-user__data-title">Будинок:</h3>
-      <p class="indicators-user__data-subtitle">1</p>
-    </div>
-    <div class="indicators-user__content">
-      <h3 class="indicators-user__data-title">Квартира:</h3>
-      <p class="indicators-user__data-subtitle">4</p>
-    </div>
+    <hr class="divider">
   </div>
-  <hr class="divider">
-  <form [formGroup]="indicatorsForm"
-        class="indicators__form">
-    <app-indicators-cards [title]="'ЧеркасиГАз'"
-                          ></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>
-    <button (click)="onSubmit()"
-            class="indicators__form-btn button">
-      Відправити</button>
-  </form>
-<!--    <app-indicators-cards></app-indicators-cards>-->
+<!--  <form [formGroup]="indicatorsForm"-->
+<!--        class="indicators__form">-->
+<!--    <app-indicators-cards [title]="'ЧеркасиГАз'"-->
+<!--                          ></app-indicators-cards>-->
+<!--    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>-->
+<!--    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>-->
+<!--    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>-->
+<!--    <app-indicators-cards [title]="'ЧеркасиГАз'" ></app-indicators-cards>-->
+<!--    <button (click)="onSubmit()"-->
+<!--            class="indicators__form-btn button">-->
+<!--      Відправити</button>-->
+<!--  </form>-->
+    <app-indicators-cards></app-indicators-cards>
 </div>
 

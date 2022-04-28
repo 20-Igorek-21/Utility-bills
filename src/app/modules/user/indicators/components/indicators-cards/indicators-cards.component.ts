@@ -10,25 +10,23 @@ export class IndicatorsCardsComponent  {
    @Input() title = '';
 
     constructor() { }
+    indicatorsForm: FormGroup = new FormGroup({
+        indicator: new FormControl<string>('', [
+            Validators.required, Validators.pattern('')
+        ])
+    })
 
-    ////////////////////////////////////////////////////////////////
-    // indicatorsForm: FormGroup = new FormGroup({
-    //     indicator: new FormControl<string>('', [
-    //         Validators.required, Validators.pattern('') // додати валідатор на введення чисел
-    //     ])
-    // })
-    //
-    // public get controls() {
-    //     return {
-    //         indicator: this.indicatorsForm.get('indicator') as FormControl<string>
-    //     }
-    // }
-    //
-    // onSubmit(): void {
-    //     if(this.indicatorsForm.valid) {
-    //         console.log( this.indicatorsForm.value)
-    //         this.indicatorsForm.reset();
-    //         alert('Показники відправлені')
-    //     }
-    // }
+    public get controls() {
+        return {
+            indicator: this.indicatorsForm.get('indicator') as FormControl<string>
+        }
+    }
+
+    onSubmit(): void {
+        if(this.indicatorsForm.valid) {
+            console.log( this.indicatorsForm.value)
+            this.indicatorsForm.reset();
+            alert('Показники відправлені')
+        }
+    }
 }
