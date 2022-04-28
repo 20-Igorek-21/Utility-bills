@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { userRoutes } from './user-routing.module';
-import { PersonalCabinetModule } from './personal-cabinet/personal-cabinet.module';
 import { indicatorsModule } from './indicators/indicators.module';
 import { UserSharedModule } from './user-shared/user-shared.module';
-import { UserProfileModule } from "./user-profile/user-profile.module";
+import { UserProfileModule } from './user-profile/user-profile.module';
 let UserModule = class UserModule {
 };
 UserModule = __decorate([
@@ -14,7 +13,7 @@ UserModule = __decorate([
         declarations: [],
         imports: [
             CommonModule,
-            PersonalCabinetModule,
+            UserPersonalCabinetModule,
             indicatorsModule,
             UserSharedModule,
             UserProfileModule,

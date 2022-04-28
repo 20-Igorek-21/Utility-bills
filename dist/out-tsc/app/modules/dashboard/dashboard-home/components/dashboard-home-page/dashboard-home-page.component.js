@@ -1,9 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let DashboardHomePageComponent = class DashboardHomePageComponent {
-    constructor() { }
-    ngOnInit() {
-    }
 };
 DashboardHomePageComponent = __decorate([
     Component({

@@ -1,0 +1,65 @@
+<mat-stepper orientation="vertical">
+
+  <mat-step [stepControl]="gasProviderForm">
+    <form [formGroup]="gasProviderForm">
+      <ng-template matStepLabel>Черкаси газ</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="code">
+      </app-input-field>
+      <div>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button matStepperNext>Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="oblenergoProviderForm">
+    <form [formGroup]="oblenergoProviderForm">
+      <ng-template matStepLabel>Черкаси обленерго</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="code"></app-input-field>
+      <div>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperNext>Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <form [formGroup]="khimvoloknoProviderForm">
+      <ng-template matStepLabel>Черкаcьке хімволокно</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="code"></app-input-field>
+      <div>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperNext>Далі</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="vodokanalProviderForm">
+      <ng-template matStepLabel>Черкаси водоканал</ng-template>
+      <app-input-field [label]="'Номер особового рахунку'"
+                       [type]="'text'"
+                       formControlName="code"></app-input-field>
+      <div>
+        <button class="app-personal-cabinet-form-providers-button"
+                mat-raised-button
+                matStepperPrevious>Назад</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-stepper>
