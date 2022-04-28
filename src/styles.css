@@ -51,6 +51,10 @@ html, body {
   align-items: center;
 }
 
+.main-layout-page__lock {
+  overflow: hidden;
+}
+
       /*auth*/
 
 .app-auth-form {
@@ -253,10 +257,4 @@ html, body {
   100% {
     transform: translateX(0);
   }
-}
-
-
-.app-main-layout__lock {
-  border: 2px solid red;
-  overflow: hidden;
 }

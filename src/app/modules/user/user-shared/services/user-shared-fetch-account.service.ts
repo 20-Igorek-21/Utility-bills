@@ -13,7 +13,7 @@ export class UserSharedFetchAccountService {
     constructor(private readonly http: HttpClient) {}
 
     fetshAccount(): Observable<IUserAccount[]> {
-        return this.http.get<IUserAccount[]>(environment.apiUrlTest)
+        return this.http.get<IUserAccount[]>(environment.apiUrl)
             .pipe(map((res:IUserAccount[]) => res));
     }
 }
