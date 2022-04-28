@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup, Validators} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
 @Component({
@@ -6,26 +6,29 @@ import {FormControl} from "@ngneat/reactive-forms";
     templateUrl: './indicators-cards.component.html',
     styleUrls: ['./indicators-cards.component.css']
 })
-export class IndicatorsCardsComponent {
+export class IndicatorsCardsComponent  {
    @Input() title = '';
-   constructor() { }
-    indicatorsForm: FormGroup = new FormGroup({
-        indicator: new FormControl<string>('', [
-            Validators.required, Validators.pattern('') // додати валідатор на введення чисел
-        ])
-    })
 
-    public get controls() {
-        return {
-            indicator: this.indicatorsForm.get('indicator') as FormControl<string>
-        }
-    }
+    constructor() { }
 
-    onSubmit(): void {
-        if(this.indicatorsForm.valid) {
-            console.log( this.indicatorsForm.value)
-            this.indicatorsForm.reset();
-            alert('Показники відправлені')
-        }
-    }
+    ////////////////////////////////////////////////////////////////
+    // indicatorsForm: FormGroup = new FormGroup({
+    //     indicator: new FormControl<string>('', [
+    //         Validators.required, Validators.pattern('') // додати валідатор на введення чисел
+    //     ])
+    // })
+    //
+    // public get controls() {
+    //     return {
+    //         indicator: this.indicatorsForm.get('indicator') as FormControl<string>
+    //     }
+    // }
+    //
+    // onSubmit(): void {
+    //     if(this.indicatorsForm.valid) {
+    //         console.log( this.indicatorsForm.value)
+    //         this.indicatorsForm.reset();
+    //         alert('Показники відправлені')
+    //     }
+    // }
 }

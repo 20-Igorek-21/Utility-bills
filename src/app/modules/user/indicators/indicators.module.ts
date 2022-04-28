@@ -8,13 +8,14 @@ import {CommonModule} from "@angular/common";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import { OnlyNumberDirective } from './components/indicators-cards/onlynumber.directive';
 
 
 
 @NgModule({
     declarations: [
         ...indicatorsComponents,
+        OnlyNumberDirective
     ],
     imports: [
         FormModule,
