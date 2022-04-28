@@ -1,9 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let MainLayoutPageHeaderComponent = class MainLayoutPageHeaderComponent {
-    constructor() { }
-    ngOnInit() {
-    }
 };
 MainLayoutPageHeaderComponent = __decorate([
     Component({

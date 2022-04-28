@@ -47,6 +47,7 @@ export class AuthRegisterFormComponent  implements OnDestroy {
                     this.router.navigateByUrl('/auth/login');
                 },
                 error => {
+                    error.message()
                     console.log(error)
                 }
                 ))

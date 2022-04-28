@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { PersonalCabinetFormEditorPageViewComponent } from './personal-cabinet/components';
 import { IndicatorsCardsPageViewComponent } from './indicators/components';
 import { UserProfileFormPageViewComponent } from './user-profile/components';
+import { UserPersonalCabinetFormEditorPageViewComponent } from './user-personal-cabinet/components';
 
 export const userRoutes: Routes = [
     {
         path: 'personal-cabinet',
-        component: PersonalCabinetFormEditorPageViewComponent
+        component: UserPersonalCabinetFormEditorPageViewComponent
     },
     {
         path: 'indicators',

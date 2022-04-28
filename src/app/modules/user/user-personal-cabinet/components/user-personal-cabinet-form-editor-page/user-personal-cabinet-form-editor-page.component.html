@@ -1,0 +1,26 @@
+<div class="content-page">
+
+  <app-user-personal-cabinet-form-editor (isCloseEditorForm)="isCloseEditorForm()"
+                                    appToggleButton
+                                    (fetchData)="fetchData()"
+                                    [showEditorForm]="isShowEditorForm"></app-user-personal-cabinet-form-editor>
+
+  <div class="content-page__block-add-address">
+    <p class="content-page__message-text">Щоб прив'язати адреси квартири або будинку до облікового запису, скористайтесь:</p>
+    <button class="button content-page__button-add-address"
+            mat-button
+            (click)="onShowEditorForm()">Додати адресу</button>
+  </div>
+
+  <div class="content-page__messages">
+    <p class="content-page__message-text content-page__message-text--color-red"
+       *ngIf="!massageText" >Ви не прив'язали жодної адреси квартири або будинку до облікового запису.</p>
+    <p class="content-page__message-text"
+       *ngIf="massageText">Виберіть прив'язаний до аккаунту адрес для поточної роботи.</p>
+  </div>
+
+  <section class="content-page__section-cards">
+    <app-user-personal-cabinet-card *ngFor="let card of cards" [card]="card"></app-user-personal-cabinet-card>
+  </section>
+
+</div>

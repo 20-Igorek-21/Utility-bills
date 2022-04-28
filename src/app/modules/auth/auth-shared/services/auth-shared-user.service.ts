@@ -29,7 +29,7 @@ export class AuthSharedUserService {
 
     public loginUser(loginValue: FormGroup): Observable<{ token: string }> {
         return this.http.post<{ token: string }>(environment.apiUrl, {
-            name: loginValue.value.email,
+            email: loginValue.value.email,
             password: loginValue.value.password
         })
     }

@@ -27,6 +27,9 @@ let InputPasswordComponent = InputPasswordComponent_1 = class InputPasswordCompo
 __decorate([
     Input()
 ], InputPasswordComponent.prototype, "label", void 0);
+__decorate([
+    Input()
+], InputPasswordComponent.prototype, "required", void 0);
 InputPasswordComponent = InputPasswordComponent_1 = __decorate([
     Component({
         selector: 'app-input-password',

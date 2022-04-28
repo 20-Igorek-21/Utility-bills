@@ -6,7 +6,7 @@
 
   <app-input-field [label]="'Адрес електронної пошти'"
                    [type]="'email'"
-                   [required]="false"
+                   [required]="true"
                    formControlName="email">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.email"></app-message-errors>
@@ -15,14 +15,14 @@
   <h2 class="app-user-profile-form__title">Змінити пароль</h2>
 
   <app-input-password [label]="'Пароль'"
-                      [required]="false"
+                      [required]="true"
                       formControlName="password">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
   <app-input-password [label]="'Повторіть пароль'"
-                      [required]="false"
+                      [required]="true"
                       appConfirmPasswordValidator="password"
                       formControlName="repeatPassword">
     <app-message-errors class="app-auth-form__message-errors"
