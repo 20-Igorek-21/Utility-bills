@@ -1,12 +1,18 @@
 import { __decorate } from "tslib";
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 let PersonalCabinetFormEditorComponent = class PersonalCabinetFormEditorComponent {
-    constructor(personalCabinetService) {
-        this.personalCabinetService = personalCabinetService;
+    constructor(userSharedCreatAccountService, router) {
+        this.userSharedCreatAccountService = userSharedCreatAccountService;
+        this.router = router;
+        this.subscription = new Subscription();
         this.isCloseEditorForm = new EventEmitter;
         this.fetchData = new EventEmitter;
         this.plugForm = new FormGroup({});
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
     onCloseWindow() {
         this.resetForm();
@@ -21,9 +27,10 @@ let PersonalCabinetFormEditorComponent = class PersonalCabinetFormEditorComponen
         this.formProviders.oblenergoProviderForm.reset();
     }
     onSubmit() {
-        this.personalCabinetService.createAccount(this.formCredentials.credentialsForm.value, this.formAddress.addressForm.value, this.formProviders.gasProviderForm.value, this.formProviders.khimvoloknoProviderForm.value, this.formProviders.vodokanalProviderForm.value, this.formProviders.oblenergoProviderForm.value).subscribe((d) => {
+        this.subscription.add(this.userSharedCreatAccountService.createAccount(this.formCredentials.credentialsForm.value, this.formAddress.addressForm.value, this.formProviders.gasProviderForm.value, this.formProviders.khimvoloknoProviderForm.value, this.formProviders.vodokanalProviderForm.value, this.formProviders.oblenergoProviderForm.value).subscribe(() => {
             this.fetchData.emit();
-        });
+            this.router.navigateByUrl('user/indicators');
+        }));
         this.resetForm();
     }
 };

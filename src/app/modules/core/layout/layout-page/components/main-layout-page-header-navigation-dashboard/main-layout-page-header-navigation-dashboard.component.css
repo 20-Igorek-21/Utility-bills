@@ -1,9 +1,11 @@
 .main-navigation__dashboard {
-  width: 400px;
+  width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
+
   .main-navigation__dashboard {
-    width: 100%;
+    width: 400px;
   }
+
 }

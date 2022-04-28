@@ -1,7 +1,9 @@
-.content-page__content-row {
+.content-page__block-add-address {
   min-width: 60px;
   padding: 15px;
-  margin: 0 10px 40px 10px;
+  margin: 10px 10px 40px 10px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   border-radius: 7px;
   background-color: var(--color-grey);
@@ -11,7 +13,7 @@
   font-size: 18px;
   line-height: 24px;
   margin-right: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .content-page__message-text--color-red {
@@ -39,16 +41,10 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 1081px) {
+@media (min-width: 1081px) {
 
-  .content-page__content-row {
+  .content-page__block-add-address {
     margin: 40px 10px 40px 10px;
-  }
-}
-
-@media (max-width: 900px) {
-
-  .content-page__content-row {
-    flex-direction: column;
+    flex-direction: row;
   }
 }

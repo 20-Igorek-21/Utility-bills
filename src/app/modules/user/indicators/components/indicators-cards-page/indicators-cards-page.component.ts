@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+
 import {FormGroup, Validators} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
 
@@ -8,6 +9,7 @@ import {FormControl} from "@ngneat/reactive-forms";
     styleUrls: ['./indicators-cards-page.component.css']
 })
 export class IndicatorsCardsPageComponent  {
+
 
     indicatorsForm: FormGroup = new FormGroup({
         indicator: new FormControl<string>('', [
@@ -29,4 +31,30 @@ export class IndicatorsCardsPageComponent  {
             alert('Показники відправлені')
         }
     }
+
+    @Input() card!: any
+
+
+
+    // indicatorsForm: FormGroup = new FormGroup({
+    //     indicator: new FormControl<string>('', [
+    //         Validators.required, Validators.pattern('') // додати валідатор на введення чисел
+    //     ])
+    // })
+    //
+    //
+    // public get controls() {
+    //     return {
+    //         indicator: this.indicatorsForm.get('indicator') as FormControl<string>
+    //     }
+    // }
+    //
+    // onSubmit(): void {
+    //     if(this.indicatorsForm.valid) {
+    //         console.log( this.indicatorsForm.value)
+    //         this.indicatorsForm.reset();
+    //         alert('Показники відправлені')
+    //     }
+    // }
+
 }

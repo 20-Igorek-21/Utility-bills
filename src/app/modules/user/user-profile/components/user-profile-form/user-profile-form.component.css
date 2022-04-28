@@ -1,0 +1,42 @@
+.app-user-profile-form {
+  height: 560px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 7px;
+  background-color: #FFF;
+  color: var(--color-dark-blue);
+}
+
+.app-user-profile-form__title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 15px;
+  border-radius: 7px;
+  background-color: var(--color-grey);
+}
+
+.app-user-profile-form__button {
+  height: 50px;
+  width: 100%;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+@media (min-width: 420px) {
+
+  .app-user-profile-form {
+    height: 490px;
+  }
+
+  .app-user-profile-form__button {
+    margin-top: 10px;
+  }
+
+  .app-user-profile-form__title {
+    margin-bottom: 10px;
+  }
+}

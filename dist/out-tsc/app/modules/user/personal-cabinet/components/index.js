@@ -12,7 +12,7 @@ export const personalCabinetComponents = [
     PersonalCabinetFormEditorComponent,
     PersonalCabinetFormEditorPageComponent,
     PersonalCabinetFormEditorPageViewComponent,
-    PersonalCabinetCardComponent
+    PersonalCabinetCardComponent,
 ];
 export * from './personal-cabinet-form-credentials/personal-cabinet-form-credentials.component';
 export * from './personal-cabinet-form-providers/personal-cabinet-form-providers.component';

@@ -1,6 +1,6 @@
 .app-personal-cabinet-card {
-  height: 200px;
-  width: 320px;
+  height: 210px;
+  width: 285px;
   margin: 20px;
   position: relative;
   border: none;
@@ -90,10 +90,10 @@
   cursor: pointer;
 }
 
-@media (max-width: 340px) {
+@media (min-width: 370px) {
 
   .app-personal-cabinet-card {
-    height: 210px;
-    width: 290px;
+    height: 200px;
+    width: 320px;
   }
 }

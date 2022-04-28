@@ -15,7 +15,7 @@
 .app-personal-cabinet-form-editor__form {
   max-width: 600px;
   min-width: 290px;
-  margin: 20px;
+  margin: 70px 5px 5px 5px;
   border-radius: 7px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(141, 180, 241);
   z-index: 101;

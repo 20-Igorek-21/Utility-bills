@@ -1,6 +1,6 @@
 import { AuthSharedUserService } from './auth-shared-user.service';
 export const authSharedServices = [
-    AuthSharedUserService
+    AuthSharedUserService,
 ];
 export * from './auth-shared-user.service';
 //# sourceMappingURL=index.js.map

@@ -5,7 +5,7 @@ import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
 import { Subscription } from 'rxjs';
-import { IUserAuth } from '../../../auth-shared/types/auth-shared-user-interface';
+import { IUserAuth } from '../../../../core/form/types/auth-shared-user-interface';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class AuthRegisterFormComponent  implements OnDestroy {
     }
 
     registerForm: FormGroup = new FormGroup({
-        email: new FormControl<string>('', [Validators.required, Validators.email]),
+        email: new FormControl<string>('', [Validators.required, Validators.email], []),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
         repeatPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
     })

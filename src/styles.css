@@ -1,4 +1,4 @@
-*. *::before, *::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -8,7 +8,7 @@ html, body {
   min-width: 300px;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 20px;
   background-color: var(--color-page);
@@ -64,7 +64,8 @@ html, body {
 
 .app-auth-form__container {
   flex-direction: column;
-  width: 380px;
+  width: 290px;
+  margin: 10px;
   padding: 20px;
   border-radius: 7px;
   background-color: #FFF;
@@ -88,10 +89,60 @@ html, body {
   width: 400px;
 }
 
+.content-page__app-personal-cabinet-form-editor {
+  display: none;
+}
+
       /*navigation*/
 
+.main-navigation {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
 .main-navigation__link {
+  margin-top: 30px;
+  color: var(--color-blue);
+}
+
+.main-navigation__link-auth--login {
+  width: 80px;
+  margin: 0 20px;
   color: var(--color-white);
+}
+
+.main-navigation__link--active {
+  background-image: linear-gradient(#2496ED, #157AFF);
+  background-size: 100% 2px;
+}
+
+.main-navigation__button-menu {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  left: 100px;
+  top: 15px;
+}
+
+.main-navigation__switch-menu {
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-self: center;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  background-color: var(--color-page);
+  animation: curtain 1s;
+  z-index: 99999;
 }
 
 .main-navigation__link-auth {
@@ -104,41 +155,12 @@ html, body {
 }
 
 .main-navigation__link-auth--register {
-  width: 200px;
-  margin-right: 40px;
+  width: 180px;
 }
 
 .main-navigation__link-auth--login {
   width: 100px;
-  margin-right: 50px;
-}
-
-.main-navigation__link--active {
-  background-image: linear-gradient(#FFF, #f4f5f6);
-  background-size: 100% 2px;
-}
-
-.main-navigation__button-menu {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  width: 40px;
-  height: 40px;
-  left: 170px;
-  top: 15px;
-  color: var(--color-white);
-}
-
-.main-navigation__switch-menu {
-  display: none;
-}
-
-.main-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
+  margin: 0 15px 0 0;
 }
 
       /*hover effects*/
@@ -148,9 +170,14 @@ html, body {
 }
 
 .main-navigation__link:hover {
-  background-image: linear-gradient(#FFF, #f4f5f6);
+  background-image: linear-gradient(#2496ED, #157AFF);
   background-size: 100% 2px;
-  opacity: .9;
+}
+
+.main-navigation__link-auth:hover {
+  background-color: var(--color-white);
+  color: var(--color-blue);
+  transition: .2s;
 }
 
 .main-navigation__link-auth:hover {
@@ -159,7 +186,63 @@ html, body {
   transition: .4s;
 }
 
-      /*animation*/
+@media (min-width: 420px) {
+  .app-auth-form__container {
+    width: 350px;
+  }
+
+  .main-navigation__button-menu {
+    left: 140px;
+  }
+}
+
+@media (min-width: 850px) {
+  .app-auth-form__container {
+    width: 380px;
+  }
+
+  .main-navigation__link-auth--register {
+    width: 200px;
+    margin-right: 40px;
+  }
+
+  .main-navigation__link-auth--login {
+    width: 100px;
+    margin-right: 50px;
+  }
+
+  /*navigation*/
+
+  .main-navigation {
+    display: flex;
+  }
+
+  .main-navigation__link {
+    margin: 0;
+    color: var(--color-white);
+  }
+
+  .main-navigation__button-menu {
+    display: none;
+  }
+
+  .main-navigation__switch-menu {
+    display: none;
+  }
+
+  .main-navigation__link--active {
+    background-image: linear-gradient(#FFF, #f4f5f6);
+    background-size: 100% 2px;
+  }
+
+  .main-navigation__link:hover {
+    background-image: linear-gradient(#FFF, #f4f5f6);
+    background-size: 100% 2px;
+    opacity: .9;
+  }
+}
+
+/*animation*/
 
 @keyframes curtain {
 
@@ -173,76 +256,7 @@ html, body {
 }
 
 
-@media (max-width: 767px) {
-
-  .main-navigation {
-    display: none;
-  }
-
-  .main-navigation__link {
-    margin-top: 30px;
-    opacity: .9;
-    color: var(--color-blue);
-  }
-
-  .main-navigation__link-auth--login {
-    width: 80px;
-    margin: 0 20px;
-    color: var(--color-white);
-  }
-
-  .main-navigation__link--active {
-    background-image: linear-gradient(#2496ED, #157AFF);
-    background-size: 100% 2px;
-  }
-
-  .main-navigation__button-menu {
-    display: flex;
-    align-items: center;
-  }
-
-  .main-navigation__switch-menu {
-    height: calc(100vh - 70px);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-self: center;
-    position: absolute;
-    left: 0;
-    top: 70px;
-    background-color: var(--color-page);
-    animation: curtain 1s;
-    z-index: 99999;
-  }
-
-  .main-navigation__link:hover {
-    background-image: linear-gradient(#2496ED, #157AFF);
-    background-size: 100% 2px;
-  }
-
-  .main-navigation__link-auth:hover {
-    background-color: var(--color-white);
-    color: var(--color-blue);
-    transition: .2s;
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .main-navigation__button-menu {
-    left: 140px;
-  }
-}
-
-@media (max-width: 400px) {
-  .main-navigation__link-auth--login {
-    margin: 0;
-  }
-}
-
-
-.content-page__app-personal-cabinet-form-editor {
-  display: none;
+.app-main-layout__lock {
+  border: 2px solid red;
+  overflow: hidden;
 }

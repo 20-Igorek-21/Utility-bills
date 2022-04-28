@@ -1,9 +1,19 @@
 .main-navigation__users {
-  width: 450px;
+  width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
+
   .main-navigation__users {
-    width: 100%;
+    width: 550px;
   }
+
+}
+
+@media (min-width: 950px) {
+
+  .main-navigation__users {
+    width: 600px;
+  }
+
 }

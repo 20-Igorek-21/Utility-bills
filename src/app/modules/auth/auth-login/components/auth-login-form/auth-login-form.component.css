@@ -1,15 +1,11 @@
 .app-auth-form__container--login {
-  height: 300px;
-}
-
-.app-auth-form__checkbox {
-  width: 20px;
-  padding-right: 120px;
+  height: 350px;
 }
 
 .app-auth-form__content-row {
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .app-auth-form__link:hover {
@@ -22,4 +18,27 @@
   opacity: .8;
   background-image: linear-gradient(#157AFF, #2496ED);
   background-size: 100% 2px;
+}
+
+
+@media (min-width: 420px) {
+
+  .app-auth-form__container--login {
+    height: 300px;
+  }
+
+  .app-auth-form__link {
+    margin-left: 15px;
+  }
+
+
+  .app-auth-form__checkbox {
+    width: 20px;
+    padding-right: 145px;
+    margin-right: 15px;
+  }
+
+  .app-auth-form__content-row {
+    margin-bottom: 20px;
+  }
 }
