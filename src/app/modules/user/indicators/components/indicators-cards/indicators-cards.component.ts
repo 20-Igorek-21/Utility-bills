@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup, Validators} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
 @Component({
@@ -6,12 +6,13 @@ import {FormControl} from "@ngneat/reactive-forms";
     templateUrl: './indicators-cards.component.html',
     styleUrls: ['./indicators-cards.component.css']
 })
-export class IndicatorsCardsComponent {
+export class IndicatorsCardsComponent  {
    @Input() title = '';
-   constructor() { }
+
+    constructor() { }
     indicatorsForm: FormGroup = new FormGroup({
         indicator: new FormControl<string>('', [
-            Validators.required, Validators.pattern('') // додати валідатор на введення чисел
+            Validators.required, Validators.pattern('')
         ])
     })
 

@@ -4,43 +4,53 @@
   border-radius: 7px;
   color: var(--color-dark-blue);
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
-  padding: 15px;
+  padding: 10px;
   text-align: center;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
-.item-block {
+.indicators__item {
+  margin-bottom: 10px;
+}
+
+.indicators__inform {
   display: flex;
   align-items: center;
   justify-content: left;
 }
 
-.indicators__form-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  justify-content: space-between;
-}
-
-.indicators__form-icon {
+.indicators__inform-icon {
   fill: #ff6e00;
-  margin-right: 20px;
+  margin-right: 5px;
+  width: 23px;
+  height: 23px;
 }
 
 
-.indicators__form-title {
-  font-size: 20px;
+.indicators__inform-title {
+  font-size: 15px;
   font-weight: 500;
-  margin: 0 20px 0 0;
+  margin: 0;
 }
 
-.indicators__form-input {
+.indicators__field {
+
+}
+
+.indicators__field-label {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indicators__field-input {
   max-width: 70px;
   height: 30px;
   padding: 5px 10px;
   border-radius: 7px;
   outline: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   color: #212529;
   background-color: #fff;
@@ -48,16 +58,57 @@
   border-bottom: 1px solid #bdbdbd;
 }
 
-.indicators__form-input::placeholder {
+.indicators__field-input::placeholder {
   color: #212529;
   opacity: 0.4;
 }
 
 .indicators__form-btn {
-  margin-top: 30px;
+  margin-top: 15px;
   padding: 10px;
   background-color: var(--color-light-blue);;
   border-radius: 7px;
   color: #FFFFFF;
   font-size: 20px;
+}
+
+@media (min-width: 420px) {
+  .indicators__inform-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .indicators__inform-title {
+    font-size: 20px;
+  }
+
+  .indicators__field-label {
+    font-size: 16px;
+  }
+
+  .indicators__field-input {
+    font-size: 18px;
+
+  }
+}
+@media (min-width:600px)  {
+
+  .indicators__form {
+    max-width: 600px;
+    padding: 20px;
+
+  }
+  .indicators__item {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .indicators__inform-icon {
+    margin-right: 20px;
+  }
 }

@@ -1,60 +1,90 @@
 <form [formGroup]="indicatorsForm"
       (ngSubmit)="onSubmit()"
       class="indicators__form">
-  <div class="indicators__form-item">
-    <div class="item-block">
-      <svg class="indicators__form-icon" height="30" width="30">
+  <div class="indicators__item">
+    <div class="indicators__inform">
+      <svg class="indicators__inform-icon">
         <use href="./assets/svg/sprites.svg#gas-icon"></use>
       </svg>
-      <h2 class="indicators__form-title">ЧЕРКАСИГАЗ</h2>
+      <h2 class="indicators__inform-title">ЧЕРКАСИГАЗ</h2>
     </div>
-    <input class="indicators__form-input"
-           formControlName="indicator"
-           placeholder="Показ">
+    <div class="indicators__field">
+      <label class="indicators__field-label">
+        <p class="label">Показник</p>
+        <input class="indicators__field-input"
+                formControlName="indicator"
+                placeholder="200"
+                OnlyNumber="true">
+      </label>
+    </div>
   </div>
-  <div class="indicators__form-item">
-    <div class="item-block">
-      <svg class="indicators__form-icon" height="30" width="30">
+  <div class="indicators__item">
+    <div class="indicators__inform">
+      <svg class="indicators__inform-icon">
         <use href="./assets/svg/sprites.svg#gas-icon"></use>
       </svg>
-      <h2 class="indicators__form-title">ЧЕРКАСИОБЛЕНЕРГО</h2>
+      <h2 class="indicators__inform-title">ЧЕРКАСИОБЛЕНЕРГО</h2>
     </div>
-    <input class="indicators__form-input"
-           formControlName="indicator"
-           placeholder="Показ">
+    <div class="indicators__field">
+      <label class="indicators__field-label">
+        <p class="label">Показник</p>
+        <input class="indicators__field-input"
+               formControlName="indicator"
+               placeholder="200"
+               OnlyNumber="true">
+      </label>
+    </div>
   </div>
-  <div class="indicators__form-item">
-    <div class="item-block">
-      <svg class="indicators__form-icon" height="30" width="30">
+  <div class="indicators__item">
+    <div class="indicators__inform">
+      <svg class="indicators__inform-icon">
         <use href="./assets/svg/sprites.svg#gas-icon"></use>
       </svg>
-      <h2 class="indicators__form-title">ЧЕРКАСЬКЕ ХІМВОЛОКНО</h2>
+      <h2 class="indicators__inform-title">ЧЕРКАСЬКЕ ХІМВОЛОКНО</h2>
     </div>
-    <input class="indicators__form-input"
-           formControlName="indicator"
-           placeholder="Показ">
+    <div class="indicators__field">
+      <label class="indicators__field-label">
+        <p class="label">Показник</p>
+        <input class="indicators__field-input"
+               formControlName="indicator"
+               placeholder="200"
+               OnlyNumber="true">
+      </label>
+    </div>
   </div>
-  <div class="indicators__form-item">
-    <div class="item-block">
-      <svg class="indicators__form-icon" height="30" width="30">
+  <div class="indicators__item">
+    <div class="indicators__inform">
+      <svg class="indicators__inform-icon">
         <use href="./assets/svg/sprites.svg#gas-icon"></use>
       </svg>
-      <h2 class="indicators__form-title">ЧЕРКАСИВОДОКАНАЛ</h2>
+      <h2 class="indicators__inform-title">ЧЕРКАСИВОДОКАНАЛ</h2>
     </div>
-    <input class="indicators__form-input"
-           formControlName="indicator"
-           placeholder="Показ">
+    <div class="indicators__field">
+      <label class="indicators__field-label">
+        <p class="label">Показник</p>
+        <input class="indicators__field-input"
+               formControlName="indicator"
+               placeholder="200"
+               OnlyNumber="true">
+      </label>
+    </div>
   </div>
-  <div class="indicators__form-item">
-    <div class="item-block">
-      <svg class="indicators__form-icon" height="30" width="30">
+  <div class="indicators__item">
+    <div class="indicators__inform">
+      <svg class="indicators__inform-icon" >
         <use href="./assets/svg/sprites.svg#gas-icon"></use>
       </svg>
-      <h2 class="indicators__form-title">ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО</h2>
+      <h2 class="indicators__inform-title">ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО</h2>
     </div>
-    <input class="indicators__form-input"
-           formControlName="indicator"
-           placeholder="Показ">
+    <div class="indicators__field">
+      <label class="indicators__field-label">
+        <p class="label">Показник</p>
+        <input class="indicators__field-input"
+               formControlName="indicator"
+               placeholder="200"
+               OnlyNumber="true">
+      </label>
+    </div>
   </div>
   <button type="submit"
           class="indicators__form-btn button">
@@ -62,15 +92,20 @@
 </form>
 
 
-<!--  <div class="indicators__form-item">-->
-<!--    <div class="item-block">-->
-<!--      <svg class="indicators__form-icon" height="30" width="30">-->
-<!--        <use href="./assets/svg/sprites.svg#gas-icon"></use>-->
-<!--      </svg>-->
-<!--      <h2 class="indicators__form-title">ЧЕРКАСИГАЗ</h2>-->
-<!--    </div>-->
-<!--    <input class="indicators__form-input"-->
-<!--           formControlName="indicator"-->
-<!--           placeholder="Показ">-->
+<!--<div class="indicators__item">-->
+<!--  <div class="indicators__inform">-->
+<!--    <svg class="indicators__inform-icon" >-->
+<!--      <use href="./assets/svg/sprites.svg#gas-icon"></use>-->
+<!--    </svg>-->
+<!--    <h2 class="indicators__inform-title">ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО</h2>-->
 <!--  </div>-->
-
+<!--  <div class="indicators__field">-->
+<!--    <label class="indicators__field-label">-->
+<!--      <p class="label">Показник</p>-->
+<!--      <input class="indicators__field-input"-->
+<!--             formControlName="indicator"-->
+<!--             placeholder="200"-->
+<!--             OnlyNumber="true">-->
+<!--    </label>-->
+<!--  </div>-->
+<!--</div>-->
