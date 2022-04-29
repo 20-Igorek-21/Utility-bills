@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
 import { Subscription } from 'rxjs';
-import { UserSharedFetchAccountService } from '../../../user-shared/services';
+import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
 @Component({
     selector: 'app-user-personal-cabinet-form-editor-page',
@@ -10,36 +10,39 @@ import { UserSharedFetchAccountService } from '../../../user-shared/services';
 })
 export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
 
+    public massageText = true;
+    public isShowEditorForm = true;
     public cards: IUserAccount []= []
     private subscription: Subscription = new Subscription()
     @Output() isLockEditorForm = new EventEmitter()
     @Output() isUnLockEditorForm = new EventEmitter()
 
-    constructor(private readonly userSharedFetchAccountService: UserSharedFetchAccountService) {
+    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
         this.fetchData()
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
+        this.subscription.unsubscribe();
     }
 
-    fetchData() {
-        this.subscription.add(this.userSharedFetchAccountService.fetshAccount()
+    fetchData(): void {
+        this.subscription.add(this.userSharedDataAccountService.fetshAccount()
             .subscribe( (data: IUserAccount[]) => {
+                console.log(data)
                 this.cards = data
+            },
+            error => {
+                console.log(error)
             }))
     }
 
-    public massageText = true;
-    public isShowEditorForm = true;
-
     public onShowEditorForm(): void {
         this.isShowEditorForm = false;
-        this.isLockEditorForm.emit(false)
+        this.isLockEditorForm.emit(false);
     }
 
     public isCloseEditorForm(): void {
         this.isShowEditorForm = true;
-        this.isUnLockEditorForm.emit(true)
+        this.isUnLockEditorForm.emit(true);
     }
 }

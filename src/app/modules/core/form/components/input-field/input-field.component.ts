@@ -1,7 +1,6 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-
 @Component({
     selector: 'app-input-field',
     templateUrl: './input-field.component.html',
@@ -36,7 +35,7 @@ export class InputFieldComponent implements ControlValueAccessor {
         this.value = value;
     }
 
-    public onTouched(): void{}
+    public onTouched!:() => void
 
     public registerOnChange(fn: never) {
         this.onChange = fn;

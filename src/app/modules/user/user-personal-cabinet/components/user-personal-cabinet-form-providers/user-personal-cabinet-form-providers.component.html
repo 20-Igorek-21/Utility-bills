@@ -5,7 +5,9 @@
       <ng-template matStepLabel>Черкаси газ</ng-template>
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'text'"
-                       formControlName="code">
+                       formControlName="number">
+        <app-message-errors class="app-auth-form__message-errors"
+                            [controlsName]="controls.number"></app-message-errors>
       </app-input-field>
       <div>
         <button class="app-personal-cabinet-form-providers-button"
@@ -19,7 +21,7 @@
       <ng-template matStepLabel>Черкаси обленерго</ng-template>
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'text'"
-                       formControlName="code"></app-input-field>
+                       formControlName="number"></app-input-field>
       <div>
         <button class="app-personal-cabinet-form-providers-button"
                 mat-raised-button
@@ -36,7 +38,7 @@
       <ng-template matStepLabel>Черкаcьке хімволокно</ng-template>
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'text'"
-                       formControlName="code"></app-input-field>
+                       formControlName="number"></app-input-field>
       <div>
         <button class="app-personal-cabinet-form-providers-button"
                 mat-raised-button
@@ -53,7 +55,7 @@
       <ng-template matStepLabel>Черкаси водоканал</ng-template>
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'text'"
-                       formControlName="code"></app-input-field>
+                       formControlName="number"></app-input-field>
       <div>
         <button class="app-personal-cabinet-form-providers-button"
                 mat-raised-button

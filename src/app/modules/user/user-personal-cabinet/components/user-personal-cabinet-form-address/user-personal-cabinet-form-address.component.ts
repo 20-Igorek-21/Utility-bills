@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {FormGroup, Validators} from '@angular/forms';
-import {FormControl} from '@ngneat/reactive-forms';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
 
 @Component({
     selector: 'app-user-personal-cabinet-form-address',
@@ -13,6 +13,6 @@ export class UserPersonalCabinetFormAddressComponent {
         city: new FormControl<string>('', Validators.required),
         street: new FormControl<string>('', Validators.required),
         house: new FormControl<string>('', Validators.required),
-        apartment: new FormControl<number | null>(null)
+        flat: new FormControl<number | null>(null)
     })
 }
