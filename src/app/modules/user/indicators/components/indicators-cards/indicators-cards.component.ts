@@ -1,32 +1,39 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormGroup, Validators} from "@angular/forms";
-import {FormControl} from "@ngneat/reactive-forms";
+import {Component, forwardRef, Input} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+
 @Component({
     selector: 'app-indicators-cards',
     templateUrl: './indicators-cards.component.html',
-    styleUrls: ['./indicators-cards.component.css']
+    styleUrls: ['./indicators-cards.component.css'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef( () => IndicatorsCardsComponent),
+            multi: true
+        }
+    ]
 })
-export class IndicatorsCardsComponent  {
-   @Input() title = '';
+export class IndicatorsCardsComponent implements ControlValueAccessor {
+    @Input() value = '';
+    @Input() title = '';
 
     constructor() { }
-    indicatorsForm: FormGroup = new FormGroup({
-        indicator: new FormControl<string>('', [
-            Validators.required, Validators.pattern('')
-        ])
-    })
 
-    public get controls() {
-        return {
-            indicator: this.indicatorsForm.get('indicator') as FormControl<string>
-        }
+    handleInput(value: string) {
+        this.onChange(value)
     }
 
-    onSubmit(): void {
-        if(this.indicatorsForm.valid) {
-            console.log( this.indicatorsForm.value)
-            this.indicatorsForm.reset();
-            alert('Показники відправлені')
-        }
+    writeValue(value: string): void {
+        this.value = value
+    }
+    onChange!: (value: string) => void;
+    onTouched!: ()=> void;
+
+    registerOnChange(fn: any): void {
+        this.onChange = fn
+    }
+
+    registerOnTouched(fn: any): void {
+        this.onTouched = fn
     }
 }
