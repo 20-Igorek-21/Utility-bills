@@ -9,6 +9,9 @@ let ToggleButtonDirective = class ToggleButtonDirective {
     set showBurgerMenu(value) {
         this.isShowBurgerMenu = value;
     }
+    set showLayoutLock(value) {
+        this.isShowLayoutLock = value;
+    }
     set showEditorForm(value) {
         this.isShowEditorForm = value;
     }
@@ -22,6 +25,9 @@ __decorate([
 __decorate([
     HostBinding('class.app-main-layout__lock')
 ], ToggleButtonDirective.prototype, "isShowLayoutLock", void 0);
+__decorate([
+    Input()
+], ToggleButtonDirective.prototype, "showLayoutLock", null);
 __decorate([
     HostBinding('class.content-page__app-personal-cabinet-form-editor')
 ], ToggleButtonDirective.prototype, "isShowEditorForm", void 0);

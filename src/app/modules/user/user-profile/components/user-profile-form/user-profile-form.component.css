@@ -29,11 +29,11 @@
 @media (min-width: 420px) {
 
   .app-user-profile-form {
-    height: 490px;
+    height: 470px;
   }
 
   .app-user-profile-form__button {
-    margin-top: 10px;
+    margin-top: 11px;
   }
 
   .app-user-profile-form__title {

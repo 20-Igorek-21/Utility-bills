@@ -1,0 +1,16 @@
+<app-main-layout-page appToggleButton [showLayoutLock]="isLock">
+
+  <ng-container authLink>
+    <a class="link main-navigation__link-auth main-navigation__link-auth--login"
+       routerLink="/">Вихід</a>
+  </ng-container>
+
+  <ng-container navigationLinks>
+    <app-main-layout-page-header-navigation-user></app-main-layout-page-header-navigation-user>
+  </ng-container>
+
+  <app-user-personal-cabinet-form-editor-page  (isLockEditorForm)="lock()" (isUnLockEditorForm)="unLock()"></app-user-personal-cabinet-form-editor-page>
+
+  <app-layout-footer-view footer></app-layout-footer-view>
+
+</app-main-layout-page>

@@ -1,9 +1,13 @@
-import {Directive, HostBinding, Input} from '@angular/core';
+import {Directive, ElementRef, HostBinding, Input, Renderer2} from '@angular/core';
 
 @Directive({
     selector: '[appToggleButton]'
 })
 export class ToggleButtonDirective {
+
+    constructor(private elementRef: ElementRef,
+                private render: Renderer2) {
+    }
 
     @HostBinding('class.main-navigation__switch-menu') isShowBurgerMenu = false;
 
@@ -11,10 +15,13 @@ export class ToggleButtonDirective {
         this.isShowBurgerMenu = value;
     }
 
-    @HostBinding('class.app-main-layout__lock') isShowLayoutLock = false;
-
     @Input() set showLayoutLock(value: boolean) {
-        this.isShowLayoutLock = value;
+        if (value) {
+            this.elementRef.nativeElement.children[0].className = 'main-layout-page main-layout-page__lock'
+        }
+        else {
+            this.elementRef.nativeElement.children[0].className = 'main-layout-page'
+        }
     }
 
     @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowEditorForm = false;
