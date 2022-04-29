@@ -7,14 +7,13 @@ import { Component } from '@angular/core';
 })
 export class UserPersonalCabinetFormEditorPageViewComponent {
 
-    isLock = false
+    public isLock = false;
 
-    lock() {
+    public lock(): void {
         this.isLock = true
     }
 
-    unLock() {
+    public unLock(): void {
         this.isLock = false
     }
-
 }
