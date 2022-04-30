@@ -9,16 +9,16 @@ export interface IUserAccountAddress {
     city: string,
     street: string,
     house: string,
-    apartment?: string
+    flat: number | null
 }
 
 export interface IUserAccountProvider {
-    name: string,
-    code: string | number,
+    id: string,
+    number: number | null,
     status: boolean
 }
 
 export interface IUserAccountCredential {
     fullName: string,
-    phone: string | number
+    phone: number
 }

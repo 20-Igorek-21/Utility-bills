@@ -1,17 +1,11 @@
 import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {UserSharedCreateAccountService} from '../../../user-shared/services';
-import {Router} from '@angular/router';
-import {FormGroup} from '@angular/forms';
-import {
-    UserPersonalCabinetFormCredentialsComponent
-} from '../user-personal-cabinet-form-credentials/user-personal-cabinet-form-credentials.component';
-import {
-    UserPersonalCabinetFormAddressComponent
-} from '../user-personal-cabinet-form-address/user-personal-cabinet-form-address.component';
-import {
-    UserPersonalCabinetFormProvidersComponent
-} from '../user-personal-cabinet-form-providers/user-personal-cabinet-form-providers.component';
+import { Subscription } from 'rxjs';
+import { UserSharedDataUserAccountService } from '../../../user-shared/services';
+import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { UserPersonalCabinetFormCredentialsComponent } from '../user-personal-cabinet-form-credentials/user-personal-cabinet-form-credentials.component';
+import { UserPersonalCabinetFormAddressComponent } from '../user-personal-cabinet-form-address/user-personal-cabinet-form-address.component';
+import { UserPersonalCabinetFormProvidersComponent } from '../user-personal-cabinet-form-providers/user-personal-cabinet-form-providers.component';
 
 @Component({
     selector: 'app-user-personal-cabinet-form-editor',
@@ -33,7 +27,7 @@ export class UserPersonalCabinetFormEditorComponent implements OnDestroy {
     @Output() fetchData = new EventEmitter;
 
     constructor(
-        private readonly userSharedCreatAccountService: UserSharedCreateAccountService,
+        private readonly userSharedDataAccountService: UserSharedDataUserAccountService,
         private readonly router: Router) {}
 
     ngOnDestroy() {
@@ -46,7 +40,7 @@ export class UserPersonalCabinetFormEditorComponent implements OnDestroy {
         this.resetForm()
     }
 
-    resetForm() {
+    resetForm(): void {
         this.isCloseEditorForm.emit();
         this.formCredentials.credentialsForm.reset();
         this.formAddress.addressForm.reset();
@@ -57,18 +51,21 @@ export class UserPersonalCabinetFormEditorComponent implements OnDestroy {
     }
 
     onSubmit(): void {
-        this.subscription.add(this.userSharedCreatAccountService.createAccount(
+        this.subscription.add(this.userSharedDataAccountService.createAccount(
             this.formCredentials.credentialsForm.value,
             this.formAddress.addressForm.value,
             this.formProviders.gasProviderForm.value,
             this.formProviders.khimvoloknoProviderForm.value,
             this.formProviders.vodokanalProviderForm.value,
             this.formProviders.oblenergoProviderForm.value
-        ).subscribe( () => {
+        ).subscribe( (res:object) => {
+            console.log(res)
             this.fetchData.emit()
-            this.router.navigateByUrl('user/indicators')
-        }))
+        },
+        error => {
+            console.log(error)
+        }
+        ))
         this.resetForm()
     }
-
 }
