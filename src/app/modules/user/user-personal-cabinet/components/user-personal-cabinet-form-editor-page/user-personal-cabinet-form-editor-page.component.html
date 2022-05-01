@@ -1,4 +1,4 @@
-<div class="content-page">
+<div class="content-page" *ngIf="!isLoader">
 
   <app-user-personal-cabinet-form-editor (isCloseEditorForm)="isCloseEditorForm()"
                                     appToggleButton
@@ -24,3 +24,5 @@
   </section>
 
 </div>
+
+<mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

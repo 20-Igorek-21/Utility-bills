@@ -9,6 +9,7 @@ import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.modu
 import { RouterModule } from '@angular/router';
 import { LayoutFooterModule } from '../../core/layout/layout-footer/layout-footer.module';
 import { userPersonalCabinetComponents } from './components';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { userPersonalCabinetComponents } from './components';
         LayoutPageModule,
         RouterModule,
         LayoutFooterModule,
+        MatProgressSpinnerModule,
     ],
     providers: []
 })

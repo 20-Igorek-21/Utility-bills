@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
-import { Subscription } from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
 @Component({
@@ -12,6 +12,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
 
     public massageText = true;
     public isShowEditorForm = true;
+    public isLoader = true;
     public cards: IUserAccount []= []
     private subscription: Subscription = new Subscription()
     @Output() isLockEditorForm = new EventEmitter()
@@ -27,6 +28,9 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
 
     fetchData(): void {
         this.subscription.add(this.userSharedDataAccountService.fetshAccount()
+            .pipe( finalize( () => {
+                this.isLoader = false;
+            }))
             .subscribe( (data: IUserAccount[]) => {
                 console.log(data)
                 this.cards = data

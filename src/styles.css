@@ -186,6 +186,11 @@ html, body {
   margin: 0 15px 0 0;
 }
 
+.content-page__loader {
+  position: absolute;
+  left: 35%;
+}
+
       /*hover effects*/
 
 .button:hover {
@@ -216,6 +221,11 @@ html, body {
 
   .main-navigation__button-menu {
     left: 140px;
+  }
+
+  .content-page__loader {
+    position: absolute;
+    left: 40%;
   }
 }
 
@@ -260,6 +270,11 @@ html, body {
   .main-navigation__link--active {
     background-image: linear-gradient(#FFF, #f4f5f6);
     background-size: 100% 2px;
+  }
+
+
+  .content-page__loader {
+    left: 50%;
   }
 
   .main-navigation__link:hover {
