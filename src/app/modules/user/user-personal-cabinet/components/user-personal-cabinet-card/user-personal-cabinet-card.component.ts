@@ -20,17 +20,23 @@ export class UserPersonalCabinetCardComponent implements OnDestroy {
         this.subscription.unsubscribe()
     }
 
-    public editCard(): void {
+    public editCard(id: string): void {
         // this.userSharedDataAccountService.changeAccount()
     }
 
-    public deleteCard() {
-        this.subscription.add(this.userSharedDataAccountService.deleteAccount()
+    public deleteCard(id: string) {
+        console.log(id)
+        this.subscription.add(this.userSharedDataAccountService.deleteAccount(id)
             .subscribe( (res) => {
                 console.log(res)
             },
             error => {
                 console.log(error)
             }))
+    }
+
+    onSelect(id:string) {
+        console.log(id)
+
     }
 }

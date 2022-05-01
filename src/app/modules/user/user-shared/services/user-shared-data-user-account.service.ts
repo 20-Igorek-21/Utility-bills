@@ -111,8 +111,8 @@ export class UserSharedDataUserAccountService {
             .pipe( map((res:IUserAccount[]) => res));
     }
 
-    deleteAccount(): Observable<void> {
-        return this.http.delete<IUserAccountAddress>(environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd')
+    deleteAccount(id:string): Observable<void> {
+        return this.http.delete<IUserAccountAddress>(environment.apiUrlAccounts + id)
             .pipe( map( (res: IUserAccountAddress) => console.log(res)))
     }
 }
