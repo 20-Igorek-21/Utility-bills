@@ -4,7 +4,7 @@
 
   <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--edit">
     <button class="button app-personal-cabinet-card__button"
-            (click)="editCard(card.id)">
+            (click)="onEditCard(card.id)">
       <svg>
         <use href="./assets/svg/sprites.svg#edit-icon"></use>
       </svg>
@@ -13,7 +13,7 @@
 
   <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--delete">
     <button class="button app-personal-cabinet-card__button"
-            (click)="deleteCard(card.id)">
+            (click)="onDeleteCard(card.id)">
       <svg>
         <use href="./assets/svg/sprites.svg#delete-icon"></use>
       </svg>

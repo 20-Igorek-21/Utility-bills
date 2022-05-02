@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,9 @@ export class UserPersonalCabinetCardComponent implements OnDestroy {
 
     subscription: Subscription = new Subscription()
 
-    @Input() card!: IUserAccount
+    @Input() card!: IUserAccount;
+    @Output() deleteCard = new EventEmitter;
+    @Output() changeCard = new EventEmitter
 
     constructor( private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
@@ -20,15 +22,16 @@ export class UserPersonalCabinetCardComponent implements OnDestroy {
         this.subscription.unsubscribe()
     }
 
-    public editCard(id: string): void {
+    public onEditCard(id: string): void {
+        this.changeCard.emit()
         // this.userSharedDataAccountService.changeAccount()
     }
 
-    public deleteCard(id: string) {
-        console.log(id)
+    public onDeleteCard(id: string) {
+
         this.subscription.add(this.userSharedDataAccountService.deleteAccount(id)
-            .subscribe( (res) => {
-                console.log(res)
+            .subscribe( () => {
+                this.deleteCard.emit()
             },
             error => {
                 console.log(error)
