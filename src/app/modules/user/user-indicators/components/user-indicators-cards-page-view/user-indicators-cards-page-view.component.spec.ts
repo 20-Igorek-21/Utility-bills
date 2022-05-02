@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndicatorsCardsPageViewComponent } from './indicators-cards-page-view.component';
+import { UserIndicatorsCardsPageViewComponent } from './user-indicators-cards-page-view.component';
 
 describe('IndicatorsCardsPageViewComponent', () => {
-  let component: IndicatorsCardsPageViewComponent;
-  let fixture: ComponentFixture<IndicatorsCardsPageViewComponent>;
+  let component: UserIndicatorsCardsPageViewComponent;
+  let fixture: ComponentFixture<UserIndicatorsCardsPageViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndicatorsCardsPageViewComponent ]
+      declarations: [ UserIndicatorsCardsPageViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndicatorsCardsPageViewComponent);
+    fixture = TestBed.createComponent(UserIndicatorsCardsPageViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

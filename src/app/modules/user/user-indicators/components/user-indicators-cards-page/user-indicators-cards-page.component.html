@@ -28,16 +28,16 @@
   </div>
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
-    <app-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
-                          formControlName="indicators"></app-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
+                          formControlName="indicators"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
+                          formControlName="indicators"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
+                          formControlName="indicators"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
+                          formControlName="indicators"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
+                          formControlName="indicators"></app-user-indicators-cards>
     <button (click)="onSubmit()"
             class="indicators__form-btn button">
       Відправити</button>

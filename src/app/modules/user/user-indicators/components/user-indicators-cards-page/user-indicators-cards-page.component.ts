@@ -5,11 +5,11 @@ import {FormControl} from "@ngneat/reactive-forms";
 
 
 @Component({
-    selector: 'app-indicators-cards-page',
-    templateUrl: './indicators-cards-page.component.html',
-    styleUrls: ['./indicators-cards-page.component.css']
+    selector: 'app-user-indicators-cards-page',
+    templateUrl: './user-indicators-cards-page.component.html',
+    styleUrls: ['./user-indicators-cards-page.component.css']
 })
-export class IndicatorsCardsPageComponent  implements OnInit {
+export class UserIndicatorsCardsPageComponent implements OnInit {
 
     ngOnInit(): void {
     }
