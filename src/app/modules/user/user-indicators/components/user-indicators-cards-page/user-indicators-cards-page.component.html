@@ -29,15 +29,20 @@
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
     <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
-                          formControlName="indicators"></app-user-indicators-cards>
+                               [itemIcon] = "'gas-icon'"
+                          formControlName="gasIndicator"></app-user-indicators-cards>
     <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
-                          formControlName="indicators"></app-user-indicators-cards>
+                               [itemIcon] = "'light-icon'"
+                          formControlName="energyIndicator"></app-user-indicators-cards>
     <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
-                          formControlName="indicators"></app-user-indicators-cards>
+                               [itemIcon] = "'term-icon'"
+                          formControlName="tecIndicator"></app-user-indicators-cards>
     <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
-                          formControlName="indicators"></app-user-indicators-cards>
+                               [itemIcon] = "'water-icon'"
+                          formControlName="waterIndicator"></app-user-indicators-cards>
     <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
-                          formControlName="indicators"></app-user-indicators-cards>
+                               [itemIcon] = "'term-icon'"
+                          formControlName="heatIndicator"></app-user-indicators-cards>
     <button (click)="onSubmit()"
             class="indicators__form-btn button">
       Відправити</button>
