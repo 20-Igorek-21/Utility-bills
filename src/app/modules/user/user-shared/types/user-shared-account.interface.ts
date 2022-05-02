@@ -1,8 +1,8 @@
 export interface IUserAccount {
     id: string,
-    credentials: IUserAccountCredential,
-    addresses: IUserAccountAddress,
-    providers: [IUserAccountProvider]
+    fullName: string,
+    phone: number,
+    address: IUserAccountAddress,
 }
 
 export interface IUserAccountAddress {
@@ -19,6 +19,7 @@ export interface IUserAccountProvider {
 }
 
 export interface IUserAccountCredential {
+    id?: string,
     fullName: string,
     phone: number
 }
