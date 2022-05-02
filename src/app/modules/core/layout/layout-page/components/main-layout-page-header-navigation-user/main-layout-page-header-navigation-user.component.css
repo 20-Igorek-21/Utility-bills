@@ -2,18 +2,18 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {*/
 
-  .main-navigation__users {
-    width: 550px;
-  }
+/*  .main-navigation__users {*/
+/*    width: 550px;*/
+/*  }*/
 
-}
+/*}*/
 
 @media (min-width: 950px) {
 
   .main-navigation__users {
-    width: 600px;
+    width: 580px;
   }
 
 }
