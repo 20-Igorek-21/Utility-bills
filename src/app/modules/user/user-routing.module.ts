@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { IndicatorsCardsPageViewComponent } from './indicators/components';
+import { UserIndicatorsCardsPageViewComponent } from './user-indicators/components';
 import { UserProfileFormPageViewComponent } from './user-profile/components';
 import { UserPersonalCabinetFormEditorPageViewComponent } from './user-personal-cabinet/components';
 
@@ -10,7 +10,7 @@ export const userRoutes: Routes = [
     },
     {
         path: 'indicators',
-        component: IndicatorsCardsPageViewComponent
+        component: UserIndicatorsCardsPageViewComponent
     },
     {
         path: 'profile',

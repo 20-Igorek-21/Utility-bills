@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { userSharedServices } from './services';
+import {userIndicatorsDirectives} from "./directives";
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        ...userIndicatorsDirectives
+    ],
+    exports: [
+        ...userIndicatorsDirectives
+    ],
     imports: [
         CommonModule
     ],

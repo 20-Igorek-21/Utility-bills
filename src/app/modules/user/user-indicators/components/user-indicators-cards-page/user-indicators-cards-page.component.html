@@ -28,16 +28,21 @@
   </div>
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
-    <app-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
-                          formControlName="gasIndicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
-                          formControlName="indicators"></app-indicators-cards>
-    <app-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
-                          formControlName="indicators"></app-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
+                               [itemIcon] = "'gas-icon'"
+                          formControlName="gasIndicator"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
+                               [itemIcon] = "'light-icon'"
+                          formControlName="energyIndicator"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
+                               [itemIcon] = "'term-icon'"
+                          formControlName="tecIndicator"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
+                               [itemIcon] = "'water-icon'"
+                          formControlName="waterIndicator"></app-user-indicators-cards>
+    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
+                               [itemIcon] = "'term-icon'"
+                          formControlName="heatIndicator"></app-user-indicators-cards>
     <button (click)="onSubmit()"
             class="indicators__form-btn button">
       Відправити</button>

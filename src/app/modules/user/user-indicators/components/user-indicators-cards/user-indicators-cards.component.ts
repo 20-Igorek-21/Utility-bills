@@ -2,20 +2,21 @@ import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-    selector: 'app-indicators-cards',
-    templateUrl: './indicators-cards.component.html',
-    styleUrls: ['./indicators-cards.component.css'],
+    selector: 'app-user-indicators-cards',
+    templateUrl: './user-indicators-cards.component.html',
+    styleUrls: ['./user-indicators-cards.component.css'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef( () => IndicatorsCardsComponent),
+            useExisting: forwardRef( () => UserIndicatorsCardsComponent),
             multi: true
         }
     ]
 })
-export class IndicatorsCardsComponent implements ControlValueAccessor {
+export class UserIndicatorsCardsComponent implements ControlValueAccessor {
     @Input() value = '';
     @Input() title = '';
+    @Input() itemIcon = '';
 
     constructor() { }
 
