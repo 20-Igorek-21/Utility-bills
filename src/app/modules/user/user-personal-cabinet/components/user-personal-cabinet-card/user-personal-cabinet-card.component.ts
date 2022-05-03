@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 import { Subscription } from 'rxjs';
@@ -16,19 +16,13 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
     @Output() deleteCard = new EventEmitter;
     @Output() changeCard = new EventEmitter
     @Output() changeMessageTrue = new EventEmitter
-    @Output() changeMessageFalse = new EventEmitter
-    constructor( private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
+
+
+    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnInit() {
         if (this.card.id) {
-            localStorage.setItem('card',this.card.id)
-            this.changeMessageTrue.emit(true)
-        }
-
-        else {
-            console.log('not')
-            localStorage.removeItem('card')
-            this.changeMessageFalse.emit(false)
+            localStorage.setItem('card',this.card.id);
         }
     }
 
@@ -37,7 +31,7 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
     }
 
     public onEditCard(id: string): void {
-        this.changeCard.emit()
+        this.changeCard.emit();
     }
 
     public onDeleteCard(id: string) {

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
-import {finalize, Subscription} from 'rxjs';
+import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
 @Component({
@@ -20,21 +20,11 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     @Output() isUnLockEditorForm = new EventEmitter()
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
-        this.fetchData()
+        this.fetchData();
     }
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
-    }
-
-    changeMessageFalse(value: boolean) {
-        this.massageText = value
-        console.log(this.massageText)
-    }
-
-    changeMessageTrue(value: boolean) {
-        this.massageText = value
-        console.log(this.massageText)
     }
 
     fetchData(): void {
@@ -43,11 +33,18 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
                 this.isLoader = false;
             }))
             .subscribe( (data: IUserAccount[]) => {
-                console.log(data)
                 this.cards = data
+                if (this.cards.length === 0) {
+                    localStorage.removeItem('card');
+                    this.massageText = false;
+                }
+                else {
+                    this.massageText = true;
+                }
+
             },
             error => {
-                console.log(error)
+                console.log(error);
             }))
 
     }
