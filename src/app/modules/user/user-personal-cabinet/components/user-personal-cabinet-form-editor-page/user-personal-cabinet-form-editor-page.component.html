@@ -21,6 +21,8 @@
 
   <section class="content-page__section-cards">
     <app-user-personal-cabinet-card *ngFor="let card of cards"
+                                    (changeMessageTrue)="changeMessageTrue($event)"
+                                    (changeMessageFalse)="changeMessageFalse($event)"
                                     [card]="card"
                                     (deleteCard)="fetchData()"></app-user-personal-cabinet-card>
   </section>
