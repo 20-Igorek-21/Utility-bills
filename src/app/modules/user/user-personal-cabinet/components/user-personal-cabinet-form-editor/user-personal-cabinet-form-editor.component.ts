@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 import { Router } from '@angular/router';
