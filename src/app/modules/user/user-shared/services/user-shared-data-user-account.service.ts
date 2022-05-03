@@ -24,7 +24,8 @@ export class UserSharedDataUserAccountService {
         vodokanalProviderValue: IUserAccountProvider,
         oblenergoProviderValue: IUserAccountProvider
     ): Observable<object> {
-        return this.http.post<IUserAccountAddress>( environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd', {
+        return this.http.post<IUserAccountAddress>( environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd',
+            {
             account: {
                 fullName: credentialsValue.fullName,
                 phone: credentialsValue.phone
