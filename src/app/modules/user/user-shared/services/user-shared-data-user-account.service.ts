@@ -106,7 +106,7 @@ export class UserSharedDataUserAccountService {
             .pipe( map( (res: IUserAccountAddress) => res ))
     }
 
-    fetshAccount(): Observable<IUserAccount[]> {
+    fetchAccount(): Observable<IUserAccount[]> {
         return this.http.get<IUserAccount[]>(environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd')
             .pipe( map((res:IUserAccount[]) => res));
     }

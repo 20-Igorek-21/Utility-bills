@@ -1,8 +1,13 @@
 import {Component, OnDestroy} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
-import {UserSharedDataUserProvidersService} from "../../../user-shared/services";
+import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from "../../../user-shared/services";
 import {Subscription} from "rxjs";
+import {
+    IUserAccount,
+    IUserAccountAddress,
+    IUserAccountProvider
+} from "../../../user-shared/types/user-shared-account.interface";
 
 
 @Component({
@@ -12,12 +17,39 @@ import {Subscription} from "rxjs";
 })
 export class UserIndicatorsCardsPageComponent implements OnDestroy {
     private subscription: Subscription = new Subscription()
+    public userDate: IUserAccount[] = [];
     constructor(
-        private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {}
+        private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService,
+        private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
+        this.fetchDataUser();
+        // this.providerData();
+    }
 
     ngOnDestroy() {
         this.subscription.unsubscribe()
     }
+
+    fetchDataUser(): void {
+        this.subscription.add(this.userSharedDataAccountService.fetchAccount()
+            .subscribe( (data: IUserAccount[]) => {
+                    this.userDate = data;
+                    // console.log(this.userDate)
+                },
+                error => {
+                    console.log(error)
+                }))
+    }
+
+    providerData(): void {
+        this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders()
+            .subscribe( (data: IUserAccountProvider[]) => {
+                    console.log(data)
+                },
+                error => {
+                    console.log(error)
+                }))
+    }
+
     indicatorsForm: FormGroup = new FormGroup({
         gasIndicator: new FormControl<string>(),
         energyIndicator: new FormControl<string>(),
