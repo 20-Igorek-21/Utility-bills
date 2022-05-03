@@ -13,9 +13,8 @@ export class UserSharedDataUserProvidersService {
     constructor(private readonly http: HttpClient) {}
 
     sendIndicators(indicators: IProvider, id: string): Observable<object> {
-
-        return this.http.post<IIndicators>(environment.apiUrlProviders + id, {
-            provider: [
+        return this.http.post<IIndicators>(environment.apiUrlProviders + id,
+             [
                 {
                     provider: 'd6bec95b-1345-44a0-9d85-64a038382005',
                     value: indicators.gasIndicator
@@ -31,13 +30,9 @@ export class UserSharedDataUserProvidersService {
                 {
                     provider: 'c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b',
                     value: indicators.waterIndicator
-                },
-                // {
-                //     provider: indicators.provider,
-                //     value: indicators.value
-                // },
+                }
             ]
-        })
+        )
             .pipe( map((res: IIndicators) => res));
     }
 
