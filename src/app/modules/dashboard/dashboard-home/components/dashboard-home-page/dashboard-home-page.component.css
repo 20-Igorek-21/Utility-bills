@@ -60,6 +60,7 @@
   font-size: calc(15px + (7 + 7 * 0.7) * ((100vw - 320px) / 1280));
   text-align: justify;
   line-height: 28px;
+  text-indent: 35px
 }
 
 
@@ -74,9 +75,9 @@
   width: 100%;
 }
 
-.companies__section {
-  border-top: solid 1px rgba(114, 114, 114, 0.59);
-}
+/*.companies__section {*/
+/*  border-top: solid 1px rgba(114, 114, 114, 0.59);*/
+/*}*/
 
 .companies-wrapper {
   display: flex;

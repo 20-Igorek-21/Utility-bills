@@ -3,6 +3,7 @@ import {environment} from "../../../../../environments/environment";
 import {map, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {IIndicators, IProvider} from "../types/user-shared-provider.interface";
+import {IUserAccountProvider} from "../types/user-shared-account.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class UserSharedDataUserProvidersService {
                     value: indicators.energyIndicator
                 },
                 {
-                    provider: '2f0906c2-9ffe-4327-9015-de9a483dcbeb  ',
+                    provider: '2f0906c2-9ffe-4327-9015-de9a483dcbeb',
                     value: indicators.tecIndicator
                 },
                 {
@@ -38,5 +39,10 @@ export class UserSharedDataUserProvidersService {
             ]
         })
             .pipe( map((res: IIndicators) => res));
+    }
+
+    fetchProviders(): Observable<IUserAccountProvider[]> {
+        return this.http.get<IUserAccountProvider[]>(environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd')
+            .pipe( map((res:IUserAccountProvider[]) => res));
     }
 }

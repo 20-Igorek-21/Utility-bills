@@ -38,7 +38,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     }
 
     fetchData(): void {
-        this.subscription.add(this.userSharedDataAccountService.fetshAccount()
+        this.subscription.add(this.userSharedDataAccountService.fetchAccount()
             .pipe( finalize( () => {
                 this.isLoader = false;
             }))
