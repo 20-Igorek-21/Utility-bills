@@ -15,6 +15,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     public isLoader = true;
     public cards: IUserAccount []= []
     private subscription: Subscription = new Subscription()
+
     @Output() isLockEditorForm = new EventEmitter()
     @Output() isUnLockEditorForm = new EventEmitter()
 
@@ -24,6 +25,16 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
+    }
+
+    changeMessageFalse(value: boolean) {
+        this.massageText = value
+        console.log(this.massageText)
+    }
+
+    changeMessageTrue(value: boolean) {
+        this.massageText = value
+        console.log(this.massageText)
     }
 
     fetchData(): void {
@@ -38,6 +49,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
             error => {
                 console.log(error)
             }))
+
     }
 
     public onShowEditorForm(): void {
