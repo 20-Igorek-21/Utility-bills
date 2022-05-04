@@ -9,6 +9,28 @@ import { FormControl } from '@ngneat/reactive-forms';
 })
 export class UserPersonalCabinetFormProvidersComponent {
 
+    isShowGas = false;
+    isShowOblenergo = false;
+    isShowKhimvolokno = false;
+    isShowVodokanal = false;
+
+
+    changeStatusGas() {
+        this.isShowGas = !this.isShowGas;
+    }
+
+    changeStatusOblenergo() {
+        this.isShowOblenergo =!this.isShowOblenergo;
+    }
+
+    changeStatusKhimvolokno() {
+        this.isShowKhimvolokno = !this.isShowKhimvolokno;
+    }
+    changeStatusVodokanal() {
+        this.isShowVodokanal = !this.isShowVodokanal;
+    }
+
+
     gasProviderForm: FormGroup = new FormGroup({
         number: new FormControl<number | null>(null, Validators.minLength(7)),
         id: new FormControl<string>('d6bec95b-1345-44a0-9d85-64a038382005'),

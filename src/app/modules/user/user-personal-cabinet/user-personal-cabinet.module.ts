@@ -9,7 +9,9 @@ import { LayoutPageModule } from '../../core/layout/layout-page/layout-page.modu
 import { RouterModule } from '@angular/router';
 import { LayoutFooterModule } from '../../core/layout/layout-footer/layout-footer.module';
 import { userPersonalCabinetComponents } from './components';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -25,6 +27,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
         RouterModule,
         LayoutFooterModule,
         MatProgressSpinnerModule,
+        MatCheckboxModule,
+        MatRadioModule,
     ],
     providers: []
 })

@@ -2,8 +2,9 @@
 
   <app-user-personal-cabinet-form-editor (isCloseEditorForm)="isCloseEditorForm()"
                                     appToggleButton
+                                    [showEditorForm]="isShowEditorForm"
                                     (fetchData)="fetchData()"
-                                    [showEditorForm]="isShowEditorForm"></app-user-personal-cabinet-form-editor>
+                                  ></app-user-personal-cabinet-form-editor>
 
   <div class="content-page__block-add-address">
     <p class="content-page__message-text">Щоб прив'язати адреси квартири або будинку до облікового запису, скористайтесь:</p>
