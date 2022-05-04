@@ -1,8 +1,38 @@
-.app-personal-cabinet-form-providers-button {
-  width: 90px;
-  margin: 0 10px 10px 0;
+.user-indicators-form-providers {
+
+
 }
 
-.app-personal-cabinet-form-providers-button:hover {
-  opacity: .8;
+.user-indicators-form-providers__container {
+  max-height: 120px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #afacac;
+  border-radius: 7px;
+}
+
+.user-indicators-form-providers__container--height {
+  max-height: 150px;
+}
+
+.user-indicators-form-providers__label-provider {
+  display: flex;
+  align-items: center;
+}
+
+.user-indicators-form-providers__checkbox-provider {
+  margin-left: 5px;
+}
+
+.user-indicators-form-providers__title-provider {
+  margin: 0 0 0 15px;
+  padding-top: 4px;
+}
+
+.user-indicators-form-providers__radio-button {
+  margin: 5px 15px;
+}
+
+.user-indicators-form-providers__input-provider {
+  margin-top: 5px;
 }
