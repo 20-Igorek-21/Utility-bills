@@ -20,15 +20,9 @@
   margin: 0;
 }
 
-.indicators__field-label {
-  font-size: 13px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .indicators__field-input {
-  max-width: 70px;
+  width: 100%;
   height: 30px;
   padding: 5px 10px;
   border-radius: 7px;
@@ -53,16 +47,11 @@
   }
 
   .indicators__inform-title {
-    font-size: 20px;
-  }
-
-  .indicators__field-label {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .indicators__field-input {
-    font-size: 18px;
-
+    margin-top: 5px;
   }
 }
 @media (min-width:600px)  {
@@ -73,11 +62,100 @@
     justify-content: space-between;
   }
 
-  .label {
-    display: none;
+  .indicators__inform-title {
+    font-size: 20px;
   }
-
   .indicators__inform-icon {
     margin-right: 20px;
   }
+
+  .indicators__field-input {
+    max-width: 80px;
+    margin-top: 0;
+  }
 }
+
+
+/*.indicators__item {*/
+/*  margin-bottom: 10px;*/
+/*}*/
+
+/*.indicators__inform {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: left;*/
+/*}*/
+
+/*.indicators__inform-icon {*/
+/*  margin-right: 5px;*/
+/*  width: 23px;*/
+/*  height: 23px;*/
+/*}*/
+
+/*.indicators__inform-title {*/
+/*  font-size: 15px;*/
+/*  font-weight: 500;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.indicators__field-label {*/
+/*  font-size: 13px;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.indicators__field-input {*/
+/*  max-width: 70px;*/
+/*  height: 30px;*/
+/*  padding: 5px 10px;*/
+/*  border-radius: 7px;*/
+/*  outline: none;*/
+/*  font-size: 14px;*/
+/*  font-weight: 400;*/
+/*  color: #212529;*/
+/*  background-color: #fff;*/
+/*  border: none;*/
+/*  border-bottom: 1px solid #bdbdbd;*/
+/*}*/
+
+/*.indicators__field-input::placeholder {*/
+/*  color: #212529;*/
+/*  opacity: 0.4;*/
+/*}*/
+
+/*@media (min-width: 420px) {*/
+/*  .indicators__inform-icon {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*  }*/
+
+/*  .indicators__inform-title {*/
+/*    font-size: 20px;*/
+/*  }*/
+
+/*  .indicators__field-label {*/
+/*    font-size: 16px;*/
+/*  }*/
+
+/*  .indicators__field-input {*/
+/*    font-size: 18px;*/
+
+/*  }*/
+/*}*/
+/*@media (min-width:600px)  {*/
+
+/*  .indicators__item {*/
+/*    display: flex;*/
+/*    margin-bottom: 20px;*/
+/*    justify-content: space-between;*/
+/*  }*/
+
+/*  .label {*/
+/*    display: none;*/
+/*  }*/
+
+/*  .indicators__inform-icon {*/
+/*    margin-right: 20px;*/
+/*  }*/
+/*}*/
