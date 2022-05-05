@@ -1,67 +1,59 @@
-<mat-stepper orientation="vertical">
+<form class="user-indicators-form-providers">
 
-  <mat-step [stepControl]="gasProviderForm">
-    <form [formGroup]="gasProviderForm">
-      <ng-template matStepLabel>Черкаси газ</ng-template>
+  <div class="user-indicators-form-providers__container">
+    <label class="user-indicators-form-providers__label-provider">
+      <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusGas()" color="primary" ></mat-checkbox>
+      <h3 class="user-indicators-form-providers__title-provider">Черкаси газ</h3>
+    </label>
+    <div class="user-indicators-form-providers__input-provider" *ngIf="isShowGas">
       <app-input-field [label]="'Номер особового рахунку'"
-                       [type]="'text'"
+                       [type]="'number'"
                        formControlName="number">
-        <app-message-errors class="app-auth-form__message-errors"
-                            [controlsName]="controls.number"></app-message-errors>
       </app-input-field>
-      <div>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button matStepperNext>Далі</button>
-      </div>
-    </form>
-  </mat-step>
+    </div>
+  </div>
 
-  <mat-step [stepControl]="oblenergoProviderForm">
-    <form [formGroup]="oblenergoProviderForm">
-      <ng-template matStepLabel>Черкаси обленерго</ng-template>
+  <div class="user-indicators-form-providers__container">
+    <label class="user-indicators-form-providers__label-provider">
+      <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusOblenergo()" color="primary" ></mat-checkbox>
+      <h3 class="user-indicators-form-providers__title-provider">Черкаси обленерго</h3>
+    </label>
+    <div class="user-indicators-form-providers__input-provider" *ngIf="isShowOblenergo">
       <app-input-field [label]="'Номер особового рахунку'"
-                       [type]="'text'"
-                       formControlName="number"></app-input-field>
-      <div>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button
-                matStepperPrevious>Назад</button>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button
-                matStepperNext>Далі</button>
-      </div>
-    </form>
-  </mat-step>
+                       [type]="'number'"
+                       formControlName="number">
+      </app-input-field>
+    </div>
+  </div>
 
-  <mat-step>
-    <form [formGroup]="khimvoloknoProviderForm">
-      <ng-template matStepLabel>Черкаcьке хімволокно</ng-template>
+  <div class="user-indicators-form-providers__container user-indicators-form-providers__container--height">
+    <label class="user-indicators-form-providers__label-provider">
+      <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusKhimvolokno()" color="primary" ></mat-checkbox>
+      <h3 class="user-indicators-form-providers__title-provider">Черкаcьке хімволокно</h3>
+    </label>
+
+    <div class="user-indicators-form-providers__input-provider" *ngIf="isShowKhimvolokno">
+      <mat-radio-button class="user-indicators-form-providers__radio-button" value="Ванна" checked="true">Ванна</mat-radio-button>
+      <mat-radio-button class="user-indicators-form-providers__radio-button" value="Кухня">Кухня</mat-radio-button>
+
       <app-input-field [label]="'Номер особового рахунку'"
-                       [type]="'text'"
-                       formControlName="number"></app-input-field>
-      <div>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button
-                matStepperPrevious>Назад</button>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button
-                matStepperNext>Далі</button>
-      </div>
-    </form>
+                       [type]="'number'"
+                       formControlName="number">
+      </app-input-field>
+    </div>
+  </div>
 
-  </mat-step>
-  <mat-step>
-    <form [formGroup]="vodokanalProviderForm">
-      <ng-template matStepLabel>Черкаси водоканал</ng-template>
+  <div class="user-indicators-form-providers__container">
+    <label class="user-indicators-form-providers__label-provider">
+      <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusVodokanal()" color="primary" ></mat-checkbox>
+      <h3 class="user-indicators-form-providers__title-provider">Черкаси водоканал</h3>
+    </label>
+    <div class="user-indicators-form-providers__input-provider" *ngIf="isShowVodokanal">
       <app-input-field [label]="'Номер особового рахунку'"
-                       [type]="'text'"
-                       formControlName="number"></app-input-field>
-      <div>
-        <button class="app-personal-cabinet-form-providers-button"
-                mat-raised-button
-                matStepperPrevious>Назад</button>
-      </div>
-    </form>
-  </mat-step>
+                       [type]="'number'"
+                       formControlName="number">
+      </app-input-field>
+    </div>
+  </div>
 
-</mat-stepper>
+</form>
