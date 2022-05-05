@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
 
+    public flat?: number | null;
     subscription: Subscription = new Subscription()
 
     @Input() card!: IUserAccount;
@@ -23,6 +24,12 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
     ngOnInit() {
         if (this.card.id) {
             localStorage.setItem('card',this.card.id);
+        }
+
+        if (this.card.address.flat === null) {
+            this.flat = null
+        } else {
+            this.flat = this.card.address.flat
         }
     }
 

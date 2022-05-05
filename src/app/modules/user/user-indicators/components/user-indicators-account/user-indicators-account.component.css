@@ -1,0 +1,74 @@
+.user-indicators-account {
+
+  width: 100px;
+  margin-top: 10px;
+}
+
+.user-indicators-account__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.user-indicators-account__button--account {
+  height: 80px;
+  flex-direction: column;
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(141, 180, 241);
+  border-radius: 10px;
+}
+
+.user-indicators-account__icon {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ffffff;
+  background-color: #157AFF;
+  border-radius: 50%;
+}
+
+.user-indicators-account__text {
+  font-size: 14px;
+  margin: 0;
+}
+
+
+
+.user-indicators-account__button--expand {
+  width: 100%;
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #0dd51f;
+  color: var(--color-white);
+
+}
+
+.user-indicators-account__icon-expand {
+  width: 30px;
+  height: 22px;
+}
+
+.user-indicators-account__setting {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 7px;
+}
+
+.user-indicators-account__button--setting {
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+}
+
+.user-indicators-account__button--setting:hover {
+  transform: scale(1.2);
+}
+
+.user-indicators-account__button--account:hover {
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(8, 100, 220);
+}
