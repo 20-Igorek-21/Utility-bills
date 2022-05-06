@@ -12,8 +12,9 @@ import {UserSharedModule} from '../user-shared/user-shared.module';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatIconModule} from "@angular/material/icon";
-import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
         MatStepperModule,
         MatIconModule,
         MatSnackBarModule,
+        MatProgressSpinnerModule,
     ]
 })
 export class UserIndicatorsModule { }

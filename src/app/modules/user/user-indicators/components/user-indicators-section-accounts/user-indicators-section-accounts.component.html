@@ -1,3 +1,19 @@
-<section class="user-indicators-section-accounts" >
-  <app-user-indicators-account *ngFor="let card of cards" [card]="card"></app-user-indicators-account>
+<section class="user-indicators-section-accounts">
+
+  <app-user-indicators-account *ngFor="let card of cards"
+                               [card]="card"
+                               (deleteAccount)="fetchData()"
+                               (editAccount)="onEditAccount($event)"></app-user-indicators-account>
+
+  <button class="button user-indicators-section-accounts__button"
+          (click)="onShowFormAccount()">
+    <mat-icon>add</mat-icon>
+  </button>
+
 </section>
+<hr>
+
+<app-user-indicators-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
+                                      appToggleButton
+                                      (fetchData)="fetchData()"
+                                      [showFormAccount]="isShowFormAccount"></app-user-indicators-form-add-account>

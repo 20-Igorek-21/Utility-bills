@@ -28,7 +28,8 @@ export class UserPersonalCabinetFormEditorComponent implements OnDestroy {
 
     constructor(
         private readonly userSharedDataAccountService: UserSharedDataUserAccountService,
-        private readonly router: Router) {}
+        private readonly router: Router) {
+    }
 
     ngOnDestroy() {
         this.subscription.unsubscribe()
@@ -42,30 +43,31 @@ export class UserPersonalCabinetFormEditorComponent implements OnDestroy {
 
     resetForm(): void {
         this.isCloseEditorForm.emit();
-        this.formCredentials.credentialsForm.reset();
-        this.formAddress.addressForm.reset();
-        this.formProviders.gasProviderForm.reset();
-        this.formProviders.khimvoloknoProviderForm.reset();
-        this.formProviders.vodokanalProviderForm.reset();
-        this.formProviders.oblenergoProviderForm.reset();
+        // this.formCredentials.credentialsForm.reset();
+        // this.formAddress.addressForm.reset();
+        // this.formProviders.gasProviderForm.reset();
+        // this.formProviders.khimvoloknoProviderForm.reset();
+        // this.formProviders.vodokanalProviderForm.reset();
+        // this.formProviders.oblenergoProviderForm.reset();
     }
 
     onSubmit(): void {
-        this.subscription.add(this.userSharedDataAccountService.createAccount(
-            this.formCredentials.credentialsForm.value,
-            this.formAddress.addressForm.value,
-            this.formProviders.gasProviderForm.value,
-            this.formProviders.khimvoloknoProviderForm.value,
-            this.formProviders.vodokanalProviderForm.value,
-            this.formProviders.oblenergoProviderForm.value
-        ).subscribe( (res:object) => {
-            console.log(res)
-            this.fetchData.emit()
-        },
-        error => {
-            console.log(error)
-        }
-        ))
-        this.resetForm()
+        //     this.subscription.add(this.userSharedDataAccountService.createAccount(
+        //         this.formCredentials.credentialsForm.value,
+        //         this.formAddress.addressForm.value,
+        //         this.formProviders.gasProviderForm.value,
+        //         this.formProviders.khimvoloknoProviderForm.value,
+        //         this.formProviders.vodokanalProviderForm.value,
+        //         this.formProviders.oblenergoProviderForm.value
+        //     ).subscribe( (res:object) => {
+        //         console.log(res)
+        //         this.fetchData.emit()
+        //     },
+        //     error => {
+        //         console.log(error)
+        //     }
+        //     ))
+        //     this.resetForm()
+        // }
     }
 }

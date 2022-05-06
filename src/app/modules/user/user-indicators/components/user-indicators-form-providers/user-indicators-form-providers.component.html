@@ -1,14 +1,14 @@
-<form class="user-indicators-form-providers">
+<form class="user-indicators-form-providers" [formGroup]="providersForm">
 
   <div class="user-indicators-form-providers__container">
     <label class="user-indicators-form-providers__label-provider">
       <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusGas()" color="primary" ></mat-checkbox>
-      <h3 class="user-indicators-form-providers__title-provider">Черкаси газ</h3>
+      <h3 class="user-indicators-form-providers__title-provider">ЧЕРКАСИГАЗ</h3>
     </label>
     <div class="user-indicators-form-providers__input-provider" *ngIf="isShowGas">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
-                       formControlName="number">
+                       formControlName="gasNumber">
       </app-input-field>
     </div>
   </div>
@@ -16,11 +16,11 @@
   <div class="user-indicators-form-providers__container">
     <label class="user-indicators-form-providers__label-provider">
       <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusOblenergo()" color="primary" ></mat-checkbox>
-      <h3 class="user-indicators-form-providers__title-provider">Черкаси обленерго</h3>
+      <h3 class="user-indicators-form-providers__title-provider">ЧЕРКАСИОБЛЕНЕРГО</h3>
     </label>
     <div class="user-indicators-form-providers__input-provider" *ngIf="isShowOblenergo">
       <app-input-field [label]="'Номер особового рахунку'"
-                       [type]="'number'"
+                       [type]="'oblenergoNumber'"
                        formControlName="number">
       </app-input-field>
     </div>
@@ -29,7 +29,7 @@
   <div class="user-indicators-form-providers__container user-indicators-form-providers__container--height">
     <label class="user-indicators-form-providers__label-provider">
       <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusKhimvolokno()" color="primary" ></mat-checkbox>
-      <h3 class="user-indicators-form-providers__title-provider">Черкаcьке хімволокно</h3>
+      <h3 class="user-indicators-form-providers__title-provider">ЧЕРКАСЬКЕ ХІМВОЛОКНО</h3>
     </label>
 
     <div class="user-indicators-form-providers__input-provider" *ngIf="isShowKhimvolokno">
@@ -38,7 +38,7 @@
 
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
-                       formControlName="number">
+                       formControlName="khimvoloknoNumber">
       </app-input-field>
     </div>
   </div>
@@ -46,12 +46,12 @@
   <div class="user-indicators-form-providers__container">
     <label class="user-indicators-form-providers__label-provider">
       <mat-checkbox class="user-indicators-form-providers__checkbox-provider" (change)="changeStatusVodokanal()" color="primary" ></mat-checkbox>
-      <h3 class="user-indicators-form-providers__title-provider">Черкаси водоканал</h3>
+      <h3 class="user-indicators-form-providers__title-provider">ЧЕРКАСИВОДОКАНАЛ</h3>
     </label>
     <div class="user-indicators-form-providers__input-provider" *ngIf="isShowVodokanal">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
-                       formControlName="number">
+                       formControlName="vodokanalNumber">
       </app-input-field>
     </div>
   </div>

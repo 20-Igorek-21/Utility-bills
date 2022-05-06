@@ -1,8 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
-import {FormGroup} from "@angular/forms";
-import {FormControl} from "@ngneat/reactive-forms";
-import {UserSharedDataUserProvidersService} from "../../../user-shared/services";
-import {Subscription} from "rxjs";
+import {FormGroup} from '@angular/forms';
+import {FormControl} from '@ngneat/reactive-forms';
+import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -11,6 +11,8 @@ import {Subscription} from "rxjs";
     styleUrls: ['./user-indicators-cards-page.component.css']
 })
 export class UserIndicatorsCardsPageComponent implements OnDestroy {
+
+    public isLoader = true;
     isProviderClose  = true;
     isAlertOpen  = false;
     isAlertOpenProgress  = false;
@@ -32,49 +34,52 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
         waterIndicator: new FormControl<string>(),
         heatIndicator: new FormControl<string>(),
     })
-     id: string = '87812366-2915-46dd-94e0-e809a4cdafca';
+     id = '87812366-2915-46dd-94e0-e809a4cdafca';
 
 
-    onSubmit(): void {
-        if(this.indicatorsForm.valid) {
-            this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
-                this.indicatorsForm.value, this.id
-            ).subscribe( (res:object) => {
-                    console.log(res)
-                    this.showNotification();
-                    this.indicatorsForm.reset();
-                },
-                error => {
-                this.error = !this.error;
-                this.massage = 'Сталася помилка!'
-                this.showNotification();
-                }
-            ))
-        }
-    }
+     onSubmit(): void {
+         if(this.indicatorsForm.valid) {
+             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
+                 this.indicatorsForm.value, this.id
+             ).subscribe( (res:object) => {
+                 console.log(res)
+                 this.showNotification();
+                 this.indicatorsForm.reset();
+             },
+             error => {
+                 this.error = !this.error;
+                 this.massage = 'Сталася помилка!'
+                 this.showNotification();
+             }
+             ))
+         }
+     }
 
-    showNotification(): void {
-        this.isAlertOpen = !this.isAlertOpen;
-        this.isAlertOpenProgress = !this.isAlertOpenProgress;
-        this.autoClose();
-    }
+     showNotification(): void {
+         this.isAlertOpen = !this.isAlertOpen;
+         this.isAlertOpenProgress = !this.isAlertOpenProgress;
+         this.autoClose();
+     }
 
-    autoClose(): void {
-        setTimeout(() => {
-            this.isAlertOpen = !this.isAlertOpen;
-        },2500);
-        setTimeout(() => {
-            this.isAlertOpenProgress = !this.isAlertOpenProgress;
-        },2800)
-    }
+     autoClose(): void {
+         setTimeout(() => {
+             this.isAlertOpen = !this.isAlertOpen;
+         },2500);
+         setTimeout(() => {
+             this.isAlertOpenProgress = !this.isAlertOpenProgress;
+         },2800)
+     }
 
-    // showNotification() {
-    //     this._snackBar.open('Показники відправлені!',  '', {
-    //         horizontalPosition: 'end',
-    //         verticalPosition: 'top',
-    //         duration: 2500,
-    //         panelClass: ["custom-style"]
-    //     });
-    // }
+     // showNotification() {
+     //     this._snackBar.open('Показники відправлені!',  '', {
+     //         horizontalPosition: 'end',
+     //         verticalPosition: 'top',
+     //         duration: 2500,
+     //         panelClass: ["custom-style"]
+     //     });
+     // }
 
+     loader(value: boolean): void {
+         this.isLoader = value;
+     }
 }

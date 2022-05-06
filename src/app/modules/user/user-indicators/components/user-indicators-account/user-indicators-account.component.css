@@ -1,7 +1,7 @@
 .user-indicators-account {
-
-  width: 100px;
-  margin-top: 10px;
+  width: 120px;
+  margin: 17px 20px 0 00px;
+  position: relative;
 }
 
 .user-indicators-account__button {
@@ -10,13 +10,12 @@
   align-items: center;
 }
 
-
 .user-indicators-account__button--account {
   height: 80px;
   flex-direction: column;
   background-color: var(--color-white);
   color: var(--color-dark-blue);
-  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(141, 180, 241);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(165, 198, 248);
   border-radius: 10px;
 }
 
@@ -36,16 +35,15 @@
   margin: 0;
 }
 
-
-
 .user-indicators-account__button--expand {
-  width: 100%;
-  height: 25px;
-  margin-top: 10px;
+  /*width: 100%;*/
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
   border-radius: 20px;
-  background-color: #0dd51f;
+  background-color: var(--color-light-blue);
   color: var(--color-white);
-
+  /*box-shadow: 0 1px 4px rgb(0 0 0 / 15%), 0 2px 16px rgb(179, 255, 172);*/
 }
 
 .user-indicators-account__icon-expand {
@@ -54,15 +52,18 @@
 }
 
 .user-indicators-account__setting {
+  position: absolute;
+  top: 92px;
+  left: 35px;
   display: flex;
   justify-content: space-around;
-  border-radius: 7px;
 }
 
 .user-indicators-account__button--setting {
   width: 35px;
   height: 35px;
-  margin-top: 10px;
+  margin-left: 10px;
+  background-color: transparent;
 }
 
 .user-indicators-account__button--setting:hover {
@@ -70,5 +71,5 @@
 }
 
 .user-indicators-account__button--account:hover {
-  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(8, 100, 220);
+  box-shadow: 0 8px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0, 110, 253);
 }
