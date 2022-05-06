@@ -1,13 +1,8 @@
 import {Component, OnDestroy} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
-import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from "../../../user-shared/services";
+import {UserSharedDataUserProvidersService} from "../../../user-shared/services";
 import {Subscription} from "rxjs";
-import {
-    IUserAccount,
-    IUserAccountAddress,
-    IUserAccountProvider
-} from "../../../user-shared/types/user-shared-account.interface";
 
 
 @Component({
@@ -16,38 +11,18 @@ import {
     styleUrls: ['./user-indicators-cards-page.component.css']
 })
 export class UserIndicatorsCardsPageComponent implements OnDestroy {
+    isProviderClose  = true;
+    isAlertOpen  = false;
+    isAlertOpenProgress  = false;
+    error  = false;
+    massage = 'Показники надіслані!';
     private subscription: Subscription = new Subscription()
-    public userDate: IUserAccount[] = [];
-    constructor(
-        private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService,
-        private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
-        this.fetchDataUser();
-        // this.providerData();
+    constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {
+
     }
 
     ngOnDestroy() {
         this.subscription.unsubscribe()
-    }
-
-    fetchDataUser(): void {
-        this.subscription.add(this.userSharedDataAccountService.fetchAccount()
-            .subscribe( (data: IUserAccount[]) => {
-                    this.userDate = data;
-                    // console.log(this.userDate)
-                },
-                error => {
-                    console.log(error)
-                }))
-    }
-
-    providerData(): void {
-        this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders()
-            .subscribe( (data: IUserAccountProvider[]) => {
-                    console.log(data)
-                },
-                error => {
-                    console.log(error)
-                }))
     }
 
     indicatorsForm: FormGroup = new FormGroup({
@@ -66,18 +41,40 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
                 this.indicatorsForm.value, this.id
             ).subscribe( (res:object) => {
                     console.log(res)
-                    alert('Показники відправлені')
+                    this.showNotification();
+                    this.indicatorsForm.reset();
                 },
                 error => {
-                    console.log(error)
+                this.error = !this.error;
+                this.massage = 'Сталася помилка!'
+                this.showNotification();
                 }
             ))
-            // this.userSharedDataUserProvidersService.sendIndicators( this.indicatorsForm.value,  this.id)
-            //     .subscribe((res) => {
-            //         console.log(res)
-            //         alert('Показники відправлені')
-            //     });
-        this.indicatorsForm.reset();
         }
     }
+
+    showNotification(): void {
+        this.isAlertOpen = !this.isAlertOpen;
+        this.isAlertOpenProgress = !this.isAlertOpenProgress;
+        this.autoClose();
+    }
+
+    autoClose(): void {
+        setTimeout(() => {
+            this.isAlertOpen = !this.isAlertOpen;
+        },2500);
+        setTimeout(() => {
+            this.isAlertOpenProgress = !this.isAlertOpenProgress;
+        },2800)
+    }
+
+    // showNotification() {
+    //     this._snackBar.open('Показники відправлені!',  '', {
+    //         horizontalPosition: 'end',
+    //         verticalPosition: 'top',
+    //         duration: 2500,
+    //         panelClass: ["custom-style"]
+    //     });
+    // }
+
 }

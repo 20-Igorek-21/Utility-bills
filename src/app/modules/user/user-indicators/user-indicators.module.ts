@@ -13,6 +13,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from "@angular/material/icon";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import {MatIconModule} from "@angular/material/icon";
         MatCheckboxModule,
         MatRadioModule,
         MatStepperModule,
-        MatIconModule
+        MatIconModule,
+        MatSnackBarModule,
     ]
 })
 export class UserIndicatorsModule { }

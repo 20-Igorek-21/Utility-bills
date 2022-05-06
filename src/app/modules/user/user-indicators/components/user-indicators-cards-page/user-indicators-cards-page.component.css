@@ -4,41 +4,87 @@
   padding: 20px;
 }
 
+.floating-alert{
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  left: 20px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  /*border-left: 6px solid #0dd51f;*/
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.active {
+  transform: translateX(0%);
+}
+
+.floating-alert__content{
+  display: flex;
+  align-items: center;
+}
+
+.floating-alert__content-text{
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+}
+
+.floating-alert__progress, .active-error{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+}
+
+.floating-alert__progress:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0dd51f;
+}
+
+.active-error:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #d50d0d;
+}
+
+.active:before{
+  animation: floating-alert__progress, active-error 2.5s linear forwards;
+}
+
+@keyframes floating-alert__progress {
+  100%{
+    right: 100%;
+  }
+}
+
+@keyframes active-error {
+  100%{
+    right: 100%;
+  }
+}
+
 .indicators-data {
   margin-bottom: 15px;
 }
 .indicators-title {
   font-size: 25px;
   font-weight: 500;
-}
-
-.divider {
-  background-color: #e5e5e5;
-}
-
-.indicators-user__data {
-  color: #333;
-  border: 0;
-}
-
-.indicators-user__content {
-  display: flex;
-  align-items: baseline;
-}
-
-.indicators-user__data-title {
-  font-size: 14px;
-  margin: 0;
-  width: 85px;
-  display: flex;
-  justify-content: left;
-  font-weight: 500;
-}
-
-.indicators-user__data-subtitle {
-  margin: 0;
-  font-weight: 400;
-  font-size: 14px;
 }
 
 .indicators__form {
@@ -81,6 +127,14 @@
   .indicators__form {
     max-width: 600px;
     padding: 20px;
+  }
 
+  .floating-alert{
+    left: 50%;
+  }
+
+  .floating-alert__content-text{
+    font-weight: 500;
+    font-size: 24px;
   }
 }
