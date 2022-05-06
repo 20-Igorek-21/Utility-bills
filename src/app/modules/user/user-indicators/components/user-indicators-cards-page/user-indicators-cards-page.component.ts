@@ -3,11 +3,8 @@ import {FormGroup} from "@angular/forms";
 import {FormControl} from "@ngneat/reactive-forms";
 import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from "../../../user-shared/services";
 import {Subscription} from "rxjs";
-import {
-    IUserAccount,
-    IUserAccountAddress,
-    IUserAccountProvider
-} from "../../../user-shared/types/user-shared-account.interface";
+import {IUserAccount} from "../../../user-shared/types/user-shared-account.interface";
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 
 
 @Component({
@@ -16,13 +13,15 @@ import {
     styleUrls: ['./user-indicators-cards-page.component.css']
 })
 export class UserIndicatorsCardsPageComponent implements OnDestroy {
+    isProviderClose: boolean = true;
+    isAlertOpen: boolean = false;
     private subscription: Subscription = new Subscription()
     public userDate: IUserAccount[] = [];
-    constructor(
+    constructor(private _snackBar: MatSnackBar,
         private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService,
         private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
         this.fetchDataUser();
-        // this.providerData();
+
     }
 
     ngOnDestroy() {
@@ -34,16 +33,6 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
             .subscribe( (data: IUserAccount[]) => {
                     this.userDate = data;
                     // console.log(this.userDate)
-                },
-                error => {
-                    console.log(error)
-                }))
-    }
-
-    providerData(): void {
-        this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders()
-            .subscribe( (data: IUserAccountProvider[]) => {
-                    console.log(data)
                 },
                 error => {
                     console.log(error)
@@ -62,22 +51,37 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
 
     onSubmit(): void {
         if(this.indicatorsForm.valid) {
-            this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
-                this.indicatorsForm.value, this.id
-            ).subscribe( (res:object) => {
-                    console.log(res)
-                    alert('Показники відправлені')
-                },
-                error => {
-                    console.log(error)
-                }
-            ))
-            // this.userSharedDataUserProvidersService.sendIndicators( this.indicatorsForm.value,  this.id)
-            //     .subscribe((res) => {
+            // this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
+            //     this.indicatorsForm.value, this.id
+            // ).subscribe( (res:object) => {
             //         console.log(res)
-            //         alert('Показники відправлені')
-            //     });
+            //         this.showNotification();
+            //     },
+            //     error => {
+            //         console.log(error)
+            //     }
+            // ))
+            this.showNotification();
         this.indicatorsForm.reset();
         }
     }
+
+    showNotification() {
+        this.isAlertOpen = true
+    }
+
+    autoClose(): void {
+        setTimeout(() => {
+            // this.hide();
+        },3000)
+    }
+
+    // showNotification() {
+    //     this._snackBar.open('Показники відправлені!',  '', {
+    //         horizontalPosition: 'end',
+    //         verticalPosition: 'top',
+    //         duration: 3000,
+    //         panelClass: ["custom-style"]
+    //     });
+    // }
 }

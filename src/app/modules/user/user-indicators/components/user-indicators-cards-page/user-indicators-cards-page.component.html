@@ -26,11 +26,24 @@
 <!--    </div>-->
 <!--    <hr class="divider">-->
 <!--  </div>-->
+  <div class="toast active"
+       *ngIf="isAlertOpen">
+    <div class="toast-content">
+      <div class="message">
+        <span class="text text-1">Показники відправлені!</span>
+      </div>
+    </div>
+    <div class="progress active"></div>
+  </div>
+
+
+
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
     <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
                                [itemIcon] = "'gas-icon'"
-                          formControlName="gasIndicator"></app-user-indicators-cards>
+                          formControlName="gasIndicator"
+                               *ngIf="isProviderClose"></app-user-indicators-cards>
     <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
                                [itemIcon] = "'light-icon'"
                           formControlName="energyIndicator"></app-user-indicators-cards>
