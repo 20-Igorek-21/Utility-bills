@@ -1,0 +1,32 @@
+<div class="user-indicators-account">
+
+  <button class="button user-indicators-account__button user-indicators-account__button--account">
+    <div class="user-indicators-account__icon">
+      <svg height="20" width="20">
+        <use href="./assets/svg/sprites.svg#house-icon"></use>
+      </svg>
+    </div>
+    <p class="user-indicators-account__text">вул.{{card.address.street}}, буд.{{card.address.house}}{{flatText}}{{card.address.flat}} </p>
+  </button>
+
+  <button class="button user-indicators-account__button user-indicators-account__button--expand"
+          (click)="onShowExpand()">
+    <svg height="35" width="35">
+      <use href="./assets/svg/sprites.svg#expand-more-icon"></use>
+    </svg>
+  </button>
+
+  <div class="user-indicators-account__setting"
+       *ngIf="!isShowExpand">
+    <button class="button user-indicators-account__button user-indicators-account__button--setting">
+      <svg height="35" width="35">
+        <use href="./assets/svg/sprites.svg#edit-icon"></use>
+      </svg>
+    </button>
+    <button class="button user-indicators-account__button user-indicators-account__button--setting">
+      <svg height="35" width="35">
+        <use href="./assets/svg/sprites.svg#delete-icon"></use>
+      </svg>
+    </button>
+  </div>
+</div>

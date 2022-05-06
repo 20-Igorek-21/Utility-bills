@@ -1,0 +1,13 @@
+<form [formGroup]="personalDataForm">
+
+  <app-input-field [label]="'Прізвище І.Б.'"
+                   [type]="'text'"
+                   [required]="true"
+                   formControlName="fullName"></app-input-field>
+
+  <app-input-field [label]="'Номер телефону'"
+                   [type]="'tel'"
+                   [required]="true"
+                   formControlName="phone"></app-input-field>
+
+</form>
