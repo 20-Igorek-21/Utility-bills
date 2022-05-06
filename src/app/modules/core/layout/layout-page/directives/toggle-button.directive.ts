@@ -13,10 +13,10 @@ export class ToggleButtonDirective {
         this.isShowBurgerMenu = value;
     }
 
-    @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowEditorForm = false;
+    @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowFormAccount = false;
 
-    @Input() set showEditorForm(value: boolean) {
-        this.isShowEditorForm = value;
+    @Input() set showFormAccount(value: boolean) {
+        this.isShowFormAccount = value;
     }
 
     @Input() set showLayoutLock(value: boolean) {

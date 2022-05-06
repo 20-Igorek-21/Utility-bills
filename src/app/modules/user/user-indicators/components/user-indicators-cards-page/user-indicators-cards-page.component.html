@@ -1,4 +1,4 @@
-<app-user-indicators-section-accounts></app-user-indicators-section-accounts>
+<app-user-indicators-section-accounts (isLoader)="loader($event)"></app-user-indicators-section-accounts>
 
 <div class="indicators">
   <div class="floating-alert"
@@ -11,7 +11,6 @@
          [ngClass]="error ? {active: isAlertOpenProgress, 'active-error': isAlertOpenProgress} : {active: isAlertOpenProgress}">
     </div>
   </div>
-
 
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
@@ -36,4 +35,3 @@
       Відправити</button>
   </form>
 </div>
-

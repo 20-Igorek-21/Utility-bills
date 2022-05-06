@@ -19,46 +19,43 @@ export class UserSharedDataUserAccountService {
     createAccount(
         credentialsValue: IUserAccountCredential,
         addressValue: IUserAccountAddress,
-        gasProviderValue: IUserAccountProvider,
-        khimvoloknoProviderValue: IUserAccountProvider,
-        vodokanalProviderValue: IUserAccountProvider,
-        oblenergoProviderValue: IUserAccountProvider
+        providersValue: any
     ): Observable<object> {
         return this.http.post<IUserAccountAddress>( environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd',
             {
-            account: {
-                fullName: credentialsValue.fullName,
-                phone: credentialsValue.phone
-            },
-            addresses: {
-                city: addressValue.city,
-                street: addressValue.street,
-                house: addressValue.house,
-                flat: addressValue.flat
-            },
-            providers: [
-                {
-                    number: gasProviderValue.number,
-                    id: gasProviderValue.id,
-                    status: gasProviderValue.status
+                account: {
+                    fullName: credentialsValue.fullName,
+                    phone: credentialsValue.phone
                 },
-                {
-                    number: khimvoloknoProviderValue.number,
-                    id: khimvoloknoProviderValue.id,
-                    status: khimvoloknoProviderValue.status
+                addresses: {
+                    city: addressValue.city,
+                    street: addressValue.street,
+                    house: addressValue.house,
+                    flat: addressValue.flat
                 },
-                {
-                    number: vodokanalProviderValue.number,
-                    id: vodokanalProviderValue.id,
-                    status: vodokanalProviderValue.status
-                },
-                {
-                    number: oblenergoProviderValue.number,
-                    id: oblenergoProviderValue.id,
-                    status: oblenergoProviderValue.status
-                }
-            ]
-        })
+                providers: [
+                // {
+                //     number: gasProviderValue.number,
+                //     id: gasProviderValue.id,
+                //     status: gasProviderValue.status
+                // },
+                // {
+                //     number: khimvoloknoProviderValue.number,
+                //     id: khimvoloknoProviderValue.id,
+                //     status: khimvoloknoProviderValue.status
+                // },
+                // {
+                //     number: vodokanalProviderValue.number,
+                //     id: vodokanalProviderValue.id,
+                //     status: vodokanalProviderValue.status
+                // },
+                // {
+                //     number: oblenergoProviderValue.number,
+                //     id: oblenergoProviderValue.id,
+                //     status: oblenergoProviderValue.status
+                // }
+                ]
+            })
             .pipe( map( (res: IUserAccountAddress) => res ))
     }
 
@@ -82,26 +79,26 @@ export class UserSharedDataUserAccountService {
                 flat: addressValue.flat
             },
             providers: [
-                {
-                    number: gasProviderValue.number,
-                    id: gasProviderValue.id,
-                    status: gasProviderValue.status
-                },
-                {
-                    number: khimvoloknoProviderValue.number,
-                    id: khimvoloknoProviderValue.id,
-                    status: khimvoloknoProviderValue.status
-                },
-                {
-                    number: vodokanalProviderValue.number,
-                    id: vodokanalProviderValue.id,
-                    status: vodokanalProviderValue.status
-                },
-                {
-                    number: oblenergoProviderValue.number,
-                    id: oblenergoProviderValue.id,
-                    status: oblenergoProviderValue.status
-                }
+                // {
+                //     number: gasProviderValue.number,
+                //     id: gasProviderValue.id,
+                //     status: gasProviderValue.status
+                // },
+                // {
+                //     number: khimvoloknoProviderValue.number,
+                //     id: khimvoloknoProviderValue.id,
+                //     status: khimvoloknoProviderValue.status
+                // },
+                // {
+                //     number: vodokanalProviderValue.number,
+                //     id: vodokanalProviderValue.id,
+                //     status: vodokanalProviderValue.status
+                // },
+                // {
+                //     number: oblenergoProviderValue.number,
+                //     id: oblenergoProviderValue.id,
+                //     status: oblenergoProviderValue.status
+                // }
             ]
         })
             .pipe( map( (res: IUserAccountAddress) => res ))

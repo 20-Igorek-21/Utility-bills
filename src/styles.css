@@ -16,13 +16,13 @@ html, body {
 }
 
 :root {
-  --color-page: #fffdfd;
+  --color-page: #FFFDFD;
   --color-light-blue: #2496ED;
   --color-dark-blue: #022044;
   --color-blue: #157AFF;
   --color-white: #FFF;
-  --color-green: #0dd51f;
-  --color-grey: #eff0f2;
+  --color-green: #0DD51F;
+  --color-grey: #EFF0F2;
 }
 
 .link {
@@ -39,7 +39,7 @@ html, body {
   font-size: 18px;
   border: none;
   cursor: pointer;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .content-row {

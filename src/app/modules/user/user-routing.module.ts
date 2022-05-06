@@ -5,12 +5,12 @@ import { UserPersonalCabinetFormEditorPageViewComponent } from './user-personal-
 
 export const userRoutes: Routes = [
     {
-        path: 'personal-cabinet',
-        component: UserPersonalCabinetFormEditorPageViewComponent
-    },
-    {
         path: 'indicators',
         component: UserIndicatorsCardsPageViewComponent
+    },
+    {
+        path: 'personal-cabinet',
+        component: UserPersonalCabinetFormEditorPageViewComponent
     },
     {
         path: 'profile',

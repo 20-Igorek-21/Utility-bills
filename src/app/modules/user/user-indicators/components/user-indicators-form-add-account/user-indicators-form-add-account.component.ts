@@ -29,7 +29,7 @@ export class UserIndicatorsFormAddAccountComponent implements OnDestroy {
     @ViewChild('formProviders')
     public formProviders!: UserIndicatorsFormProvidersComponent;
 
-    @Output() isCloseEditorForm = new EventEmitter;
+    @Output() isCloseFormAccount = new EventEmitter;
     @Output() fetchData = new EventEmitter;
 
     constructor(
@@ -47,23 +47,18 @@ export class UserIndicatorsFormAddAccountComponent implements OnDestroy {
     }
 
     resetForm(): void {
-        this.isCloseEditorForm.emit();
+        this.isCloseFormAccount.emit();
         this.formPersonalData.personalDataForm.reset();
         this.formAddress.addressForm.reset();
-        this.formProviders.gasProviderForm.reset();
-        this.formProviders.khimvoloknoProviderForm.reset();
-        this.formProviders.vodokanalProviderForm.reset();
-        this.formProviders.oblenergoProviderForm.reset();
+        this.formProviders.providersForm.reset();
+
     }
 
     onSubmit(): void {
         this.subscription.add(this.userSharedDataAccountService.createAccount(
             this.formPersonalData.personalDataForm.value,
             this.formAddress.addressForm.value,
-            this.formProviders.gasProviderForm.value,
-            this.formProviders.khimvoloknoProviderForm.value,
-            this.formProviders.vodokanalProviderForm.value,
-            this.formProviders.oblenergoProviderForm.value
+            this.formProviders.providersForm.value,
         ).subscribe( (res:object) => {
             console.log(res)
             this.fetchData.emit()

@@ -10,14 +10,13 @@ import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 })
 export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
 
-    public massageText = true;
-    public isShowEditorForm = true;
-    public isLoader = true;
+    public isShowFormAccount = true;
     public cards: IUserAccount []= []
     private subscription: Subscription = new Subscription()
 
-    @Output() isLockEditorForm = new EventEmitter()
-    @Output() isUnLockEditorForm = new EventEmitter()
+    @Output() isLockEditorForm = new EventEmitter();
+    @Output() isUnLockEditorForm = new EventEmitter();
+    @Output() isLoader = new EventEmitter();
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
         this.fetchData();
@@ -30,37 +29,32 @@ export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
     fetchData(): void {
         this.subscription.add(this.userSharedDataAccountService.fetchAccount()
             .pipe( finalize( () => {
-                this.isLoader = false;
+                this.isLoader.emit(false);
             }))
             .subscribe( (data: IUserAccount[]) => {
                 console.log(data)
                 this.cards = data
-                // if (this.cards.length === 0) {
-                //     localStorage.removeItem('card');
-                //     this.massageText = false;
-                // }
-                // else {
-                //     this.massageText = true;
-                // }
-
+                if (this.cards.length === 0) {
+                    localStorage.removeItem('card');
+                    // this.onShowFormAccount()
+                }
             },
             error => {
                 console.log(error);
             }))
-
     }
 
-    public onShowEditorForm(): void {
-        this.isShowEditorForm = false;
+    public onEditAccount(id: string): void {
+        console.log(id)
+    }
+
+    public onShowFormAccount(): void {
+        this.isShowFormAccount = false;
         this.isLockEditorForm.emit(false);
     }
 
-    public isCloseEditorForm(): void {
-        this.isShowEditorForm = true;
+    public isCloseFormAccount(): void {
+        this.isShowFormAccount = true;
         this.isUnLockEditorForm.emit(true);
     }
-
-
-
-
 }

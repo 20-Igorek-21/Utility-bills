@@ -27,20 +27,13 @@
       d="M25 1.05c-.22 0-.43.07-.62.21l-23 17.95a1 1 0 0 0-.17 1.4 1 1 0 0 0 1.4.18L4 19.7V46a1 1 0 0 0 1 1h14V29h12v18h14a1 1 0 0 0 1-1V19.71l1.38 1.08c.2.14.4.21.62.21a1 1 0 0 0 .79-.38 1 1 0 0 0-.17-1.4l-23-17.96c-.19-.14-.4-.2-.62-.2zM35 5v1.05l6 4.68V5h-6z"/>
   </symbol>
 
-  <symbol id="expand-more-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF">
-      <path d="M33.17 17.17 24 26.34l-9.17-9.17L12 20l12 12 12-12z"/>
-      <path d="M0 0h48v48H0z" fill="none"/>
+  <symbol id="expand-more-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFF">
+    <path d="m1 12 15 14 15-14-4-4-11 10L5 8z"/>
   </symbol>
 
-<!--  <symbol id="apartment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="">-->
-<!--    <g>-->
-<!--      <rect fill="none" height="24" width="24"/>-->
-<!--    </g>-->
-<!--    <g>-->
-<!--      <path-->
-<!--        d="M17,11V3H7v4H3v14h8v-4h2v4h8V11H17z M7,19H5v-2h2V19z M7,15H5v-2h2V15z M7,11H5V9h2V11z M11,15H9v-2h2V15z M11,11H9V9h2 V11z M11,7H9V5h2V7z M15,15h-2v-2h2V15z M15,11h-2V9h2V11z M15,7h-2V5h2V7z M19,19h-2v-2h2V19z M19,15h-2v-2h2V15z"/>-->
-<!--    </g>-->
-<!--  </symbol>-->
+  <symbol id="expand-few-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFF">
+      <path d="M1 20 16 6l15 14-4 4-11-10L5 24z"/>
+  </symbol>
 
 <!--  <symbol id="place-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="">-->
 <!--    <path d="M0 0h24v24H0z" fill="none"/>-->
