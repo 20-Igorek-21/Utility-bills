@@ -4,7 +4,7 @@ import {FormControl} from "@ngneat/reactive-forms";
 import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from "../../../user-shared/services";
 import {Subscription} from "rxjs";
 import {IUserAccount} from "../../../user-shared/types/user-shared-account.interface";
-import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 
 @Component({
