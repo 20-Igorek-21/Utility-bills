@@ -15,6 +15,14 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/*container*/
+
+.page__section {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 :root {
   --color-page: #FFFDFD;
   --color-light-blue: #2496ED;

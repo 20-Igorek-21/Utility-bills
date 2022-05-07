@@ -47,7 +47,7 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
                  this.indicatorsForm.reset();
              },
              error => {
-                 this.error = !this.error;
+                 this.error = true;
                  this.massage = 'Сталася помилка!'
                  this.showNotification();
              }

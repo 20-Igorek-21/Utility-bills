@@ -3,11 +3,6 @@
   height: 100%;
 }
 
-.page__section {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
 .home__main {
   width: 100%;
   padding: 60px 20px;
@@ -64,20 +59,17 @@
 }
 
 
-.transfer__img {
+.home__content-img {
   width: 100%;
   margin-top: 20px;
   border-radius: 7px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
 }
 
-.transfer__img-calendar {
+.img-calendar {
   width: 100%;
 }
 
-/*.companies__section {*/
-/*  border-top: solid 1px rgba(114, 114, 114, 0.59);*/
-/*}*/
 
 .companies-wrapper {
   display: flex;
