@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutPageHeaderNavigationDashboardComponent {
 
-    public isShowBurgerMenu = false;
-
-    public switchMenu() {
-        this.isShowBurgerMenu = !this.isShowBurgerMenu;
+    // public isShowBurgerMenu = false;
+    //
+    // public switchMenu() {
+    //     this.isShowBurgerMenu = !this.isShowBurgerMenu;
+    // }
+    isAlertOpen  = false;
+    test() {
+        this.isAlertOpen = !this.isAlertOpen;
     }
 }
