@@ -1,8 +1,9 @@
 import {Component, OnDestroy} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormControl} from '@ngneat/reactive-forms';
-import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
+import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from '../../../user-shared/services';
 import {Subscription} from 'rxjs';
+import {IUserAccount} from "../../../user-shared/types/user-shared-account.interface";
 
 
 @Component({
@@ -19,8 +20,9 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     error  = false;
     massage = 'Показники надіслані!';
     private subscription: Subscription = new Subscription()
-    constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {
-
+    constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService,
+                 private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
+        // this.getProvidersData();
     }
 
     ngOnDestroy() {
@@ -36,6 +38,23 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     })
      id = '87812366-2915-46dd-94e0-e809a4cdafca';
 
+//отримання даних про вибраних провайдерів
+    // getProvidersData(): void {
+    //     this.subscription.add(this.userSharedDataAccountService.fetchAccount()
+    //         .pipe( finalize( () => {
+    //         }))
+    //         .subscribe( (data: IUserAccount[]) => {
+    //                 console.log(data)
+    //                 this.cards = data
+    //                 if (this.cards.length === 0) {
+    //                     localStorage.removeItem('card');
+    //                     // this.onShowFormAccount()
+    //                 }
+    //             },
+    //             error => {
+    //                 console.log(error);
+    //             }))
+    // }
 
      onSubmit(): void {
          if(this.indicatorsForm.valid) {
@@ -69,15 +88,6 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
              this.isAlertOpenProgress = !this.isAlertOpenProgress;
          },2800)
      }
-
-     // showNotification() {
-     //     this._snackBar.open('Показники відправлені!',  '', {
-     //         horizontalPosition: 'end',
-     //         verticalPosition: 'top',
-     //         duration: 2500,
-     //         panelClass: ["custom-style"]
-     //     });
-     // }
 
      loader(value: boolean): void {
          this.isLoader = value;

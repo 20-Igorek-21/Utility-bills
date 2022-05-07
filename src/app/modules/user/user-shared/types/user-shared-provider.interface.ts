@@ -8,4 +8,3 @@ export interface  IIndicators {
     provider: IProvider,
     value: string
 }
-
