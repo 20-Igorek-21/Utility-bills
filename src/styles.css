@@ -165,7 +165,7 @@ html, body {
   left: 0;
   top: 70px;
   background-color: var(--color-page);
-  animation: curtain 1s;
+  animation: curtain .3s;
   z-index: 99999;
 }
 

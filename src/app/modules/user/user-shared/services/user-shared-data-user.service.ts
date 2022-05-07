@@ -21,7 +21,7 @@ export class UserSharedDataUserService {
     }
 
     fetchDataUser(): Observable<IUserAuth> {
-        return this.http.get<IUserAuth>(environment.apiUrl+ '0301314c-e771-4d60-8244-91b1655e76d9')
+        return this.http.get<IUserAuth>(environment.apiUrl)
             .pipe(map((res:IUserAuth) => res));
     }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
+import {IUserAccount, IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 import { Subscription } from 'rxjs';
 
@@ -13,7 +13,7 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
     public flat?: number | null;
     subscription: Subscription = new Subscription()
 
-    @Input() card!: IUserAccount;
+    @Input() card!: IUserAccountData;
     @Output() deleteCard = new EventEmitter;
     @Output() changeCard = new EventEmitter
     @Output() changeMessageTrue = new EventEmitter
@@ -22,15 +22,15 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnInit() {
-        if (this.card.id) {
-            localStorage.setItem('card',this.card.id);
-        }
-
-        if (this.card.address.flat === null) {
-            this.flat = null
-        } else {
-            this.flat = this.card.address.flat
-        }
+        // if (this.card.id) {
+        //     localStorage.setItem('card',this.card.id);
+        // }
+        //
+        // if (this.card.addresses?.flat === null) {
+        //     this.flat = null
+        // } else {
+        //     this.flat = this.card.addresses?.flat
+        // }
     }
 
     ngOnDestroy() {
@@ -54,6 +54,6 @@ export class UserPersonalCabinetCardComponent implements OnInit, OnDestroy {
 
     onSelect(id:string) {
         console.log(id)
-        localStorage.setItem('card',this.card.id)
+        // localStorage.setItem('card',this.card.id)
     }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
-import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
+import {IUserAccount, IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
@@ -13,7 +13,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     public massageText = true;
     public isShowEditorForm = true;
     public isLoader = true;
-    public cards: IUserAccount []= []
+    public cards: IUserAccountData []= []
     private subscription: Subscription = new Subscription()
 
     @Output() isLockEditorForm = new EventEmitter()
@@ -32,7 +32,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
             .pipe( finalize( () => {
                 this.isLoader = false;
             }))
-            .subscribe( (data: IUserAccount[]) => {
+            .subscribe( (data: IUserAccountData[]) => {
                 this.cards = data
                 if (this.cards.length === 0) {
                     localStorage.removeItem('card');

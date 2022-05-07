@@ -34,15 +34,15 @@ export class UserIndicatorsFormProvidersComponent {
     providersForm: FormGroup = new FormGroup({
         gasNumber: new FormControl<number | null>(null),
         gasId: new FormControl<string>('d6bec95b-1345-44a0-9d85-64a038382005'),
-        gasStatus: new FormControl<boolean>(true),
+        gasStatus: new FormControl<boolean>(),
         oblenergoNumber: new FormControl<number | null>(null),
         oblenergoId: new FormControl<string>('38b5c1ab-24fb-4c4c-8351-5e9dcdcc8778'),
-        oblenergoStatus: new FormControl<boolean>(true),
+        oblenergoStatus: new FormControl<boolean>(this.isShowOblenergo),
         khimvoloknoNumber: new FormControl<number | null>(null),
         khimvoloknoId: new FormControl<string>('2f0906c2-9ffe-4327-9015-de9a483dcbeb'),
-        khimvoloknoStatus: new FormControl<boolean>(true),
+        khimvoloknoStatus: new FormControl<boolean>(this.isShowKhimvolokno),
         vodokanalNumber: new FormControl<number | null>(null),
         vodokanalId: new FormControl<string>('c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b'),
-        vodokanalStatus: new FormControl<boolean>(true)
+        vodokanalStatus: new FormControl<boolean>(this.isShowVodokanal)
     })
 }

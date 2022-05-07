@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnDestroy, Output} from '@angular/core';
-import {IUserAccount} from '../../../user-shared/types/user-shared-account.interface';
+import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import {finalize, Subscription} from 'rxjs';
 import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 
@@ -11,7 +11,7 @@ import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
 
     public isShowFormAccount = true;
-    public cards: IUserAccount []= []
+    public cards: IUserAccountData []= []
     private subscription: Subscription = new Subscription()
 
     @Output() isLockEditorForm = new EventEmitter();
@@ -31,7 +31,7 @@ export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
             .pipe( finalize( () => {
                 this.isLoader.emit(false);
             }))
-            .subscribe( (data: IUserAccount[]) => {
+            .subscribe( (data: IUserAccountData[]) => {
                 console.log(data)
                 this.cards = data
                 if (this.cards.length === 0) {
