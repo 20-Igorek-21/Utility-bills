@@ -1,8 +1,8 @@
 export interface IUserAccount {
-    id: string,
-    fullName: string,
-    phone: number,
+    account: IUserAccountData,
     address: IUserAccountAddress,
+    providers?: IUserAccountProviders[]
+
 }
 
 export interface IUserAccountAddress {
@@ -12,14 +12,25 @@ export interface IUserAccountAddress {
     flat: number | null
 }
 
-export interface IUserAccountProvider {
-    id: string,
-    number: number | null,
-    status: boolean
+export interface IUserAccountProviders {
+    gasNumber: number | null,
+    gasId: string,
+    gasStatus: boolean,
+    oblenergoNumber: number | null,
+    oblenergoId: string,
+    oblenergoStatus: boolean,
+    khimvoloknoNumber:number | null,
+    khimvoloknoId: string,
+    khimvoloknoStatus: boolean,
+    vodokanalNumber:number | null,
+    vodokanalId: string,
+    vodokanalStatus: boolean
 }
 
-export interface IUserAccountCredential {
-    id?: string,
+export interface IUserAccountData {
+    id: string,
     fullName: string,
     phone: number
+    address: IUserAccountAddress,
 }
+

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import { IUserAccount } from '../../../user-shared/types/user-shared-account.interface';
+import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import {Subscription} from 'rxjs';
 import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 
@@ -15,7 +15,7 @@ export class UserIndicatorsAccountComponent implements OnInit, OnDestroy {
     public isShowExpand = true;
     public subscription: Subscription = new Subscription();
 
-    @Input() card!: IUserAccount;
+    @Input() card!: IUserAccountData;
 
     @Output() deleteAccount = new EventEmitter;
     @Output() editAccount = new EventEmitter;
@@ -28,7 +28,7 @@ export class UserIndicatorsAccountComponent implements OnInit, OnDestroy {
             localStorage.setItem('card',this.card.id);
         }
 
-        if (this.card.address.flat === null) {
+        if (this.card.address?.flat === null) {
             this.flatText = '';
         } else {
             this.flatText = ', кв.';
@@ -49,6 +49,7 @@ export class UserIndicatorsAccountComponent implements OnInit, OnDestroy {
     }
 
     public onDeleteAccount(id: string): void {
+        console.log(id)
         this.subscription.add(this.userSharedDataAccountService.deleteAccount(id)
             .subscribe( () => {
                 this.deleteAccount.emit();

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import {
     IUserAccount,
     IUserAccountAddress,
-    IUserAccountCredential,
-    IUserAccountProvider
+    IUserAccountData,
+    IUserAccountProviders
 } from '../types/user-shared-account.interface';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
@@ -17,15 +17,15 @@ export class UserSharedDataUserAccountService {
     constructor(private readonly http: HttpClient) {}
 
     createAccount(
-        credentialsValue: IUserAccountCredential,
+        personalDataValue: IUserAccountData,
         addressValue: IUserAccountAddress,
-        providersValue: any
-    ): Observable<object> {
-        return this.http.post<IUserAccountAddress>( environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd',
+        providersValue: IUserAccountProviders
+    ): Observable<IUserAccount> {
+        return this.http.post<IUserAccount>( environment.apiUrl + 'accounts/',
             {
                 account: {
-                    fullName: credentialsValue.fullName,
-                    phone: credentialsValue.phone
+                    fullName: personalDataValue.fullName,
+                    phone: personalDataValue.phone
                 },
                 addresses: {
                     city: addressValue.city,
@@ -34,43 +34,41 @@ export class UserSharedDataUserAccountService {
                     flat: addressValue.flat
                 },
                 providers: [
-                // {
-                //     number: gasProviderValue.number,
-                //     id: gasProviderValue.id,
-                //     status: gasProviderValue.status
-                // },
-                // {
-                //     number: khimvoloknoProviderValue.number,
-                //     id: khimvoloknoProviderValue.id,
-                //     status: khimvoloknoProviderValue.status
-                // },
-                // {
-                //     number: vodokanalProviderValue.number,
-                //     id: vodokanalProviderValue.id,
-                //     status: vodokanalProviderValue.status
-                // },
-                // {
-                //     number: oblenergoProviderValue.number,
-                //     id: oblenergoProviderValue.id,
-                //     status: oblenergoProviderValue.status
-                // }
+                    {
+                        number: providersValue.gasNumber,
+                        id: providersValue.gasId,
+                        status: providersValue.gasStatus
+                    },
+                    {
+                        number: providersValue.oblenergoNumber,
+                        id: providersValue.oblenergoId,
+                        status: providersValue.oblenergoStatus
+                    }
+                    ,
+                    {
+                        number: providersValue.khimvoloknoNumber,
+                        id: providersValue.khimvoloknoId,
+                        status: providersValue.khimvoloknoStatus
+                    },
+                    {
+                        number: providersValue.vodokanalNumber,
+                        id: providersValue.vodokanalId,
+                        status: providersValue.vodokanalStatus
+                    }
                 ]
             })
-            .pipe( map( (res: IUserAccountAddress) => res ))
+            .pipe( map( (res: IUserAccount) => res ))
     }
 
     changeAccount(
-        credentialsValue: IUserAccountCredential,
+        personalDataValue: IUserAccountData,
         addressValue: IUserAccountAddress,
-        gasProviderValue: IUserAccountProvider,
-        khimvoloknoProviderValue: IUserAccountProvider,
-        vodokanalProviderValue: IUserAccountProvider,
-        oblenergoProviderValue: IUserAccountProvider
-    ): Observable<object> {
-        return this.http.put<IUserAccountAddress>( environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd', {
+        providersValue: IUserAccountProviders
+    ): Observable<IUserAccount> {
+        return this.http.put<IUserAccount>( environment.apiUrl + 'accounts/', {
             account: {
-                fullName: credentialsValue.fullName,
-                phone: credentialsValue.phone
+                fullName: personalDataValue.fullName,
+                phone: personalDataValue.phone
             },
             addresses: {
                 city: addressValue.city,
@@ -79,38 +77,39 @@ export class UserSharedDataUserAccountService {
                 flat: addressValue.flat
             },
             providers: [
-                // {
-                //     number: gasProviderValue.number,
-                //     id: gasProviderValue.id,
-                //     status: gasProviderValue.status
-                // },
-                // {
-                //     number: khimvoloknoProviderValue.number,
-                //     id: khimvoloknoProviderValue.id,
-                //     status: khimvoloknoProviderValue.status
-                // },
-                // {
-                //     number: vodokanalProviderValue.number,
-                //     id: vodokanalProviderValue.id,
-                //     status: vodokanalProviderValue.status
-                // },
-                // {
-                //     number: oblenergoProviderValue.number,
-                //     id: oblenergoProviderValue.id,
-                //     status: oblenergoProviderValue.status
-                // }
+                {
+                    number: providersValue.gasNumber,
+                    id: providersValue.gasId,
+                    status: providersValue.gasStatus
+                },
+                {
+                    number: providersValue.oblenergoNumber,
+                    id: providersValue.oblenergoId,
+                    status: providersValue.oblenergoStatus
+                }
+                ,
+                {
+                    number: providersValue.khimvoloknoNumber,
+                    id: providersValue.khimvoloknoId,
+                    status: providersValue.khimvoloknoStatus
+                },
+                {
+                    number: providersValue.vodokanalNumber,
+                    id: providersValue.vodokanalId,
+                    status: providersValue.vodokanalStatus
+                }
             ]
         })
-            .pipe( map( (res: IUserAccountAddress) => res ))
+            .pipe( map( (res: IUserAccount) => res ))
     }
 
-    fetchAccount(): Observable<IUserAccount[]> {
-        return this.http.get<IUserAccount[]>(environment.apiUrlAccounts + '09923a66-8d03-477f-b8bf-f39d4d49f2cd')
-            .pipe( map((res:IUserAccount[]) => res));
+    fetchAccount(): Observable<IUserAccountData[]> {
+        return this.http.get<IUserAccountData[]>(environment.apiUrl + 'accounts/')
+            .pipe( map((res:IUserAccountData[]) => res));
     }
 
     deleteAccount(id:string): Observable<void> {
-        return this.http.delete<IUserAccountAddress>(environment.apiUrlAccounts + id)
-            .pipe( map( (res: IUserAccountAddress) => console.log(res)))
+        return this.http.delete<IUserAccount>(environment.apiUrl + 'accounts/' + id)
+            .pipe( map( (res: IUserAccount) => console.log(res)))
     }
 }

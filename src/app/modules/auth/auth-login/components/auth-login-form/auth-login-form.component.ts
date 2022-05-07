@@ -4,6 +4,8 @@ import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
+import {AuthSharedUserService} from '../../../auth-shared/services';
+
 
 @Component({
     selector: 'app-auth-login-form',
@@ -12,7 +14,7 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 })
 export class AuthLoginFormComponent  {
 
-    constructor( private router: Router ) { }
+    constructor( private router: Router, private authSharedUserService: AuthSharedUserService) { }
 
     loginForm: FormGroup = new FormGroup({
         email: new FormControl<string>('', [Validators.required, Validators.email]),
@@ -28,8 +30,15 @@ export class AuthLoginFormComponent  {
     }
 
     public onSubmit() {
-        // if(this.loginForm.invalid) {
-        this.router.navigateByUrl('user/indicators')
-        // }
+        if(!this.loginForm.invalid) {
+            this.authSharedUserService.loginUser(this.loginForm)
+                .subscribe( (r) => {
+                    console.log(r)
+                },
+                error => {
+                    this.router.navigateByUrl('user/login')
+                }   )
+            this.router.navigateByUrl('user/indicators')
+        }
     }
 }
