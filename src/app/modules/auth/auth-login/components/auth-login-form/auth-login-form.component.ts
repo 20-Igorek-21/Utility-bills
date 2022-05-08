@@ -35,12 +35,13 @@ export class AuthLoginFormComponent {
 
             }
             this.authSharedUserService.loginUser(this.loginForm)
-                .subscribe( () => {
-                    this.router.navigateByUrl('user/indicators')
+                .subscribe( (r) => {
+                    console.log(r)
                 },
                 error => {
-                    console.log( error.message())
+                    this.router.navigateByUrl('user/login')
                 }   )
+            this.router.navigateByUrl('user/indicators')
         }
     }
 }
