@@ -32,13 +32,12 @@ export class AuthLoginFormComponent  {
     public onSubmit() {
         if(!this.loginForm.invalid) {
             this.authSharedUserService.loginUser(this.loginForm)
-                .subscribe( (r) => {
-                    console.log(r)
+                .subscribe( () => {
+                    this.router.navigateByUrl('user/indicators')
                 },
                 error => {
-                    this.router.navigateByUrl('user/login')
+                    console.log( error.message())
                 }   )
-            this.router.navigateByUrl('user/indicators')
         }
     }
 }
