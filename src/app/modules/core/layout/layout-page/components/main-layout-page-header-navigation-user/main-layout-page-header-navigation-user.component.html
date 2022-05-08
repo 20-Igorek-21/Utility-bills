@@ -1,21 +1,43 @@
-<nav class="main-navigation main-navigation__users" appToggleButton [showBurgerMenu]="isShowBurgerMenu">
+<nav class=" main-navigation__users">
+  <a class="link main-layout-page-header__logo-icon" routerLink="/">
+    <svg height="20" width="20">
+      <use href="./assets/svg/sprites.svg#house-icon"></use>
+    </svg>
+  </a>
 
-  <a class="link main-navigation__link"
-     routerLink="/user/personal-cabinet"
-     routerLinkActive="main-navigation__link--active">Персональний кабінет</a>
+  <a class="link main-layout-page-header__link-icon"
+     routerLink="/user/personal-cabinet">
+    <svg height="35" width="35">
+      <use href="./assets/svg/sprites.svg#account"></use>
+    </svg>
+  </a>
 
-  <a class="link main-navigation__link"
-     routerLink="/user/profile"
-     routerLinkActive="main-navigation__link--active">Особисті дані</a>
-
-  <a class="link main-navigation__link"
-     routerLink="/user/indicators"
-     routerLinkActive="main-navigation__link--active">Введення показників</a>
-
+  <a class="link main-layout-page-header__link-icon"
+     routerLink="/user/indicators">
+    <svg height="35" width="35">
+      <use href="./assets/svg/sprites.svg#transfer"></use>
+    </svg>
+  </a>
 </nav>
 
-<button class="button main-navigation__button-menu"  (click)="switchMenu()">
-  <svg height="35" width="35">
-    <use href="./assets/svg/sprites.svg#menu-icon"></use>
-  </svg>
-</button>
+<!--<nav class="main-navigation main-navigation__users" appToggleButton [showBurgerMenu]="isShowBurgerMenu">-->
+
+<!--  <a class="link main-navigation__link"-->
+<!--     routerLink="/user/personal-cabinet"-->
+<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Персональний кабінет</a>-->
+
+<!--  <a class="link main-navigation__link"-->
+<!--     routerLink="/user/profile"-->
+<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Особисті дані</a>-->
+
+<!--  <a class="link main-navigation__link"-->
+<!--     routerLink="/user/indicators"-->
+<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Введення показників</a>-->
+
+<!--</nav>-->
+
+<!--<button class="button main-navigation__button-menu"  (click)="switchMenu()">-->
+<!--  <svg height="35" width="35">-->
+<!--    <use href="./assets/svg/sprites.svg#menu-icon"></use>-->
+<!--  </svg>-->
+<!--</button>-->

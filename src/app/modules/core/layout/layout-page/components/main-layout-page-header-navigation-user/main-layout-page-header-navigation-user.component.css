@@ -1,19 +1,16 @@
 .main-navigation__users {
+  display: flex;
   width: 100%;
+  justify-content: space-around;
 }
 
-/*@media (min-width: 768px) {*/
-
-/*  .main-navigation__users {*/
-/*    width: 550px;*/
-/*  }*/
-
-/*}*/
-
-@media (min-width: 950px) {
-
-  .main-navigation__users {
-    width: 580px;
-  }
-
+.main-layout-page-header__link-icon {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ffffff;
+  background-color: transparent;
 }
+

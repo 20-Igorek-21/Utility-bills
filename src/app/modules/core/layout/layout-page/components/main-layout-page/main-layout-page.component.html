@@ -1,6 +1,9 @@
 <div class="main-layout-page">
 
   <app-main-layout-page-header>
+    <ng-container navigationLogo>
+      <ng-content select="[navigationLogo]"></ng-content>
+    </ng-container>
     <ng-container authLink>
       <ng-content select="[authLink]"></ng-content>
     </ng-container>
