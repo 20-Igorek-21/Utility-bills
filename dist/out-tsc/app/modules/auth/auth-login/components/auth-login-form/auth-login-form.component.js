@@ -4,8 +4,9 @@ import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 let AuthLoginFormComponent = class AuthLoginFormComponent {
-    constructor(router) {
+    constructor(router, authSharedUserService) {
         this.router = router;
+        this.authSharedUserService = authSharedUserService;
         this.loginForm = new FormGroup({
             email: new FormControl('', [Validators.required, Validators.email]),
             password: new FormControl('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
@@ -19,9 +20,16 @@ let AuthLoginFormComponent = class AuthLoginFormComponent {
         };
     }
     onSubmit() {
-        // if(this.loginForm.invalid) {
-        this.router.navigateByUrl('user/personal-cabinet');
-        // }
+        if (!this.loginForm.invalid) {
+            if (this.loginForm.value.checkbox) {
+            }
+            this.authSharedUserService.loginUser(this.loginForm)
+                .subscribe(() => {
+                this.router.navigateByUrl('user/indicators');
+            }, error => {
+                console.log(error.message());
+            });
+        }
     }
 };
 AuthLoginFormComponent = __decorate([

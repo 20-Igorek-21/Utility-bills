@@ -1,0 +1,39 @@
+.user-shared-form-providers {
+
+
+}
+
+.user-shared-form-providers__container {
+  max-height: 120px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #afacac;
+  border-radius: 7px;
+}
+
+.user-shared-form-providers__container--height {
+  max-height: 150px;
+}
+
+.user-shared-form-providers__label-provider {
+  display: flex;
+  align-items: center;
+}
+
+.user-shared-form-providers__checkbox-provider {
+  margin-left: 5px;
+}
+
+.user-shared-form-providers__title-provider {
+  margin: 0 0 0 15px;
+  padding-top: 4px;
+  font-size: 14px;
+}
+
+.user-shared-form-providers__radio-button {
+  margin: 5px 15px;
+}
+
+.user-shared-form-providers__input-provider {
+  margin-top: 5px;
+}

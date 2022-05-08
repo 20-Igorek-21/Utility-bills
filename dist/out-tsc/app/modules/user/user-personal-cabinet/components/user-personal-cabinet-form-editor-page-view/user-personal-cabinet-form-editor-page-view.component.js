@@ -1,8 +1,14 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let UserPersonalCabinetFormEditorPageViewComponent = class UserPersonalCabinetFormEditorPageViewComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        this.isLock = false;
+    }
+    lock() {
+        this.isLock = true;
+    }
+    unLock() {
+        this.isLock = false;
     }
 };
 UserPersonalCabinetFormEditorPageViewComponent = __decorate([

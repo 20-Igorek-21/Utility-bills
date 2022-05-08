@@ -32,6 +32,7 @@ let AuthRegisterFormComponent = class AuthRegisterFormComponent {
                 console.log(d);
                 this.router.navigateByUrl('/auth/login');
             }, error => {
+                error.message();
                 console.log(error);
             }));
             this.registerForm.reset();

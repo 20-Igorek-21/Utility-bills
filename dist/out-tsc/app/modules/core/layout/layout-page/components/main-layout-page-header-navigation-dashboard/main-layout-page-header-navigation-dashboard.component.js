@@ -2,10 +2,15 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let MainLayoutPageHeaderNavigationDashboardComponent = class MainLayoutPageHeaderNavigationDashboardComponent {
     constructor() {
-        this.isShowBurgerMenu = false;
+        // public isShowBurgerMenu = false;
+        //
+        // public switchMenu() {
+        //     this.isShowBurgerMenu = !this.isShowBurgerMenu;
+        // }
+        this.isAlertOpen = false;
     }
-    switchMenu() {
-        this.isShowBurgerMenu = !this.isShowBurgerMenu;
+    test() {
+        this.isAlertOpen = !this.isAlertOpen;
     }
 };
 MainLayoutPageHeaderNavigationDashboardComponent = __decorate([

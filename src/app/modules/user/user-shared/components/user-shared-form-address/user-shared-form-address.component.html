@@ -1,0 +1,27 @@
+<form [formGroup]="addressForm">
+
+  <app-input-field [label]="'Місто'"
+                   [type]="'text'"
+                   [required]="true"
+                   formControlName="city">
+  </app-input-field>
+
+  <app-input-field [label]="'Вулиця'"
+                   [type]="'text'"
+                   [required]="true"
+                   formControlName="street">
+  </app-input-field>
+
+  <app-input-field [label]="'Будинок'"
+                   [type]="'text'"
+                   [required]="true"
+                   formControlName="house">
+  </app-input-field>
+
+  <app-input-field [label]="'Квартира'"
+                   [type]="'number'"
+                   [required]="false"
+                   formControlName="flat">
+  </app-input-field>
+
+</form>

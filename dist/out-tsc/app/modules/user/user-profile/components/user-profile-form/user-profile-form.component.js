@@ -18,7 +18,7 @@ let UserProfileFormComponent = class UserProfileFormComponent {
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()
             .subscribe((res) => {
-            this.user = res;
+            console.log(res);
         }));
     }
     ngOnDestroy() {
@@ -33,7 +33,7 @@ let UserProfileFormComponent = class UserProfileFormComponent {
     }
     onSubmit() {
         if (!this.profileForm.invalid) {
-            this.subscription.add(this.userSharedDataUserService.changeDataUser('1', this.profileForm)
+            this.subscription.add(this.userSharedDataUserService.changeDataUser('0301314c-e771-4d60-8244-91b1655e76d9', this.profileForm)
                 .subscribe((res) => {
                 console.log(res);
                 // this.router.navigateByUrl('auth/personal-cabinet')

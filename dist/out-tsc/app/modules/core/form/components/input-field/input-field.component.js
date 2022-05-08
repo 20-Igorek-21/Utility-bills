@@ -15,7 +15,6 @@ let InputFieldComponent = InputFieldComponent_1 = class InputFieldComponent {
     onChange(value) {
         this.value = value;
     }
-    onTouched() { }
     registerOnChange(fn) {
         this.onChange = fn;
     }

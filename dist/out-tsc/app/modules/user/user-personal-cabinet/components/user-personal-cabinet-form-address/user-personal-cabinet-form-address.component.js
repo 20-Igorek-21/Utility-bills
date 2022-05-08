@@ -1,8 +1,15 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
 let UserPersonalCabinetFormAddressComponent = class UserPersonalCabinetFormAddressComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        this.addressForm = new FormGroup({
+            city: new FormControl('', Validators.required),
+            street: new FormControl('', Validators.required),
+            house: new FormControl('', Validators.required),
+            flat: new FormControl(null)
+        });
     }
 };
 UserPersonalCabinetFormAddressComponent = __decorate([

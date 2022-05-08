@@ -36,16 +36,12 @@ export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
                 this.cards = data
                 if (this.cards.length === 0) {
                     localStorage.removeItem('card');
-                    // this.onShowFormAccount()
+                    this.onShowFormAccount()
                 }
             },
             error => {
                 console.log(error);
             }))
-    }
-
-    public onEditAccount(id: string): void {
-        console.log(id)
     }
 
     public onShowFormAccount(): void {
