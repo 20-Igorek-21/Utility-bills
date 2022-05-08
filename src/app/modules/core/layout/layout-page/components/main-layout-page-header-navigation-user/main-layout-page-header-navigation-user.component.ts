@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AuthSharedUserService} from '../../../../../auth/auth-shared/services';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-main-layout-page-header-navigation-user',
@@ -7,9 +9,12 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutPageHeaderNavigationUserComponent {
 
-    public isShowBurgerMenu = false;
+    constructor(private readonly authSharedUserService: AuthSharedUserService,
+                private router: Router) {
+    }
 
-    public switchMenu() {
-        this.isShowBurgerMenu = !this.isShowBurgerMenu;
+    public onHomePage() {
+        this.authSharedUserService.logOut();
+        this.router.navigateByUrl('/');
     }
 }

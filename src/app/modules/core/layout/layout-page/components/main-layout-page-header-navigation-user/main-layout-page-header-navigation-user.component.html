@@ -1,5 +1,5 @@
 <nav class=" main-navigation__users">
-  <a class="link main-layout-page-header__logo-icon" routerLink="/">
+  <a class="link main-layout-page-header__logo-icon" (click)="onHomePage()">
     <svg height="20" width="20">
       <use href="./assets/svg/sprites.svg#house-icon"></use>
     </svg>
@@ -19,25 +19,3 @@
     </svg>
   </a>
 </nav>
-
-<!--<nav class="main-navigation main-navigation__users" appToggleButton [showBurgerMenu]="isShowBurgerMenu">-->
-
-<!--  <a class="link main-navigation__link"-->
-<!--     routerLink="/user/personal-cabinet"-->
-<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Персональний кабінет</a>-->
-
-<!--  <a class="link main-navigation__link"-->
-<!--     routerLink="/user/profile"-->
-<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Особисті дані</a>-->
-
-<!--  <a class="link main-navigation__link"-->
-<!--     routerLink="/user/indicators"-->
-<!--     routerLinkActive="main-navigation__link&#45;&#45;active">Введення показників</a>-->
-
-<!--</nav>-->
-
-<!--<button class="button main-navigation__button-menu"  (click)="switchMenu()">-->
-<!--  <svg height="35" width="35">-->
-<!--    <use href="./assets/svg/sprites.svg#menu-icon"></use>-->
-<!--  </svg>-->
-<!--</button>-->
