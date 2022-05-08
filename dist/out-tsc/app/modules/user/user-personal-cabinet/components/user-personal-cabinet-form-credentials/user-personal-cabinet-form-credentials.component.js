@@ -1,8 +1,20 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
 let UserPersonalCabinetFormCredentialsComponent = class UserPersonalCabinetFormCredentialsComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        this.credentialsForm = new FormGroup({
+            fullName: new FormControl('', Validators.required),
+            phone: new FormControl(null, [
+                Validators.required, Validators.pattern('')
+            ])
+        });
+    }
+    get controls() {
+        return {
+            phone: this.credentialsForm.get('phone')
+        };
     }
 };
 UserPersonalCabinetFormCredentialsComponent = __decorate([

@@ -2,7 +2,6 @@ export interface IUserAccount {
     account: IUserAccountData,
     address: IUserAccountAddress,
     providers?: IUserAccountProviders[]
-
 }
 
 export interface IUserAccountAddress {
@@ -22,6 +21,7 @@ export interface IUserAccountProviders {
     khimvoloknoNumber:number | null,
     khimvoloknoId: string,
     khimvoloknoStatus: boolean,
+    khimvoloknoCounterInstalled: string,
     vodokanalNumber:number | null,
     vodokanalId: string,
     vodokanalStatus: boolean
@@ -33,4 +33,3 @@ export interface IUserAccountData {
     phone: number
     address: IUserAccountAddress,
 }
-

@@ -1,31 +1,54 @@
 <div class="content-page" *ngIf="!isLoader">
 
-  <app-user-personal-cabinet-form-editor (isCloseEditorForm)="isCloseEditorForm()"
+  <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                     appToggleButton
-                                    [showFormAccount]="isShowEditorForm"
                                     (fetchData)="fetchData()"
-                                  ></app-user-personal-cabinet-form-editor>
+                                    [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
 
-  <div class="content-page__block-add-address">
-    <p class="content-page__message-text">Щоб прив'язати адреси квартири або будинку до облікового запису, скористайтесь:</p>
-    <button class="button content-page__button-add-address"
-            mat-button
-            (click)="onShowEditorForm()">Додати адресу</button>
+  <div class="content-page__block content-page__block--account" *ngIf="!isExpandPrivateData">
+
+    <h2 class="content-page__title" >Редагувати рахунки:</h2>
+
+    <button class="button content-page__button user-indicators-account__button--expand"
+            (click)="onExpandDataAccount()">
+      <svg height="25" width="25">
+        <use [attr.href]="'./assets/svg/sprites.svg#expand-' + iconNameExpendAccount + '-icon'"></use>
+      </svg>
+    </button>
+
+    <div class="content-page__accounts" *ngIf="isExpandDataAccount">
+
+      <p class="content-page__message-text"
+         *ngIf="!massageText">Необхідно додати адресу.</p>
+
+      <app-user-personal-cabinet-account *ngFor="let card of cards"
+                                         [card]="card"
+                                         (deleteCard)="fetchData()"></app-user-personal-cabinet-account>
+
+      <button class="button content-page__button content-page__button--add-address"
+              mat-button
+              (click)="onShowEditorForm()">Додати адресу</button>
+    </div>
+
   </div>
 
-  <div class="content-page__messages">
-    <p class="content-page__message-text content-page__message-text--color-red"
-       *ngIf="!massageText" >Ви не прив'язали жодної адреси квартири або будинку до облікового запису.</p>
-    <p class="content-page__message-text"
-       *ngIf="massageText">Виберіть прив'язаний до аккаунту адрес для поточної роботи.</p>
-  </div>
+    <div class="content-page__block content-page__block--private-data" *ngIf="!isExpandDataAccount">
 
-  <section class="content-page__section-cards">
-    <app-user-personal-cabinet-card *ngFor="let card of cards"
-                                    [card]="card"
-                                    (deleteCard)="fetchData()"></app-user-personal-cabinet-card>
-  </section>
+      <h2 class="content-page__title">Редагувати персональні дані:</h2>
 
+      <button class="button content-page__button user-indicators-account__button--expand"
+              (click)="onExpandPrivateData()">
+        <svg height="25" width="25">
+          <use [attr.href]="'./assets/svg/sprites.svg#expand-' + iconNameExpendPrivateData + '-icon'"></use>
+        </svg>
+      </button>
+
+      <div class="content-page__block-private-data" *ngIf="isExpandPrivateData">
+
+        <app-user-personal-cabinet-form-privete-data></app-user-personal-cabinet-form-privete-data>
+
+      </div>
+    </div>
 </div>
 
 <mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

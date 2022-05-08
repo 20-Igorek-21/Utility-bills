@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
-import {IUserAccount, IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
+import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
@@ -10,8 +10,12 @@ import { UserSharedDataUserAccountService } from '../../../user-shared/services'
 })
 export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
 
-    public massageText = true;
-    public isShowEditorForm = true;
+    public massageText = false;
+    public isExpandDataAccount = false;
+    public isExpandPrivateData = false;
+    public iconNameExpendAccount = 'more';
+    public iconNameExpendPrivateData = 'more';
+    public isShowFormAccount = true;
     public isLoader = true;
     public cards: IUserAccountData []= []
     private subscription: Subscription = new Subscription()
@@ -34,6 +38,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
             }))
             .subscribe( (data: IUserAccountData[]) => {
                 this.cards = data
+                console.log(data)
                 if (this.cards.length === 0) {
                     localStorage.removeItem('card');
                     this.massageText = false;
@@ -50,12 +55,22 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     }
 
     public onShowEditorForm(): void {
-        this.isShowEditorForm = false;
+        this.isShowFormAccount = false;
         this.isLockEditorForm.emit(false);
     }
 
-    public isCloseEditorForm(): void {
-        this.isShowEditorForm = true;
+    public isCloseFormAccount(): void {
+        this.isShowFormAccount = true;
         this.isUnLockEditorForm.emit(true);
+    }
+
+    public onExpandDataAccount(): void {
+        this.isExpandDataAccount = !this.isExpandDataAccount;
+        this.iconNameExpendAccount = this.iconNameExpendAccount == 'more' ? 'few' : 'more';
+    }
+
+    public onExpandPrivateData(): void {
+        this.isExpandPrivateData = !this.isExpandPrivateData;
+        this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
     }
 }

@@ -1,13 +1,14 @@
 import { __decorate } from "tslib";
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
+import { AuthInterceptor } from '../interceptor/auth.interceptor';
 let AuthSharedUserService = class AuthSharedUserService {
     constructor(http) {
         this.http = http;
-        this.token = '';
     }
     registerUser(registerValue) {
-        return this.http.post(environment.apiUrl, {
+        return this.http.post(environment.apiUrl + 'register/', {
             email: registerValue.value.email,
             password: registerValue.value.password,
         });
@@ -18,16 +19,24 @@ let AuthSharedUserService = class AuthSharedUserService {
         });
     }
     loginUser(loginValue) {
-        return this.http.post(environment.apiUrl, {
-            name: loginValue.value.email,
+        return this.http.post(environment.apiUrl + 'login/', {
+            email: loginValue.value.email,
             password: loginValue.value.password
-        });
+        })
+            .pipe(tap(({ token }) => {
+            // localStorage.setItem('auth', token);
+            AuthInterceptor.accessToken = token;
+        }));
     }
-    setToken(token) {
-        this.token = token;
+    refreshToken() {
+        return this.http.get(environment.apiUrl + 'refresh/')
+            .pipe(tap(({ token }) => {
+            AuthInterceptor.accessToken = token;
+        }));
     }
-    getToken() {
-        return this.token;
+    logOut() {
+        localStorage.clear();
+        AuthInterceptor.accessToken = '';
     }
 };
 AuthSharedUserService = __decorate([

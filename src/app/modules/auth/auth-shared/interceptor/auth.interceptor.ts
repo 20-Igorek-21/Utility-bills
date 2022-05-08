@@ -25,8 +25,12 @@ export class AuthInterceptor implements HttpInterceptor {
             if (err.status === 401 && !this.refresh) {
                 this.refresh = true;
                 this.authSharedUserService.refreshToken()
-                    .subscribe( (res) => {
+                    .subscribe( ({token}) => {
                         console.log('refresh good')
+                        console.log(token)
+                    },
+                    error => {
+                        console.log(error)
                     })
                 return next.handle(request.clone({
                     headers: req.headers.set('Authorization', 'Bearer ' + AuthInterceptor.accessToken)

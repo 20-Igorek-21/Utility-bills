@@ -48,7 +48,8 @@ export class UserSharedDataUserAccountService {
                     {
                         number: providersValue.khimvoloknoNumber,
                         id: providersValue.khimvoloknoId,
-                        status: providersValue.khimvoloknoStatus
+                        status: providersValue.khimvoloknoStatus,
+                        counterInstalled: providersValue.khimvoloknoCounterInstalled
                     },
                     {
                         number: providersValue.vodokanalNumber,

@@ -1,14 +1,14 @@
-import { PersonalCabinetFormEditorPageViewComponent } from './personal-cabinet/components';
-import { IndicatorsCardsPageViewComponent } from './indicators/components';
+import { UserIndicatorsCardsPageViewComponent } from './user-indicators/components';
 import { UserProfileFormPageViewComponent } from './user-profile/components';
+import { UserPersonalCabinetFormEditorPageViewComponent } from './user-personal-cabinet/components';
 export const userRoutes = [
     {
-        path: 'personal-cabinet',
-        component: PersonalCabinetFormEditorPageViewComponent
+        path: 'indicators',
+        component: UserIndicatorsCardsPageViewComponent
     },
     {
-        path: 'indicators',
-        component: IndicatorsCardsPageViewComponent
+        path: 'personal-cabinet',
+        component: UserPersonalCabinetFormEditorPageViewComponent
     },
     {
         path: 'profile',

@@ -12,7 +12,7 @@ import {AuthSharedUserService} from '../../../auth-shared/services';
     templateUrl: './auth-login-form.component.html',
     styleUrls: ['./auth-login-form.component.css']
 })
-export class AuthLoginFormComponent  {
+export class AuthLoginFormComponent {
 
     constructor( private router: Router, private authSharedUserService: AuthSharedUserService) { }
 
@@ -31,6 +31,9 @@ export class AuthLoginFormComponent  {
 
     public onSubmit() {
         if(!this.loginForm.invalid) {
+            if (this.loginForm.value.checkbox) {
+
+            }
             this.authSharedUserService.loginUser(this.loginForm)
                 .subscribe( () => {
                     this.router.navigateByUrl('user/indicators')

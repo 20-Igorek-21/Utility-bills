@@ -12,10 +12,13 @@ import { userPersonalCabinetComponents } from './components';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {UserSharedModule} from '../user-shared/user-shared.module';
+import {AuthSharedModule} from '../../auth/auth-shared/auth-shared.module';
+
 
 @NgModule({
     declarations: [
-        ...userPersonalCabinetComponents
+        ...userPersonalCabinetComponents,
     ],
     imports: [
         CommonModule,
@@ -29,6 +32,8 @@ import {MatRadioModule} from '@angular/material/radio';
         MatProgressSpinnerModule,
         MatCheckboxModule,
         MatRadioModule,
+        UserSharedModule,
+        AuthSharedModule,
     ],
     providers: []
 })

@@ -1,50 +1,69 @@
-.content-page__block-add-address {
-  min-width: 60px;
-  padding: 15px;
-  margin: 10px 10px 40px 10px;
+.content-page {
+  width: 100%;
+  color: var(--color-dark-blue);
+}
+
+.content-page__block{
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 7px;
+  background-color: #FFF;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+}
+
+.content-page__block--account {
+  margin: 20px 0 0;
+}
+
+.content-page__block--private-data {
+  margin: 20px 0;
+}
+
+.content-page__title {
+  font-size: 24px;
+}
+
+.content-page__button {
+  border-radius: 9px;
+  color: var(--color-white);
+}
+
+.user-indicators-account__button--expand {
+  height: 40px;
+  width: 150px;
+  background-color: var(--color-light-blue);
+}
+
+.content-page__accounts {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 7px;
-  background-color: var(--color-grey);
 }
 
 .content-page__message-text {
+  width: 100%;
+  margin: 20px 0 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
-  line-height: 24px;
-  margin-right: 20px;
-  padding-top: 20px;
+  color: red;
 }
 
-.content-page__message-text--color-red {
-  color: #ff0202;
-}
-
-.content-page__messages {
-  margin: 0 10px 20px 10px;
-  padding: 15px;
-  border-radius: 7px;
-  background-color: var(--color-grey);
-}
-
-.content-page__button-add-address {
-  height: 45px;
+.content-page__button--add-address {
+  height: 50px;
+  width: 200px;
+  margin: 20px 0 0 ;
   background-color: var(--color-green);
   color: var(--color-white);
 }
 
-.content-page__section-cards {
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
+@media (min-width: 500px) {
 
-@media (min-width: 1081px) {
-
-  .content-page__block-add-address {
-    margin: 40px 10px 40px 10px;
-    flex-direction: row;
-  }
+  .content-page__block{
+    width: 350px;
+ }
 }

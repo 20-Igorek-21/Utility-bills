@@ -6,9 +6,6 @@ import { IUserAuth } from '../../../core/form/types/auth-shared-user-interface';
 import { FormGroup } from '@angular/forms';
 import { AuthInterceptor } from '../interceptor/auth.interceptor';
 
-
-
-
 @Injectable({
     providedIn: 'root'
 })
@@ -41,7 +38,7 @@ export class AuthSharedUserService {
     }
 
     public refreshToken(): Observable<{ token: string }> {
-        return this.http.get<{ token: string }>(environment.apiUrl + 'refresh')
+        return this.http.get<{ token: string }>(environment.apiUrl + 'refresh/')
             .pipe( tap( ({token}) => {
                 AuthInterceptor.accessToken = token;
             }));

@@ -1,0 +1,69 @@
+<div class="app-user-shared-form-account">
+
+  <mat-stepper class="app-user-shared-form-account__form"
+               orientation="vertical">
+
+    <mat-step [stepControl]="plugForm">
+
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Особисті дані</ng-template>
+        <app-user-shared-form-personal-data #formPersonalData></app-user-shared-form-personal-data>
+        <div>
+          <button class="app-user-shared-form-account__button" mat-raised-button
+                  matStepperNext>Далі
+          </button>
+          <button class="app-user-shared-form-account__button app-user-shared-form-account__button--close" mat-raised-button
+                  matStepperNext
+                  (click)="onCloseWindow()">Закрити
+          </button>
+        </div>
+      </form>
+
+    </mat-step>
+
+    <mat-step [stepControl]="plugForm">
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Адреса</ng-template>
+        <app-user-shared-form-address #formAddress></app-user-shared-form-address>
+        <div>
+          <button class="app-user-shared-form-account__button" mat-raised-button
+                  matStepperPrevious>Назад
+          </button>
+          <button class="app-user-shared-form-account__button"
+                  mat-raised-button
+                  matStepperNext>Далі
+          </button>
+          <button class="app-user-shared-form-account__button app-user-shared-form-account__button--close" mat-raised-button
+                  matStepperNext
+                  (click)="onCloseWindow()">Закрити
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="plugForm">
+      <form [formGroup]="plugForm">
+        <ng-template matStepLabel>Організації</ng-template>
+        <app-user-shared-form-providers #formProviders></app-user-shared-form-providers>
+        <div>
+          <div>
+            <button class="app-user-shared-form-account__button"
+                    mat-raised-button
+                    matStepperPrevious>Назад
+            </button>
+            <button class="app-user-shared-form-account__button app-user-shared-form-account__button--save"
+                    mat-raised-button
+                    matStepperNext
+                    (click)="addDataAccount()">Зберегти
+            </button>
+            <button class="app-user-shared-form-account__button app-user-shared-form-account__button--close" mat-raised-button
+                    matStepperNext
+                    (click)="onCloseWindow()">Закрити
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+
+  </mat-stepper>
+</div>
