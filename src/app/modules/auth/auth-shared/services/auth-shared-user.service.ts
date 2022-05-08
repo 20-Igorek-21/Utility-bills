@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable, tap} from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
 import { IUserAuth } from '../../../core/form/types/auth-shared-user-interface';
 import { FormGroup } from '@angular/forms';
-import {AuthInterceptor} from "../../../../auth.interceptor";
+import { AuthInterceptor } from '../interceptor/auth.interceptor';
+
+
 
 
 @Injectable({
@@ -12,9 +14,7 @@ import {AuthInterceptor} from "../../../../auth.interceptor";
 })
 export class AuthSharedUserService {
 
-    private token = '';
-
-    constructor(private readonly http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
     public registerUser(registerValue: FormGroup): Observable<IUserAuth> {
         return this.http.post<IUserAuth>(environment.apiUrl + 'register/', {
@@ -34,20 +34,21 @@ export class AuthSharedUserService {
             email: loginValue.value.email,
             password: loginValue.value.password
         })
-            .pipe( tap( (token) => {
-                console.log(token)
-
-                localStorage.setItem('auth', token.token)
-                this.setToken(token.token)
+            .pipe( tap( ({token}) => {
+                // localStorage.setItem('auth', token);
+                AuthInterceptor.accessToken = token;
             }))
     }
 
-    setToken(token: string): void {
-        this.token = token;
+    public refreshToken(): Observable<{ token: string }> {
+        return this.http.get<{ token: string }>(environment.apiUrl + 'refresh')
+            .pipe( tap( ({token}) => {
+                AuthInterceptor.accessToken = token;
+            }));
     }
 
-    getToken(): string {
-        return this.token
+    public logOut() {
+        localStorage.clear();
+        AuthInterceptor.accessToken = '';
     }
-
 }
