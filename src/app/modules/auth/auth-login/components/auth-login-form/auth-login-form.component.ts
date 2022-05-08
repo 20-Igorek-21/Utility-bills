@@ -30,16 +30,15 @@ export class AuthLoginFormComponent  {
     }
 
     public onSubmit() {
-        // if(!this.loginForm.invalid) {
-        //     this.authSharedUserService.loginUser(this.loginForm)
-        //         .subscribe( (r) => {
-        //             console.log(r)
-        //         },
-        //         error => {
-        //             this.router.navigateByUrl('user/login')
-        //         }   )
-        //     this.router.navigateByUrl('user/indicators')
-        // }
-        this.router.navigateByUrl('user/indicators')
+
+        if(!this.loginForm.invalid) {
+            this.authSharedUserService.loginUser(this.loginForm)
+                .subscribe( () => {
+                    this.router.navigateByUrl('user/indicators')
+                },
+                error => {
+                    console.log( error.message())
+                }   )
+        }
     }
 }
