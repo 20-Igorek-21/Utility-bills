@@ -1,0 +1,10 @@
+<div class="floating-alert"
+     [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
+     [ngClass]="{active: isAlertOpen}">
+  <div class="floating-alert__content">
+    <span class="floating-alert__content-text">{{massage}}</span>
+  </div>
+  <div class="floating-alert__progress"
+       [ngClass]="error ? {active: isAlertOpenProgress, 'active-error': isAlertOpenProgress} : {active: isAlertOpenProgress}">
+  </div>
+</div>

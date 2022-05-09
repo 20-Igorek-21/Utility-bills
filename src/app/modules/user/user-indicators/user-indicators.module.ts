@@ -21,6 +21,7 @@ import { UserIndicatorsSectionAccountComponent } from './components/user-indicat
     declarations: [
         ...userIndicatorsComponents,
         UserIndicatorsSectionAccountComponent,
+
     ],
     imports: [
         FormModule,

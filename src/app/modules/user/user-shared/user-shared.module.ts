@@ -9,11 +9,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
+import { UserSharedFloatingAlertComponent } from './components/user-shared-floating-alert/user-shared-floating-alert.component';
 
 @NgModule({
     declarations: [
         ...userIndicatorsDirectives,
-        ...userSharedComponents
+        ...userSharedComponents,
     ],
     exports: [
         ...userIndicatorsDirectives,
