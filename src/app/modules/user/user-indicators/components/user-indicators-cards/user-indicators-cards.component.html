@@ -1,4 +1,4 @@
-<div class="indicators__item">
+<div class="indicators__item" *ngIf="provider.status">
   <div class="indicators__inform">
     <svg class="indicators__inform-icon">
       <use [attr.xlink:href]="'/assets/svg/sprites.svg#'+ itemIcon"></use>

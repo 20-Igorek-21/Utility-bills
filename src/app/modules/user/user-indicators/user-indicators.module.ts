@@ -15,10 +15,12 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UserIndicatorsSectionAccountComponent } from './components/user-indicators-section-account/user-indicators-section-account.component';
 
 @NgModule({
     declarations: [
         ...userIndicatorsComponents,
+        UserIndicatorsSectionAccountComponent,
     ],
     imports: [
         FormModule,
