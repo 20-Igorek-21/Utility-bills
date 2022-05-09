@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, Output} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import {finalize, Subscription} from 'rxjs';
 import {UserSharedDataUserAccountService} from '../../../user-shared/services';
@@ -8,7 +8,7 @@ import {UserSharedDataUserAccountService} from '../../../user-shared/services';
     templateUrl: './user-indicators-section-accounts.component.html',
     styleUrls: ['./user-indicators-section-accounts.component.css']
 })
-export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
+export class UserIndicatorsSectionAccountsComponent implements OnInit, OnDestroy {
 
     public isShowFormAccount = true;
     public cards: IUserAccountData []= []
@@ -18,7 +18,9 @@ export class UserIndicatorsSectionAccountsComponent implements OnDestroy {
     @Output() isUnLockEditorForm = new EventEmitter();
     @Output() isLoader = new EventEmitter();
 
-    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
+    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
+
+    ngOnInit() {
         this.fetchData();
     }
 
