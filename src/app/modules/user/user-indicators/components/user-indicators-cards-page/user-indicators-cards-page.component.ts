@@ -1,9 +1,9 @@
 import {Component, OnDestroy} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormControl} from '@ngneat/reactive-forms';
-import {UserSharedDataUserAccountService, UserSharedDataUserProvidersService} from '../../../user-shared/services';
+import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
 import {Subscription} from 'rxjs';
-import {IUserAccount} from "../../../user-shared/types/user-shared-account.interface";
+
 
 
 @Component({
@@ -19,10 +19,24 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     isAlertOpenProgress  = false;
     error  = false;
     massage = 'Показники надіслані!';
+    userId: string | undefined = '';
+    public providers: any = [
+        {
+            status: true
+        },
+        {
+            status: false
+        },
+        {
+            status: true
+        },
+        {
+            status: false
+        }]
     private subscription: Subscription = new Subscription()
-    constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService,
-                 private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
-        // this.getProvidersData();
+    constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {
+        this.userId = this.getUserId()
+        this.getProvidersData();
     }
 
     ngOnDestroy() {
@@ -36,30 +50,30 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
         waterIndicator: new FormControl<string>(),
         heatIndicator: new FormControl<string>(),
     })
-     id = '87812366-2915-46dd-94e0-e809a4cdafca';
 
+
+    getUserId() {
+        const value = localStorage.getItem('card');
+        if (value) {
+            return value;
+        }
+        return undefined
+    }
 //отримання даних про вибраних провайдерів
-    // getProvidersData(): void {
-    //     this.subscription.add(this.userSharedDataAccountService.fetchAccount()
-    //         .pipe( finalize( () => {
-    //         }))
-    //         .subscribe( (data: IUserAccount[]) => {
-    //                 console.log(data)
-    //                 this.cards = data
-    //                 if (this.cards.length === 0) {
-    //                     localStorage.removeItem('card');
-    //                     // this.onShowFormAccount()
-    //                 }
-    //             },
-    //             error => {
-    //                 console.log(error);
-    //             }))
-    // }
+    getProvidersData(): void {
+        this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
+            .subscribe( (data: any) => {
+                    console.log(data)
+                },
+                error => {
+                    console.log(error);
+                }))
+    }
 
      onSubmit(): void {
          if(this.indicatorsForm.valid) {
              this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
-                 this.indicatorsForm.value, this.id
+                 this.indicatorsForm.value, this.userId
              ).subscribe( (res:object) => {
                  console.log(res)
                  this.showNotification();

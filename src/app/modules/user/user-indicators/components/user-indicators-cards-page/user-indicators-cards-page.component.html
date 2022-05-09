@@ -1,6 +1,8 @@
-<app-user-indicators-section-accounts (isLoader)="loader($event)"></app-user-indicators-section-accounts>
-
 <div class="indicators">
+  <app-user-indicators-section-accounts (isLoader)="loader($event)"></app-user-indicators-section-accounts>
+
+  <hr>
+
   <div class="floating-alert"
        [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
        [ngClass]="{active: isAlertOpen}">
@@ -16,22 +18,48 @@
         class="indicators__form">
     <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
                                [itemIcon] = "'gas-icon'"
-                          formControlName="gasIndicator"
-                               *ngIf="isProviderClose"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
-                               [itemIcon] = "'light-icon'"
-                          formControlName="energyIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
-                               [itemIcon] = "'term-icon'"
-                          formControlName="tecIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
-                               [itemIcon] = "'water-icon'"
-                          formControlName="waterIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
-                               [itemIcon] = "'term-icon'"
-                          formControlName="heatIndicator"></app-user-indicators-cards>
+                               formControlName="gasIndicator"
+                               *ngFor="let provider of providers"
+                               [provider]="provider"></app-user-indicators-cards>
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
+<!--                               [itemIcon] = "'light-icon'"-->
+<!--                               formControlName="energyIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
+<!--                               [itemIcon] = "'term-icon'"-->
+<!--                               formControlName="tecIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
+<!--                               [itemIcon] = "'water-icon'"-->
+<!--                               formControlName="waterIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
+<!--                               [itemIcon] = "'term-icon'"-->
+<!--                               formControlName="heatIndicator"></app-user-indicators-cards>-->
     <button (click)="onSubmit()"
             class="indicators__form-btn button">
       Відправити</button>
   </form>
+
+
+
+<!--  <form [formGroup]="indicatorsForm"-->
+<!--        class="indicators__form">-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"-->
+<!--                               [itemIcon] = "'gas-icon'"-->
+<!--                          formControlName="gasIndicator"-->
+<!--                               *ngIf="isProviderClose"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
+<!--                               [itemIcon] = "'light-icon'"-->
+<!--                          formControlName="energyIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
+<!--                               [itemIcon] = "'term-icon'"-->
+<!--                          formControlName="tecIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
+<!--                               [itemIcon] = "'water-icon'"-->
+<!--                          formControlName="waterIndicator"></app-user-indicators-cards>-->
+<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
+<!--                               [itemIcon] = "'term-icon'"-->
+<!--                          formControlName="heatIndicator"></app-user-indicators-cards>-->
+<!--    <button (click)="onSubmit()"-->
+<!--            class="indicators__form-btn button">-->
+<!--      Відправити</button>-->
+<!--  </form>-->
 </div>

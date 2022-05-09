@@ -3,6 +3,7 @@ import {environment} from '../../../../../environments/environment';
 import {map, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {IIndicators, IProvider} from '../types/user-shared-provider.interface';
+import {IUserAccount, IUserAccountData, IUserAccountProviders} from "../types/user-shared-account.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,12 @@ export class UserSharedDataUserProvidersService {
 
     constructor(private readonly http: HttpClient) {}
 
-    sendIndicators(indicators: IProvider, id: string): Observable<object> {
+    fetchProviders(id: string | undefined): Observable<any> {
+        return this.http.get<any>(environment.apiUrl + 'accountProviders/'+ id)
+            .pipe( map((res:any) => res));
+    }
+
+    sendIndicators(indicators: IProvider, id: string | undefined): Observable<object> {
         return this.http.post<IIndicators>(environment.apiUrl +'transfer/' + id,
             [
                 {

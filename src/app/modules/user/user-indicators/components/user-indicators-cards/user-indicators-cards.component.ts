@@ -14,6 +14,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     ]
 })
 export class UserIndicatorsCardsComponent implements ControlValueAccessor {
+    @Input() provider!: any;
     @Input() value = '';
     @Input() title = '';
     @Input() itemIcon = '';

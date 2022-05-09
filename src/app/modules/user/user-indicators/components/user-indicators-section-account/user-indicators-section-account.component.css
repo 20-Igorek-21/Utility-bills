@@ -1,0 +1,12 @@
+.user__address {
+  display: flex;
+  align-items: center;
+}
+
+.user__address-img {
+  fill: #2496ed;
+}
+
+.user__address-title {
+  margin: 0 0 0 15px;
+}
