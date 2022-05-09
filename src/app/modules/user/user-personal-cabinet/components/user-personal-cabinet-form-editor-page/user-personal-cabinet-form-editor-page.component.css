@@ -15,11 +15,11 @@
 }
 
 .content-page__block--account {
-  margin: 40px 10px;
+  margin: 40px 10px 20px 10px;
 }
 
 .content-page__block--private-data {
-  margin: 0 10px 40px;
+  margin: 20px 10px 40px;
 }
 
 .content-page__title {

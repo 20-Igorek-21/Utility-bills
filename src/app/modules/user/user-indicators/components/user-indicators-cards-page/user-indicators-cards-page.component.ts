@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormControl} from '@ngneat/reactive-forms';
 import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
@@ -12,7 +12,7 @@ import {IUserProviders} from "../../../user-shared/types/user-shared-provider.in
     templateUrl: './user-indicators-cards-page.component.html',
     styleUrls: ['./user-indicators-cards-page.component.css']
 })
-export class UserIndicatorsCardsPageComponent implements OnDestroy {
+export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
 
     public isLoader = true;
     isAlertOpen  = false;
@@ -60,8 +60,13 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     ]
     private subscription: Subscription = new Subscription()
     constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {
-        this.userId = this.getUserId()
+
+        // this.userId = this.getUserId()
         this.getProvidersData();
+    }
+
+    ngOnInit() {
+
     }
 
     ngOnDestroy() {
@@ -77,16 +82,17 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     })
 
 
-    getUserId() {
-        const value = localStorage.getItem('card');
-        if (value) {
-            return value;
-        }
-        return undefined
-    }
-//отримання даних про вибраних провайдерів
+    // getUserId() {
+    //     const value = localStorage.getItem('card');
+    //     if (value) {
+    //         return value;
+    //     }
+    //     return undefined
+    // }
+    //отримання даних про вибраних провайдерів
     getProvidersData(): void {
         this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
+
             .subscribe( (data: IUserProviders[]) => {
                     // this.providers = data;
                     console.log(data)
@@ -96,40 +102,40 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
                 }))
     }
 
-     onSubmit(): void {
-         if(this.indicatorsForm.valid) {
-             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
-                 this.indicatorsForm.value, this.userId
-             ).subscribe( (res:object) => {
-                 console.log(res)
-                 this.showNotification();
-                 this.indicatorsForm.reset();
-             },
-             error => {
-                 this.error = true;
-                 this.massage = 'Сталася помилка!'
-                 this.showNotification();
-             }
-             ))
-         }
-     }
+    onSubmit(): void {
+        if(this.indicatorsForm.valid) {
+            this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
+                this.indicatorsForm.value, this.userId
+            ).subscribe( (res:object) => {
+                console.log(res)
+                this.showNotification();
+                this.indicatorsForm.reset();
+            },
+            error => {
+                this.error = true;
+                this.massage = 'Сталася помилка!'
+                this.showNotification();
+            }
+            ))
+        }
+    }
 
-     showNotification(): void {
-         this.isAlertOpen = !this.isAlertOpen;
-         this.isAlertOpenProgress = !this.isAlertOpenProgress;
-         this.autoClose();
-     }
+    showNotification(): void {
+        this.isAlertOpen = !this.isAlertOpen;
+        this.isAlertOpenProgress = !this.isAlertOpenProgress;
+        this.autoClose();
+    }
 
-     autoClose(): void {
-         setTimeout(() => {
-             this.isAlertOpen = !this.isAlertOpen;
-         },2500);
-         setTimeout(() => {
-             this.isAlertOpenProgress = !this.isAlertOpenProgress;
-         },2800)
-     }
+    autoClose(): void {
+        setTimeout(() => {
+            this.isAlertOpen = !this.isAlertOpen;
+        },2500);
+        setTimeout(() => {
+            this.isAlertOpenProgress = !this.isAlertOpenProgress;
+        },2800)
+    }
 
-     loader(value: boolean): void {
-         this.isLoader = value;
-     }
+    loader(value: boolean): void {
+        this.isLoader = value;
+    }
 }
