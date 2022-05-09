@@ -2,7 +2,6 @@
   <app-user-indicators-section-accounts (isLoader)="loader($event)"></app-user-indicators-section-accounts>
 
   <hr>
-
   <div class="floating-alert"
        [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
        [ngClass]="{active: isAlertOpen}">
@@ -16,9 +15,9 @@
 
   <form [formGroup]="indicatorsForm"
         class="indicators__form">
-    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
-                               [itemIcon] = "'gas-icon'"
-                               formControlName="gasIndicator"
+    <app-user-indicators-cards [title]="provider.provider.fullName"
+                               [itemIcon] = "provider.provider.indicator"
+                               [formControlName]="provider.provider.indicator"
                                *ngFor="let provider of providers"
                                [provider]="provider"></app-user-indicators-cards>
 <!--    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->

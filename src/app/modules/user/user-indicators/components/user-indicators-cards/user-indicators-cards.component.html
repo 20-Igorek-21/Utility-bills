@@ -1,9 +1,10 @@
-<div class="indicators__item" *ngIf="provider.status">
+
+<div class="indicators__item">
   <div class="indicators__inform">
     <svg class="indicators__inform-icon">
       <use [attr.xlink:href]="'/assets/svg/sprites.svg#'+ itemIcon"></use>
     </svg>
-    <h2 class="indicators__inform-title">{{title}}</h2>
+    <h2 class="indicators__inform-title">{{title | titlecase}}</h2>
   </div>
   <div class="indicators__field">
       <input class="indicators__field-input"
@@ -15,22 +16,3 @@
   </div>
 </div>
 
-<!--<div class="indicators__item">-->
-<!--  <div class="indicators__inform">-->
-<!--    <svg class="indicators__inform-icon">-->
-<!--      <use [attr.xlink:href]="'/assets/svg/sprites.svg#'+ itemIcon"></use>-->
-<!--    </svg>-->
-<!--    <h2 class="indicators__inform-title">{{title}}</h2>-->
-<!--  </div>-->
-<!--  <div class="indicators__field">-->
-<!--    <label class="indicators__field-label">-->
-<!--      <p class="label">Показник</p>-->
-<!--      <input class="indicators__field-input"-->
-<!--             placeholder="200"-->
-<!--             OnlyNumber="true"-->
-<!--             (ngModelChange)="handleInput($event)"-->
-<!--             [(ngModel)]="value"-->
-<!--             (click)="onTouched()">-->
-<!--    </label>-->
-<!--  </div>-->
-<!--</div>-->
