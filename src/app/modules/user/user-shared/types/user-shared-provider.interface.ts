@@ -8,3 +8,14 @@ export interface  IIndicators {
     provider: IProvider,
     value: string
 }
+
+
+export interface IUserProviders {
+    provider: IUserProvider,
+}
+export interface IUserProvider {
+    fullName: string,
+    id: string,
+    indicator:string
+
+}

@@ -1,5 +1,7 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {IUserAccountProviders} from "../../../user-shared/types/user-shared-account.interface";
+import {IUserProviders} from "../../../user-shared/types/user-shared-provider.interface";
 
 @Component({
     selector: 'app-user-indicators-cards',
@@ -14,12 +16,13 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     ]
 })
 export class UserIndicatorsCardsComponent implements ControlValueAccessor {
-    @Input() provider!: any;
+    @Input() provider!: IUserProviders;
     @Input() value = '';
     @Input() title = '';
     @Input() itemIcon = '';
 
-    constructor() { }
+    constructor() {
+    }
 
     handleInput(value: string) {
         this.onChange(value)
