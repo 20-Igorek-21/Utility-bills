@@ -3,6 +3,5 @@
                                       (fetchData)="fetchData()"
                                       [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
 
-<app-user-indicators-section-account *ngFor="let card of cards"
-                                     [card]="card">
-</app-user-indicators-section-account>
+<app-user-indicators-current-account *ngFor="let card of cards"
+                                     [card]="card"></app-user-indicators-current-account>

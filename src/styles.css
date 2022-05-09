@@ -239,14 +239,14 @@ html, body {
   transition: .4s;
 }
 
-@media (min-width: 420px) {
+@media (min-width: 360px) {
   .app-auth-form__container {
     width: 350px;
   }
 
-  .main-navigation__button-menu {
-    left: 140px;
-  }
+  /*.main-navigation__button-menu {*/
+  /*  left: 140px;*/
+  /*}*/
 
   .content-page__loader {
     position: absolute;
