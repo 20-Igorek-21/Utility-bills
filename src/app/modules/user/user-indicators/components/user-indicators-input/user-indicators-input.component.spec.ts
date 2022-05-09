@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserIndicatorsCardsComponent } from './user-indicators-cards.component';
+import { UserIndicatorsCardsComponent } from './user-indicators-input.component';
 
 describe('IndicatorsCardsComponent', () => {
   let component: UserIndicatorsCardsComponent;

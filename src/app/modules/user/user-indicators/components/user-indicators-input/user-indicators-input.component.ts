@@ -1,21 +1,20 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {IUserAccountProviders} from "../../../user-shared/types/user-shared-account.interface";
 import {IUserProviders} from "../../../user-shared/types/user-shared-provider.interface";
 
 @Component({
-    selector: 'app-user-indicators-cards',
-    templateUrl: './user-indicators-cards.component.html',
-    styleUrls: ['./user-indicators-cards.component.css'],
+    selector: 'app-user-indicators-input',
+    templateUrl: './user-indicators-input.component.html',
+    styleUrls: ['./user-indicators-input.component.css'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef( () => UserIndicatorsCardsComponent),
+            useExisting: forwardRef( () => UserIndicatorsInputComponent),
             multi: true
         }
     ]
 })
-export class UserIndicatorsCardsComponent implements ControlValueAccessor {
+export class UserIndicatorsInputComponent implements ControlValueAccessor {
     @Input() provider!: IUserProviders;
     @Input() value = '';
     @Input() title = '';
