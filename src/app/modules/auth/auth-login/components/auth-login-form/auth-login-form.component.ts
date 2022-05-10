@@ -19,7 +19,6 @@ export class AuthLoginFormComponent {
     loginForm: FormGroup = new FormGroup({
         email: new FormControl<string>('', [Validators.required, Validators.email]),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
-        checkbox: new FormControl<boolean>(false)
     })
 
     public get controls() {
@@ -35,13 +34,13 @@ export class AuthLoginFormComponent {
 
             }
             this.authSharedUserService.loginUser(this.loginForm)
-                .subscribe( (r) => {
-                    console.log(r)
+                .subscribe( () => {
+                    this.router.navigateByUrl('user/indicators');
                 },
                 error => {
-                    this.router.navigateByUrl('user/login')
+                    console.log(error)
+                    this.router.navigateByUrl('user/login');
                 }   )
-            this.router.navigateByUrl('user/indicators')
         }
     }
 }
