@@ -14,7 +14,6 @@ export class UserSharedFormProvidersComponent {
     isShowKhimvolokno = false;
     isShowVodokanal = false;
 
-
     changeStatusGas() {
         this.isShowGas = !this.isShowGas;
     }
@@ -29,7 +28,6 @@ export class UserSharedFormProvidersComponent {
     changeStatusVodokanal() {
         this.isShowVodokanal = !this.isShowVodokanal;
     }
-
 
     providersForm: FormGroup = new FormGroup({
         gasNumber: new FormControl<number | null>(null),

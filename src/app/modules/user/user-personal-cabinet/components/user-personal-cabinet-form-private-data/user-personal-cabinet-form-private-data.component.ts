@@ -1,31 +1,31 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IUserAuth} from '../../../../core/form/types/auth-shared-user-interface';
-import {Subscription} from 'rxjs';
-import {Router} from '@angular/router';
-import {UserSharedDataUserService} from '../../../user-shared/services';
-import {FormGroup, Validators} from '@angular/forms';
-import {FormControl} from '@ngneat/reactive-forms';
-import {MIN_LENGTH_SYMBOL} from '../../../../../constants';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IUserAuth} from '../../../../core/form/types/auth-shared-user-interface';
+import { Subscription} from 'rxjs';
+import { UserSharedDataUserService } from '../../../user-shared/services';
+import { FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
+import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 
 @Component({
-    selector: 'app-user-personal-cabinet-form-privete-data',
-    templateUrl: './user-personal-cabinet-form-privete-data.component.html',
-    styleUrls: ['./user-personal-cabinet-form-privete-data.component.css']
+    selector: 'app-user-personal-cabinet-form-private-data',
+    templateUrl: './user-personal-cabinet-form-private-data.component.html',
+    styleUrls: ['./user-personal-cabinet-form-private-data.component.css']
 })
-export class UserPersonalCabinetFormPriveteDataComponent implements OnInit, OnDestroy {
+export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDestroy {
 
-    user!: IUserAuth
+    user!: IUserAuth;
+    userId: string | undefined
 
     private subscription: Subscription = new Subscription();
 
-    constructor(
-        private readonly router: Router,
-        private readonly userSharedDataUserService: UserSharedDataUserService) {}
+    constructor(private readonly userSharedDataUserService: UserSharedDataUserService) {}
 
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()
             .subscribe( (res:IUserAuth) => {
                 console.log(res)
+                this.user = res
+                this.userId = res.id
             }))
     }
 
@@ -47,19 +47,18 @@ export class UserPersonalCabinetFormPriveteDataComponent implements OnInit, OnDe
         }
     }
 
-    onSubmit() {
+    onChangeDataUser() {
         if (!this.profileForm.invalid) {
-            this.subscription.add(this.userSharedDataUserService.changeDataUser('0301314c-e771-4d60-8244-91b1655e76d9', this.profileForm)
+            this.subscription.add(this.userSharedDataUserService.changeDataUser(this.profileForm)
                 .subscribe( (res:IUserAuth) => {
                     console.log(res)
-                    // this.router.navigateByUrl('auth/personal-cabinet')
+                    alert('дані змінено')
                 },
                 error => {
-                    console.log(error)
+                    console.log(error);
                 }
                 ))
-            this.profileForm.reset()
+            this.profileForm.reset();
         }
-
     }
 }

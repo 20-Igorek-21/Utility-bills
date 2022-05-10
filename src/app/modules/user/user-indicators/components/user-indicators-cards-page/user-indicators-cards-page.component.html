@@ -11,7 +11,7 @@
 
   <app-user-indicators-current-account *ngFor="let account of accountData" [account]="account"></app-user-indicators-current-account>
 
-  <hr class="content-page__line">
+  <hr class="content-page__line" *ngIf="accountData.length !== 0">
 
   <app-user-indicators-cards-form *ngIf="accountData.length !== 0"></app-user-indicators-cards-form>
 </div>
