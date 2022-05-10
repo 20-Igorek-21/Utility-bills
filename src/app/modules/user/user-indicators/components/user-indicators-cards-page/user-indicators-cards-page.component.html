@@ -1,12 +1,9 @@
 <div class="content-page" *ngIf="!isLoader">
 
-<div class="indicators">
-
+<div class="content-page__indicators-content" >
 
   <div class="content-page__add-account" *ngIf="accountData.length === 0">
-
     <p class="content-page__message-text">Необхідно додати адресу.</p>
-
     <button class="button content-page__button content-page__button--add-address"
             mat-button
             (click)="onShowFormAccount()">Додати адресу</button>
@@ -14,15 +11,16 @@
 
   <app-user-indicators-current-account *ngFor="let account of accountData" [account]="account"></app-user-indicators-current-account>
 
-  <hr>
-  <app-user-indicators-cards-form></app-user-indicators-cards-form>
+  <hr class="content-page__line">
+
+  <app-user-indicators-cards-form *ngIf="accountData.length !== 0"></app-user-indicators-cards-form>
+</div>
+
 </div>
 
 <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                   appToggleButton
                                   (fetchData)="fetchData()"
                                   [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
-
-</div>
 
 <mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

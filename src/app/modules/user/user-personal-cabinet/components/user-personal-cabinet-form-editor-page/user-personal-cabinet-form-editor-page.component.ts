@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
@@ -48,7 +48,6 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
                 else {
                     this.massageText = true;
                 }
-
             },
             error => {
                 console.log(error);
@@ -75,5 +74,4 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
         this.isExpandPrivateData = !this.isExpandPrivateData;
         this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
     }
-
 }

@@ -1,6 +1,6 @@
 import {Component, forwardRef, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {IUserProviders} from "../../../user-shared/types/user-shared-provider.interface";
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {IUserProviders} from '../../../user-shared/types/user-shared-provider.interface';
 
 @Component({
     selector: 'app-user-indicators-input',
@@ -20,24 +20,21 @@ export class UserIndicatorsInputComponent implements ControlValueAccessor {
     @Input() title = '';
     @Input() itemIcon = '';
 
-    constructor() {
-    }
-
     handleInput(value: string) {
-        this.onChange(value)
+        this.onChange(value);
     }
 
     writeValue(value: string): void {
-        this.value = value
+        this.value = value;
     }
     onChange!: (value: string) => void;
     onTouched!: ()=> void;
 
-    registerOnChange(fn: any): void {
-        this.onChange = fn
+    registerOnChange(fn: never): void {
+        this.onChange = fn;
     }
 
-    registerOnTouched(fn: any): void {
-        this.onTouched = fn
+    registerOnTouched(fn: never): void {
+        this.onTouched = fn;
     }
 }
