@@ -13,7 +13,7 @@ export class UserPersonalCabinetAccountComponent implements OnInit, OnDestroy {
     public flat?: number | null;
     subscription: Subscription = new Subscription()
 
-    @Input() card!: IUserAccountData;
+    @Input() account!: IUserAccountData;
     @Output() deleteCard = new EventEmitter;
     @Output() changeCard = new EventEmitter
     @Output() changeMessageTrue = new EventEmitter
@@ -22,8 +22,8 @@ export class UserPersonalCabinetAccountComponent implements OnInit, OnDestroy {
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnInit() {
-        if (this.card.id) {
-            localStorage.setItem('card',this.card.id);
+        if (this.account.id) {
+            localStorage.setItem('card',this.account.id);
         }
 
         // if (this.card.addresses?.flat === null) {
@@ -53,6 +53,6 @@ export class UserPersonalCabinetAccountComponent implements OnInit, OnDestroy {
     }
 
     onSelect(id:string) {
-        localStorage.setItem('card',this.card.id)
+        localStorage.setItem('card',this.account.id)
     }
 }

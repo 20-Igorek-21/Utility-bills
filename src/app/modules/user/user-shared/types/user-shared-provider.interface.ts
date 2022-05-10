@@ -9,7 +9,6 @@ export interface  IIndicators {
     value: string
 }
 
-
 export interface IUserProviders {
     provider: IUserProvider,
 }
@@ -17,5 +16,4 @@ export interface IUserProvider {
     fullName: string,
     id: string,
     indicator:string
-
 }

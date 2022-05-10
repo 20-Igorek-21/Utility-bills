@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
@@ -8,7 +8,7 @@ import { UserSharedDataUserAccountService } from '../../../user-shared/services'
     templateUrl: './user-personal-cabinet-form-editor-page.component.html',
     styleUrls: ['./user-personal-cabinet-form-editor-page.component.css']
 })
-export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
+export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDestroy {
 
     public massageText = false;
     public isExpandDataAccount = false;
@@ -17,13 +17,15 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
     public iconNameExpendPrivateData = 'more';
     public isShowFormAccount = true;
     public isLoader = true;
-    public cards: IUserAccountData []= []
+    public accountData: IUserAccountData []= []
     private subscription: Subscription = new Subscription()
 
     @Output() isLockEditorForm = new EventEmitter()
     @Output() isUnLockEditorForm = new EventEmitter()
 
-    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {
+    constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
+
+    ngOnInit() {
         this.fetchData();
     }
 
@@ -37,9 +39,9 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
                 this.isLoader = false;
             }))
             .subscribe( (data: IUserAccountData[]) => {
-                this.cards = data
+                this.accountData = data
                 console.log(data)
-                if (this.cards.length === 0) {
+                if (this.accountData.length === 0) {
                     localStorage.removeItem('card');
                     this.massageText = false;
                 }
@@ -73,4 +75,5 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnDestroy {
         this.isExpandPrivateData = !this.isExpandPrivateData;
         this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
     }
+
 }
