@@ -1,16 +1,16 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {IUserProviders} from "../../../user-shared/types/user-shared-provider.interface";
-import {Subscription} from "rxjs";
-import {UserSharedDataUserProvidersService} from "../../../user-shared/services";
-import {FormGroup} from "@angular/forms";
-import {FormControl} from "@ngneat/reactive-forms";
-import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
+import {IUserProviders} from '../../../user-shared/types/user-shared-provider.interface';
+import {Subscription} from 'rxjs';
+import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
+import {FormGroup} from '@angular/forms';
+import {FormControl} from '@ngneat/reactive-forms';
+import {UserSharedFloatingAlertComponent} from '../../../user-shared/components';
 
 
 @Component({
-  selector: 'app-user-indicators-cards-form',
-  templateUrl: './user-indicators-cards-form.component.html',
-  styleUrls: ['./user-indicators-cards-form.component.css']
+    selector: 'app-user-indicators-cards-form',
+    templateUrl: './user-indicators-cards-form.component.html',
+    styleUrls: ['./user-indicators-cards-form.component.css']
 })
 export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
 
@@ -18,37 +18,37 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
     public providers: IUserProviders[] = [
         {
             provider: {
-                id: "d6bec95b-1345-44a0-9d85-64a038382005",
+                id: 'd6bec95b-1345-44a0-9d85-64a038382005',
                 fullName: 'АТ "Черкасигаз"',
-                indicator: "gasIndicator",
+                indicator: 'gasIndicator',
             }
         },
         {
             provider: {
-                id: "38b5c1ab-24fb-4c4c-8351-5e9dcdcc8778",
+                id: '38b5c1ab-24fb-4c4c-8351-5e9dcdcc8778',
                 fullName: 'ТОВ "ЧЕРКАСИОБЛЕНЕРГО"',
-                indicator: "energyIndicator",
+                indicator: 'energyIndicator',
             }
         },
         {
             provider: {
-                id: "2f0906c2-9ffe-4327-9015-de9a483dcbeb",
+                id: '2f0906c2-9ffe-4327-9015-de9a483dcbeb',
                 fullName: 'ПРАТ "Черкаське xімволокно"',
-                indicator: "tecIndicator",
+                indicator: 'tecIndicator',
             }
         },
         {
             provider: {
-                id: "c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b",
+                id: 'c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b',
                 fullName: 'КП "Черкасиводоканал"',
-                indicator: "waterIndicatorCold",
+                indicator: 'waterIndicatorCold',
             }
         },
         {
             provider: {
-                id: "c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b",
+                id: 'c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b',
                 fullName: 'КП "Черкасиводоканал"',
-                indicator: "waterIndicatorHot",
+                indicator: 'waterIndicatorHot',
             }
         },
 
@@ -82,17 +82,17 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         }
         return undefined
     }
-//отримання даних про вибраних провайдерів
+    //отримання даних про вибраних провайдерів
 
     getProvidersData(): void {
         this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
             .subscribe( (data: IUserProviders[]) => {
-                    // this.providers = data;
-                    console.log(data)
-                },
-                error => {
-                    console.log(error);
-                }))
+                // this.providers = data;
+                console.log(data)
+            },
+            error => {
+                console.log(error);
+            }))
     }
 
     onSubmit(): void {
@@ -100,15 +100,15 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
                 this.indicatorsForm.value, this.userId
             ).subscribe( (res:object) => {
-                    // console.log(res)
-                    this.openAlert.showNotification()
-                    this.indicatorsForm.reset();
-                },
-                error => {
-                    this.openAlert.error = true;
-                    this.openAlert.massage = 'Сталася помилка!'
-                    this.openAlert.showNotification();
-                }
+                // console.log(res)
+                this.openAlert.showNotification()
+                this.indicatorsForm.reset();
+            },
+            error => {
+                this.openAlert.error = true;
+                this.openAlert.massage = 'Сталася помилка!'
+                this.openAlert.showNotification();
+            }
             ))
         }
     }

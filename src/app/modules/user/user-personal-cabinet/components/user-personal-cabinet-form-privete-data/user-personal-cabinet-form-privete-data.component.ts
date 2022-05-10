@@ -16,7 +16,6 @@ export class UserPersonalCabinetFormPriveteDataComponent implements OnInit, OnDe
 
     user!: IUserAuth
 
-
     private subscription: Subscription = new Subscription();
 
     constructor(
@@ -63,5 +62,4 @@ export class UserPersonalCabinetFormPriveteDataComponent implements OnInit, OnDe
         }
 
     }
-
 }
