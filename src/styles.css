@@ -153,23 +153,23 @@ html, body {
 
       /*navigation*/
 
-.main-navigation {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
+/*.main-navigation {*/
+/*  display: none;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*  position: relative;*/
+/*}*/
 
 .main-navigation__link {
   margin-top: 30px;
   color: var(--color-blue);
 }
 
-.main-navigation__link-auth--login {
-  width: 80px;
-  margin: 0 20px;
-  color: var(--color-white);
-}
+/*.main-navigation__link-auth--login {*/
+/*  width: 80px;*/
+/*  margin: 0 20px;*/
+/*  color: var(--color-white);*/
+/*}*/
 
 .main-layout-page-header__logo-icon {
   height: 35px;
@@ -248,21 +248,14 @@ html, body {
   opacity: .9;
 }
 
-.main-navigation__link:hover {
-  background-image: linear-gradient(#2496ED, #157AFF);
-  background-size: 100% 2px;
-}
-
 .main-navigation__link-auth:hover {
   background-color: var(--color-white);
   color: var(--color-blue);
   transition: .2s;
 }
 
-.main-navigation__link-auth:hover {
-  background-color: var(--color-white);
-  color: var(--color-blue);
-  transition: .4s;
+.main-layout-page-header__logo-icon:hover {
+  opacity: .8;
 }
 
 @media (min-width: 360px) {
@@ -280,6 +273,16 @@ html, body {
   }
 }
 
+@media (min-width: 470px) {
+  .main-navigation__link-auth--register {
+    margin-right: 20px;
+  }
+
+  .main-navigation__link-auth--login {
+    margin-right: 30px;
+  }
+}
+
 @media (min-width: 850px) {
 
   .home__main-link {
@@ -289,48 +292,11 @@ html, body {
     width: 380px;
   }
 
-  .main-navigation__link-auth--register {
-    width: 200px;
-    margin-right: 40px;
-  }
-
-  .main-navigation__link-auth--login {
-    width: 100px;
-    margin-right: 50px;
-  }
-
-  /*navigation*/
-
-  .main-navigation {
-    display: flex;
-  }
-
-  .main-navigation__link {
-    margin: 0;
-    color: var(--color-white);
-  }
-
-  .main-navigation__button-menu {
-    display: none;
-  }
-
-  .main-navigation__switch-menu {
-    display: none;
-  }
-
-  .main-navigation__link--active {
-    background-image: linear-gradient(#FFF, #f4f5f6);
-    background-size: 100% 2px;
-  }
-
-
   .content-page__loader {
     left: 50%;
   }
 
   .main-navigation__link:hover {
-    background-image: linear-gradient(#FFF, #f4f5f6);
-    background-size: 100% 2px;
     opacity: .9;
   }
 
@@ -348,10 +314,3 @@ html, body {
     transform: translateX(0);
   }
 }
-
-/*.custom-style{*/
-/*  font-size: 16px;*/
-/*  font-weight: 500;*/
-/*  background-color: #0dd51f;*/
-/*  color:white;*/
-/*}*/

@@ -5,4 +5,15 @@ import { Component } from '@angular/core';
     templateUrl: './user-indicators-cards-page-view.component.html',
     styleUrls: ['./user-indicators-cards-page-view.component.css']
 })
-export class UserIndicatorsCardsPageViewComponent {}
+export class UserIndicatorsCardsPageViewComponent {
+
+    public isLock = false;
+
+    public lock(): void {
+        this.isLock = true
+    }
+
+    public unLock(): void {
+        this.isLock = false
+    }
+}

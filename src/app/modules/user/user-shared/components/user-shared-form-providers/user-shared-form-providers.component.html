@@ -43,8 +43,11 @@
     </label>
 
     <div class="user-shared-form-providers__input-provider" *ngIf="isShowKhimvolokno">
-      <mat-radio-button class="user-shared-form-providers__radio-button" value="Ванна" checked="true">Ванна</mat-radio-button>
-      <mat-radio-button class="user-shared-form-providers__radio-button" value="Кухня">Кухня</mat-radio-button>
+      <mat-radio-button class="user-shared-form-providers__radio-button"
+                        value="Ванна"
+                        checked="true">Ванна</mat-radio-button>
+      <mat-radio-button class="user-shared-form-providers__radio-button"
+                        value="Кухня">Кухня</mat-radio-button>
 
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"

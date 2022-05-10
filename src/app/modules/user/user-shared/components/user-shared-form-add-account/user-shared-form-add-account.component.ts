@@ -1,11 +1,11 @@
-import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {UserSharedDataUserAccountService} from '../../services';
-import {FormGroup} from '@angular/forms';
-import {UserSharedFormPersonalDataComponent} from '../user-shared-form-personal-data/user-shared-form-personal-data.component';
-import {UserSharedFormAddressComponent} from '../user-shared-form-address/user-shared-form-address.component';
-import {UserSharedFormProvidersComponent} from '../user-shared-form-providers/user-shared-form-providers.component';
-
+import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UserSharedDataUserAccountService } from '../../services';
+import { FormGroup } from '@angular/forms';
+import { UserSharedFormPersonalDataComponent } from '../user-shared-form-personal-data/user-shared-form-personal-data.component';
+import { UserSharedFormAddressComponent } from '../user-shared-form-address/user-shared-form-address.component';
+import { UserSharedFormProvidersComponent } from '../user-shared-form-providers/user-shared-form-providers.component';
+import { UserSharedFloatingAlertComponent } from '../user-shared-floating-alert/user-shared-floating-alert.component';
 
 @Component({
     selector: 'app-user-shared-form-add-account',
@@ -22,6 +22,8 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
     public formAddress!: UserSharedFormAddressComponent;
     @ViewChild('formProviders')
     public formProviders!: UserSharedFormProvidersComponent;
+    @ViewChild('openAlert')
+    public openAlert!: UserSharedFloatingAlertComponent;
 
     @Output() isCloseFormAccount = new EventEmitter;
     @Output() fetchData = new EventEmitter;
@@ -35,7 +37,7 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
     plugForm: FormGroup = new FormGroup({});
 
     onCloseWindow(): void {
-        this.resetForm()
+        this.resetForm();
     }
 
     resetForm(): void {
@@ -50,15 +52,14 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
             this.formPersonalData.personalDataForm.value,
             this.formAddress.addressForm.value,
             this.formProviders.providersForm.value
-        ).subscribe( (res:object) => {
-            console.log(res)
-            alert('account added')
-            this.fetchData.emit()
+        ).subscribe( () => {
+            this.fetchData.emit();
+            alert('рахунок доданий')
         },
         error => {
-            console.log(error)
+            console.log(error);
         }
         ))
-        this.resetForm()
+        this.resetForm();
     }
 }
