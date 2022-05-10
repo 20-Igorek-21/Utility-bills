@@ -15,11 +15,11 @@
 }
 
 .content-page__block--account {
-  margin: 40px 10px;
+  margin: 40px 10px 20px 10px;
 }
 
 .content-page__block--private-data {
-  margin: 0 10px 40px;
+  margin: 20px 10px 40px;
 }
 
 .content-page__title {
@@ -35,30 +35,6 @@
   height: 40px;
   width: 150px;
   background-color: var(--color-light-blue);
-}
-
-.content-page__accounts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.content-page__message-text {
-  width: 100%;
-  margin: 20px 0 0 ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  color: red;
-}
-
-.content-page__button--add-address {
-  height: 50px;
-  width: 200px;
-  margin: 20px 0 0 ;
-  background-color: var(--color-green);
-  color: var(--color-white);
 }
 
 @media (min-width: 350px) {

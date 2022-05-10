@@ -16,17 +16,18 @@
       </svg>
     </button>
 
-    <div class="content-page__accounts" *ngIf="isExpandDataAccount">
+    <div class="content-page__add-account" *ngIf="isExpandDataAccount">
 
       <p class="content-page__message-text"
          *ngIf="!massageText">Необхідно додати адресу.</p>
 
-      <app-user-personal-cabinet-account *ngFor="let card of cards"
-                                         [card]="card"
+      <app-user-personal-cabinet-account *ngFor="let account of accountData"
+                                         [account]="account"
                                          (deleteCard)="fetchData()"></app-user-personal-cabinet-account>
 
       <button class="button content-page__button content-page__button--add-address"
               mat-button
+              *ngIf="accountData.length === 0"
               (click)="onShowEditorForm()">Додати адресу</button>
     </div>
 
@@ -45,7 +46,7 @@
 
       <div class="content-page__block-private-data" *ngIf="isExpandPrivateData">
 
-        <app-user-personal-cabinet-form-privete-data></app-user-personal-cabinet-form-privete-data>
+        <app-user-personal-cabinet-form-private-data></app-user-personal-cabinet-form-private-data>
 
       </div>
     </div>

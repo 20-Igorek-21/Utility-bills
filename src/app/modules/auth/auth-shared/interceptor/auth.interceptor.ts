@@ -27,7 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
                 this.authSharedUserService.refreshToken()
                     .subscribe( ({token}) => {
                         console.log('refresh good')
-                        console.log(token)
+                        AuthInterceptor.accessToken = token;
                     },
                     error => {
                         console.log(error)

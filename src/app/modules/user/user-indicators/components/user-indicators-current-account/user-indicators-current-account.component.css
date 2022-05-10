@@ -1,0 +1,13 @@
+.user-indicators-current-account {
+  display: flex;
+  align-items: center;
+}
+
+.user-indicators-current-account__address-icon {
+  fill: #2496ed;
+}
+
+.user-indicators-current-account__address-title {
+  margin: 0 0 0 15px;
+  font-size: 16px;
+}

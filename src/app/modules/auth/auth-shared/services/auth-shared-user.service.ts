@@ -32,6 +32,7 @@ export class AuthSharedUserService {
             password: loginValue.value.password
         })
             .pipe( tap( ({token}) => {
+                console.log('token service')
                 localStorage.setItem('auth', token);
                 AuthInterceptor.accessToken = token;
             }))

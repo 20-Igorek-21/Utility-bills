@@ -1,37 +1,26 @@
-<app-user-indicators-section-accounts (isLoader)="loader($event)"></app-user-indicators-section-accounts>
+<div class="content-page" *ngIf="!isLoader">
 
-<div class="indicators">
-  <div class="floating-alert"
-       [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
-       [ngClass]="{active: isAlertOpen}">
-    <div class="floating-alert__content">
-        <span class="floating-alert__content-text">{{massage}}</span>
-    </div>
-    <div class="floating-alert__progress"
-         [ngClass]="error ? {active: isAlertOpenProgress, 'active-error': isAlertOpenProgress} : {active: isAlertOpenProgress}">
-    </div>
+<div class="content-page__indicators-content" >
+
+  <div class="content-page__add-account" *ngIf="accountData.length === 0">
+    <p class="content-page__message-text">Необхідно додати адресу.</p>
+    <button class="button content-page__button content-page__button--add-address"
+            mat-button
+            (click)="onShowFormAccount()">Додати адресу</button>
   </div>
 
-  <form [formGroup]="indicatorsForm"
-        class="indicators__form">
-    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"
-                               [itemIcon] = "'gas-icon'"
-                          formControlName="gasIndicator"
-                               *ngIf="isProviderClose"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"
-                               [itemIcon] = "'light-icon'"
-                          formControlName="energyIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"
-                               [itemIcon] = "'term-icon'"
-                          formControlName="tecIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"
-                               [itemIcon] = "'water-icon'"
-                          formControlName="waterIndicator"></app-user-indicators-cards>
-    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"
-                               [itemIcon] = "'term-icon'"
-                          formControlName="heatIndicator"></app-user-indicators-cards>
-    <button (click)="onSubmit()"
-            class="indicators__form-btn button">
-      Відправити</button>
-  </form>
+  <app-user-indicators-current-account *ngFor="let account of accountData" [account]="account"></app-user-indicators-current-account>
+
+  <hr class="content-page__line" *ngIf="accountData.length !== 0">
+
+  <app-user-indicators-cards-form *ngIf="accountData.length !== 0"></app-user-indicators-cards-form>
 </div>
+
+</div>
+
+<app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
+                                  appToggleButton
+                                  (fetchData)="fetchData()"
+                                  [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
+
+<mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

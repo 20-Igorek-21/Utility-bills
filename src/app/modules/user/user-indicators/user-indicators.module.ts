@@ -5,16 +5,11 @@ import {LayoutFooterModule} from '../../core/layout/layout-footer/layout-footer.
 import {LayoutPageModule} from '../../core/layout/layout-page/layout-page.module';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserSharedModule} from '../user-shared/user-shared.module';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {UserIndicatorsMaterialModule} from './user-indicators-material.module';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
     declarations: [
@@ -26,17 +21,12 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         LayoutPageModule,
         RouterModule,
         CommonModule,
-        MatExpansionModule,
-        MatButtonModule,
+        MatProgressSpinnerModule,
         ReactiveFormsModule,
         FormsModule,
         UserSharedModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatStepperModule,
-        MatIconModule,
-        MatSnackBarModule,
-        MatProgressSpinnerModule,
+        UserIndicatorsMaterialModule,
+        MatButtonModule
     ]
 })
 export class UserIndicatorsModule { }
