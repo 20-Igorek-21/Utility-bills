@@ -70,7 +70,7 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
 
     }
 
-    ngOnDestroy() {
+    ngOnDestroy() {}
 
     // getUserId() {
     //     const value = localStorage.getItem('card');
@@ -80,50 +80,50 @@ export class UserIndicatorsCardsPageComponent implements OnDestroy {
     //     return undefined
     // }
     //отримання даних про вибраних провайдерів
-    getProvidersData(): void {
-        // this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
-        //
-        //     .subscribe( (data: IUserProviders[]) => {
-        //             // this.providers = data;
-        //             console.log(data)
-        //         },
-        //         error => {
-        //             console.log(error);
-        //         }))
-    }
+    // getProvidersData(): void {
+    //     // this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
+    //     //
+    //     //     .subscribe( (data: IUserProviders[]) => {
+    //     //             // this.providers = data;
+    //     //             console.log(data)
+    //     //         },
+    //     //         error => {
+    //     //             console.log(error);
+    //     //         }))
+    // }
 
-    onSubmit(): void {
-        if(this.indicatorsForm.valid) {
-            this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
-                this.indicatorsForm.value, this.userId
-            ).subscribe( (res:object) => {
-                console.log(res)
-                this.showNotification();
-                this.indicatorsForm.reset();
-            },
-            error => {
-                this.error = true;
-                this.massage = 'Сталася помилка!'
-                this.showNotification();
-            }
-            ))
-        }
-    }
-
-    showNotification(): void {
-        this.isAlertOpen = !this.isAlertOpen;
-        this.isAlertOpenProgress = !this.isAlertOpenProgress;
-        this.autoClose();
-    }
-
-    autoClose(): void {
-        setTimeout(() => {
-            this.isAlertOpen = !this.isAlertOpen;
-        },2500);
-        setTimeout(() => {
-            this.isAlertOpenProgress = !this.isAlertOpenProgress;
-        },2800)
-    }
+    // onSubmit(): void {
+    //     if(this.indicatorsForm.valid) {
+    //         this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
+    //             this.indicatorsForm.value, this.userId
+    //         ).subscribe( (res:object) => {
+    //             console.log(res)
+    //             this.showNotification();
+    //             this.indicatorsForm.reset();
+    //         },
+    //         error => {
+    //             this.error = true;
+    //             this.massage = 'Сталася помилка!'
+    //             this.showNotification();
+    //         }
+    //         ))
+    //     }
+    // }
+    //
+    // showNotification(): void {
+    //     this.isAlertOpen = !this.isAlertOpen;
+    //     this.isAlertOpenProgress = !this.isAlertOpenProgress;
+    //     this.autoClose();
+    // }
+    //
+    // autoClose(): void {
+    //     setTimeout(() => {
+    //         this.isAlertOpen = !this.isAlertOpen;
+    //     },2500);
+    //     setTimeout(() => {
+    //         this.isAlertOpenProgress = !this.isAlertOpenProgress;
+    //     },2800)
+    // }
 
 
 

@@ -2,6 +2,9 @@
   height: 210px;
   width: 285px;
   margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   border: none;
   border-radius: 7px;
@@ -21,27 +24,14 @@
   overflow: hidden;
 }
 
-.app-personal-cabinet-account__wrapper-button {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.app-personal-cabinet-account__button--edit {
+  top: 10px;
+  left: 10px;
 }
 
-.app-personal-cabinet-account__wrapper-button--edit {
-  width: 60px;
-  height: 60px;
-  top: 0;
-  left: 0;
-  cursor: default;
-}
-
-.app-personal-cabinet-account__wrapper-button--delete {
-  width: 60px;
-  height: 60px;
-  top: 0;
-  right: 0;
-  cursor: default;
+.app-personal-cabinet-account__button--delete {
+  top: 10px;
+  right: 10px;
 }
 
 .app-personal-cabinet-account__icon {
@@ -65,6 +55,7 @@
 
 .app-personal-cabinet-account__content-row {
   align-items: center;
+  width: 100%;
 }
 
 .app-personal-cabinet-account__title {
@@ -85,15 +76,10 @@
   transform: scale(1.2);
 }
 
-.app-personal-cabinet-account:hover {
-  box-shadow: 0 4px 8px rgb(120, 161, 245), 0 8px 16px rgb(0 0 0 / 15%);
-  cursor: pointer;
-}
-
 @media (min-width: 370px) {
 
   .app-personal-cabinet-account {
-    height: 200px;
+    height: 205px;
     width: 320px;
   }
 }
