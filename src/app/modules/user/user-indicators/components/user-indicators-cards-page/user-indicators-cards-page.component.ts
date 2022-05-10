@@ -1,3 +1,4 @@
+
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormControl} from '@ngneat/reactive-forms';
@@ -6,12 +7,13 @@ import {finalize, Subscription} from 'rxjs';
 import {IUserProviders} from '../../../user-shared/types/user-shared-provider.interface';
 import {IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 
+
 @Component({
     selector: 'app-user-indicators-cards-page',
     templateUrl: './user-indicators-cards-page.component.html',
     styleUrls: ['./user-indicators-cards-page.component.css']
 })
-export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
+export class UserIndicatorsCardsPageComponent implements OnDestroy {
 
     isAlertOpen  = false;
     isAlertOpenProgress  = false;
@@ -65,20 +67,10 @@ export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
     }
     ngOnInit() {
         this.fetchData()
+
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
-    }
-
-    indicatorsForm: FormGroup = new FormGroup({
-        gasIndicator: new FormControl<string>(),
-        energyIndicator: new FormControl<string>(),
-        tecIndicator: new FormControl<string>(),
-        waterIndicator: new FormControl<string>(),
-        heatIndicator: new FormControl<string>(),
-    })
-
 
     // getUserId() {
     //     const value = localStorage.getItem('card');
@@ -175,4 +167,5 @@ export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
         this.isShowFormAccount = true;
         this.isUnLockEditorForm.emit(true);
     }
+
 }

@@ -2,6 +2,7 @@
 
 <div class="indicators">
 
+
   <div class="content-page__add-account" *ngIf="accountData.length === 0">
 
     <p class="content-page__message-text">Необхідно додати адресу.</p>
@@ -14,65 +15,7 @@
   <app-user-indicators-current-account *ngFor="let account of accountData" [account]="account"></app-user-indicators-current-account>
 
   <hr>
-  <div class="floating-alert"
-       [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
-       [ngClass]="{active: isAlertOpen}">
-    <div class="floating-alert__content">
-        <span class="floating-alert__content-text">{{massage}}</span>
-    </div>
-    <div class="floating-alert__progress"
-         [ngClass]="error ? {active: isAlertOpenProgress, 'active-error': isAlertOpenProgress} : {active: isAlertOpenProgress}">
-    </div>
-  </div>
-
-  <form [formGroup]="indicatorsForm"
-        class="indicators__form">
-    <app-user-indicators-cards [title]="provider.provider.fullName"
-                               [itemIcon] = "provider.provider.indicator"
-                               [formControlName]="provider.provider.indicator"
-                               *ngFor="let provider of providers"
-                               [provider]="provider"></app-user-indicators-cards>
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
-<!--                               [itemIcon] = "'light-icon'"-->
-<!--                               formControlName="energyIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
-<!--                               [itemIcon] = "'term-icon'"-->
-<!--                               formControlName="tecIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
-<!--                               [itemIcon] = "'water-icon'"-->
-<!--                               formControlName="waterIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
-<!--                               [itemIcon] = "'term-icon'"-->
-<!--                               formControlName="heatIndicator"></app-user-indicators-cards>-->
-    <button (click)="onSubmit()"
-            class="indicators__form-btn button">
-      Відправити</button>
-  </form>
-
-
-
-<!--  <form [formGroup]="indicatorsForm"-->
-<!--        class="indicators__form">-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИГАЗ'"-->
-<!--                               [itemIcon] = "'gas-icon'"-->
-<!--                          formControlName="gasIndicator"-->
-<!--                               *ngIf="isProviderClose"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
-<!--                               [itemIcon] = "'light-icon'"-->
-<!--                          formControlName="energyIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
-<!--                               [itemIcon] = "'term-icon'"-->
-<!--                          formControlName="tecIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
-<!--                               [itemIcon] = "'water-icon'"-->
-<!--                          formControlName="waterIndicator"></app-user-indicators-cards>-->
-<!--    <app-user-indicators-cards [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
-<!--                               [itemIcon] = "'term-icon'"-->
-<!--                          formControlName="heatIndicator"></app-user-indicators-cards>-->
-<!--    <button (click)="onSubmit()"-->
-<!--            class="indicators__form-btn button">-->
-<!--      Відправити</button>-->
-<!--  </form>-->
+  <app-user-indicators-cards-form></app-user-indicators-cards-form>
 </div>
 
 <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"

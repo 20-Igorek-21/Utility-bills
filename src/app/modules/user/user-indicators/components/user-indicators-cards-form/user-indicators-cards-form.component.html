@@ -1,0 +1,27 @@
+
+<app-user-shared-floating-alert
+></app-user-shared-floating-alert>
+
+<form [formGroup]="indicatorsForm"
+      class="indicators__form">
+  <app-user-indicators-input [title]="provider.provider.fullName"
+                             [itemIcon] = "provider.provider.indicator"
+                             [formControlName]="provider.provider.indicator"
+                             *ngFor="let provider of providers"
+                             [provider]="provider"></app-user-indicators-input>
+  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
+  <!--                               [itemIcon] = "'light-icon'"-->
+  <!--                               formControlName="energyIndicator"></app-user-indicators-input>-->
+  <!--    <app-user-indicators-input [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
+  <!--                               [itemIcon] = "'term-icon'"-->
+  <!--                               formControlName="tecIndicator"></app-user-indicators-input>-->
+  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
+  <!--                               [itemIcon] = "'water-icon'"-->
+  <!--                               formControlName="waterIndicator"></app-user-indicators-input>-->
+  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
+  <!--                               [itemIcon] = "'term-icon'"-->
+  <!--                               formControlName="heatIndicator"></app-user-indicators-input>-->
+  <button (click)="onSubmit()"
+          class="indicators__form-btn button">
+    Відправити</button>
+</form>
