@@ -1,4 +1,5 @@
 <div class="floating-alert"
+     (click)="showNotification()"
      [ngStyle]="error ? {'border-left': '6px solid #d50d0d'} : {'border-left': '6px solid #0dd51f'}"
      [ngClass]="{active: isAlertOpen}">
   <div class="floating-alert__content">

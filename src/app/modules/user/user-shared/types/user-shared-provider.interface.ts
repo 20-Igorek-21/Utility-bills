@@ -17,5 +17,4 @@ export interface IUserProvider {
     fullName: string,
     id: string,
     indicator:string
-
 }
