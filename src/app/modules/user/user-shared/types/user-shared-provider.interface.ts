@@ -9,7 +9,6 @@ export interface  IIndicators {
     value: string
 }
 
-
 export interface IUserProviders {
     provider: IUserProvider,
 }

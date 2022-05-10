@@ -1,7 +1,10 @@
-.app-personal-cabinet-card {
+.app-personal-cabinet-account {
   height: 210px;
   width: 285px;
   margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   border: none;
   border-radius: 7px;
@@ -10,7 +13,7 @@
   box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
 }
 
-.app-personal-cabinet-card__button {
+.app-personal-cabinet-account__button {
   width: 35px;
   height: 35px;
   position: absolute;
@@ -21,53 +24,41 @@
   overflow: hidden;
 }
 
-.app-personal-cabinet-card__wrapper-button {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.app-personal-cabinet-account__button--edit {
+  top: 10px;
+  left: 10px;
 }
 
-.app-personal-cabinet-card__wrapper-button--edit {
-  width: 60px;
-  height: 60px;
-  top: 0;
-  left: 0;
-  cursor: default;
+.app-personal-cabinet-account__button--delete {
+  top: 10px;
+  right: 10px;
 }
 
-.app-personal-cabinet-card__wrapper-button--delete {
-  width: 60px;
-  height: 60px;
-  top: 0;
-  right: 0;
-  cursor: default;
-}
-
-.app-personal-cabinet-card__icon {
+.app-personal-cabinet-account__icon {
   width: 25px;
   height: 25px;
   margin-left: 10px;
   fill: #079f15;
 }
 
-.app-personal-cabinet-card__user-name {
+.app-personal-cabinet-account__user-name {
   padding-bottom: 12px;
   margin: 10px 0 0;
   font-weight: 500;
 }
 
-.app-personal-cabinet-card__user-phone {
+.app-personal-cabinet-account__user-phone {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
 }
 
-.app-personal-cabinet-card__content-row {
+.app-personal-cabinet-account__content-row {
   align-items: center;
+  width: 100%;
 }
 
-.app-personal-cabinet-card__title {
+.app-personal-cabinet-account__title {
   margin: 0 0 0 20px;
   width: 85px;
   display: flex;
@@ -75,25 +66,20 @@
   font-weight: 500;
 }
 
-.app-personal-cabinet-card__subtitle {
+.app-personal-cabinet-account__subtitle {
   margin: 0;
   font-weight: 500;
   font-size: 16px;
 }
 
-.app-personal-cabinet-card__button:hover {
+.app-personal-cabinet-account__button:hover {
   transform: scale(1.2);
-}
-
-.app-personal-cabinet-card:hover {
-  box-shadow: 0 4px 8px rgb(120, 161, 245), 0 8px 16px rgb(0 0 0 / 15%);
-  cursor: pointer;
 }
 
 @media (min-width: 370px) {
 
-  .app-personal-cabinet-card {
-    height: 200px;
+  .app-personal-cabinet-account {
+    height: 205px;
     width: 320px;
   }
 }

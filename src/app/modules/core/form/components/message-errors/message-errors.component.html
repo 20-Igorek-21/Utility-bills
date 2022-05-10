@@ -1,4 +1,4 @@
-<ng-container *ngIf="controlsName?.dirty" class="test">
+<ng-container *ngIf="controlsName?.dirty">
 
   <p *ngIf="controlsName?.hasError('required')">Некоректне відображення введених даних</p>
 
@@ -9,6 +9,5 @@
   <p *ngIf="controlsName?.hasError('notMatch')">Паролі не співпадають!</p>
 
   <p *ngIf="controlsName?.hasError('pattern')">Паролі!</p>
-
 
 </ng-container>

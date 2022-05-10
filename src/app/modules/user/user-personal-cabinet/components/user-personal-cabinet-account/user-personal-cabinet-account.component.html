@@ -1,57 +1,53 @@
-<button class="app-personal-cabinet-card" type="button" (click)="onSelect(card.id)">
+<section class="app-personal-cabinet-account">
 
-  <h1 class="app-personal-cabinet-card__user-name">{{card.fullName}}</h1>
+  <h1 class="app-personal-cabinet-account__user-name">{{account.fullName}}</h1>
 
-  <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--edit">
-    <button class="button app-personal-cabinet-card__button"
-            (click)="onEditCard(card.id)">
+   <button class="button app-personal-cabinet-account__button app-personal-cabinet-account__button--edit"
+            (click)="onEditCard(account.id)">
       <svg>
         <use href="./assets/svg/sprites.svg#edit-icon"></use>
       </svg>
     </button>
-  </div>
 
-  <div class="app-personal-cabinet-card__wrapper-button app-personal-cabinet-card__wrapper-button--delete">
-    <button class="button app-personal-cabinet-card__button"
-            (click)="onDeleteCard(card.id)">
+    <button class="button app-personal-cabinet-account__button app-personal-cabinet-account__button--delete"
+            (click)="onDeleteCard(account.id)">
       <svg>
         <use href="./assets/svg/sprites.svg#delete-icon"></use>
       </svg>
     </button>
-  </div>
 
-  <div class="content-row app-personal-cabinet-card__content-row">
-    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
-      <use href="./assets/svg/sprites.svg#place-icon"></use>
+  <div class="content-row app-personal-cabinet-account__content-row">
+    <svg class="app-personal-cabinet-account__icon" height="45" width="45">
+      <use href="./assets/svg/sprites.svg#pin-icon"></use>
     </svg>
-    <h3 class="app-personal-cabinet-card__title">Місто:</h3>
-    <p class="app-personal-cabinet-card__subtitle">{{card.address.city}}</p>
+    <h3 class="app-personal-cabinet-account__title">Місто:</h3>
+    <p class="app-personal-cabinet-account__subtitle">{{account.address.city}}</p>
   </div>
 
-  <div class="content-row app-personal-cabinet-card__content-row">
-    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+  <div class="content-row app-personal-cabinet-account__content-row">
+    <svg class="app-personal-cabinet-account__icon" height="50" width="50">
       <use href="./assets/svg/sprites.svg#street-icon"></use>
     </svg>
-    <h3 class="app-personal-cabinet-card__title">Вул.</h3>
-    <p class="app-personal-cabinet-card__subtitle">{{card.address.street}}</p>
+    <h3 class="app-personal-cabinet-account__title">Вул.</h3>
+    <p class="app-personal-cabinet-account__subtitle">{{account.address.street}}</p>
   </div>
 
-  <div class="content-row app-personal-cabinet-card__content-row">
-    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
-      <use href="./assets/svg/sprites.svg#house--icon"></use>
+  <div class="content-row app-personal-cabinet-account__content-row">
+    <svg class="app-personal-cabinet-account__icon" height="30" width="30">
+      <use href="./assets/svg/sprites.svg#house-icon"></use>
     </svg>
-    <h3 class="app-personal-cabinet-card__title">Будинок:</h3>
-    <p class="app-personal-cabinet-card__subtitle">{{card.address.house}}</p>
+    <h3 class="app-personal-cabinet-account__title">Будинок:</h3>
+    <p class="app-personal-cabinet-account__subtitle">{{account.address.house}}</p>
   </div>
 
-  <div class="content-row app-personal-cabinet-card__content-row">
-    <svg class="app-personal-cabinet-card__icon" height="50" width="50">
+  <div class="content-row app-personal-cabinet-account__content-row" *ngIf="account.address.flat">
+    <svg class="app-personal-cabinet-account__icon" height="40" width="40">
       <use href="./assets/svg/sprites.svg#apartment-icon"></use>
     </svg>
-    <h3 class="app-personal-cabinet-card__title">Квартира:</h3>
-    <p class="app-personal-cabinet-card__subtitle">{{card.address.house}}</p>
+    <h3 class="app-personal-cabinet-account__title" >Квартира:</h3>
+    <p class="app-personal-cabinet-account__subtitle">{{account.address.flat}}</p>
   </div>
 
-  <h3 class="app-personal-cabinet-card__user-phone">тел. {{card.phone}}</h3>
+  <h3 class="app-personal-cabinet-account__user-phone">тел. {{account.phone}}</h3>
 
-</button>
+</section>
