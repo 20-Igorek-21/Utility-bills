@@ -5,6 +5,7 @@ import { UserSharedDataUserService } from '../../../user-shared/services';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-user-personal-cabinet-form-private-data',
@@ -18,7 +19,8 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
 
     private subscription: Subscription = new Subscription();
 
-    constructor(private readonly userSharedDataUserService: UserSharedDataUserService) {}
+    constructor(private readonly userSharedDataUserService: UserSharedDataUserService,
+                private readonly router: Router) {}
 
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()
@@ -53,12 +55,13 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
                 .subscribe( (res:IUserAuth) => {
                     console.log(res)
                     alert('дані змінено')
+                    this.router.navigateByUrl('/user/personal-cabinet')
                 },
                 error => {
                     console.log(error);
                 }
                 ))
-            this.profileForm.reset();
+            // this.profileForm.reset();
         }
     }
 }
