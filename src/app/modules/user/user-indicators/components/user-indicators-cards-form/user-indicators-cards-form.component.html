@@ -2,7 +2,7 @@
 <app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 
 <form [formGroup]="indicatorsForm"
-      class="indicators__form">
+      class="content-page__form">
   <app-user-indicators-input [title]="provider.provider.fullName"
                              [itemIcon] = "provider.provider.indicator"
                              [formControlName]="provider.provider.indicator"
@@ -21,6 +21,6 @@
   <!--                               [itemIcon] = "'term-icon'"-->
   <!--                               formControlName="heatIndicator"></app-user-indicators-input>-->
   <button (click)="onSubmit()"
-          class="indicators__form-btn button">
+          class="content-page__form-btn button">
     Відправити</button>
 </form>
