@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-user-shared-floating-alert',
@@ -16,8 +17,8 @@ export class UserSharedFloatingAlertComponent  {
         this.isAlertOpen = !this.isAlertOpen;
         this.isAlertOpenProgress = !this.isAlertOpenProgress;
         this.autoClose();
-    }
 
+    }
     autoClose(): void {
         setTimeout(() => {
             this.isAlertOpen = !this.isAlertOpen;
@@ -26,5 +27,4 @@ export class UserSharedFloatingAlertComponent  {
             this.isAlertOpenProgress = !this.isAlertOpenProgress;
         },2800)
     }
-
 }

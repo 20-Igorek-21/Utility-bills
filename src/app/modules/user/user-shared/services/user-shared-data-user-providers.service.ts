@@ -3,7 +3,6 @@ import {environment} from '../../../../../environments/environment';
 import {map, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {IIndicators, IProvider, IUserProviders} from '../types/user-shared-provider.interface';
-import {IUserAccount, IUserAccountData, IUserAccountProviders} from "../types/user-shared-account.interface";
 
 @Injectable({
     providedIn: 'root'

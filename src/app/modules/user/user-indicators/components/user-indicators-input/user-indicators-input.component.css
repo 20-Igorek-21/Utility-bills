@@ -14,12 +14,31 @@
   height: 23px;
 }
 
+.color-gasIndicator {
+  fill:#ff6e00
+}
+
+.color-energyIndicator {
+  fill:#ffc800
+}
+
+.color-tecIndicator {
+  fill:#c93b3b
+}
+
+.color-waterIndicatorCold {
+  fill: #2496ED;
+}
+
+.color-waterIndicatorHot {
+  fill:#c93b3b
+}
+
 .indicators__inform-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   margin: 0;
 }
-
 
 .indicators__field-input {
   width: 100%;
