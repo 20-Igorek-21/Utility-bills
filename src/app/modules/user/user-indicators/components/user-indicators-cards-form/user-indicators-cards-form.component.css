@@ -1,4 +1,4 @@
-.indicators__form {
+.content-page__form {
   max-width: 500px;
   border: none;
   border-radius: 7px;
@@ -9,17 +9,17 @@
   margin: 0 auto;
 }
 
-.indicators__form-btn {
+.content-page__form-btn {
   margin-top: 15px;
   padding: 10px;
   background-color: var(--color-light-blue);;
   border-radius: 7px;
-  color: #FFFFFF;
+  color: var(--color-white);;
   font-size: 20px;
 }
 @media (min-width:600px) {
 
-  .indicators__form {
+  .content-page__form {
     max-width: 600px;
     padding: 20px;
   }

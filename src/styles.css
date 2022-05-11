@@ -31,6 +31,7 @@ html, body {
   --color-white: #FFF;
   --color-green: #0DD51F;
   --color-grey: #EFF0F2;
+  --indicators-input: #212529;
 }
 
 .link {
@@ -187,10 +188,6 @@ html, body {
   width: 100%;
 }
 
-/*.main-navigation__link--active {*/
-/*  background-image: linear-gradient(#2496ED, #157AFF);*/
-/*  background-size: 100% 2px;*/
-/*}*/
 
 /*.main-navigation__button-menu {*/
 /*  display: flex;*/
@@ -202,21 +199,6 @@ html, body {
 /*  height: 40px;*/
 /*  left: 100px;*/
 /*  top: 15px;*/
-/*}*/
-
-/*.main-navigation__switch-menu {*/
-/*  height: calc(100vh - 70px);*/
-/*  width: 100%;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  justify-content: left;*/
-/*  align-self: center;*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 70px;*/
-/*  background-color: var(--color-page);*/
-/*  animation: curtain .3s;*/
-/*  z-index: 99999;*/
 /*}*/
 
 .main-navigation__link-auth {
