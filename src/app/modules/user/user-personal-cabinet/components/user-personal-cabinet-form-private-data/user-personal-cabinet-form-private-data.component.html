@@ -1,10 +1,10 @@
 <form class="app-user-profile-form"
       [formGroup]="profileForm"
-      (ngSubmit)="onSubmit()">
+      (ngSubmit)="onChangeDataUser()">
 
   <h2 class="app-user-profile-form__title">Змінити адресу електронної пошти</h2>
 
-  <app-input-field [label]="'Адрес електронної пошти'"
+  <app-input-field [label]="'Вкажіть новий email'"
                    [type]="'email'"
                    [required]="true"
                    formControlName="email">
@@ -14,14 +14,14 @@
 
   <h2 class="app-user-profile-form__title">Змінити пароль</h2>
 
-  <app-input-password [label]="'Пароль'"
+  <app-input-password [label]="'Вкажіть новий пароль'"
                       [required]="true"
                       formControlName="password">
     <app-message-errors class="app-auth-form__message-errors"
                         [controlsName]="controls.password"></app-message-errors>
   </app-input-password>
 
-  <app-input-password [label]="'Повторіть пароль'"
+  <app-input-password [label]="'Повторіть новий пароль'"
                       [required]="true"
                       appConfirmPasswordValidator="password"
                       formControlName="repeatPassword">

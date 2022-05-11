@@ -7,12 +7,6 @@ export class ToggleButtonDirective {
 
     constructor(private elementRef: ElementRef) {}
 
-    @HostBinding('class.main-navigation__switch-menu') isShowBurgerMenu = false;
-
-    @Input() set showBurgerMenu(value: boolean) {
-        this.isShowBurgerMenu = value;
-    }
-
     @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowFormAccount = false;
 
     @Input() set showFormAccount(value: boolean) {

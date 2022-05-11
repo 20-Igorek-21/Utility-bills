@@ -10,10 +10,9 @@ import { FormControl } from '@ngneat/reactive-forms';
 export class UserSharedFormAddressComponent {
 
     addressForm: FormGroup = new FormGroup({
-        city: new FormControl<string>('Черкаси', Validators.required),
-        street: new FormControl<string>('Свободи', Validators.required),
-        house: new FormControl<string>('5', Validators.required),
+        city: new FormControl<string>('', Validators.required),
+        street: new FormControl<string>('', Validators.required),
+        house: new FormControl<string>('', Validators.required),
         flat: new FormControl<number | null>(null)
     })
-
 }

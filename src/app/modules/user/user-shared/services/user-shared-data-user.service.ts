@@ -13,15 +13,15 @@ export class UserSharedDataUserService {
 
     constructor(private readonly http: HttpClient) { }
 
-    changeDataUser(id:string, profileValue: FormGroup): Observable<IUserAuth> {
-        return this.http.put<IUserAuth>(environment.apiUrl + id, {
+    changeDataUser( profileValue: FormGroup ): Observable<IUserAuth> {
+        return this.http.put<IUserAuth>(environment.apiUrl + 'users/', {
             email: profileValue.value.email,
             password: profileValue.value.password
         })
     }
 
     fetchDataUser(): Observable<IUserAuth> {
-        return this.http.get<IUserAuth>(environment.apiUrl)
+        return this.http.get<IUserAuth>(environment.apiUrl + 'users/')
             .pipe(map((res:IUserAuth) => res));
     }
 }
