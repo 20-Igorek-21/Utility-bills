@@ -5,6 +5,11 @@
                                     (fetchData)="fetchData()"
                                     [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
 
+  <app-user-personal-cabinet-form-change-account (isCloseFormAccount)="isCloseFormAccount()"
+                                                 appToggleButton
+                                                 (fetchData)="fetchData()"
+                                                 [showFormAccount]="isShowFormAccount"></app-user-personal-cabinet-form-change-account>
+
   <div class="content-page__block content-page__block--account" *ngIf="!isExpandPrivateData">
 
     <h2 class="content-page__title" >Редагувати рахунки:</h2>
@@ -23,7 +28,8 @@
 
       <app-user-personal-cabinet-account *ngFor="let account of accountData"
                                          [account]="account"
-                                         (deleteCard)="fetchData()"></app-user-personal-cabinet-account>
+                                         (changeAccount)="changeAccount($event)"
+                                         (deleteAccount)="fetchData()"></app-user-personal-cabinet-account>
 
       <button class="button content-page__button content-page__button--add-address"
               mat-button
