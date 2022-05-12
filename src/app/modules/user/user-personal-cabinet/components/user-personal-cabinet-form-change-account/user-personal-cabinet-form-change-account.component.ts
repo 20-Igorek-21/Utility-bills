@@ -1,17 +1,19 @@
-import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { UserSharedDataUserAccountService } from '../../services';
-import { FormGroup } from '@angular/forms';
-import { UserSharedFormPersonalDataComponent } from '../user-shared-form-personal-data/user-shared-form-personal-data.component';
-import { UserSharedFormAddressComponent } from '../user-shared-form-address/user-shared-form-address.component';
-import { UserSharedFormProvidersComponent } from '../user-shared-form-providers/user-shared-form-providers.component';
+import {Component, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {
+    UserSharedFormAddressComponent,
+    UserSharedFormPersonalDataComponent,
+    UserSharedFormProvidersComponent
+} from '../../../user-shared/components';
+import {UserSharedDataUserAccountService} from '../../../user-shared/services';
+import {FormGroup} from '@angular/forms';
 
 @Component({
-    selector: 'app-user-shared-form-add-account',
-    templateUrl: './user-shared-form-add-account.component.html',
-    styleUrls: ['./user-shared-form-add-account.component.css']
+    selector: 'app-user-personal-cabinet-form-change-account',
+    templateUrl: './user-personal-cabinet-form-change-account.component.html',
+    styleUrls: ['./user-personal-cabinet-form-change-account.component.css']
 })
-export class UserSharedFormAddAccountComponent implements OnDestroy {
+export class UserPersonalCabinetFormChangeAccountComponent implements OnDestroy {
 
     private subscription: Subscription = new Subscription()
 

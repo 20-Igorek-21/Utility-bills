@@ -13,9 +13,6 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 })
 export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDestroy {
 
-    user!: IUserAuth;
-    userId: string | undefined
-
     private subscription: Subscription = new Subscription();
 
     constructor(private readonly userSharedDataUserService: UserSharedDataUserService) {}
@@ -23,9 +20,7 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()
             .subscribe( (res:IUserAuth) => {
-                console.log(res)
-                this.user = res
-                this.userId = res.id
+                this.profileForm.patchValue({email: res.email});
             }))
     }
 
@@ -37,6 +32,7 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
         email: new FormControl<string>('', [Validators.required, Validators.email]),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
         repeatPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
+        oldPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
     })
 
     public get controls() {
@@ -44,6 +40,7 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
             email: this.profileForm.get('email') as FormControl<string>,
             password: this.profileForm.get('password') as FormControl<string>,
             repeatPassword: this.profileForm.get('repeatPassword') as FormControl<string>,
+            oldPassword: this.profileForm.get('oldPassword') as FormControl<string>,
         }
     }
 

@@ -16,7 +16,8 @@ export class UserSharedDataUserService {
     changeDataUser( profileValue: FormGroup ): Observable<IUserAuth> {
         return this.http.put<IUserAuth>(environment.apiUrl + 'users/', {
             email: profileValue.value.email,
-            password: profileValue.value.password
+            password: profileValue.value.password,
+            oldPassword: profileValue.value.oldPassword
         })
     }
 

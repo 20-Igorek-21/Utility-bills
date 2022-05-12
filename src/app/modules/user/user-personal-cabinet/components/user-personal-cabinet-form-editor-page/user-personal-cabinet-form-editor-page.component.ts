@@ -74,4 +74,9 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
         this.isExpandPrivateData = !this.isExpandPrivateData;
         this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
     }
+
+    public  changeAccount(id: string) {
+        console.log('edit')
+        this.isShowFormAccount = true;
+    }
 }

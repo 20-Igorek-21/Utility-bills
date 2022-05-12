@@ -5,12 +5,14 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-around;
   position: relative;
-  border: none;
+  /*border: 1px solid var(--color-dark-blue);*/
   border-radius: 7px;
   background-color: #FFF;
   color: var(--color-dark-blue);
-  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+
+  /*box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);*/
 }
 
 .app-personal-cabinet-account__button {
@@ -20,24 +22,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /*background-color: var(--color-light-blue);*/
+  /*border-radius: 5px;*/
+  /*fill: #e9ebee;*/
   background-color: transparent;
   overflow: hidden;
 }
 
 .app-personal-cabinet-account__button--edit {
-  top: 10px;
+  /*top: 200px;*/
+  bottom: 220px;
   left: 10px;
+
 }
 
 .app-personal-cabinet-account__button--delete {
-  top: 10px;
+  bottom: 220px;
   right: 10px;
+  fill: #d50d0d;
 }
 
 .app-personal-cabinet-account__icon {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
   fill: #079f15;
 }
 
@@ -59,8 +67,8 @@
 }
 
 .app-personal-cabinet-account__title {
-  margin: 0 0 0 20px;
-  width: 85px;
+  margin: 0 0 0 30px;
+  width: 100px;
   display: flex;
   justify-content: left;
   font-weight: 500;
