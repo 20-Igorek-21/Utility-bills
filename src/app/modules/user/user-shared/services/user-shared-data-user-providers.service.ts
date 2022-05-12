@@ -33,7 +33,7 @@ export class UserSharedDataUserProvidersService {
                 },
                 {
                     provider: 'c3f89ec7-ae6a-4c9a-8ee3-c9081c1b330b',
-                    value: indicators.waterIndicator
+                    value: indicators.waterIndicatorHot + ':' + indicators.waterIndicatorCold
                 }
             ]
         )

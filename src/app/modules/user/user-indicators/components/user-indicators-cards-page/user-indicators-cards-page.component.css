@@ -1,9 +1,9 @@
 .content-page__indicators-content {
   max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   padding: 20px;
 }
 
-.content-page__line {
-  margin-bottom: 20px;
+.content-page__indicators-current-account {
+  width: 100%;
 }
