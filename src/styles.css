@@ -153,24 +153,10 @@ html, body {
 }
 
       /*navigation*/
-
-/*.main-navigation {*/
-/*  display: none;*/
-/*  align-items: center;*/
-/*  justify-content: space-between;*/
-/*  position: relative;*/
-/*}*/
-
 .main-navigation__link {
   margin-top: 30px;
   color: var(--color-blue);
 }
-
-/*.main-navigation__link-auth--login {*/
-/*  width: 80px;*/
-/*  margin: 0 20px;*/
-/*  color: var(--color-white);*/
-/*}*/
 
 .main-layout-page-header__logo-icon {
   height: 35px;
@@ -187,19 +173,6 @@ html, body {
 .navigation-user {
   width: 100%;
 }
-
-
-/*.main-navigation__button-menu {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  position: absolute;*/
-/*  background-color: transparent;*/
-/*  border: none;*/
-/*  width: 40px;*/
-/*  height: 40px;*/
-/*  left: 100px;*/
-/*  top: 15px;*/
-/*}*/
 
 .main-navigation__link-auth {
   height: 35px;
@@ -244,10 +217,6 @@ html, body {
   .app-auth-form__container {
     width: 350px;
   }
-
-  /*.main-navigation__button-menu {*/
-  /*  left: 140px;*/
-  /*}*/
 
   .content-page__loader {
     position: absolute;

@@ -2,7 +2,8 @@ export interface IProvider {
     gasIndicator: string,
     energyIndicator: string,
     tecIndicator: string,
-    waterIndicator: string,
+    waterIndicatorHot: string,
+    waterIndicatorCold: string,
 }
 export interface  IIndicators {
     provider: IProvider,
