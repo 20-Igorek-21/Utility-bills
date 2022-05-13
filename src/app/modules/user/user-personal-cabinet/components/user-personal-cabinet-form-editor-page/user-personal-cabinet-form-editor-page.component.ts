@@ -21,8 +21,8 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     public accountData: IUserAccountData [] = []
     private subscription: Subscription = new Subscription()
 
-    @Output() isLockEditorForm = new EventEmitter()
-    @Output() isUnLockEditorForm = new EventEmitter()
+    @Output() isLockEditorForm = new EventEmitter();
+    @Output() isUnLockEditorForm = new EventEmitter();
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
