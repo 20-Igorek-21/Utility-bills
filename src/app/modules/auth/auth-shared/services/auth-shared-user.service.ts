@@ -46,7 +46,7 @@ export class AuthSharedUserService {
     }
 
     isLogged(): boolean {
-        return !!localStorage.getItem('auth')
+        return !!localStorage.getItem('auth');
     }
 
     public logOut() {

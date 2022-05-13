@@ -6,7 +6,7 @@
       <p class="content-page__message-text">Необхідно додати адресу.</p>
       <button class="button content-page__button content-page__button--add-address"
               mat-button
-              (click)="onShowFormAccount()">Додати адресу</button>
+              (click)="onShowFormAddAccount()">Додати адресу</button>
     </div>
   </div>
     <app-user-indicators-current-account
@@ -24,6 +24,6 @@
 <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                   appToggleButton
                                   (fetchData)="fetchData()"
-                                  [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
+                                  [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
 
 <mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

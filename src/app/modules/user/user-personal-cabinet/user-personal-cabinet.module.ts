@@ -9,10 +9,10 @@ import { userPersonalCabinetComponents } from './components';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserSharedModule } from '../user-shared/user-shared.module';
 import { AuthSharedModule } from '../../auth/auth-shared/auth-shared.module';
-import { UserPersonalCabinetMaterialModule } from './user-personal-cabinet-material.module';
 import { MatStepperModule } from '@angular/material/stepper';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -20,17 +20,18 @@ import {MatButtonModule} from '@angular/material/button';
     ],
     imports: [
         CommonModule,
-        UserPersonalCabinetMaterialModule,
         ReactiveFormsModule,
         FormModule,
-        MatProgressSpinnerModule,
         LayoutPageModule,
         RouterModule,
         LayoutFooterModule,
         UserSharedModule,
         AuthSharedModule,
         MatStepperModule,
-        MatButtonModule
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatRadioModule,
     ],
     providers: []
 })

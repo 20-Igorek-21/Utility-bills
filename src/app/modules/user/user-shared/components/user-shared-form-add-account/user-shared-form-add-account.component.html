@@ -7,7 +7,8 @@
 
       <form [formGroup]="plugForm">
         <ng-template matStepLabel>Особисті дані</ng-template>
-        <app-user-shared-form-personal-data #formPersonalData></app-user-shared-form-personal-data>
+        <app-user-shared-form-personal-data [isAccountDataCanBeChanged]="isAccountDataCanBeChanged"
+                                            #formPersonalData></app-user-shared-form-personal-data>
         <div>
           <button class="app-user-form-account__button" mat-raised-button
                   matStepperNext>Далі
@@ -24,7 +25,8 @@
     <mat-step [stepControl]="plugForm">
       <form [formGroup]="plugForm">
         <ng-template matStepLabel>Адреса</ng-template>
-        <app-user-shared-form-address #formAddress></app-user-shared-form-address>
+        <app-user-shared-form-address [isAccountDataCanBeChanged]="isAccountDataCanBeChanged"
+                                      #formAddress></app-user-shared-form-address>
         <div>
           <button class="app-user-form-account__button" mat-raised-button
                   matStepperPrevious>Назад
@@ -44,7 +46,8 @@
     <mat-step [stepControl]="plugForm">
       <form [formGroup]="plugForm">
         <ng-template matStepLabel>Організації</ng-template>
-        <app-user-shared-form-providers #formProviders></app-user-shared-form-providers>
+        <app-user-shared-form-providers [isAccountDataCanBeChanged]="isAccountDataCanBeChanged"
+                                        #formProviders></app-user-shared-form-providers>
         <div>
           <div>
             <button class="app-user-form-account__button"

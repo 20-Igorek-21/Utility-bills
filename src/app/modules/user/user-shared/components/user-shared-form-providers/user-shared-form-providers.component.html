@@ -4,13 +4,13 @@
   <div class="user-shared-form-providers__container">
     <label class="user-shared-form-providers__label-provider">
       <mat-checkbox class="user-shared-form-providers__checkbox-provider"
-                    (change)="changeStatusGas()"
+
                     color="primary"
                     formControlName="gasStatus"></mat-checkbox>
       <h3 class="user-shared-form-providers__title-provider">ЧЕРКАСИГАЗ</h3>
     </label>
     <div class="user-shared-form-providers__input-provider"
-         *ngIf="isShowGas">
+         *ngIf="providersForm.value.gasStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
                        formControlName="gasNumber">
@@ -20,12 +20,13 @@
 
   <div class="user-shared-form-providers__container">
     <label class="user-shared-form-providers__label-provider">
-      <mat-checkbox class="user-shared-form-providers__checkbox-provider" (change)="changeStatusOblenergo()"
+      <mat-checkbox class="user-shared-form-providers__checkbox-provider"
                     color="primary"
                     formControlName="oblenergoStatus"></mat-checkbox>
       <h3 class="user-shared-form-providers__title-provider">ЧЕРКАСИОБЛЕНЕРГО</h3>
     </label>
-    <div class="user-shared-form-providers__input-provider" *ngIf="isShowOblenergo">
+    <div class="user-shared-form-providers__input-provider"
+         *ngIf="providersForm.value.oblenergoStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
                        formControlName="oblenergoNumber">
@@ -36,13 +37,12 @@
   <div class="user-shared-form-providers__container user-shared-form-providers__container--height">
     <label class="user-shared-form-providers__label-provider">
       <mat-checkbox class="user-shared-form-providers__checkbox-provider"
-                    (change)="changeStatusKhimvolokno()"
                     color="primary"
                     formControlName="khimvoloknoStatus"></mat-checkbox>
       <h3 class="user-shared-form-providers__title-provider">ЧЕРКАСЬКЕ ХІМВОЛОКНО</h3>
     </label>
 
-    <div class="user-shared-form-providers__input-provider" *ngIf="isShowKhimvolokno">
+    <div class="user-shared-form-providers__input-provider" *ngIf="providersForm.value.khimvoloknoStatus">
       <mat-radio-button class="user-shared-form-providers__radio-button"
                         value="Ванна"
                         checked="true">Ванна</mat-radio-button>
@@ -59,12 +59,11 @@
   <div class="user-shared-form-providers__container">
     <label class="user-shared-form-providers__label-provider">
       <mat-checkbox class="user-shared-form-providers__checkbox-provider"
-                    (change)="changeStatusVodokanal()"
                     color="primary"
                     formControlName="vodokanalStatus"></mat-checkbox>
       <h3 class="user-shared-form-providers__title-provider">ЧЕРКАСИВОДОКАНАЛ</h3>
     </label>
-    <div class="user-shared-form-providers__input-provider" *ngIf="isShowVodokanal">
+    <div class="user-shared-form-providers__input-provider" *ngIf="providersForm.value.vodokanalStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
                        formControlName="vodokanalNumber">

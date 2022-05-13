@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { FormGroup} from '@angular/forms';
 import { FormControl} from '@ngneat/reactive-forms';
 
@@ -9,25 +9,7 @@ import { FormControl} from '@ngneat/reactive-forms';
 })
 export class UserSharedFormProvidersComponent {
 
-    isShowGas = false;
-    isShowOblenergo = false;
-    isShowKhimvolokno = false;
-    isShowVodokanal = false;
-
-    changeStatusGas() {
-        this.isShowGas = !this.isShowGas;
-    }
-
-    changeStatusOblenergo() {
-        this.isShowOblenergo =!this.isShowOblenergo;
-    }
-
-    changeStatusKhimvolokno() {
-        this.isShowKhimvolokno = !this.isShowKhimvolokno;
-    }
-    changeStatusVodokanal() {
-        this.isShowVodokanal = !this.isShowVodokanal;
-    }
+    @Input() isAccountDataCanBeChanged!: boolean;
 
     providersForm: FormGroup = new FormGroup({
         gasNumber: new FormControl<number | null>(null),

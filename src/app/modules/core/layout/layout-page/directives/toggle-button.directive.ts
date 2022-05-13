@@ -7,10 +7,16 @@ export class ToggleButtonDirective {
 
     constructor(private elementRef: ElementRef) {}
 
-    @HostBinding('class.content-page__app-personal-cabinet-form-editor')  isShowFormAccount = false;
+    @HostBinding('class.content-page__app-form-add-account')  isShowFormAddAccount = false;
 
-    @Input() set showFormAccount(value: boolean) {
-        this.isShowFormAccount = value;
+    @Input() set showFormAddAccount(value: boolean) {
+        this.isShowFormAddAccount = value;
+    }
+
+    @HostBinding('class.content-page__app-form-change-account')  isShowFormChangeAccount = false;
+
+    @Input() set showFormChangeAccount(value: boolean) {
+        this.isShowFormChangeAccount = value;
     }
 
     @Input() set showLayoutLock(value: boolean) {
