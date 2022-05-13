@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import { IUserAccountData } from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';

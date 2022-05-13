@@ -64,9 +64,9 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
 
                 this.fetchData.emit();
                 this.isCloseFormAccount.emit();
-                this.openAlert.massage = 'Акаунт додано!'
+                this.openAlert.massage = 'Дані змінено!'
                 this.openAlert.showNotification();
-          
+
             },
             error => {
                 this.isCloseFormAccount.emit();
