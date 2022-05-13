@@ -1,6 +1,16 @@
 .user-indicators-current-account {
+  width: 100%;
+  background-color: var(--color-grey);
+  margin-top: 20px;
+}
+
+.user-indicators-current-account__wrapper {
   display: flex;
   align-items: center;
+  max-width: 1280px;
+  border-radius: 8px;
+  padding: 5px 20px;
+  margin: 0 auto;
 }
 
 .user-indicators-current-account__address-icon {
@@ -9,5 +19,6 @@
 
 .user-indicators-current-account__address-title {
   margin: 0 0 0 15px;
-  font-size: 16px;
+  font-size: calc(16px + (4 + 4 * 0.7) * ((100vw - 320px) / 1280));
 }
+

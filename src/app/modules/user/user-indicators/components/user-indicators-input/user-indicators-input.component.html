@@ -1,12 +1,12 @@
-<div class="indicators__item">
-  <div class="indicators__inform">
-    <svg class="indicators__inform-icon color-{{itemIcon}}">
+<div class="form__item">
+  <div class="form__inform">
+    <svg class="form__inform-icon color-{{itemIcon}}">
       <use [attr.xlink:href]="'/assets/svg/sprites.svg#'+ itemIcon"></use>
     </svg>
-    <h2 class="indicators__inform-title">{{title | uppercase}}</h2>
+    <h2 class="form__inform-title">{{title | uppercase}}</h2>
   </div>
-  <div class="indicators__field">
-      <input class="indicators__field-input"
+  <div class="form__field">
+      <input class="form__field-input"
              placeholder="Показник"
              OnlyNumber="true"
              (ngModelChange)="handleInput($event)"

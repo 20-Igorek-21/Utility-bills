@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
-import {UserSharedDataUserAccountService} from '../../../user-shared/services';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { IUserAccountData } from '../../../user-shared/types/user-shared-account.interface';
+import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 
 @Component({
     selector: 'app-user-personal-cabinet-account',
@@ -11,32 +11,30 @@ import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 export class UserPersonalCabinetAccountComponent implements OnDestroy {
 
     public flat?: number | null;
-    subscription: Subscription = new Subscription()
+    subscription: Subscription = new Subscription();
 
     @Input() account!: IUserAccountData;
-    @Output() deleteCard = new EventEmitter;
-    @Output() changeCard = new EventEmitter
-    @Output() changeMessageTrue = new EventEmitter
-
+    @Output() deleteAccount = new EventEmitter;
+    @Output() changeAccount = new EventEmitter;
+    @Output() changeMessageTrue = new EventEmitter;
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
+        this.subscription.unsubscribe();
     }
 
-    public onEditCard(id: string): void {
-        this.changeCard.emit();
+    public onChangeAccount(id: string): void {
+        this.changeAccount.emit(id);
     }
 
-    public onDeleteCard(id: string) {
-
+    public onDeleteAccount(id: string): void {
         this.subscription.add(this.userSharedDataAccountService.deleteAccount(id)
             .subscribe( () => {
-                this.deleteCard.emit()
+                this.deleteAccount.emit();
             },
             error => {
-                console.log(error)
+                console.log(error);
             }))
     }
 }

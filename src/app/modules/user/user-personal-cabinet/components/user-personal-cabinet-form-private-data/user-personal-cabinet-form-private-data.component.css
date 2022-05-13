@@ -1,5 +1,5 @@
 .app-user-profile-form {
-  height: 560px;
+  height: 600px;
   width: 100%;
   padding: 20px;
   display: flex;
@@ -24,16 +24,13 @@
   width: 100%;
   background-color: var(--color-blue);
   color: var(--color-white);
+  z-index: 99999;
 }
 
 @media (min-width: 420px) {
 
   .app-user-profile-form {
-    height: 470px;
-  }
-
-  .app-user-profile-form__button {
-    margin-top: 11px;
+    height: 630px;
   }
 
   .app-user-profile-form__title {

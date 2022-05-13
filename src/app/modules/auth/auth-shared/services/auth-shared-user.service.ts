@@ -45,6 +45,10 @@ export class AuthSharedUserService {
             }));
     }
 
+    isLogged(): boolean {
+        return !!localStorage.getItem('auth');
+    }
+
     public logOut() {
         localStorage.clear();
         AuthInterceptor.accessToken = '';

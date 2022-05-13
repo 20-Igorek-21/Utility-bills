@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthOnlyGuard } from './modules/auth/auth-shared/guards/auth-only.guard';
 
 const routes: Routes = [
 
     {
         path: '',
-        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     },
     {
         path: 'auth',
@@ -13,7 +14,9 @@ const routes: Routes = [
     },
     {
         path: 'user',
-        loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
+        loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule),
+        canLoad: [AuthOnlyGuard],
+        canActivate: [AuthOnlyGuard]
     },
     {
         path: '**',

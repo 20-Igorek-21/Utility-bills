@@ -1,27 +1,35 @@
-.indicators__form {
+.content-page__form {
   max-width: 500px;
   border: none;
-  border-radius: 7px;
   color: var(--color-dark-blue);
-  box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
-  padding: 10px;
   text-align: center;
   margin: 0 auto;
 }
 
-.indicators__form-btn {
+.content-page__form-btn {
   margin-top: 15px;
   padding: 10px;
-  background-color: var(--color-light-blue);;
+  background-color: var(--color-light-blue);
   border-radius: 7px;
-  color: #FFFFFF;
+  color: var(--color-white);
   font-size: 20px;
 }
 @media (min-width:600px) {
 
-  .indicators__form {
-    max-width: 600px;
+  .content-page__form {
+    max-width: 700px;
     padding: 20px;
+  }
+
+}
+
+
+@media (min-width:1024px) {
+
+  .content-page__form {
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+
   }
 
 }

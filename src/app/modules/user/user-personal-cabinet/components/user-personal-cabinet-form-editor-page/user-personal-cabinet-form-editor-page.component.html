@@ -1,13 +1,22 @@
 <div class="content-page" *ngIf="!isLoader">
+  <app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 
   <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                     appToggleButton
                                     (fetchData)="fetchData()"
-                                    [showFormAccount]="isShowFormAccount"></app-user-shared-form-add-account>
+                                    [openAlert]="openAlert"
+                                    [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
+
+  <app-user-personal-cabinet-form-change-account (isCloseFormAccount)="isCloseFormAccount()"
+                                                 appToggleButton
+                                                 (fetchData)="fetchData()"
+                                                 [openAlert]="openAlert"
+                                                 [accountData]="accountData"
+                                                 [showFormChangeAccount]="isShowFormChangeAccount"></app-user-personal-cabinet-form-change-account>
 
   <div class="content-page__block content-page__block--account" *ngIf="!isExpandPrivateData">
 
-    <h2 class="content-page__title" >Редагувати рахунки:</h2>
+    <h2 class="content-page__title" >Редагувати рахунок:</h2>
 
     <button class="button content-page__button user-indicators-account__button--expand"
             (click)="onExpandDataAccount()">
@@ -23,12 +32,13 @@
 
       <app-user-personal-cabinet-account *ngFor="let account of accountData"
                                          [account]="account"
-                                         (deleteCard)="fetchData()"></app-user-personal-cabinet-account>
+                                         (changeAccount)="changeAccount($event)"
+                                         (deleteAccount)="fetchData()"></app-user-personal-cabinet-account>
 
       <button class="button content-page__button content-page__button--add-address"
               mat-button
               *ngIf="accountData.length === 0"
-              (click)="onShowEditorForm()">Додати адресу</button>
+              (click)="onShowFormAddAccount()">Додати адресу</button>
     </div>
 
   </div>

@@ -62,11 +62,12 @@ export class UserSharedDataUserAccountService {
     }
 
     changeAccount(
+        id: string | null,
         personalDataValue: IUserAccountData,
         addressValue: IUserAccountAddress,
         providersValue: IUserAccountProviders
     ): Observable<IUserAccount> {
-        return this.http.put<IUserAccount>( environment.apiUrl + 'accounts/', {
+        return this.http.put<IUserAccount>( environment.apiUrl + 'accounts/' + id, {
             account: {
                 fullName: personalDataValue.fullName,
                 phone: personalDataValue.phone

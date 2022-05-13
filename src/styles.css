@@ -31,6 +31,7 @@ html, body {
   --color-white: #FFF;
   --color-green: #0DD51F;
   --color-grey: #EFF0F2;
+  --indicators-input: #212529;
 }
 
 .link {
@@ -73,6 +74,7 @@ html, body {
 
 .app-auth-form__field {
   width: 100%;
+  z-index: 9999;
 }
 
 .app-auth-form__container {
@@ -96,6 +98,7 @@ html, body {
   top: 50px;
   left: -5px;
   font-size: 13px;
+  z-index: 1;
 }
 
 /*home page*/
@@ -121,8 +124,51 @@ html, body {
 .app-personal-cabinet-form {
   width: 400px;
 }
-/*!!!!!*/
-.content-page__app-personal-cabinet-form-editor {
+
+.app-user-form-account {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-white);
+  z-index: 100;
+  overflow-y: scroll;
+}
+
+.app-user-form-account__form {
+  max-width: 600px;
+  min-width: 290px;
+  z-index: 99999;
+}
+
+.app-user-form-account__button {
+  width: 100px;
+  font-size: 16px;
+}
+
+.app-user-form-account__button--close {
+  background-color: #ff0202;
+  color: #FFFFFF;
+}
+
+.app-user-form-account__button--save {
+  background-color: #0dd51f;
+  color: #FFFFFF;
+}
+
+.app-user-form-account__button:hover {
+  opacity: .8;
+}
+
+.content-page__app-form-change-account {
+  display: none;
+}
+
+.content-page__app-form-add-account {
   display: none;
 }
 
@@ -152,24 +198,21 @@ html, body {
 }
 
       /*navigation*/
-
-/*.main-navigation {*/
-/*  display: none;*/
-/*  align-items: center;*/
-/*  justify-content: space-between;*/
-/*  position: relative;*/
-/*}*/
-
 .main-navigation__link {
   margin-top: 30px;
   color: var(--color-blue);
 }
 
-/*.main-navigation__link-auth--login {*/
-/*  width: 80px;*/
-/*  margin: 0 20px;*/
-/*  color: var(--color-white);*/
-/*}*/
+.main-navigation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 
 .main-layout-page-header__logo-icon {
   height: 35px;
@@ -187,38 +230,6 @@ html, body {
   width: 100%;
 }
 
-/*.main-navigation__link--active {*/
-/*  background-image: linear-gradient(#2496ED, #157AFF);*/
-/*  background-size: 100% 2px;*/
-/*}*/
-
-/*.main-navigation__button-menu {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  position: absolute;*/
-/*  background-color: transparent;*/
-/*  border: none;*/
-/*  width: 40px;*/
-/*  height: 40px;*/
-/*  left: 100px;*/
-/*  top: 15px;*/
-/*}*/
-
-/*.main-navigation__switch-menu {*/
-/*  height: calc(100vh - 70px);*/
-/*  width: 100%;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  justify-content: left;*/
-/*  align-self: center;*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 70px;*/
-/*  background-color: var(--color-page);*/
-/*  animation: curtain .3s;*/
-/*  z-index: 99999;*/
-/*}*/
-
 .main-navigation__link-auth {
   height: 35px;
   display: flex;
@@ -234,7 +245,6 @@ html, body {
 
 .main-navigation__link-auth--login {
   width: 100px;
-  margin: 0 15px 0 0;
 }
 
 .content-page__loader {
@@ -263,23 +273,24 @@ html, body {
     width: 350px;
   }
 
-  /*.main-navigation__button-menu {*/
-  /*  left: 140px;*/
-  /*}*/
-
   .content-page__loader {
     position: absolute;
     left: 40%;
   }
 }
 
-@media (min-width: 470px) {
-  .main-navigation__link-auth--register {
-    margin-right: 20px;
+@media (min-width: 599px) {
+
+  .app-user-form-account {
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,.3);
   }
 
-  .main-navigation__link-auth--login {
-    margin-right: 30px;
+  .app-user-form-account__form {
+    margin: 70px 8px 5px 5px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(141, 180, 241);
+
   }
 }
 
