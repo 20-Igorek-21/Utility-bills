@@ -202,6 +202,17 @@ html, body {
   color: var(--color-blue);
 }
 
+.main-navigation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
 .main-layout-page-header__logo-icon {
   height: 35px;
   width: 35px;
@@ -233,7 +244,6 @@ html, body {
 
 .main-navigation__link-auth--login {
   width: 100px;
-  margin: 0 15px 0 0;
 }
 
 .content-page__loader {
@@ -265,16 +275,6 @@ html, body {
   .content-page__loader {
     position: absolute;
     left: 40%;
-  }
-}
-
-@media (min-width: 470px) {
-  .main-navigation__link-auth--register {
-    margin-right: 20px;
-  }
-
-  .main-navigation__link-auth--login {
-    margin-right: 30px;
   }
 }
 

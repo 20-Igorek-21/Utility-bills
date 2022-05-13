@@ -1,6 +1,6 @@
 .user-indicators-current-account {
   width: 100%;
-  background-color: #bdbdbd47;
+  background-color: var(--color-grey);
   margin-top: 20px;
 }
 

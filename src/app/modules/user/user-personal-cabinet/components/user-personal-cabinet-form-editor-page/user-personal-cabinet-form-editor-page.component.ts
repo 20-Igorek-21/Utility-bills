@@ -1,7 +1,8 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
+import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
 
 @Component({
     selector: 'app-user-personal-cabinet-form-editor-page',
@@ -17,9 +18,10 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     public iconNameExpendPrivateData = 'more';
     public isShowFormAccount = true;
     public isLoader = true;
-    public accountData: IUserAccountData []= []
+    public accountData: IUserAccountData []= [];
     private subscription: Subscription = new Subscription()
-
+    @ViewChild('openAlert')
+    public openAlert!: UserSharedFloatingAlertComponent;
     @Output() isLockEditorForm = new EventEmitter()
     @Output() isUnLockEditorForm = new EventEmitter()
 
