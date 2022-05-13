@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {UserSharedDataUserAccountService} from '../../../user-shared/services';
 import {finalize, Subscription} from 'rxjs';
 import {IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
+import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
 
 @Component({
     selector: 'app-user-indicators-cards-page',
@@ -14,7 +15,8 @@ export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
     public accountData: IUserAccountData[] = [];
     public isLoader = true;
     private subscription: Subscription = new Subscription();
-
+    @ViewChild('openAlert')
+    public openAlert!: UserSharedFloatingAlertComponent;
     @Output() isLockEditorForm = new EventEmitter();
     @Output() isUnLockEditorForm = new EventEmitter();
 

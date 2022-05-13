@@ -1,10 +1,11 @@
-import { Component, EventEmitter, OnDestroy, Output, ViewChild } from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output, ViewChild} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../services';
 import { FormGroup } from '@angular/forms';
 import { UserSharedFormPersonalDataComponent } from '../user-shared-form-personal-data/user-shared-form-personal-data.component';
 import { UserSharedFormAddressComponent } from '../user-shared-form-address/user-shared-form-address.component';
 import { UserSharedFormProvidersComponent } from '../user-shared-form-providers/user-shared-form-providers.component';
+import {UserSharedFloatingAlertComponent} from "../user-shared-floating-alert/user-shared-floating-alert.component";
 
 @Component({
     selector: 'app-user-shared-form-add-account',
@@ -21,10 +22,9 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
     public formAddress!: UserSharedFormAddressComponent;
     @ViewChild('formProviders')
     public formProviders!: UserSharedFormProvidersComponent;
-
+    @Input() public openAlert!: UserSharedFloatingAlertComponent;
     @Output() isCloseFormAccount = new EventEmitter;
     @Output() fetchData = new EventEmitter;
-
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnDestroy() {
@@ -52,11 +52,15 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
                 this.formProviders.providersForm.value
             ).subscribe( () => {
                 this.fetchData.emit();
-                alert('рахунок доданий')
+                this.openAlert.massage = 'Акаунт додано!'
+                this.openAlert.showNotification();
                 this.resetForm();
             },
             error => {
-                console.log(error);
+                this.isCloseFormAccount.emit();
+                this.openAlert.error = true;
+                this.openAlert.massage = 'Помилка! Спробуйте ще раз!'
+                this.openAlert.showNotification();
             }
             ))
         }

@@ -6,7 +6,6 @@ import {FormGroup} from '@angular/forms';
 import {FormControl} from '@ngneat/reactive-forms';
 import {UserSharedFloatingAlertComponent} from '../../../user-shared/components';
 
-
 @Component({
     selector: 'app-user-indicators-cards-form',
     templateUrl: './user-indicators-cards-form.component.html',
@@ -82,7 +81,6 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         }
         return undefined
     }
-    //отримання даних про вибраних провайдерів
 
     getProvidersData(): void {
         this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
@@ -100,13 +98,12 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
                 this.indicatorsForm.value, this.userId
             ).subscribe( (res:object) => {
-                // console.log(res)
                 this.openAlert.showNotification()
                 this.indicatorsForm.reset();
             },
             error => {
                 this.openAlert.error = true;
-                this.openAlert.massage = 'Сталася помилка!'
+                this.openAlert.massage = 'Помилка! Спробуйте відправити ще раз!'
                 this.openAlert.showNotification();
             }
             ))
