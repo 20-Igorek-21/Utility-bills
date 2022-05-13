@@ -4,20 +4,19 @@
   <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                     appToggleButton
                                     (fetchData)="fetchData()"
-                                    [showFormAccount]="isShowFormAccount"
                                     [openAlert]="openAlert"
-
-  ></app-user-shared-form-add-account>
+                                    [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
 
   <app-user-personal-cabinet-form-change-account (isCloseFormAccount)="isCloseFormAccount()"
                                                  appToggleButton
-                                                 (fetchData)="fetchData()" [showFormAccount]="isShowFormAccount"
+                                                 (fetchData)="fetchData()"
                                                  [openAlert]="openAlert"
-  ></app-user-personal-cabinet-form-change-account>
+                                                 [accountData]="accountData"
+                                                 [showFormChangeAccount]="isShowFormChangeAccount"></app-user-personal-cabinet-form-change-account>
 
   <div class="content-page__block content-page__block--account" *ngIf="!isExpandPrivateData">
 
-    <h2 class="content-page__title" >Редагувати рахунки:</h2>
+    <h2 class="content-page__title" >Редагувати рахунок:</h2>
 
     <button class="button content-page__button user-indicators-account__button--expand"
             (click)="onExpandDataAccount()">
@@ -39,7 +38,7 @@
       <button class="button content-page__button content-page__button--add-address"
               mat-button
               *ngIf="accountData.length === 0"
-              (click)="onShowEditorForm()">Додати адресу</button>
+              (click)="onShowFormAddAccount()">Додати адресу</button>
     </div>
 
   </div>

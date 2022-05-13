@@ -11,7 +11,7 @@ import {UserSharedFloatingAlertComponent} from "../../../user-shared/components"
 })
 export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
 
-    public isShowFormAccount = true;
+    public isShowFormAddAccount = true;
     public accountData: IUserAccountData[] = [];
     public isLoader = true;
     private subscription: Subscription = new Subscription();
@@ -40,7 +40,7 @@ export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
 
                 if (data.length === 0) {
                     localStorage.removeItem('card');
-                    this.onShowFormAccount()
+                    this.onShowFormAddAccount()
                 }
                 else {
                     if (data[0].id){
@@ -53,13 +53,13 @@ export class UserIndicatorsCardsPageComponent implements OnInit, OnDestroy {
             }))
     }
 
-    public onShowFormAccount(): void {
-        this.isShowFormAccount = false;
+    public onShowFormAddAccount(): void {
+        this.isShowFormAddAccount = false;
         this.isLockEditorForm.emit(false);
     }
 
     public isCloseFormAccount(): void {
-        this.isShowFormAccount = true;
+        this.isShowFormAddAccount = true;
         this.isUnLockEditorForm.emit(true);
     }
 }

@@ -15,6 +15,7 @@ import {UserSharedFloatingAlertComponent} from "../user-shared-floating-alert/us
 export class UserSharedFormAddAccountComponent implements OnDestroy {
 
     private subscription: Subscription = new Subscription()
+    public isAccountDataCanBeChanged = false;
 
     @ViewChild('formPersonalData')
     public formPersonalData!: UserSharedFormPersonalDataComponent;

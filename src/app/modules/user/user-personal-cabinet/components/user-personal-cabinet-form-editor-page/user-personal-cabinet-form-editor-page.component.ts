@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
-import { IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { IUserAccountData } from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
 import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
@@ -16,14 +16,17 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     public isExpandPrivateData = false;
     public iconNameExpendAccount = 'more';
     public iconNameExpendPrivateData = 'more';
-    public isShowFormAccount = true;
+    public isShowFormAddAccount = true;
+    public isShowFormChangeAccount = true;
     public isLoader = true;
-    public accountData: IUserAccountData []= [];
+
+    public accountData: IUserAccountData [] = []
     private subscription: Subscription = new Subscription()
+
+    @Output() isLockEditorForm = new EventEmitter();
+    @Output() isUnLockEditorForm = new EventEmitter();
     @ViewChild('openAlert')
     public openAlert!: UserSharedFloatingAlertComponent;
-    @Output() isLockEditorForm = new EventEmitter()
-    @Output() isUnLockEditorForm = new EventEmitter()
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
@@ -54,16 +57,22 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
             error => {
                 console.log(error);
             }))
-
     }
 
-    public onShowEditorForm(): void {
-        this.isShowFormAccount = false;
+    public changeAccount(id: string) {
+        sessionStorage.setItem('changeId', id)
+        this.isShowFormChangeAccount = false;
+        this.isLockEditorForm.emit(false);
+    }
+
+    public onShowFormAddAccount(): void {
+        this.isShowFormAddAccount = false;
         this.isLockEditorForm.emit(false);
     }
 
     public isCloseFormAccount(): void {
-        this.isShowFormAccount = true;
+        this.isShowFormAddAccount = true;
+        this.isShowFormChangeAccount = true;
         this.isUnLockEditorForm.emit(true);
     }
 
@@ -75,10 +84,5 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     public onExpandPrivateData(): void {
         this.isExpandPrivateData = !this.isExpandPrivateData;
         this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
-    }
-
-    public  changeAccount(id: string) {
-        console.log('edit')
-        this.isShowFormAccount = true;
     }
 }

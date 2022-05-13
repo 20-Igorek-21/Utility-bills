@@ -33,7 +33,7 @@ export class AuthInterceptor implements HttpInterceptor {
                         console.log(error)
                     })
                 return next.handle(request.clone({
-                    headers: req.headers.set('Authorization', 'Refresh ' + AuthInterceptor.accessToken)
+                    headers: req.headers.set('Authorization', 'Bearer ' + AuthInterceptor.accessToken)
                 }));
             }
             this.refresh = false;
