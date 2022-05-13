@@ -20,10 +20,12 @@
   </div>
 
 </div>
-
+<app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                   appToggleButton
                                   (fetchData)="fetchData()"
-                                  [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
+
+                                  [showFormAccount]="isShowFormAccount"
+                                  [openAlert]="openAlert"></app-user-shared-form-add-account>
 
 <mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>

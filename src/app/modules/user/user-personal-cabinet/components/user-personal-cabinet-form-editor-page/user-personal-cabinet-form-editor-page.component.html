@@ -1,13 +1,16 @@
 <div class="content-page" *ngIf="!isLoader">
+  <app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 
   <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                     appToggleButton
                                     (fetchData)="fetchData()"
+                                    [openAlert]="openAlert"
                                     [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
 
   <app-user-personal-cabinet-form-change-account (isCloseFormAccount)="isCloseFormAccount()"
                                                  appToggleButton
                                                  (fetchData)="fetchData()"
+                                                 [openAlert]="openAlert"
                                                  [accountData]="accountData"
                                                  [showFormChangeAccount]="isShowFormChangeAccount"></app-user-personal-cabinet-form-change-account>
 

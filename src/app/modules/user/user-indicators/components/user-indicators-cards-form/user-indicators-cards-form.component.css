@@ -1,7 +1,6 @@
 .content-page__form {
   max-width: 500px;
   border: none;
-  border-radius: 7px;
   color: var(--color-dark-blue);
   text-align: center;
   margin: 0 auto;
@@ -18,8 +17,19 @@
 @media (min-width:600px) {
 
   .content-page__form {
-    max-width: 600px;
+    max-width: 700px;
     padding: 20px;
+  }
+
+}
+
+
+@media (min-width:1024px) {
+
+  .content-page__form {
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);
+
   }
 
 }

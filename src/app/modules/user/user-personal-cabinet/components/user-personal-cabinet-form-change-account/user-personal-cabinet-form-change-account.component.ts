@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+
 import {Subscription} from 'rxjs';
 import {
+    UserSharedFloatingAlertComponent,
     UserSharedFormAddressComponent,
     UserSharedFormPersonalDataComponent,
     UserSharedFormProvidersComponent
@@ -29,8 +31,9 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
 
     @Output() isCloseFormAccount = new EventEmitter;
     @Output() fetchData = new EventEmitter;
-    @Input() accountData: IUserAccountData [] = [];
 
+    @Input() accountData: IUserAccountData [] = [];
+    @Input() public openAlert!: UserSharedFloatingAlertComponent;
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
@@ -58,12 +61,18 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
                 this.formAddress.addressForm.value,
                 this.formProviders.providersForm.value
             ).subscribe( () => {
+
                 this.fetchData.emit();
                 this.isCloseFormAccount.emit();
-                alert('рахунок change')
+                this.openAlert.massage = 'Акаунт додано!'
+                this.openAlert.showNotification();
+          
             },
             error => {
-                console.log(error);
+                this.isCloseFormAccount.emit();
+                this.openAlert.error = true;
+                this.openAlert.massage = 'Помилка! Спробуйте ще раз!'
+                this.openAlert.showNotification();
             }
             ))
         }
