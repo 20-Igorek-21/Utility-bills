@@ -16,5 +16,9 @@ export interface IUserProviders {
 export interface IUserProvider {
     fullName: string,
     id: string,
-    indicator:string
+    indicators: Array<IUserIndicator>;
+}
+
+export interface IUserIndicator {
+    name: string,
 }
