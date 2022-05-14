@@ -14,6 +14,12 @@
   color: var(--color-white);
   font-size: 20px;
 }
+
+.providers-empty {
+  text-align: center;
+  font-size: calc(14px + (6 + 6 * 0.7) * ((100vw - 320px) / 1280));
+  font-weight: 500;
+}
 @media (min-width:600px) {
 
   .content-page__form {
