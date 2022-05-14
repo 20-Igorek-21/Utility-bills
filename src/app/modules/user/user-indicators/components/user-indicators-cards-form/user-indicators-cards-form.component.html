@@ -2,25 +2,20 @@
 <app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 
 <form [formGroup]="indicatorsForm"
-      class="content-page__form">
-  <app-user-indicators-input [title]="provider.provider.fullName"
-                             [itemIcon] = "provider.provider.indicator"
-                             [formControlName]="provider.provider.indicator"
-                             *ngFor="let provider of providers"
-                             [provider]="provider"></app-user-indicators-input>
-  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИОБЛЕНЕРГО'"-->
-  <!--                               [itemIcon] = "'light-icon'"-->
-  <!--                               formControlName="energyIndicator"></app-user-indicators-input>-->
-  <!--    <app-user-indicators-input [title]="'ЧЕРКАСЬКЕ ХІМВОЛОКНО'"-->
-  <!--                               [itemIcon] = "'term-icon'"-->
-  <!--                               formControlName="tecIndicator"></app-user-indicators-input>-->
-  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИВОДОКАНАЛ'"-->
-  <!--                               [itemIcon] = "'water-icon'"-->
-  <!--                               formControlName="waterIndicator"></app-user-indicators-input>-->
-  <!--    <app-user-indicators-input [title]="'ЧЕРКАСИТЕПЛОКОМУНЕНЕРГО'"-->
-  <!--                               [itemIcon] = "'term-icon'"-->
-  <!--                               formControlName="heatIndicator"></app-user-indicators-input>-->
+      class="content-page__form"
+      *ngIf="providers.length != 0; else emptyState">
+  <div class="content-page__providers" *ngFor="let provider of providers">
+    <app-user-indicators-input *ngFor="let indicator of provider.provider.indicators"
+                               [provider]="provider"
+                               [title]="provider.provider.fullName"
+                               [itemIcon] = "indicator.name"
+                               [formControlName]="indicator.name"
+                               required></app-user-indicators-input>
+  </div>
   <button (click)="onSubmit()"
           class="content-page__form-btn button">
     Відправити</button>
 </form>
+<ng-template #emptyState>
+  <p class="providers-empty">Провайдери не підключені!</p>
+</ng-template>
