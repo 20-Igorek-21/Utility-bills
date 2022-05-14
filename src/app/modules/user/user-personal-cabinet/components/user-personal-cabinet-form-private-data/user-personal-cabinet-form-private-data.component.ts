@@ -52,13 +52,11 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
                 .subscribe( (res:IUserAuth) => {
                     console.log(res)
                     alert('дані змінено')
-                    this.router.navigateByUrl('/user/personal-cabinet')
                 },
                 error => {
                     console.log(error);
                 }
                 ))
-            // this.profileForm.reset();
         }
     }
 }
