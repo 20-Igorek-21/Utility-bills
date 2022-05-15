@@ -6,7 +6,7 @@
           <h1 class="home__title-text">Міська Комунальна Система</h1>
           <p class="home__title-desc">Передавайте показники лічильників з одного сайту!</p>
         </div>
-        <ng-container authLink>
+        <ng-container authLink *ngIf="!isLogged">
           <a class="link home__main-link"
              routerLink="/auth/login">Увійти</a>
         </ng-container>

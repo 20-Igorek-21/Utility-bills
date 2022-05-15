@@ -1,7 +1,8 @@
 <app-main-layout-page class="app-main-layout">
-  <ng-container navigationLogo>
+
+  <ng-container navigationLogo *ngIf="!isLogged">
     <div class="main-navigation__wrapper">
-      <a class="link main-layout-page-header__logo-icon" routerLink="/">
+      <a class="link main-layout-page-header__logo-icon">
         <svg height="20" width="20">
           <use href="./assets/svg/sprites.svg#house-icon"></use>
         </svg>
@@ -13,10 +14,58 @@
     </div>
   </ng-container>
 
+  <ng-container navigationLinks *ngIf="isLogged">
+    <nav class="main-navigation__users navigation-user">
+      <a class="link main-layout-page-header__logo-icon" (click)="userOutput()">
+        <svg height="35" width="35">
+          <use href="./assets/svg/sprites.svg#output-icon"></use>
+        </svg>
+      </a>
+
+      <a class="link main-layout-page-header__link-icon"
+         routerLink="/user/personal-cabinet">
+        <svg height="35" width="35">
+          <use href="./assets/svg/sprites.svg#account-icon"></use>
+        </svg>
+      </a>
+
+      <a class="link main-layout-page-header__link-icon"
+         routerLink="/user/indicators">
+        <svg height="35" width="35">
+          <use href="./assets/svg/sprites.svg#transfer-icon"></use>
+        </svg>
+      </a>
+    </nav>
+  </ng-container>
 
 
-  <app-dashboard-home-page></app-dashboard-home-page>
+
+  <app-dashboard-home-page [isLogged] = isLogged></app-dashboard-home-page>
 
   <app-layout-footer-view footer></app-layout-footer-view>
 
 </app-main-layout-page>
+
+
+<!--<app-main-layout-page class="app-main-layout">-->
+<!--  <ng-container navigationLogo>-->
+<!--    <div class="main-navigation__wrapper">-->
+<!--      <a class="link main-layout-page-header__logo-icon">-->
+<!--        <svg height="20" width="20">-->
+<!--          <use href="./assets/svg/sprites.svg#house-icon"></use>-->
+<!--        </svg>-->
+<!--      </a>-->
+<!--      <ng-container authLink>-->
+<!--        <a class="link main-navigation__link-auth main-navigation__link-auth&#45;&#45;login"-->
+<!--           routerLink="/auth/login">Увійти</a>-->
+<!--      </ng-container>-->
+<!--    </div>-->
+<!--  </ng-container>-->
+
+
+
+<!--  <app-dashboard-home-page></app-dashboard-home-page>-->
+
+<!--  <app-layout-footer-view footer></app-layout-footer-view>-->
+
+<!--</app-main-layout-page>-->
