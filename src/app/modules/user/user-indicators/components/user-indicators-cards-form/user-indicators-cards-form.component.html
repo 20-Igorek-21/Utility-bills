@@ -3,7 +3,7 @@
 
 <form [formGroup]="indicatorsForm"
       class="content-page__form"
-      *ngIf="providers.length != 0; else emptyState">
+      *ngIf="providers.length !== 0; else emptyState">
   <div class="content-page__providers" *ngFor="let provider of providers">
     <app-user-indicators-input *ngFor="let indicator of provider.provider.indicators"
                                [provider]="provider"

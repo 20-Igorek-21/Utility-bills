@@ -5,7 +5,7 @@ import { FormGroup } from '@angular/forms';
 import { UserSharedFormPersonalDataComponent } from '../user-shared-form-personal-data/user-shared-form-personal-data.component';
 import { UserSharedFormAddressComponent } from '../user-shared-form-address/user-shared-form-address.component';
 import { UserSharedFormProvidersComponent } from '../user-shared-form-providers/user-shared-form-providers.component';
-import {UserSharedFloatingAlertComponent} from "../user-shared-floating-alert/user-shared-floating-alert.component";
+import { UserSharedFloatingAlertComponent } from '../user-shared-floating-alert/user-shared-floating-alert.component';
 
 @Component({
     selector: 'app-user-shared-form-add-account',
@@ -53,17 +53,16 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
                 this.formProviders.providersForm.value
             ).subscribe( () => {
                 this.fetchData.emit();
-                this.openAlert.massage = 'Акаунт додано!'
+                this.openAlert.massage = 'Рахунок додано!';
                 this.openAlert.showNotification();
                 this.resetForm();
             },
             error => {
                 this.isCloseFormAccount.emit();
                 this.openAlert.error = true;
-                this.openAlert.massage = 'Помилка! Спробуйте ще раз!'
+                this.openAlert.massage = 'Помилка! Спробуйте ще раз!';
                 this.openAlert.showNotification();
-            }
-            ))
+            }))
         }
     }
 }

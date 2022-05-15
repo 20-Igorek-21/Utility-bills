@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { IUserAuth} from '../../../../core/form/types/auth-shared-user-interface';
 import { Subscription} from 'rxjs';
 import { UserSharedDataUserService } from '../../../user-shared/services';
@@ -13,6 +13,8 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 })
 export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDestroy {
 
+    @Output() isChangeDataUser = new EventEmitter;
+
     private subscription: Subscription = new Subscription();
 
     constructor(private readonly userSharedDataUserService: UserSharedDataUserService) {}
@@ -20,12 +22,12 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()
             .subscribe( (res:IUserAuth) => {
-                this.profileForm.patchValue({email: res.email});
+                this.profileForm.patchValue({ email: res.email });
             }))
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
+        this.subscription.unsubscribe();
     }
 
     profileForm: FormGroup = new FormGroup({
@@ -47,15 +49,14 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
     onChangeDataUser() {
         if (!this.profileForm.invalid) {
             this.subscription.add(this.userSharedDataUserService.changeDataUser(this.profileForm)
-                .subscribe( (res:IUserAuth) => {
-                    console.log(res)
-                    alert('дані змінено')
+                .subscribe( () => {
+                    alert('дані змінено');
+                    this.isChangeDataUser.emit();
                 },
                 error => {
                     console.log(error);
                 }
                 ))
-            this.profileForm.reset();
         }
     }
 }

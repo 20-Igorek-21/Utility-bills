@@ -10,8 +10,7 @@ import {Router} from '@angular/router';
 export class MainLayoutPageHeaderNavigationUserComponent {
 
     constructor(private readonly authSharedUserService: AuthSharedUserService,
-                private router: Router) {
-    }
+                private router: Router) {}
 
     public onHomePage() {
         this.authSharedUserService.logOut();

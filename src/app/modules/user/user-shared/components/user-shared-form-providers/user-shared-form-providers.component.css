@@ -7,12 +7,16 @@
 }
 
 .user-shared-form-providers__container--height {
-  max-height: 150px;
+  max-height: 162px;
 }
 
 .user-shared-form-providers__label-provider {
   display: flex;
   align-items: center;
+}
+
+.user-shared-form-providers__label-provider--radio-button {
+    margin-right: 7px;
 }
 
 .user-shared-form-providers__checkbox-provider {
@@ -25,10 +29,35 @@
   font-size: 14px;
 }
 
+.user-shared-form-providers__radio-button-row {
+  margin: 0 0 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
 .user-shared-form-providers__radio-button {
-  margin: 5px 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.user-shared-form-providers__radio-button-text {
+  margin: 0;
+  padding: 3px 0 0 5px;
+}
+
+.user-shared-form-providers__subtitle-radio-button {
+  height: 20px;
+  margin: 0;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
 }
 
 .user-shared-form-providers__input-provider {
   margin-top: 5px;
+}
+
+.user-shared-form-providers__input-provider--radio-button {
+  margin: 0;
 }

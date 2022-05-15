@@ -1,10 +1,10 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {IUserProviders} from '../../../user-shared/types/user-shared-provider.interface';
-import {Subscription} from 'rxjs';
-import {UserSharedDataUserProvidersService} from '../../../user-shared/services';
-import {FormGroup, Validators} from '@angular/forms';
-import {FormControl} from '@ngneat/reactive-forms';
-import {UserSharedFloatingAlertComponent} from '../../../user-shared/components';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { IUserProviders } from '../../../user-shared/types/user-shared-provider.interface';
+import { Subscription } from 'rxjs';
+import { UserSharedDataUserProvidersService } from '../../../user-shared/services';
+import { FormGroup } from '@angular/forms';
+import { FormControl } from '@ngneat/reactive-forms';
+import { UserSharedFloatingAlertComponent } from '../../../user-shared/components';
 
 @Component({
     selector: 'app-user-indicators-cards-form',
@@ -18,11 +18,14 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
     @ViewChild('openAlert')
     public openAlert!: UserSharedFloatingAlertComponent;
     private subscription: Subscription = new Subscription()
+
     constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {}
+
     ngOnInit(): void {
         this.userId = this.getUserId()
         this.getProvidersData();
     }
+
     ngOnDestroy() {
         this.subscription.unsubscribe()
     }
@@ -36,9 +39,8 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         heatIndicator: new FormControl<string>(),
     })
 
-
     getUserId() {
-        const value = localStorage.getItem('card');
+        const value = sessionStorage.getItem('card');
         if (value) {
             return value;
         }
@@ -61,8 +63,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         if(!this.indicatorsForm.invalid) {
             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
                 this.indicatorsForm.value, this.userId
-            ).subscribe( (res:object) => {
-
+            ).subscribe( () => {
                 this.openAlert.showNotification()
                 this.indicatorsForm.reset();
             },

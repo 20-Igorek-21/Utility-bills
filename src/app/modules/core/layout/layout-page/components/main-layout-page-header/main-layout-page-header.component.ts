@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './main-layout-page-header.component.html',
     styleUrls: ['./main-layout-page-header.component.css']
 })
-export class MainLayoutPageHeaderComponent {
-
-}
+export class MainLayoutPageHeaderComponent {}

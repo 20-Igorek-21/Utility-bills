@@ -10,10 +10,10 @@ export class UserPersonalCabinetFormEditorPageViewComponent {
     public isLock = false;
 
     public lock(): void {
-        this.isLock = true
+        this.isLock = true;
     }
 
     public unLock(): void {
-        this.isLock = false
+        this.isLock = false;
     }
 }

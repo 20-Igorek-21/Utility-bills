@@ -1,22 +1,24 @@
-<div class="content-page" *ngIf="!isLoader">
+<div class="content-page"
+     *ngIf="!isLoader">
   <app-user-shared-floating-alert #openAlert></app-user-shared-floating-alert>
 
   <app-user-shared-form-add-account (isCloseFormAccount)="isCloseFormAccount()"
                                     appToggleButton
-                                    (fetchData)="fetchData()"
+                                    (fetchData)="fetchAccountData()"
                                     [openAlert]="openAlert"
                                     [showFormAddAccount]="isShowFormAddAccount"></app-user-shared-form-add-account>
 
   <app-user-personal-cabinet-form-change-account (isCloseFormAccount)="isCloseFormAccount()"
                                                  appToggleButton
-                                                 (fetchData)="fetchData()"
+                                                 (fetchData)="fetchAccountData()"
                                                  [openAlert]="openAlert"
                                                  [accountData]="accountData"
                                                  [showFormChangeAccount]="isShowFormChangeAccount"></app-user-personal-cabinet-form-change-account>
 
-  <div class="content-page__block content-page__block--account" *ngIf="!isExpandPrivateData">
+  <div class="content-page__block content-page__block--account"
+       *ngIf="!isExpandPrivateData">
 
-    <h2 class="content-page__title" >Редагувати рахунок:</h2>
+    <h2 class="content-page__title">Редагувати рахунок:</h2>
 
     <button class="button content-page__button user-indicators-account__button--expand"
             (click)="onExpandDataAccount()">
@@ -25,15 +27,16 @@
       </svg>
     </button>
 
-    <div class="content-page__add-account" *ngIf="isExpandDataAccount">
+    <div class="content-page__add-account"
+         *ngIf="isExpandDataAccount">
 
       <p class="content-page__message-text"
          *ngIf="!massageText">Необхідно додати адресу.</p>
 
       <app-user-personal-cabinet-account *ngFor="let account of accountData"
                                          [account]="account"
-                                         (changeAccount)="changeAccount($event)"
-                                         (deleteAccount)="fetchData()"></app-user-personal-cabinet-account>
+                                         (changeAccount)="changeAccount()"
+                                         (deleteAccount)="fetchAccountData()"></app-user-personal-cabinet-account>
 
       <button class="button content-page__button content-page__button--add-address"
               mat-button
@@ -43,7 +46,8 @@
 
   </div>
 
-    <div class="content-page__block content-page__block--private-data" *ngIf="!isExpandDataAccount">
+    <div class="content-page__block content-page__block--private-data"
+         *ngIf="!isExpandDataAccount">
 
       <h2 class="content-page__title">Редагувати персональні дані:</h2>
 
@@ -54,12 +58,14 @@
         </svg>
       </button>
 
-      <div class="content-page__block-private-data" *ngIf="isExpandPrivateData">
+      <div class="content-page__block-private-data"
+           *ngIf="isExpandPrivateData">
 
-        <app-user-personal-cabinet-form-private-data></app-user-personal-cabinet-form-private-data>
+        <app-user-personal-cabinet-form-private-data (isChangeDataUser)="onExpandPrivateData()"></app-user-personal-cabinet-form-private-data>
 
       </div>
     </div>
 </div>
 
-<mat-spinner class="content-page__loader" *ngIf="isLoader"></mat-spinner>
+<mat-spinner class="content-page__loader"
+             *ngIf="isLoader"></mat-spinner>

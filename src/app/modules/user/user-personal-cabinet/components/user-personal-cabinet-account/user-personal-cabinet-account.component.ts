@@ -24,8 +24,8 @@ export class UserPersonalCabinetAccountComponent implements OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    public onChangeAccount(id: string): void {
-        this.changeAccount.emit(id);
+    public onChangeAccount(): void {
+        this.changeAccount.emit();
     }
 
     public onDeleteAccount(id: string): void {

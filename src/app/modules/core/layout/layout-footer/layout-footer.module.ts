@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {layoutFooterComponents, LayoutFooterViewComponent} from './components';
+import { layoutFooterComponents, LayoutFooterViewComponent } from './components';
 
 @NgModule({
     declarations: [
