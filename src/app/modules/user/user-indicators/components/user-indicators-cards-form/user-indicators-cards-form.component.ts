@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IUserProviders } from '../../../user-shared/types/user-shared-provider.interface';
-import { Subscription } from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 import { UserSharedDataUserProvidersService } from '../../../user-shared/services';
 import { FormGroup } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
@@ -13,6 +13,7 @@ import { UserSharedFloatingAlertComponent } from '../../../user-shared/component
 })
 export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
 
+    public ispProgressBar = true;
     userId: string | undefined = '';
     public providers: IUserProviders[] = []
     @ViewChild('openAlert')
@@ -48,6 +49,9 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
 
     getProvidersData(): void {
         this.subscription.add(this.userSharedDataUserProvidersService.fetchProviders(this.userId)
+            .pipe( finalize( () => {
+                this.ispProgressBar = false;
+            }))
             .subscribe( (data: IUserProviders[]) => {
                 this.providers = data;
             },
