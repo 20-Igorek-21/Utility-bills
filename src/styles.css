@@ -232,6 +232,25 @@ html, body {
   width: 100%;
 }
 
+.main-navigation__users {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-content: space-between;
+
+}
+
+.main-layout-page-header__link-icon {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--color-white);
+  background-color: transparent;
+}
+
 .main-navigation__link-auth {
   height: 35px;
   display: flex;

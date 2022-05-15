@@ -36,7 +36,6 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         tecIndicator: new FormControl<string>(),
         waterIndicatorCold: new FormControl<string>(),
         waterIndicatorHot: new FormControl<string>(),
-        heatIndicator: new FormControl<string>(),
     })
 
     getUserId() {
