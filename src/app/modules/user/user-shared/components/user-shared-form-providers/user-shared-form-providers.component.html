@@ -42,12 +42,25 @@
       <h3 class="user-shared-form-providers__title-provider">ЧЕРКАСЬКЕ ХІМВОЛОКНО</h3>
     </label>
 
-    <div class="user-shared-form-providers__input-provider" *ngIf="providersForm.value.khimvoloknoStatus">
-      <mat-radio-button class="user-shared-form-providers__radio-button"
-                        value="Ванна"
-                        checked="true">Ванна</mat-radio-button>
-      <mat-radio-button class="user-shared-form-providers__radio-button"
-                        value="Кухня">Кухня</mat-radio-button>
+    <div class="user-shared-form-providers__input-provider user-shared-form-providers__input-provider--radio-button" *ngIf="providersForm.value.khimvoloknoStatus">
+      <h4 class="user-shared-form-providers__subtitle-radio-button">Лічильник встановлений:</h4>
+      <div class="user-shared-form-providers__radio-button-row">
+        <label class="user-shared-form-providers__label-provider user-shared-form-providers__label-provider--radio-button">
+          <input class="user-shared-form-providers__radio-button"
+                 type="radio"
+                 formControlName="khimvoloknoCounterInstalled"
+                 value="Ванна">
+          <p class="user-shared-form-providers__radio-button-text">Ванна</p>
+        </label>
+
+        <label class="user-shared-form-providers__label-provider">
+          <input class="user-shared-form-providers__radio-button"
+                 type="radio"
+                 formControlName="khimvoloknoCounterInstalled"
+                 value="Кухня">
+          <p class="user-shared-form-providers__radio-button-text">Кухня</p>
+        </label>
+      </div>
 
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"

@@ -5,8 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './dashboard-home-page.component.html',
     styleUrls: ['./dashboard-home-page.component.css']
 })
-export class DashboardHomePageComponent {
-
-
-
-}
+export class DashboardHomePageComponent {}

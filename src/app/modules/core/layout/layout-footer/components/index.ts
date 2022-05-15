@@ -1,4 +1,4 @@
-import {LayoutFooterViewComponent} from './layout-footer-view/layout-footer-view.component';
+import { LayoutFooterViewComponent } from './layout-footer-view/layout-footer-view.component';
 
 export const layoutFooterComponents = [
     LayoutFooterViewComponent

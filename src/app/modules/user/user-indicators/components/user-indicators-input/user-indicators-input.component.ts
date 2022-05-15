@@ -1,6 +1,6 @@
-import {Component, forwardRef, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {IUserProviders} from '../../../user-shared/types/user-shared-provider.interface';
+import { Component, forwardRef, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { IUserProviders } from '../../../user-shared/types/user-shared-provider.interface';
 
 @Component({
     selector: 'app-user-indicators-input',
