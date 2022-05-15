@@ -1,15 +1,14 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
-
-import {Subscription} from 'rxjs';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import {
     UserSharedFloatingAlertComponent,
     UserSharedFormAddressComponent,
     UserSharedFormPersonalDataComponent,
     UserSharedFormProvidersComponent
 } from '../../../user-shared/components';
-import {UserSharedDataUserAccountService} from '../../../user-shared/services';
-import {FormGroup} from '@angular/forms';
-import {IUserAccountData} from '../../../user-shared/types/user-shared-account.interface';
+import { UserSharedDataUserAccountService } from '../../../user-shared/services';
+import { FormGroup } from '@angular/forms';
+import { IUserAccountData } from '../../../user-shared/types/user-shared-account.interface';
 
 @Component({
     selector: 'app-user-personal-cabinet-form-change-account',
@@ -31,18 +30,17 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
 
     @Output() isCloseFormAccount = new EventEmitter;
     @Output() fetchData = new EventEmitter;
-
     @Input() accountData: IUserAccountData [] = [];
     @Input() public openAlert!: UserSharedFloatingAlertComponent;
 
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnInit() {
-        this.statusCanBeChange()
+        this.statusCanBeChange();
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
+        this.subscription.unsubscribe();
     }
 
     plugForm: FormGroup = new FormGroup({});
@@ -52,8 +50,7 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
     }
 
     changeDataAccount(): void {
-        const accountId = sessionStorage.getItem('changeId')
-        console.log(accountId)
+        const accountId = sessionStorage.getItem('card')
         if (this.formPersonalData.personalDataForm.valid ?? this.formAddress.addressForm.valid) {
             this.subscription.add(this.userSharedDataAccountService.changeAccount(
                 accountId,
@@ -61,17 +58,16 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
                 this.formAddress.addressForm.value,
                 this.formProviders.providersForm.value
             ).subscribe( () => {
-
                 this.fetchData.emit();
                 this.isCloseFormAccount.emit();
-                this.openAlert.massage = 'Дані змінено!'
+                this.openAlert.massage = 'Дані змінено!';
                 this.openAlert.showNotification();
 
             },
             error => {
                 this.isCloseFormAccount.emit();
                 this.openAlert.error = true;
-                this.openAlert.massage = 'Помилка! Спробуйте ще раз!'
+                this.openAlert.massage = 'Помилка! Спробуйте ще раз!';
                 this.openAlert.showNotification();
             }
             ))

@@ -1,8 +1,8 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { IUserAccountData } from '../../../user-shared/types/user-shared-account.interface';
 import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../../user-shared/services';
-import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
+import { UserSharedFloatingAlertComponent } from '../../../user-shared/components';
 
 @Component({
     selector: 'app-user-personal-cabinet-form-editor-page',
@@ -19,9 +19,8 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     public isShowFormAddAccount = true;
     public isShowFormChangeAccount = true;
     public isLoader = true;
-
-    public accountData: IUserAccountData [] = []
-    private subscription: Subscription = new Subscription()
+    public accountData: IUserAccountData [] = [];
+    private subscription: Subscription = new Subscription();
 
     @Output() isLockEditorForm = new EventEmitter();
     @Output() isUnLockEditorForm = new EventEmitter();
@@ -31,27 +30,29 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
     constructor(private readonly userSharedDataAccountService: UserSharedDataUserAccountService) {}
 
     ngOnInit() {
-        this.fetchData();
+        this.fetchAccountData();
     }
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
 
-    fetchData(): void {
+    fetchAccountData(): void {
         this.subscription.add(this.userSharedDataAccountService.fetchAccount()
             .pipe( finalize( () => {
                 this.isLoader = false;
             }))
             .subscribe( (data: IUserAccountData[]) => {
-                this.accountData = data
-                console.log(data)
+                this.accountData = data;
                 if (this.accountData.length === 0) {
-                    localStorage.removeItem('card');
+                    sessionStorage.removeItem('card');
                     this.massageText = false;
                 }
                 else {
-                    this.massageText = true;
+                    if (data[0].id){
+                        sessionStorage.setItem('card', data[0].id);
+                        this.massageText = true;
+                    }
                 }
             },
             error => {
@@ -59,8 +60,7 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
             }))
     }
 
-    public changeAccount(id: string) {
-        sessionStorage.setItem('changeId', id)
+    public changeAccount() {
         this.isShowFormChangeAccount = false;
         this.isLockEditorForm.emit(false);
     }
@@ -83,6 +83,6 @@ export class UserPersonalCabinetFormEditorPageComponent implements OnInit, OnDes
 
     public onExpandPrivateData(): void {
         this.isExpandPrivateData = !this.isExpandPrivateData;
-        this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more'
+        this.iconNameExpendPrivateData = this.iconNameExpendPrivateData == 'more' ? 'few' : 'more';
     }
 }

@@ -91,6 +91,7 @@ html, body {
   height: 50px;
   background-color: var(--color-blue);
   color: var(--color-white);
+  z-index: 99999;
 }
 
 .app-auth-form__message-errors {
@@ -98,6 +99,7 @@ html, body {
   top: 50px;
   left: -5px;
   font-size: 13px;
+  color: #f10505;
   z-index: 1;
 }
 

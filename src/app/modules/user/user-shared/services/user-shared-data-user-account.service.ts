@@ -58,7 +58,7 @@ export class UserSharedDataUserAccountService {
                     }
                 ]
             })
-            .pipe( map( (res: IUserAccount) => res ))
+            .pipe( map( (res: IUserAccount) => res ));
     }
 
     changeAccount(
@@ -67,6 +67,7 @@ export class UserSharedDataUserAccountService {
         addressValue: IUserAccountAddress,
         providersValue: IUserAccountProviders
     ): Observable<IUserAccount> {
+        console.log(providersValue.khimvoloknoCounterInstalled)
         return this.http.put<IUserAccount>( environment.apiUrl + 'accounts/' + id, {
             account: {
                 fullName: personalDataValue.fullName,
@@ -93,7 +94,8 @@ export class UserSharedDataUserAccountService {
                 {
                     number: providersValue.khimvoloknoNumber,
                     id: providersValue.khimvoloknoId,
-                    status: providersValue.khimvoloknoStatus
+                    status: providersValue.khimvoloknoStatus,
+                    counterInstalled: providersValue.khimvoloknoCounterInstalled
                 },
                 {
                     number: providersValue.vodokanalNumber,
@@ -102,7 +104,7 @@ export class UserSharedDataUserAccountService {
                 }
             ]
         })
-            .pipe( map( (res: IUserAccount) => res ))
+            .pipe( map( (res: IUserAccount) => res ));
     }
 
     fetchAccount(): Observable<IUserAccountData[]> {
@@ -112,6 +114,6 @@ export class UserSharedDataUserAccountService {
 
     deleteAccount(id:string): Observable<void> {
         return this.http.delete<IUserAccount>(environment.apiUrl + 'accounts/' + id)
-            .pipe( map( (res: IUserAccount) => console.log(res)))
+            .pipe( map( (res: IUserAccount) => console.log(res)));
     }
 }

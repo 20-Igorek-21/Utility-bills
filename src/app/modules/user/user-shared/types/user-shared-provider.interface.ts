@@ -12,6 +12,9 @@ export interface  IIndicators {
 
 export interface IUserProviders {
     provider: IUserProvider,
+    number: string,
+    status: boolean
+    counterInstalled?: string
 }
 export interface IUserProvider {
     fullName: string,

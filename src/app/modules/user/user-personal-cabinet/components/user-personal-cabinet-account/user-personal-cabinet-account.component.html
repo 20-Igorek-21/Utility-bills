@@ -1,7 +1,7 @@
 <section class="app-personal-cabinet-account">
 
    <button class="button app-personal-cabinet-account__button app-personal-cabinet-account__button--edit"
-            (click)="onChangeAccount(account.id)">
+            (click)="onChangeAccount()">
       <svg>
         <use href="./assets/svg/sprites.svg#edit-icon"></use>
       </svg>
@@ -54,7 +54,7 @@
     <p class="app-personal-cabinet-account__subtitle">{{account.address.flat}}</p>
   </div>
 
-  <div class="content-row app-personal-cabinet-account__content-row" *ngIf="account.address.flat">
+  <div class="content-row app-personal-cabinet-account__content-row" *ngIf="account.phone">
     <svg class="app-personal-cabinet-account__icon">
       <use href="./assets/svg/sprites.svg#phone-icon"></use>
     </svg>
