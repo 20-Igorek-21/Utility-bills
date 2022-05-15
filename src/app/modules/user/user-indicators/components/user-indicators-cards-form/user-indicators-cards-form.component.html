@@ -17,5 +17,6 @@
     Відправити</button>
 </form>
 <ng-template #emptyState>
-  <p class="providers-empty">Провайдери не підключені!</p>
+  <p class="providers-empty" *ngIf="!ispProgressBar">Провайдери не підключені!</p>
+  <mat-progress-bar *ngIf="ispProgressBar" mode="indeterminate"></mat-progress-bar>
 </ng-template>

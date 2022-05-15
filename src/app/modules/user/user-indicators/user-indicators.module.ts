@@ -10,6 +10,7 @@ import { UserSharedModule } from '../user-shared/user-shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserIndicatorsMaterialModule } from './user-indicators-material.module';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
         FormsModule,
         UserSharedModule,
         UserIndicatorsMaterialModule,
-        MatButtonModule
+        MatButtonModule,
+        MatProgressBarModule
     ]
 })
 export class UserIndicatorsModule { }
