@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-main-layout-page-header-navigation-user',
@@ -8,8 +8,7 @@ import { Router} from '@angular/router';
 })
 export class MainLayoutPageHeaderNavigationUserComponent {
 
-    constructor(private router: Router) {
-    }
+    constructor(private router: Router) {}
 
     public onHomePage() {
         this.router.navigateByUrl('/');

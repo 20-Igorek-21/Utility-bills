@@ -6,9 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormModule } from '../../core/form/form.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import  {MatButtonModule } from '@angular/material/button';
-
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [

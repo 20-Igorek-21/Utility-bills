@@ -1,12 +1,10 @@
-import {Component, OnDestroy} from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
 import { Subscription } from 'rxjs';
-import { IUserAuth } from '../../../../core/form/types/auth-shared-user-interface';
-
 
 @Component({
     selector: 'app-auth-register-form',
@@ -22,11 +20,11 @@ export class AuthRegisterFormComponent  implements OnDestroy {
         private readonly authSharedUserService: AuthSharedUserService) { }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe()
+        this.subscription.unsubscribe();
     }
 
     registerForm: FormGroup = new FormGroup({
-        email: new FormControl<string>('', [Validators.required, Validators.email], []),
+        email: new FormControl<string>('', [Validators.required, Validators.email]),
         password: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
         repeatPassword: new FormControl<string>('', [Validators.required, Validators.minLength(MIN_LENGTH_SYMBOL)]),
     })
@@ -42,16 +40,16 @@ export class AuthRegisterFormComponent  implements OnDestroy {
     public onSubmit() {
         if (!this.registerForm.invalid) {
             this.subscription.add(this.authSharedUserService.registerUser(this.registerForm)
-                .subscribe((d:IUserAuth)=> {
-                    console.log(d);
+                .subscribe((res)=> {
+                    console.log(res)
                     this.router.navigateByUrl('/auth/login');
                 },
                 error => {
-                    error.message()
-                    console.log(error)
+                    error.message();
                 }
                 ))
             this.registerForm.reset();
         }
     }
 }
+

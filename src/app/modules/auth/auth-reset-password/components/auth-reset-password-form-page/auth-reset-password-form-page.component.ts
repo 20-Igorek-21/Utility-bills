@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-auth-reset-password-form-page',
-  templateUrl: './auth-reset-password-form-page.component.html',
-  styleUrls: ['./auth-reset-password-form-page.component.css']
+    selector: 'app-auth-reset-password-form-page',
+    templateUrl: './auth-reset-password-form-page.component.html',
+    styleUrls: ['./auth-reset-password-form-page.component.css']
 })
-export class AuthResetPasswordFormPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class AuthResetPasswordFormPageComponent {}

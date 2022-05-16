@@ -7,12 +7,9 @@
   flex-direction: column;
   justify-content: space-around;
   position: relative;
-  /*border: 1px solid var(--color-dark-blue);*/
   border-radius: 7px;
   background-color: #FFF;
   color: var(--color-dark-blue);
-
-  /*box-shadow: 0 4px 8px rgb(0 0 0 / 15%), 0 8px 16px rgb(0 0 0 / 15%);*/
 }
 
 .app-personal-cabinet-account__button {
@@ -22,18 +19,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: var(--color-light-blue);*/
-  /*border-radius: 5px;*/
-  /*fill: #e9ebee;*/
   background-color: transparent;
   overflow: hidden;
 }
 
 .app-personal-cabinet-account__button--edit {
-  /*top: 200px;*/
   bottom: 220px;
   left: 10px;
-
 }
 
 .app-personal-cabinet-account__button--delete {
@@ -64,7 +56,6 @@
 .app-personal-cabinet-account__content-row {
   align-items: center;
   width: 100%;
-  /*border-bottom: 1px solid #a8a6a6;*/
 }
 
 .app-personal-cabinet-account__title {
