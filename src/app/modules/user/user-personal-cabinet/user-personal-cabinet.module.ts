@@ -13,6 +13,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { MatRadioModule } from '@angular/material/radio';
         MatButtonModule,
         MatCheckboxModule,
         MatRadioModule,
+        MatIconModule,
     ],
     providers: []
 })

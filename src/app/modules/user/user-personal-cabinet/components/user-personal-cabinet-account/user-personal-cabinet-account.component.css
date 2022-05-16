@@ -1,7 +1,7 @@
 .app-personal-cabinet-account {
   height: 210px;
   width: 285px;
-  margin: 20px;
+  margin: 30px 20px 0 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -21,24 +21,26 @@
   align-items: center;
   background-color: transparent;
   overflow: hidden;
+  transform: scale(1.2);
 }
 
 .app-personal-cabinet-account__button--edit {
   bottom: 220px;
   left: 10px;
+  color: var(--color-dark-blue);
 }
 
 .app-personal-cabinet-account__button--delete {
   bottom: 220px;
   right: 10px;
-  fill: #d50d0d;
+  color: #fc4343;
 }
 
 .app-personal-cabinet-account__icon {
   width: 20px;
   height: 20px;
   margin-left: 20px;
-  fill: #079f15;
+  fill: #079F15;
 }
 
 .app-personal-cabinet-account__user-name {
@@ -73,7 +75,7 @@
 }
 
 .app-personal-cabinet-account__button:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 @media (min-width: 370px) {
