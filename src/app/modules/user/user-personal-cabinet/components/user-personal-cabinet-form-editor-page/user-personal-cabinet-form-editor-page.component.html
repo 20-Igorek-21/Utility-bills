@@ -61,7 +61,11 @@
       <div class="content-page__block-private-data"
            *ngIf="isExpandPrivateData">
 
-        <app-user-personal-cabinet-form-private-data (isChangeDataUser)="onExpandPrivateData()"></app-user-personal-cabinet-form-private-data>
+        <app-user-personal-cabinet-form-private-data
+          (isChangeDataUser)="onExpandPrivateData()"
+          [openAlert]="openAlert">
+
+        </app-user-personal-cabinet-form-private-data>
 
       </div>
     </div>

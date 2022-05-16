@@ -72,6 +72,10 @@ html, body {
   justify-content: space-around;
 }
 
+mat-form-field.mat-form-field {
+  font-size: 16px;
+}
+
 .app-auth-form__field {
   width: 100%;
   z-index: 9999;
@@ -107,7 +111,7 @@ html, body {
 .home__main-link {
   padding: 0 20px;
   margin-top: 50px;
-  max-width: 100px;
+  max-width: 120px;
   height: 35px;
   display: flex;
   align-items: center;
@@ -116,7 +120,7 @@ html, body {
   color: var(--color-white);
   border-radius: 7px;
   z-index: 5;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -162,9 +166,6 @@ html, body {
   color: #FFFFFF;
 }
 
-.app-user-form-account__button:hover {
-  opacity: .8;
-}
 
 .content-page__app-form-change-account {
   display: none;
@@ -273,25 +274,7 @@ html, body {
   left: 35%;
 }
 
-      /*hover effects*/
 
-.button:hover {
-  opacity: .9;
-}
-
-.main-navigation__link-auth:hover {
-  background-color: var(--color-white);
-  color: var(--color-blue);
-  transition: .2s;
-}
-
-.main-layout-page-header__logo-icon:hover {
-  opacity: .8;
-}
-
-.main-layout-page-header__link-icon:hover {
-  opacity: .8;
-}
 
 @media (min-width: 360px) {
   .app-auth-form__container {
@@ -332,8 +315,35 @@ html, body {
     left: 50%;
   }
 
+}
+
+@media (min-width: 1024px) {
+  /*hover effects*/
+
   .main-navigation__link:hover {
     opacity: .9;
+  }
+
+  .button:hover {
+    opacity: .9;
+  }
+
+  .main-navigation__link-auth:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    transition: .2s;
+  }
+
+  .main-layout-page-header__logo-icon:hover {
+    opacity: .8;
+  }
+
+  .main-layout-page-header__link-icon:hover {
+    opacity: .8;
+  }
+
+  .app-user-form-account__button:hover {
+    opacity: .8;
   }
 
 }
