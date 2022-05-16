@@ -63,7 +63,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(): void {
-        if(!this.indicatorsForm.invalid) {
+        if(this.indicatorsForm.valid) {
             this.subscription.add(this.userSharedDataUserProvidersService.sendIndicators(
                 this.indicatorsForm.value, this.userId
             ).subscribe( () => {

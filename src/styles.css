@@ -15,8 +15,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/*container*/
-
 .page__section {
   max-width: 1280px;
   margin: 0 auto;
@@ -65,8 +63,6 @@ html, body {
   overflow: hidden;
 }
 
-      /*auth*/
-
 .app-auth-form {
   display: flex;
   justify-content: space-around;
@@ -100,7 +96,7 @@ mat-form-field.mat-form-field {
 
 .app-auth-form__message-errors {
   position: absolute;
-  top: 50px;
+  top: 55px;
   left: -5px;
   font-size: 13px;
   color: #f10505;
