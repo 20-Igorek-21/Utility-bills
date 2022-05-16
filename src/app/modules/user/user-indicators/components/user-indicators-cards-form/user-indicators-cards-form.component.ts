@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { IUserProviders } from '../../../user-shared/types/user-shared-provider.interface';
 import {finalize, Subscription} from 'rxjs';
 import { UserSharedDataUserProvidersService } from '../../../user-shared/services';
-import { FormGroup } from '@angular/forms';
+import {FormGroup, Validators} from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { UserSharedFloatingAlertComponent } from '../../../user-shared/components';
 
@@ -15,7 +15,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
 
     public ispProgressBar = true;
     userId: string | undefined = '';
-    public providers: IUserProviders[] = []
+    public providers: IUserProviders[] = [];
     @ViewChild('openAlert')
     public openAlert!: UserSharedFloatingAlertComponent;
     private subscription: Subscription = new Subscription()
@@ -32,11 +32,11 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
     }
 
     indicatorsForm: FormGroup = new FormGroup({
-        gasIndicator: new FormControl<string>(),
-        energyIndicator: new FormControl<string>(),
-        tecIndicator: new FormControl<string>(),
-        waterIndicatorCold: new FormControl<string>(),
-        waterIndicatorHot: new FormControl<string>(),
+        gasIndicator: new FormControl<string>('', [Validators.required]),
+        energyIndicator: new FormControl<string>('', [Validators.required]),
+        tecIndicator: new FormControl<string>('', [Validators.required]),
+        waterIndicatorCold: new FormControl<string>('', [Validators.required]),
+        waterIndicatorHot: new FormControl<string>('', [Validators.required]),
     })
 
     getUserId(): string | undefined {
@@ -78,7 +78,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
             ))
         } else {
             this.openAlert.error = true;
-            this.openAlert.massage = 'Помилка! Показники не надіслані!'
+            this.openAlert.massage = 'Помилка! Поля не заповнені!'
             this.openAlert.showNotification();
         }
     }
