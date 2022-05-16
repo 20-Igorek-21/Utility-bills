@@ -1,10 +1,12 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import { IUserAuth} from '../../../../core/form/types/auth-shared-user-interface';
 import { Subscription} from 'rxjs';
 import { UserSharedDataUserService } from '../../../user-shared/services';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
+import {Router} from "@angular/router";
+import {UserSharedFloatingAlertComponent} from "../../../user-shared/components";
 
 @Component({
     selector: 'app-user-personal-cabinet-form-private-data',
@@ -13,6 +15,7 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 })
 export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDestroy {
 
+    @Input() public openAlert!: UserSharedFloatingAlertComponent;
     @Output() isChangeDataUser = new EventEmitter;
 
     private subscription: Subscription = new Subscription();
@@ -50,11 +53,14 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
         if (!this.profileForm.invalid) {
             this.subscription.add(this.userSharedDataUserService.changeDataUser(this.profileForm)
                 .subscribe( () => {
-                    alert('дані змінено');
                     this.isChangeDataUser.emit();
+                    this.openAlert.massage = 'Дані змінено!';
+                    this.openAlert.showNotification();
                 },
                 error => {
-                    console.log(error);
+                    this.openAlert.error = true;
+                    this.openAlert.massage = 'Помилка! Спробуйте ще раз!';
+                    this.openAlert.showNotification();
                 }
                 ))
         }
