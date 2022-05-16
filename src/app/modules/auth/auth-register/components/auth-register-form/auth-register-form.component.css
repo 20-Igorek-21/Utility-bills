@@ -1,5 +1,12 @@
 .app-auth-form__container--register {
-  height: 380px;
+  height: 400px;
+}
+
+@media (min-width: 340px) {
+
+  .app-auth-form__container--register {
+    height: 370px;
+  }
 }
 
 @media (min-width: 420px) {
