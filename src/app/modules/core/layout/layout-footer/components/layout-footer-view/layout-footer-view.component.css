@@ -49,6 +49,22 @@
   color: #d3aa33;
 }
 
+.main-footer__item-desc:hover {
+  opacity: .8;
+}
+
+.main-footer__item-phone-link:hover {
+  opacity: .8;
+}
+
+.main-footer__item-email-link:hover {
+  opacity: .8;
+}
+
+.main-footer__content-item:hover {
+  opacity: .8;
+}
+
 .divider {
   width: 100%;
   margin: 0;

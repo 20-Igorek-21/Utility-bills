@@ -27,7 +27,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         this.getProvidersData();
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.subscription.unsubscribe()
     }
 
@@ -39,7 +39,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
         waterIndicatorHot: new FormControl<string>(),
     })
 
-    getUserId() {
+    getUserId(): string | undefined {
         const value = sessionStorage.getItem('card');
         if (value) {
             return value;
