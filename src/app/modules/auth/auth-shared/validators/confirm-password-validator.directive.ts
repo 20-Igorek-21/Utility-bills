@@ -21,5 +21,4 @@ export class ConfirmPasswordValidatorDirective implements Validator {
        }
        return null
    }
-
 }

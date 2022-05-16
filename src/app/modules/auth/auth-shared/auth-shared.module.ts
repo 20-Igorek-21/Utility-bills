@@ -12,7 +12,6 @@ import { authSharedServices } from './services';
     ],
     exports: [
         ConfirmPasswordValidatorDirective,
-
     ],
     providers: [
         ...authSharedServices

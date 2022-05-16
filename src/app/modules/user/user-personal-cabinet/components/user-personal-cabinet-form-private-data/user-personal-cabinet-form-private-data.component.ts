@@ -20,8 +20,7 @@ export class UserPersonalCabinetFormPrivateDataComponent implements OnInit, OnDe
 
     private subscription: Subscription = new Subscription();
 
-    constructor(private readonly userSharedDataUserService: UserSharedDataUserService,
-                private readonly router: Router) {}
+    constructor(private readonly userSharedDataUserService: UserSharedDataUserService) {}
 
     ngOnInit() {
         this.subscription.add(this.userSharedDataUserService.fetchDataUser()

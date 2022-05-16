@@ -65,6 +65,7 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
 
             },
             error => {
+                console.log(error)
                 this.isCloseFormAccount.emit();
                 this.openAlert.error = true;
                 this.openAlert.massage = 'Помилка! Спробуйте ще раз!';

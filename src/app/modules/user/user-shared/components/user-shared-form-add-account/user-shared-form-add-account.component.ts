@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, Output, ViewChild} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UserSharedDataUserAccountService } from '../../services';
 import { FormGroup } from '@angular/forms';
@@ -58,6 +58,7 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
                 this.resetForm();
             },
             error => {
+                console.log(error)
                 this.isCloseFormAccount.emit();
                 this.openAlert.error = true;
                 this.openAlert.massage = 'Помилка! Спробуйте ще раз!';
