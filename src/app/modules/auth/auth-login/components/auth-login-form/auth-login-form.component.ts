@@ -30,16 +30,14 @@ export class AuthLoginFormComponent {
 
     public onSubmit() {
         if(!this.loginForm.invalid) {
-            if (this.loginForm.value.checkbox) {
-
-            }
             this.authSharedUserService.loginUser(this.loginForm)
-                .subscribe( () => {
+                .subscribe( (res) => {
+                    console.log(res)
                     this.router.navigateByUrl('user/indicators');
                 },
                 error => {
-                    console.log(error)
-                    this.router.navigateByUrl('user/login');
+                    console.log(error.error.message)
+                    this.loginForm.setErrors(error.error.message)
                 }   )
         }
     }

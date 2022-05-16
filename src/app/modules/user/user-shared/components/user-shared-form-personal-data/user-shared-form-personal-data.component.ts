@@ -24,8 +24,6 @@ export class UserSharedFormPersonalDataComponent implements OnInit {
 
     personalDataForm: FormGroup = new FormGroup({
         fullName: new FormControl<string>('', Validators.required),
-        phone: new FormControl<number | null>(null, [
-            Validators.required, Validators.pattern('')
-        ])
+        phone: new FormControl<number | null>(null, [Validators.required])
     })
 }

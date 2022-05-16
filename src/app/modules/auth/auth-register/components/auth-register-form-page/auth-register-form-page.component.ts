@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './auth-register-form-page.component.html',
     styleUrls: ['./auth-register-form-page.component.css']
 })
-export class AuthRegisterFormPageComponent {
-
-}
+export class AuthRegisterFormPageComponent {}

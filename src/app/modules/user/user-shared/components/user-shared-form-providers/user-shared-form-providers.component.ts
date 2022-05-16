@@ -5,7 +5,6 @@ import { IUserProviders } from '../../types/user-shared-provider.interface';
 import { UserSharedDataUserProvidersService } from '../../services';
 import { Subscription } from 'rxjs';
 
-
 @Component({
     'selector': 'app-user-shared-form-providers',
     'templateUrl': './user-shared-form-providers.component.html',
@@ -62,7 +61,6 @@ export class UserSharedFormProvidersComponent implements OnInit {
                     }
 
                     if (item.provider.id === '2f0906c2-9ffe-4327-9015-de9a483dcbeb') {
-                        console.log(item.counterInstalled)
                         this.providersForm.patchValue({
                             khimvoloknoNumber: item.number,
                             khimvoloknoStatus: item.status,
