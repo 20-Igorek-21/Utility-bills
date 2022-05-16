@@ -2,16 +2,12 @@
 
    <button class="button app-personal-cabinet-account__button app-personal-cabinet-account__button--edit"
             (click)="onChangeAccount()">
-      <svg>
-        <use href="./assets/svg/sprites.svg#edit-icon"></use>
-      </svg>
+     <mat-icon>edit</mat-icon>
     </button>
 
     <button class="button app-personal-cabinet-account__button app-personal-cabinet-account__button--delete"
             (click)="onDeleteAccount(account.id)">
-      <svg>
-        <use href="./assets/svg/sprites.svg#delete-icon"></use>
-      </svg>
+      <mat-icon class="test">delete</mat-icon>
     </button>
 
   <div class="content-row app-personal-cabinet-account__content-row">
