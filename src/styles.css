@@ -103,7 +103,6 @@ mat-form-field.mat-form-field {
   z-index: 1;
 }
 
-/*home page*/
 .home__main-link {
   padding: 0 20px;
   margin-top: 50px;
@@ -120,8 +119,6 @@ mat-form-field.mat-form-field {
   font-weight: 500;
   text-transform: uppercase;
 }
-
-      /*personal-cabinet*/
 
 .app-personal-cabinet-form {
   width: 400px;
@@ -162,7 +159,6 @@ mat-form-field.mat-form-field {
   color: #FFFFFF;
 }
 
-
 .content-page__app-form-change-account {
   display: none;
 }
@@ -196,7 +192,6 @@ mat-form-field.mat-form-field {
   color: var(--color-white);
 }
 
-      /*navigation*/
 .main-navigation__link {
   margin-top: 30px;
   color: var(--color-blue);
@@ -270,8 +265,6 @@ mat-form-field.mat-form-field {
   left: 35%;
 }
 
-
-
 @media (min-width: 360px) {
   .app-auth-form__container {
     width: 350px;
@@ -343,8 +336,6 @@ mat-form-field.mat-form-field {
   }
 
 }
-
-/*animation*/
 
 @keyframes curtain {
 

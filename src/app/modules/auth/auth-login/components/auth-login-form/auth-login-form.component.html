@@ -24,6 +24,9 @@
 
   <button class="button app-auth-form__button"
           mat-flat-button
-          type="submit">Увійти</button>
+          type="submit">
+    <p class="app-auth-form__button-text" *ngIf="!isRequestLoading">Увійти</p>
+    <app-main-layout-page-request-loading *ngIf="isRequestLoading"></app-main-layout-page-request-loading>
+  </button>
 
 </form>

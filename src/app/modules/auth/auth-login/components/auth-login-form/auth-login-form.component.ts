@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
-
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
-import {AuthSharedUserService} from '../../../auth-shared/services';
+import { AuthSharedUserService } from '../../../auth-shared/services';
+import { finalize } from 'rxjs';
 
 
 @Component({
@@ -13,6 +13,8 @@ import {AuthSharedUserService} from '../../../auth-shared/services';
     styleUrls: ['./auth-login-form.component.css']
 })
 export class AuthLoginFormComponent {
+
+    public isRequestLoading = false;
 
     constructor( private router: Router, private authSharedUserService: AuthSharedUserService) { }
 
@@ -30,9 +32,12 @@ export class AuthLoginFormComponent {
 
     public onSubmit() {
         if(!this.loginForm.invalid) {
+            this.isRequestLoading = true;
             this.authSharedUserService.loginUser(this.loginForm)
-                .subscribe( (res) => {
-                    console.log(res)
+                .pipe( finalize( () => {
+                    this.isRequestLoading = false;
+                }))
+                .subscribe( () => {
                     this.router.navigateByUrl('user/indicators');
                 },
                 error => {

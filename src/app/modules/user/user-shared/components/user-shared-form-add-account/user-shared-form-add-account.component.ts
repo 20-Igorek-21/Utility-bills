@@ -35,13 +35,6 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
     plugForm: FormGroup = new FormGroup({});
 
     onCloseWindow(): void {
-        this.resetForm();
-    }
-
-    resetForm(): void {
-        this.formPersonalData.personalDataForm.reset();
-        this.formAddress.addressForm.reset();
-        this.formProviders.providersForm.reset();
         this.isCloseFormAccount.emit();
     }
 
@@ -55,7 +48,7 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
                 this.fetchData.emit();
                 this.openAlert.massage = 'Рахунок додано!';
                 this.openAlert.showNotification();
-                this.resetForm();
+                this.isCloseFormAccount.emit();
             },
             error => {
                 console.log(error)

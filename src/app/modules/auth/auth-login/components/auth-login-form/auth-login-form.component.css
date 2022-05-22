@@ -2,6 +2,10 @@
   height: 330px;
 }
 
+.app-auth-form__button-text {
+  margin: 0;
+}
+
 .app-auth-form__content-row {
   align-items: center;
   justify-content: end;
@@ -31,3 +35,4 @@
     margin-bottom: 20px;
   }
 }
+

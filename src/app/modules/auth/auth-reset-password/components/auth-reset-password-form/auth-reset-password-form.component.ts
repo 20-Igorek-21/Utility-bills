@@ -2,7 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { AuthSharedUserService } from '../../../auth-shared/services';
-import { Subscription } from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-auth-reset-password-form',
@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./auth-reset-password-form.component.css']
 })
 export class AuthResetPasswordFormComponent implements OnDestroy {
+
+    public isRequestLoading = false;
 
     private subscription: Subscription = new Subscription();
 
@@ -31,7 +33,11 @@ export class AuthResetPasswordFormComponent implements OnDestroy {
 
     public onSubmit() {
         if(!this.resetPasswordForm.invalid) {
+            this.isRequestLoading = true;
             this.subscription.add(this.authSharedUserService.resetPassword(this.resetPasswordForm.value)
+                .pipe( finalize( () => {
+                    this.isRequestLoading = false;
+                }))
                 .subscribe( (res) => {
                     console.log(res)
                 }))

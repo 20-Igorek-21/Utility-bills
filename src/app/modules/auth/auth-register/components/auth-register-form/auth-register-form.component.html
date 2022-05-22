@@ -27,6 +27,9 @@
 
   <button class="button app-auth-form__button"
           mat-flat-button
-          type="submit">Зареєструватися</button>
+          type="submit">
+    <p class="app-auth-form__button-text" *ngIf="!isRequestLoading">Зареєструватися</p>
+    <app-main-layout-page-request-loading *ngIf="isRequestLoading"></app-main-layout-page-request-loading>
+  </button>
 
 </form>
