@@ -30,6 +30,8 @@ export class AuthSharedUserService {
         return this.http.post<{ token: string }>(environment.apiUrl + 'login/' , {
             email: loginValue.value.email,
             password: loginValue.value.password
+        }, {
+            withCredentials: false
         })
             .pipe( tap( ({token}) => {
                 console.log('token service')
@@ -39,7 +41,9 @@ export class AuthSharedUserService {
     }
 
     public refreshToken(): Observable<{ token: string }> {
-        return this.http.get<{ token: string }>(environment.apiUrl + 'refresh/')
+        return this.http.get<{ token: string }>(environment.apiUrl + 'refresh/', {
+            withCredentials: true
+        })
             .pipe( tap( ({token}) => {
                 AuthInterceptor.accessToken = token;
             }));

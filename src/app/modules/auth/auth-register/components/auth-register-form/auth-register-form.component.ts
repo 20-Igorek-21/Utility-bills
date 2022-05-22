@@ -4,7 +4,7 @@ import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
-import { Subscription } from 'rxjs';
+import {finalize, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-auth-register-form',
@@ -12,6 +12,8 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./auth-register-form.component.css']
 })
 export class AuthRegisterFormComponent  implements OnDestroy {
+
+    public isRequestLoading = false;
 
     private subscription: Subscription = new Subscription();
 
@@ -39,7 +41,11 @@ export class AuthRegisterFormComponent  implements OnDestroy {
 
     public onSubmit() {
         if (!this.registerForm.invalid) {
+            this.isRequestLoading = true;
             this.subscription.add(this.authSharedUserService.registerUser(this.registerForm)
+                .pipe( finalize( () => {
+                    this.isRequestLoading = false;
+                }))
                 .subscribe((res)=> {
                     console.log(res)
                     this.router.navigateByUrl('/auth/login');

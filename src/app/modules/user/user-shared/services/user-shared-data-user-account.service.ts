@@ -67,7 +67,6 @@ export class UserSharedDataUserAccountService {
         addressValue: IUserAccountAddress,
         providersValue: IUserAccountProviders
     ): Observable<IUserAccount> {
-        console.log(providersValue.khimvoloknoCounterInstalled)
         return this.http.put<IUserAccount>( environment.apiUrl + 'accounts/' + id, {
             account: {
                 fullName: personalDataValue.fullName,
