@@ -8,4 +8,8 @@
 
   <p *ngIf="controlsName?.hasError('notMatch')">Паролі не співпадають!</p>
 
+  <p *ngIf="controlsName?.hasError('emailExists')">Введений email зареєстрований!</p>
+
+  <p *ngIf="controlsName?.hasError('emailOrPasswordInvalid')">Невірний email або пароль!</p>
+
 </ng-container>

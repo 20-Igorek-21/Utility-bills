@@ -4,7 +4,8 @@ import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
-import {finalize, Subscription} from 'rxjs';
+import { finalize, Subscription } from 'rxjs';
+import { IUserAuth } from '../../../../core/form/types/auth-shared-user-interface';
 
 @Component({
     selector: 'app-auth-register-form',
@@ -46,16 +47,20 @@ export class AuthRegisterFormComponent  implements OnDestroy {
                 .pipe( finalize( () => {
                     this.isRequestLoading = false;
                 }))
-                .subscribe((res)=> {
-                    console.log(res)
-                    this.router.navigateByUrl('/auth/login');
+                .subscribe((res:IUserAuth)=> {
+                    if (!res.success) {
+                        this.registerForm.get('email')?.setErrors({ emailExists: true });
+                    }
+                    if (res.id) {
+                        this.router.navigateByUrl('/auth/login');
+                    }
                 },
                 error => {
                     error.message();
                 }
                 ))
-            this.registerForm.reset();
         }
     }
 }
+
 

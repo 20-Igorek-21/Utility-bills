@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
-import { IUserAuth } from '../../../core/form/types/auth-shared-user-interface';
+import {ILoginResponse, IUserAuth} from '../../../core/form/types/auth-shared-user-interface';
 import { FormGroup } from '@angular/forms';
 import { AuthInterceptor } from '../interceptor/auth.interceptor';
 
@@ -26,8 +26,8 @@ export class AuthSharedUserService {
         })
     }
 
-    public loginUser(loginValue: FormGroup): Observable<{ token: string }> {
-        return this.http.post<{ token: string }>(environment.apiUrl + 'login/' , {
+    public loginUser(loginValue: FormGroup): Observable<ILoginResponse> {
+        return this.http.post<ILoginResponse>(environment.apiUrl + 'login/' , {
             email: loginValue.value.email,
             password: loginValue.value.password
         }, {

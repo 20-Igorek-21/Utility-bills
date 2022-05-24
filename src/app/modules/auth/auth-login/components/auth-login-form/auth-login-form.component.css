@@ -1,5 +1,5 @@
 .app-auth-form__container--login {
-  height: 330px;
+  height: 340px;
 }
 
 .app-auth-form__button-text {
@@ -7,6 +7,7 @@
 }
 
 .app-auth-form__content-row {
+  margin-bottom: 10px;
   align-items: center;
   justify-content: end;
 }
@@ -24,7 +25,7 @@
 @media (min-width: 420px) {
 
   .app-auth-form__container--login {
-    height: 300px;
+    height: 310px;
   }
 
   .app-auth-form__link {
@@ -35,4 +36,3 @@
     margin-bottom: 20px;
   }
 }
-

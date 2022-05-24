@@ -6,7 +6,6 @@ import { MIN_LENGTH_SYMBOL } from '../../../../../constants';
 import { AuthSharedUserService } from '../../../auth-shared/services';
 import { finalize } from 'rxjs';
 
-
 @Component({
     selector: 'app-auth-login-form',
     templateUrl: './auth-login-form.component.html',
@@ -41,9 +40,10 @@ export class AuthLoginFormComponent {
                     this.router.navigateByUrl('user/indicators');
                 },
                 error => {
-                    console.log(error.error.message)
-                    this.loginForm.setErrors(error.error.message)
-                }   )
+                    if (error.error.message) {
+                        this.loginForm.get('email')?.setErrors({ emailOrPasswordInvalid: true });
+                    }
+                })
         }
     }
 }
