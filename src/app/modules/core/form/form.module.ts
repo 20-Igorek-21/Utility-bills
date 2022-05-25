@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { formComponents } from './components';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { formComponents } from './components';
         MatButtonModule,
         MatIconModule,
         MatFormFieldModule,
+        NgxMaskModule,
     ],
     exports: [
         ...formComponents

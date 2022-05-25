@@ -39,7 +39,7 @@ export class UserSharedFormAddAccountComponent implements OnDestroy {
     }
 
     addDataAccount(): void {
-        if (this.formPersonalData.personalDataForm.valid ?? this.formAddress.addressForm.valid) {
+        if (this.formPersonalData.personalDataForm.valid && this.formAddress.addressForm.valid) {
             this.subscription.add(this.userSharedDataAccountService.createAccount(
                 this.formPersonalData.personalDataForm.value,
                 this.formAddress.addressForm.value,

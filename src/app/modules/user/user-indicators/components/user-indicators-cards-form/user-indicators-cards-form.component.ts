@@ -1,8 +1,8 @@
-import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IUserProviders } from '../../../user-shared/types/user-shared-provider.interface';
-import {finalize, Subscription} from 'rxjs';
+import { finalize, Subscription } from 'rxjs';
 import { UserSharedDataUserProvidersService } from '../../../user-shared/services';
-import {FormGroup, Validators} from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@ngneat/reactive-forms';
 import { UserSharedFloatingAlertComponent } from '../../../user-shared/components';
 
@@ -18,7 +18,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
     public providers: IUserProviders[] = [];
     @ViewChild('openAlert')
     public openAlert!: UserSharedFloatingAlertComponent;
-    private subscription: Subscription = new Subscription()
+    private subscription: Subscription = new Subscription();
 
     constructor( private readonly userSharedDataUserProvidersService: UserSharedDataUserProvidersService) {}
 
@@ -54,8 +54,10 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
             }))
             .subscribe( (data: IUserProviders[]) => {
                 this.providers = data;
+                console.log(data)
+
             },
-            error => {
+            () => {
                 this.openAlert.error = true;
                 this.openAlert.massage = 'Помилка! Спробуйте оновити сторінку!'
                 this.openAlert.showNotification();
@@ -70,7 +72,7 @@ export class UserIndicatorsCardsFormComponent implements OnInit, OnDestroy {
                 this.openAlert.showNotification()
                 this.indicatorsForm.reset();
             },
-            error => {
+            () => {
                 this.openAlert.error = true;
                 this.openAlert.massage = 'Помилка! Спробуйте відправити ще раз!'
                 this.openAlert.showNotification();

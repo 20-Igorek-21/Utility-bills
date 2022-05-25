@@ -13,6 +13,7 @@
          *ngIf="providersForm.value.gasStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
+                       [required]="providersForm.value.gasStatus"
                        formControlName="gasNumber">
       </app-input-field>
     </div>
@@ -29,6 +30,7 @@
          *ngIf="providersForm.value.oblenergoStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
+                       [required]="providersForm.value.oblenergoStatus"
                        formControlName="oblenergoNumber">
       </app-input-field>
     </div>
@@ -64,6 +66,7 @@
 
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
+                       [required]="providersForm.value.khimvoloknoStatus"
                        formControlName="khimvoloknoNumber">
       </app-input-field>
     </div>
@@ -79,6 +82,7 @@
     <div class="user-shared-form-providers__input-provider" *ngIf="providersForm.value.vodokanalStatus">
       <app-input-field [label]="'Номер особового рахунку'"
                        [type]="'number'"
+                       [required]="providersForm.value.vodokanalStatus"
                        formControlName="vodokanalNumber">
       </app-input-field>
     </div>

@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatCheckboxModule,
         MatRadioModule,
         MatStepperModule,
-        MatButtonModule
+        MatButtonModule,
+        NgxMaskModule,
     ],
     providers: [
         ...userSharedServices

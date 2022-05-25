@@ -26,7 +26,6 @@ export class UserSharedFormProvidersComponent implements OnInit {
         }
     }
 
-
     providersForm: FormGroup = new FormGroup({
         gasNumber: new FormControl<number | null>(null),
         gasId: new FormControl<string>('d6bec95b-1345-44a0-9d85-64a038382005'),

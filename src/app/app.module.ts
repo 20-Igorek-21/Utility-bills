@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './modules/auth/auth-shared/interceptor/auth.interceptor';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { AuthInterceptor } from './modules/auth/auth-shared/interceptor/auth.int
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxMaskModule.forRoot()
     ],
     providers: [
         {

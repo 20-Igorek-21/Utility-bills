@@ -57,6 +57,7 @@
             <button class="app-user-form-account__button app-user-form-account__button--save"
                     mat-raised-button
                     matStepperNext
+                    [disabled]="formPersonalData.personalDataForm.invalid || formAddress.addressForm.invalid || formProviders.providersForm.invalid"
                     (click)="addDataAccount()">Зберегти
             </button>
             <button class="app-user-form-account__button app-user-form-account__button--close" mat-raised-button

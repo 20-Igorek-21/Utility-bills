@@ -51,7 +51,7 @@ export class UserPersonalCabinetFormChangeAccountComponent implements OnInit, On
 
     changeDataAccount(): void {
         const accountId = sessionStorage.getItem('card')
-        if (this.formPersonalData.personalDataForm.valid ?? this.formAddress.addressForm.valid) {
+        if (this.formPersonalData.personalDataForm.valid && this.formAddress.addressForm.valid) {
             this.subscription.add(this.userSharedDataAccountService.changeAccount(
                 accountId,
                 this.formPersonalData.personalDataForm.value,
