@@ -7,6 +7,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './modules/auth/auth-shared/interceptor/auth.interceptor';
 import { NgxMaskModule } from 'ngx-mask';
 
+
 @NgModule({
     declarations: [
         AppComponent
@@ -23,7 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true
-        }
+        },
     ],
     bootstrap: [AppComponent]
 })
