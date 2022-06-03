@@ -3,7 +3,7 @@ import { AuthInterceptor } from './modules/auth/auth-shared/interceptor/auth.int
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
-declare let gtag: any;
+declare let gtag: Function;
 
 @Component({
     selector: 'app-root',
