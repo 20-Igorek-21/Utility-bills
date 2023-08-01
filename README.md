@@ -2,4 +2,4 @@
 
 ## Angular
 
-### Typescript
+### Typescript  
